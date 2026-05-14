@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kvigneshwaran178-bit.github.io/quicktools/sitemap.xml
