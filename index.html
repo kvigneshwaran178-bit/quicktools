@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>QuickTools – All Free Online Calculators & Smart Tools</title>
+<meta name="description" content="Fast, simple and free tools for students, professionals, and creators. EMI Calculator, BMI Calculator, Age Calculator and more." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  /* ─── RESET & VARIABLES ─── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue: #2563eb;
+    --blue-dark: #1d4ed8;
+    --blue-light: #eff6ff;
+    --blue-mid: #bfdbfe;
+    --green: #10b981;
+    --red: #ef4444;
+    --yellow: #f59e0b;
+    --purple: #8b5cf6;
+    --pink: #ec4899;
+    --orange: #f97316;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --card: #ffffff;
+    --text: #0f172a;
+    --text-2: #475569;
+    --text-3: #94a3b8;
+    --border: #e2e8f0;
+    --shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.06);
+    --shadow-md: 0 4px 6px rgba(0,0,0,.05), 0 10px 30px rgba(0,0,0,.1);
+    --shadow-lg: 0 20px 60px rgba(37,99,235,.15);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --font-head: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --transition: .22s cubic-bezier(.4,0,.2,1);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--blue-mid); border-radius: 99px; }
+
+  /* ─── HEADER ─── */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav {
+    max-width: 1200px; margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px;
+  }
+  .logo {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--font-head); font-weight: 800; font-size: 1.35rem;
+    color: var(--blue);
+    flex-shrink: 0;
+  }
+  .logo-icon {
+    width: 36px; height: 36px; background: var(--blue);
+    border-radius: 10px; display: grid; place-items: center;
+    color: #fff; font-size: 1rem;
+  }
+  .nav-links {
+    display: flex; align-items: center; gap: 4px;
+  }
+  .nav-links a {
+    padding: 6px 14px; border-radius: 8px;
+    font-size: .9rem; font-weight: 500; color: var(--text-2);
+    transition: background var(--transition), color var(--transition);
+  }
+  .nav-links a:hover, .nav-links a.active {
+    background: var(--blue-light); color: var(--blue);
+  }
+  .nav-search {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--bg); border: 1.5px solid var(--border);
+    border-radius: 99px; padding: 6px 14px;
+    flex: 1; max-width: 260px;
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+  .nav-search:focus-within { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,.12); }
+  .nav-search input {
+    border: none; outline: none; background: transparent;
+    font-family: var(--font-body); font-size: .875rem; color: var(--text);
+    width: 100%;
+  }
+  .nav-search input::placeholder { color: var(--text-3); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: var(--transition); }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative; overflow: hidden;
+    padding: 96px 24px 80px;
+    text-align: center;
+    background: linear-gradient(135deg, #eff6ff 0%, #ffffff 50%, #f0fdf4 100%);
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(37,99,235,.12), transparent);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--blue-light); color: var(--blue);
+    border: 1px solid var(--blue-mid); border-radius: 99px;
+    padding: 5px 14px; font-size: .8rem; font-weight: 600;
+    margin-bottom: 24px;
+    animation: fadeDown .6s ease both;
+  }
+  .hero h1 {
+    font-family: var(--font-head); font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 800; line-height: 1.15;
+    max-width: 760px; margin: 0 auto 20px;
+    animation: fadeDown .6s .1s ease both;
+  }
+  .hero h1 span { color: var(--blue); }
+  .hero p {
+    font-size: 1.1rem; color: var(--text-2); max-width: 520px;
+    margin: 0 auto 36px;
+    animation: fadeDown .6s .2s ease both;
+  }
+  .hero-search {
+    display: flex; align-items: center; gap: 0;
+    background: var(--white); border: 2px solid var(--blue);
+    border-radius: 99px; padding: 6px 6px 6px 20px;
+    max-width: 560px; margin: 0 auto;
+    box-shadow: var(--shadow-lg);
+    animation: fadeDown .6s .3s ease both;
+    transition: box-shadow var(--transition);
+  }
+  .hero-search:focus-within { box-shadow: 0 20px 60px rgba(37,99,235,.25); }
+  .hero-search input {
+    flex: 1; border: none; outline: none; font-family: var(--font-body);
+    font-size: 1rem; color: var(--text); background: transparent;
+  }
+  .hero-search input::placeholder { color: var(--text-3); }
+  .hero-search button {
+    background: var(--blue); color: #fff;
+    border-radius: 99px; padding: 10px 24px;
+    font-size: .9rem; font-weight: 600; font-family: var(--font-body);
+    transition: background var(--transition), transform var(--transition);
+    white-space: nowrap;
+  }
+  .hero-search button:hover { background: var(--blue-dark); transform: scale(1.03); }
+  .hero-tags {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+    margin-top: 20px; animation: fadeDown .6s .4s ease both;
+  }
+  .hero-tags span {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 99px; padding: 4px 12px; font-size: .8rem; color: var(--text-2);
+    cursor: pointer; transition: border-color var(--transition), color var(--transition), background var(--transition);
+  }
+  .hero-tags span:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+
+  /* ─── SECTION WRAPPER ─── */
+  .section { max-width: 1200px; margin: 0 auto; padding: 64px 24px; }
+  .section-head { margin-bottom: 36px; }
+  .section-label {
+    display: inline-block; font-size: .75rem; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: var(--blue); margin-bottom: 8px;
+  }
+  .section-head h2 {
+    font-family: var(--font-head); font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800; line-height: 1.2;
+  }
+  .section-head p { color: var(--text-2); margin-top: 8px; max-width: 480px; }
+
+  /* ─── CATEGORY GRID ─── */
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+  }
+  .cat-card {
+    background: var(--card); border: 1.5px solid var(--border);
+    border-radius: var(--radius); padding: 24px;
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    cursor: pointer;
+  }
+  .cat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: transparent; }
+  .cat-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    display: grid; place-items: center; font-size: 1.3rem;
+    margin-bottom: 16px;
+  }
+  .cat-card h3 {
+    font-family: var(--font-head); font-size: 1rem; font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .cat-tools { display: flex; flex-direction: column; gap: 6px; }
+  .cat-tool {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 10px; border-radius: 8px;
+    font-size: .875rem; color: var(--text-2);
+    transition: background var(--transition), color var(--transition);
+  }
+  .cat-tool:hover { background: var(--blue-light); color: var(--blue); }
+  .cat-tool .arrow { font-size: .75rem; opacity: 0; transition: opacity var(--transition), transform var(--transition); }
+  .cat-tool:hover .arrow { opacity: 1; transform: translateX(3px); }
+
+  /* Color variants */
+  .cc-finance .cat-icon { background: #eff6ff; color: var(--blue); }
+  .cc-health  .cat-icon { background: #f0fdf4; color: var(--green); }
+  .cc-student .cat-icon { background: #faf5ff; color: var(--purple); }
+  .cc-utility .cat-icon { background: #fff7ed; color: var(--orange); }
+  .cc-finance:hover { border-color: var(--blue-mid) !important; }
+  .cc-health:hover  { border-color: #6ee7b7 !important; }
+  .cc-student:hover { border-color: #c4b5fd !important; }
+  .cc-utility:hover { border-color: #fed7aa !important; }
+
+  /* ─── FEATURED TOOLS ─── */
+  .feat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .feat-card {
+    background: var(--card); border: 1.5px solid var(--border);
+    border-radius: var(--radius); padding: 28px 20px;
+    text-align: center;
+    transition: transform var(--transition), box-shadow var(--transition);
+    cursor: pointer; position: relative; overflow: hidden;
+  }
+  .feat-card::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, transparent 60%, rgba(37,99,235,.04));
+    pointer-events: none;
+  }
+  .feat-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+  .feat-emoji { font-size: 2.4rem; margin-bottom: 12px; }
+  .feat-card h3 { font-family: var(--font-head); font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+  .feat-card p { font-size: .8rem; color: var(--text-3); }
+  .feat-badge {
+    position: absolute; top: 12px; right: 12px;
+    background: var(--blue); color: #fff;
+    font-size: .65rem; font-weight: 700; padding: 3px 8px; border-radius: 99px;
+  }
+
+  /* ─── TOOL PAGE ─── */
+  .tool-page { display: none; }
+  .tool-page.active { display: block; }
+  .breadcrumb {
+    display: flex; align-items: center; gap: 6px;
+    font-size: .8rem; color: var(--text-3); margin-bottom: 28px;
+  }
+  .breadcrumb a { color: var(--blue); }
+  .breadcrumb span { color: var(--text-3); }
+  .tool-layout {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px; align-items: start;
+  }
+  .tool-card {
+    background: var(--card); border: 1.5px solid var(--border);
+    border-radius: var(--radius); padding: 28px;
+  }
+  .tool-card h2 {
+    font-family: var(--font-head); font-size: 1.25rem; font-weight: 700;
+    margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+  }
+  .form-group { margin-bottom: 16px; }
+  .form-group label {
+    display: block; font-size: .85rem; font-weight: 600;
+    color: var(--text-2); margin-bottom: 6px;
+  }
+  .form-group input, .form-group select {
+    width: 100%; padding: 10px 14px;
+    border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+    font-family: var(--font-body); font-size: .95rem; color: var(--text);
+    background: var(--bg);
+    outline: none; transition: border-color var(--transition), box-shadow var(--transition);
+  }
+  .form-group input:focus, .form-group select:focus {
+    border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,.1);
+    background: var(--white);
+  }
+  .btn-calc {
+    width: 100%; padding: 13px; border-radius: var(--radius-sm);
+    background: var(--blue); color: #fff;
+    font-family: var(--font-head); font-size: 1rem; font-weight: 700;
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    margin-top: 4px;
+  }
+  .btn-calc:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(37,99,235,.3); }
+  .btn-calc:active { transform: translateY(0); }
+  .result-box {
+    background: var(--blue-light); border-radius: var(--radius-sm);
+    padding: 20px; margin-bottom: 16px;
+  }
+  .result-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--blue-mid); }
+  .result-row:last-child { border-bottom: none; }
+  .result-label { font-size: .85rem; color: var(--text-2); }
+  .result-value { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--blue); }
+  .result-value.big { font-size: 1.5rem; color: var(--blue-dark); }
+  .result-placeholder {
+    text-align: center; padding: 32px 20px;
+    color: var(--text-3); font-size: .9rem;
+  }
+  .result-placeholder .icon { font-size: 2.5rem; margin-bottom: 8px; }
+
+  /* Chart */
+  .chart-wrap { margin-top: 20px; }
+  .chart-wrap h3 { font-family: var(--font-head); font-size: .95rem; font-weight: 700; margin-bottom: 14px; }
+  .pie-chart-svg { display: block; margin: 0 auto 16px; }
+  .chart-legend { display: flex; flex-direction: column; gap: 8px; }
+  .legend-item { display: flex; align-items: center; gap: 8px; font-size: .85rem; color: var(--text-2); }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+  /* Breakdown table */
+  .breakdown-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: .82rem; }
+  .breakdown-table th { text-align: left; padding: 8px 10px; background: var(--bg); font-weight: 700; color: var(--text-2); border-bottom: 2px solid var(--border); }
+  .breakdown-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); color: var(--text-2); }
+  .breakdown-table tr:hover td { background: var(--blue-light); }
+
+  /* SEO section */
+  .seo-section {
+    background: var(--card); border: 1.5px solid var(--border);
+    border-radius: var(--radius); padding: 32px; margin-top: 24px;
+  }
+  .seo-section h2 { font-family: var(--font-head); font-size: 1.4rem; font-weight: 800; margin-bottom: 16px; }
+  .seo-section h3 { font-family: var(--font-head); font-size: 1rem; font-weight: 700; margin: 20px 0 8px; color: var(--blue); }
+  .seo-section p { color: var(--text-2); line-height: 1.7; font-size: .9rem; }
+  .seo-section ul { padding-left: 20px; margin-top: 6px; }
+  .seo-section ul li { color: var(--text-2); font-size: .9rem; margin-bottom: 4px; }
+
+  /* Related tools */
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-top: 16px; }
+  .related-card {
+    background: var(--bg); border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm); padding: 14px;
+    text-align: center; cursor: pointer;
+    transition: border-color var(--transition), background var(--transition), transform var(--transition);
+  }
+  .related-card:hover { border-color: var(--blue); background: var(--blue-light); transform: translateY(-2px); }
+  .related-card .emoji { font-size: 1.5rem; margin-bottom: 6px; }
+  .related-card p { font-size: .8rem; font-weight: 600; color: var(--text-2); }
+
+  /* ─── WHY US ─── */
+  .why-section {
+    background: var(--blue); border-radius: 24px;
+    padding: 60px 40px; margin: 0 24px 64px;
+    max-width: 1200px; margin-left: auto; margin-right: auto;
+    position: relative; overflow: hidden;
+  }
+  .why-section::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    background: rgba(255,255,255,.06); border-radius: 50%;
+    pointer-events: none;
+  }
+  .why-section::after {
+    content: ''; position: absolute; bottom: -80px; left: -40px;
+    width: 280px; height: 280px;
+    background: rgba(255,255,255,.04); border-radius: 50%;
+    pointer-events: none;
+  }
+  .why-section .section-label { color: rgba(255,255,255,.7); }
+  .why-section h2 { font-family: var(--font-head); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; color: #fff; margin-bottom: 36px; }
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; position: relative; z-index: 1; }
+  .why-item {
+    background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15);
+    border-radius: var(--radius); padding: 24px;
+    backdrop-filter: blur(10px);
+    transition: background var(--transition), transform var(--transition);
+  }
+  .why-item:hover { background: rgba(255,255,255,.16); transform: translateY(-3px); }
+  .why-icon { font-size: 2rem; margin-bottom: 12px; }
+  .why-item h3 { color: #fff; font-family: var(--font-head); font-size: .95rem; font-weight: 700; margin-bottom: 4px; }
+  .why-item p { color: rgba(255,255,255,.7); font-size: .82rem; line-height: 1.5; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--text); color: rgba(255,255,255,.8);
+    padding: 48px 24px 24px;
+  }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 40px; margin-bottom: 40px; }
+  .footer-logo {
+    font-family: var(--font-head); font-weight: 800; font-size: 1.3rem;
+    color: #fff; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+  }
+  .footer-logo-icon {
+    width: 32px; height: 32px; background: var(--blue); border-radius: 8px;
+    display: grid; place-items: center; font-size: .9rem;
+  }
+  .footer-about p { font-size: .85rem; line-height: 1.6; color: rgba(255,255,255,.55); max-width: 220px; }
+  .footer-col h4 { font-family: var(--font-head); font-size: .85rem; font-weight: 700; color: #fff; margin-bottom: 14px; text-transform: uppercase; letter-spacing: .05em; }
+  .footer-col ul { display: flex; flex-direction: column; gap: 8px; }
+  .footer-col ul li a { font-size: .85rem; color: rgba(255,255,255,.55); transition: color var(--transition); }
+  .footer-col ul li a:hover { color: #fff; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .footer-bottom p { font-size: .8rem; color: rgba(255,255,255,.4); }
+  .social-links { display: flex; gap: 10px; }
+  .social-link {
+    width: 34px; height: 34px; border-radius: 8px;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.1);
+    display: grid; place-items: center; font-size: .85rem;
+    color: rgba(255,255,255,.6); cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+  }
+  .social-link:hover { background: var(--blue); color: #fff; }
+
+  /* ─── MOBILE NAV ─── */
+  .mobile-nav {
+    display: none; position: fixed; bottom: 0; left: 0; right: 0;
+    background: rgba(255,255,255,.95); backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border); z-index: 200;
+    padding: 8px 0 env(safe-area-inset-bottom, 8px);
+  }
+  .mobile-nav-items { display: flex; justify-content: space-around; }
+  .mobile-nav-item {
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+    padding: 6px 12px; border-radius: 8px; cursor: pointer;
+    transition: background var(--transition);
+    font-size: .65rem; font-weight: 600; color: var(--text-3);
+    min-width: 56px;
+  }
+  .mobile-nav-item.active { color: var(--blue); }
+  .mobile-nav-item .nav-icon { font-size: 1.2rem; }
+
+  /* ─── SEARCH RESULTS ─── */
+  .search-results {
+    position: absolute; top: calc(100% + 8px); left: 0; right: 0;
+    background: var(--white); border: 1.5px solid var(--border);
+    border-radius: var(--radius); box-shadow: var(--shadow-md);
+    z-index: 50; max-height: 320px; overflow-y: auto; display: none;
+  }
+  .search-results.show { display: block; }
+  .search-result-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 16px; cursor: pointer;
+    transition: background var(--transition);
+    border-bottom: 1px solid var(--border);
+  }
+  .search-result-item:last-child { border-bottom: none; }
+  .search-result-item:hover { background: var(--blue-light); }
+  .sri-icon { font-size: 1.3rem; width: 32px; text-align: center; }
+  .sri-info .name { font-weight: 600; font-size: .9rem; }
+  .sri-info .cat { font-size: .75rem; color: var(--text-3); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-up { animation: fadeUp .5s ease both; }
+
+  /* ─── DARK MODE ─── */
+  body.dark {
+    --bg: #0f172a; --card: #1e293b; --text: #f1f5f9; --text-2: #94a3b8;
+    --text-3: #475569; --border: #334155; --blue-light: #1e3a5f; --blue-mid: #1e40af;
+  }
+  body.dark header { background: rgba(15,23,42,.88); }
+  body.dark .nav-search { background: var(--card); }
+  body.dark .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+  body.dark .hero::before { background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(37,99,235,.2), transparent); }
+  body.dark .hero-tags span { background: var(--card); }
+  body.dark .hero-search { background: var(--card); }
+  body.dark .form-group input, body.dark .form-group select { background: var(--bg); color: var(--text); }
+  body.dark .form-group input:focus, body.dark .form-group select:focus { background: var(--card); }
+
+  .dark-toggle {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: var(--bg); border: 1.5px solid var(--border);
+    display: grid; place-items: center; cursor: pointer; font-size: .95rem;
+    transition: background var(--transition), border-color var(--transition);
+    flex-shrink: 0;
+  }
+  .dark-toggle:hover { background: var(--blue-light); border-color: var(--blue); }
+
+  /* ─── PAGE STATES ─── */
+  #home-page { display: block; }
+  #tool-page { display: none; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-search { display: none; }
+    .hamburger { display: flex; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .tool-layout { grid-template-columns: 1fr; }
+    .mobile-nav { display: block; }
+    body { padding-bottom: 70px; }
+    .why-section { margin: 0 12px 48px; padding: 40px 24px; }
+    .section { padding: 40px 16px; }
+    .hero { padding: 64px 16px 60px; }
+  }
+  @media (max-width: 480px) {
+    .footer-top { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════ HEADER ════════ -->
+<header>
+  <nav class="nav">
+    <a class="logo" href="#" onclick="showPage('home')">
+      <div class="logo-icon">⚡</div>
+      QuickTools
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" class="active" onclick="showPage('home');return false">Home</a></li>
+      <li><a href="#categories" onclick="showPage('home');setTimeout(()=>document.getElementById('categories').scrollIntoView({behavior:'smooth'}),100);return false">Tools</a></li>
+      <li><a href="#categories" onclick="showPage('home');return false">Categories</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-search" style="position:relative">
+      <span>🔍</span>
+      <input type="text" id="navSearch" placeholder="Search tools…" oninput="handleNavSearch(this.value)" />
+      <div class="search-results" id="navResults"></div>
+    </div>
+    <button class="dark-toggle" onclick="toggleDark()" title="Toggle dark mode">🌙</button>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ════════ HOME PAGE ════════ -->
+<div id="home-page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">✨ 20+ Free Tools — No Login Required</div>
+    <h1>All Free Online <span>Calculators</span> &amp; Smart Tools in One Place</h1>
+    <p>Fast, simple and free tools for students, professionals, and everyday life.</p>
+    <div class="hero-search" style="position:relative">
+      <input type="text" id="heroSearch" placeholder="Search any tool… (EMI, BMI, Age, Salary…)" oninput="handleHeroSearch(this.value)" />
+      <div class="search-results" id="heroResults"></div>
+      <button onclick="doHeroSearch()">🔍 Search</button>
+    </div>
+    <div class="hero-tags">
+      <span onclick="openTool('emi')">💰 EMI Calculator</span>
+      <span onclick="openTool('bmi')">🏃 BMI Calculator</span>
+      <span onclick="openTool('age')">🎂 Age Calculator</span>
+      <span onclick="openTool('salary')">💼 Salary Calculator</span>
+      <span onclick="openTool('calorie')">🥗 Calorie Calculator</span>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section" id="categories">
+    <div class="section-head">
+      <span class="section-label">Browse by Category</span>
+      <h2>Everything you need, organized</h2>
+      <p>Pick a category and find the right tool in seconds.</p>
+    </div>
+    <div class="cat-grid">
+
+      <!-- Finance -->
+      <div class="cat-card cc-finance animate-up">
+        <div class="cat-icon">💰</div>
+        <h3>Finance Tools</h3>
+        <div class="cat-tools">
+          <a class="cat-tool" onclick="openTool('emi')">📊 EMI Calculator <span class="arrow">→</span></a>
+          <a class="cat-tool" onclick="openTool('salary')">💼 Salary Calculator <span class="arrow">→</span></a>
+          <a class="cat-tool" onclick="openTool('profit')">📈 Profit Calculator <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <!-- Health -->
+      <div class="cat-card cc-health animate-up" style="animation-delay:.08s">
+        <div class="cat-icon">🏃</div>
+        <h3>Health Tools</h3>
+        <div class="cat-tools">
+          <a class="cat-tool" onclick="openTool('bmi')">⚖️ BMI Calculator <span class="arrow">→</span></a>
+          <a class="cat-tool" onclick="openTool('calorie')">🥗 Calorie Calculator <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <!-- Student -->
+      <div class="cat-card cc-student animate-up" style="animation-delay:.16s">
+        <div class="cat-icon">📚</div>
+        <h3>Student Tools</h3>
+        <div class="cat-tools">
+          <a class="cat-tool" onclick="openTool('age')">🎂 Age Calculator <span class="arrow">→</span></a>
+          <a class="cat-tool" onclick="openTool('typing')">⌨️ Typing Speed Test <span class="arrow">→</span></a>
+          <a class="cat-tool" onclick="openTool('gpa')">🎓 GPA Calculator <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <!-- Utility -->
+      <div class="cat-card cc-utility animate-up" style="animation-delay:.24s">
+        <div class="cat-icon">🛠️</div>
+        <h3>Utility Tools</h3>
+        <div class="cat-tools">
+          <a class="cat-tool" onclick="openTool('timezone')">🌍 Time Zone Converter <span class="arrow">→</span></a>
+          <a class="cat-tool" onclick="openTool('random')">🎲 Random Generator <span class="arrow">→</span></a>
+          <a class="cat-tool" onclick="openTool('data')">📶 Data Usage Calc <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="section" style="padding-top:0">
+    <div class="section-head">
+      <span class="section-label">⭐ Most Popular</span>
+      <h2>Featured Tools</h2>
+      <p>Our most-used tools, loved by thousands daily.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card" onclick="openTool('emi')">
+        <div class="feat-badge">🔥 Hot</div>
+        <div class="feat-emoji">💰</div>
+        <h3>EMI Calculator</h3>
+        <p>Calculate monthly loan installments instantly</p>
+      </div>
+      <div class="feat-card" onclick="openTool('bmi')">
+        <div class="feat-badge">❤️ Popular</div>
+        <div class="feat-emoji">⚖️</div>
+        <h3>BMI Calculator</h3>
+        <p>Check your Body Mass Index in seconds</p>
+      </div>
+      <div class="feat-card" onclick="openTool('age')">
+        <div class="feat-emoji">🎂</div>
+        <h3>Age Calculator</h3>
+        <p>Find your exact age in years, months &amp; days</p>
+      </div>
+      <div class="feat-card" onclick="openTool('salary')">
+        <div class="feat-emoji">💼</div>
+        <h3>Salary Calculator</h3>
+        <p>Break down your take-home pay quickly</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <div class="why-section" id="about">
+    <span class="section-label">Why QuickTools?</span>
+    <h2>Built for speed, designed for everyone</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon">⚡</div>
+        <h3>Lightning Fast</h3>
+        <p>Results in milliseconds. No waiting, no lag.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">📱</div>
+        <h3>Mobile Friendly</h3>
+        <p>Works perfectly on any screen size, anywhere.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🆓</div>
+        <h3>100% Free</h3>
+        <p>Every tool, forever free. No hidden charges.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🔒</div>
+        <h3>No Login Required</h3>
+        <p>Jump right in — no accounts, no tracking.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /home-page -->
+
+<!-- ════════ TOOL PAGE ════════ -->
+<div id="tool-page">
+  <section class="section">
+    <nav class="breadcrumb" id="breadcrumb">
+      <a href="#" onclick="showPage('home');return false">Home</a>
+      <span>›</span><span id="bcCat">Finance</span>
+      <span>›</span><span id="bcTool">EMI Calculator</span>
+    </nav>
+    <div id="toolContent"></div>
+  </section>
+</div>
+
+<!-- ════════ FOOTER ════════ -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-about">
+        <div class="footer-logo"><div class="footer-logo-icon">⚡</div> QuickTools</div>
+        <p>Your go-to hub for free online calculators and smart tools. Fast, accurate, and always free.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Finance</h4>
+        <ul>
+          <li><a href="#" onclick="openTool('emi');return false">EMI Calculator</a></li>
+          <li><a href="#" onclick="openTool('salary');return false">Salary Calculator</a></li>
+          <li><a href="#" onclick="openTool('profit');return false">Profit Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Health &amp; Study</h4>
+        <ul>
+          <li><a href="#" onclick="openTool('bmi');return false">BMI Calculator</a></li>
+          <li><a href="#" onclick="openTool('calorie');return false">Calorie Calculator</a></li>
+          <li><a href="#" onclick="openTool('age');return false">Age Calculator</a></li>
+          <li><a href="#" onclick="openTool('gpa');return false">GPA Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 QuickTools. All rights reserved.</p>
+      <div class="social-links">
+        <div class="social-link" title="Twitter">𝕏</div>
+        <div class="social-link" title="Facebook">f</div>
+        <div class="social-link" title="Instagram">📸</div>
+        <div class="social-link" title="YouTube">▶</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════ MOBILE NAV ════════ -->
+<nav class="mobile-nav">
+  <div class="mobile-nav-items">
+    <div class="mobile-nav-item active" onclick="showPage('home')">
+      <span class="nav-icon">🏠</span>Home
+    </div>
+    <div class="mobile-nav-item" onclick="showPage('home');setTimeout(()=>document.getElementById('categories').scrollIntoView({behavior:'smooth'}),200)">
+      <span class="nav-icon">🔧</span>Tools
+    </div>
+    <div class="mobile-nav-item" onclick="openTool('emi')">
+      <span class="nav-icon">💰</span>EMI
+    </div>
+    <div class="mobile-nav-item" onclick="openTool('bmi')">
+      <span class="nav-icon">⚖️</span>BMI
+    </div>
+    <div class="mobile-nav-item" onclick="toggleDark()">
+      <span class="nav-icon">🌙</span>Dark
+    </div>
+  </div>
+</nav>
+
+<script>
+/* ════════ DATA ════════ */
+const ALL_TOOLS = [
+  { id:'emi',      name:'EMI Calculator',        cat:'Finance',   emoji:'💰' },
+  { id:'salary',   name:'Salary Calculator',     cat:'Finance',   emoji:'💼' },
+  { id:'profit',   name:'Profit Calculator',     cat:'Finance',   emoji:'📈' },
+  { id:'bmi',      name:'BMI Calculator',        cat:'Health',    emoji:'⚖️' },
+  { id:'calorie',  name:'Calorie Calculator',    cat:'Health',    emoji:'🥗' },
+  { id:'age',      name:'Age Calculator',        cat:'Education', emoji:'🎂' },
+  { id:'typing',   name:'Typing Speed Test',     cat:'Education', emoji:'⌨️' },
+  { id:'gpa',      name:'GPA Calculator',        cat:'Education', emoji:'🎓' },
+  { id:'timezone', name:'Time Zone Converter',   cat:'Utility',   emoji:'🌍' },
+  { id:'random',   name:'Random Generator',      cat:'Utility',   emoji:'🎲' },
+  { id:'data',     name:'Data Usage Calculator', cat:'Utility',   emoji:'📶' },
+];
+
+/* ════════ SEARCH ════════ */
+function searchTools(q) {
+  if (!q.trim()) return [];
+  return ALL_TOOLS.filter(t => t.name.toLowerCase().includes(q.toLowerCase()) || t.cat.toLowerCase().includes(q.toLowerCase()));
+}
+function renderResults(results, container, inputEl) {
+  const el = document.getElementById(container);
+  if (!results.length) { el.classList.remove('show'); return; }
+  el.innerHTML = results.map(t =>
+    `<div class="search-result-item" onclick="openTool('${t.id}')">
+      <span class="sri-icon">${t.emoji}</span>
+      <div class="sri-info"><div class="name">${t.name}</div><div class="cat">${t.cat}</div></div>
+    </div>`
+  ).join('');
+  el.classList.add('show');
+}
+function handleNavSearch(v)  { renderResults(searchTools(v), 'navResults',  'navSearch'); }
+function handleHeroSearch(v) { renderResults(searchTools(v), 'heroResults', 'heroSearch'); }
+function doHeroSearch() {
+  const v = document.getElementById('heroSearch').value;
+  const r = searchTools(v);
+  if (r.length) openTool(r[0].id);
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-search') && !e.target.closest('.hero-search')) {
+    document.querySelectorAll('.search-results').forEach(el => el.classList.remove('show'));
+  }
+});
+
+/* ════════ DARK MODE ════════ */
+function toggleDark() {
+  document.body.classList.toggle('dark');
+  document.querySelector('.dark-toggle').textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+}
+
+/* ════════ PAGE SWITCHING ════════ */
+function showPage(page) {
+  document.getElementById('home-page').style.display = page === 'home' ? 'block' : 'none';
+  document.getElementById('tool-page').style.display = page === 'tool'  ? 'block' : 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ════════ TOOL TEMPLATES ════════ */
+function openTool(id) {
+  document.getElementById('toolContent').innerHTML = getToolHTML(id);
+  const tool = ALL_TOOLS.find(t => t.id === id);
+  if (tool) {
+    document.getElementById('bcCat').textContent  = tool.cat;
+    document.getElementById('bcTool').textContent = tool.name;
+  }
+  showPage('tool');
+  if (id === 'typing') startTypingTest();
+}
+
+function getToolHTML(id) {
+  switch(id) {
+    case 'emi':    return emiHTML();
+    case 'bmi':    return bmiHTML();
+    case 'age':    return ageHTML();
+    case 'salary': return salaryHTML();
+    case 'calorie':return calorieHTML();
+    case 'profit': return profitHTML();
+    case 'gpa':    return gpaHTML();
+    case 'typing': return typingHTML();
+    case 'timezone':return timezoneHTML();
+    case 'random': return randomHTML();
+    case 'data':   return dataHTML();
+    default: return `<p>Tool coming soon!</p>`;
+  }
+}
+
+/* ─── RELATED TOOLS SNIPPET ─── */
+function relatedTools(ids, title = 'Related Tools') {
+  return `
+  <div class="tool-card" style="margin-top:20px">
+    <h2>🔗 ${title}</h2>
+    <div class="related-grid">
+      ${ids.map(id => {
+        const t = ALL_TOOLS.find(x => x.id === id);
+        return t ? `<div class="related-card" onclick="openTool('${t.id}')"><div class="emoji">${t.emoji}</div><p>${t.name}</p></div>` : '';
+      }).join('')}
+    </div>
+  </div>`;
+}
+
+/* ─── SEO SECTION SNIPPET ─── */
+function seoBlock(title, content) {
+  return `<div class="seo-section animate-up">${content}</div>`;
+}
+
+/* ════════════════════════════════
+   TOOL: EMI Calculator
+════════════════════════════════ */
+function emiHTML() {
+  return `
+  <div class="tool-layout">
+    <div class="tool-card animate-up">
+      <h2>💰 EMI Calculator</h2>
+      <div class="form-group">
+        <label>Loan Amount (₹)</label>
+        <input type="number" id="emi_amount" value="500000" placeholder="e.g. 500000" />
+      </div>
+      <div class="form-group">
+        <label>Annual Interest Rate (%)</label>
+        <input type="number" id="emi_rate" value="8.5" step="0.1" placeholder="e.g. 8.5" />
+      </div>
+      <div class="form-group">
+        <label>Loan Tenure (Months)</label>
+        <input type="number" id="emi_tenure" value="60" placeholder="e.g. 60" />
+      </div>
+      <button class="btn-calc" onclick="calcEMI()">Calculate EMI</button>
+    </div>
+    <div class="tool-card animate-up" id="emi_result" style="animation-delay:.1s">
+      <h2>📊 Results</h2>
+      <div class="result-placeholder"><div class="icon">💡</div>Enter your loan details and click Calculate</div>
+    </div>
+  </div>
+  <div id="emi_chart" style="display:none" class="tool-card animate-up" style="margin-top:20px"></div>
+  ${relatedTools(['salary','profit','data'])}
+  <div class="seo-section animate-up" style="margin-top:20px">
+    <h2>What is EMI?</h2>
+    <p>EMI (Equated Monthly Instalment) is the fixed amount you pay to the bank every month until your loan is fully repaid. It includes both the principal repayment and the interest.</p>
+    <h3>How is EMI Calculated?</h3>
+    <p>The formula: <strong>EMI = P × r × (1+r)ⁿ / ((1+r)ⁿ – 1)</strong> where P = Principal, r = monthly interest rate, n = number of months.</p>
+    <h3>Tips to Reduce Your EMI</h3>
+    <ul>
+      <li>Make a larger down payment to reduce principal</li>
+      <li>Choose a longer tenure (note: total interest increases)</li>
+      <li>Negotiate a lower interest rate</li>
+      <li>Make part-prepayments when possible</li>
+    </ul>
+  </div>`;
+}
+
+function calcEMI() {
+  const P = parseFloat(document.getElementById('emi_amount').value);
+  const annualRate = parseFloat(document.getElementById('emi_rate').value);
+  const n = parseInt(document.getElementById('emi_tenure').value);
+  if (!P || !annualRate || !n) { alert('Please fill all fields'); return; }
+  const r = annualRate / 12 / 100;
+  const emi = P * r * Math.pow(1+r, n) / (Math.pow(1+r, n) - 1);
+  const total = emi * n;
+  const interest = total - P;
+  const pPct = Math.round((P / total) * 100);
+  const iPct = 100 - pPct;
+
+  // Pie chart SVG
+  function describeArc(cx, cy, r, startAngle, endAngle) {
+    const s = { x: cx + r * Math.cos(Math.PI * startAngle / 180), y: cy + r * Math.sin(Math.PI * startAngle / 180) };
+    const e = { x: cx + r * Math.cos(Math.PI * endAngle / 180),   y: cy + r * Math.sin(Math.PI * endAngle / 180) };
+    const large = endAngle - startAngle > 180 ? 1 : 0;
+    return `M ${cx} ${cy} L ${s.x} ${s.y} A ${r} ${r} 0 ${large} 1 ${e.x} ${e.y} Z`;
+  }
+  const deg = pPct * 3.6;
+  const pieSVG = `<svg class="pie-chart-svg" viewBox="0 0 120 120" width="140" height="140">
+    <path d="${describeArc(60,60,55,-90,-90+deg)}" fill="#2563eb"/>
+    <path d="${describeArc(60,60,55,-90+deg,270)}" fill="#10b981"/>
+    <circle cx="60" cy="60" r="28" fill="var(--card)"/>
+    <text x="60" y="56" text-anchor="middle" font-size="9" fill="var(--text-2)" font-family="DM Sans">EMI</text>
+    <text x="60" y="68" text-anchor="middle" font-size="10" fill="var(--blue)" font-weight="700" font-family="Syne">₹${fmt(emi)}</text>
+  </svg>`;
+
+  document.getElementById('emi_result').innerHTML = `
+    <h2>📊 Results</h2>
+    <div class="result-box">
+      <div class="result-row"><span class="result-label">Monthly EMI</span><span class="result-value big">₹${fmt(emi)}</span></div>
+      <div class="result-row"><span class="result-label">Total Interest</span><span class="result-value" style="color:var(--green)">₹${fmt(interest)}</span></div>
+      <div class="result-row"><span class="result-label">Total Payment</span><span class="result-value">₹${fmt(total)}</span></div>
+    </div>
+    <div class="chart-wrap">
+      <h3>Principal vs Interest</h3>
+      ${pieSVG}
+      <div class="chart-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#2563eb"></div>Principal — ${pPct}% (₹${fmt(P)})</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div>Interest — ${iPct}% (₹${fmt(interest)})</div>
+      </div>
+    </div>`;
+
+  // Yearly breakdown
+  let balance = P, tableRows = '';
+  for (let yr = 1; yr <= Math.ceil(n/12); yr++) {
+    let yEMI=0, yInt=0, yPrin=0;
+    const months = Math.min(12, n - (yr-1)*12);
+    for (let m=0; m<months; m++) {
+      const intPart = balance * r;
+      const prinPart = emi - intPart;
+      yInt += intPart; yPrin += prinPart; yEMI += emi;
+      balance = Math.max(0, balance - prinPart);
+    }
+    tableRows += `<tr><td>Year ${yr}</td><td>₹${fmt(yEMI)}</td><td>₹${fmt(yPrin)}</td><td>₹${fmt(yInt)}</td><td>₹${fmt(balance)}</td></tr>`;
+  }
+  document.getElementById('emi_chart').style.display = 'block';
+  document.getElementById('emi_chart').innerHTML = `
+    <h2>📋 Yearly Breakdown</h2>
+    <div style="overflow-x:auto">
+    <table class="breakdown-table">
+      <thead><tr><th>Year</th><th>Total Paid</th><th>Principal</th><th>Interest</th><th>Balance</th></tr></thead>
+      <tbody>${tableRows}</tbody>
+    </table></div>`;
+}
+
+/* ════════════════════════════════
+   TOOL: BMI Calculator
+════════════════════════════════ */
+function bmiHTML() {
+  return `
+  <div class="tool-layout">
+    <div class="tool-card animate-up">
+      <h2>⚖️ BMI Calculator</h2>
+      <div class="form-group">
+        <label>Unit System</label>
+        <select id="bmi_unit" onchange="toggleBMIUnit()">
+          <option value="metric">Metric (kg, cm)</option>
+          <option value="imperial">Imperial (lb, in)</option>
+        </select>
+      </div>
+      <div id="bmi_metric">
+        <div class="form-group"><label>Weight (kg)</label><input type="number" id="bmi_kg" value="70" /></div>
+        <div class="form-group"><label>Height (cm)</label><input type="number" id="bmi_cm" value="170" /></div>
+      </div>
+      <div id="bmi_imperial" style="display:none">
+        <div class="form-group"><label>Weight (lbs)</label><input type="number" id="bmi_lb" value="154" /></div>
+        <div class="form-group"><label>Height (inches)</label><input type="number" id="bmi_in" value="67" /></div>
+      </div>
+      <div class="form-group"><label>Age</label><input type="number" id="bmi_age" value="25" /></div>
+      <div class="form-group">
+        <label>Gender</label>
+        <select id="bmi_gender"><option>Male</option><option>Female</option></select>
+      </div>
+      <button class="btn-calc" onclick="calcBMI()">Calculate BMI</button>
+    </div>
+    <div class="tool-card animate-up" id="bmi_result" style="animation-delay:.1s">
+      <h2>📊 Results</h2>
+      <div class="result-placeholder"><div class="icon">💡</div>Enter your details and click Calculate</div>
+    </div>
+  </div>
+  ${relatedTools(['calorie','age'])}
+  <div class="seo-section animate-up" style="margin-top:20px">
+    <h2>What is BMI?</h2>
+    <p>Body Mass Index (BMI) is a measure of body fat based on height and weight. It helps classify whether a person is underweight, normal weight, overweight, or obese.</p>
+    <h3>BMI Categories</h3>
+    <ul>
+      <li><strong>Under 18.5</strong> — Underweight</li>
+      <li><strong>18.5 – 24.9</strong> — Normal weight ✅</li>
+      <li><strong>25 – 29.9</strong> — Overweight</li>
+      <li><strong>30 and above</strong> — Obese</li>
+    </ul>
+    <h3>Limitations of BMI</h3>
+    <p>BMI doesn't distinguish between muscle and fat. Athletes may have a high BMI without excess body fat. Always consult a healthcare professional for personalized advice.</p>
+  </div>`;
+}
+
+function toggleBMIUnit() {
+  const u = document.getElementById('bmi_unit').value;
+  document.getElementById('bmi_metric').style.display   = u === 'metric' ? 'block' : 'none';
+  document.getElementById('bmi_imperial').style.display = u === 'imperial' ? 'block' : 'none';
+}
+
+function calcBMI() {
+  const unit = document.getElementById('bmi_unit').value;
+  let kg, cm;
+  if (unit === 'metric') {
+    kg = parseFloat(document.getElementById('bmi_kg').value);
+    cm = parseFloat(document.getElementById('bmi_cm').value);
+  } else {
+    kg = parseFloat(document.getElementById('bmi_lb').value) * 0.453592;
+    cm = parseFloat(document.getElementById('bmi_in').value) * 2.54;
+  }
+  const bmi = kg / Math.pow(cm/100, 2);
+  let cat, color, advice;
+  if (bmi < 18.5)      { cat='Underweight'; color='#f59e0b'; advice='Consider increasing caloric intake with nutritious foods.'; }
+  else if (bmi < 25)   { cat='Normal Weight'; color='#10b981'; advice='Great! Maintain your healthy lifestyle.'; }
+  else if (bmi < 30)   { cat='Overweight'; color='#f97316'; advice='Regular exercise and a balanced diet can help.'; }
+  else                 { cat='Obese'; color='#ef4444'; advice='Consult a healthcare provider for guidance.'; }
+
+  const pct = Math.min(100, Math.max(0, (bmi - 10) / 30 * 100));
+  document.getElementById('bmi_result').innerHTML = `
+    <h2>📊 Results</h2>
+    <div class="result-box">
+      <div class="result-row"><span class="result-label">Your BMI</span><span class="result-value big" style="color:${color}">${bmi.toFixed(1)}</span></div>
+      <div class="result-row"><span class="result-label">Category</span><span class="result-value" style="color:${color}">${cat}</span></div>
+    </div>
+    <div style="margin:16px 0">
+      <div style="display:flex;justify-content:space-between;font-size:.75rem;color:var(--text-3);margin-bottom:6px">
+        <span>10</span><span>18.5</span><span>25</span><span>30</span><span>40</span>
+      </div>
+      <div style="height:12px;background:linear-gradient(to right,#3b82f6,#10b981,#f59e0b,#ef4444);border-radius:99px;position:relative">
+        <div style="position:absolute;top:-4px;left:${pct}%;transform:translateX(-50%);width:20px;height:20px;background:#fff;border:3px solid ${color};border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.2)"></div>
+      </div>
+    </div>
+    <div style="background:var(--bg);border-radius:10px;padding:14px;font-size:.87rem;color:var(--text-2)">
+      💡 <strong>Advice:</strong> ${advice}
+    </div>`;
+}
+
+/* ════════════════════════════════
+   TOOL: Age Calculator
+════════════════════════════════ */
+function ageHTML() {
+  const today = new Date().toISOString().split('T')[0];
+  return `
+  <div class="tool-layout">
+    <div class="tool-card animate-up">
+      <h2>🎂 Age Calculator</h2>
+      <div class="form-group"><label>Date of Birth</label><input type="date" id="age_dob" value="1995-06-15" max="${today}" /></div>
+      <div class="form-group"><label>Calculate Age As Of</label><input type="date" id="age_to" value="${today}" /></div>
+      <button class="btn-calc" onclick="calcAge()">Calculate Age</button>
+    </div>
+    <div class="tool-card animate-up" id="age_result" style="animation-delay:.1s">
+      <h2>📊 Results</h2>
+      <div class="result-placeholder"><div class="icon">🎂</div>Select your birthday and click Calculate</div>
+    </div>
+  </div>
+  ${relatedTools(['bmi','gpa','typing'])}
+  <div class="seo-section animate-up" style="margin-top:20px">
+    <h2>How to Use the Age Calculator</h2>
+    <p>Simply enter your date of birth and the date you want to calculate your age as of. Our tool shows your exact age in years, months, days — and many more fun facts!</p>
+  </div>`;
+}
+
+function calcAge() {
+  const dob  = new Date(document.getElementById('age_dob').value);
+  const to   = new Date(document.getElementById('age_to').value);
+  let yy = to.getFullYear() - dob.getFullYear();
+  let mm = to.getMonth() - dob.getMonth();
+  let dd = to.getDate() - dob.getDate();
+  if (dd < 0) { mm--; dd += new Date(to.getFullYear(), to.getMonth(), 0).getDate(); }
+  if (mm < 0) { yy--; mm += 12; }
+  const totalDays = Math.floor((to - dob) / 86400000);
+  const nextBday = new Date(to.getFullYear(), dob.getMonth(), dob.getDate());
+  if (nextBday < to) nextBday.setFullYear(to.getFullYear() + 1);
+  const daysToNext = Math.floor((nextBday - to) / 86400000);
+
+  document.getElementById('age_result').innerHTML = `
+    <h2>📊 Your Age</h2>
+    <div class="result-box">
+      <div class="result-row"><span class="result-label">Age</span><span class="result-value big">${yy} yrs ${mm} mos ${dd} days</span></div>
+      <div class="result-row"><span class="result-label">Total Days Lived</span><span class="result-value">${totalDays.toLocaleString()}</span></div>
+      <div class="result-row"><span class="result-label">Total Months</span><span class="result-value">${(yy*12+mm).toLocaleString()}</span></div>
+      <div class="result-row"><span class="result-label">Total Weeks</span><span class="result-value">${Math.floor(totalDays/7).toLocaleString()}</span></div>
+      <div class="result-row"><span class="result-label">Next Birthday In</span><span class="result-value" style="color:var(--green)">🎉 ${daysToNext} days</span></div>
+      <div class="result-row"><span class="result-label">Hours Lived</span><span class="result-value">${(totalDays*24).toLocaleString()}</span></div>
+    </div>`;
+}
+
+/* ════════════════════════════════
+   TOOL: Salary Calculator
+════════════════════════════════ */
+function salaryHTML() {
+  return `
+  <div class="tool-layout">
+    <div class="tool-card animate-up">
+      <h2>💼 Salary Calculator</h2>
+      <div class="form-group"><label>Annual CTC (₹)</label><input type="number" id="sal_ctc" value="800000" /></div>
+      <div class="form-group"><label>Monthly Basic (% of CTC)</label><input type="number" id="sal_basic_pct" value="40" /></div>
+      <div class="form-group"><label>PF Deduction (%)</label><input type="number" id="sal_pf" value="12" /></div>
+      <div class="form-group"><label>Professional Tax (₹/month)</label><input type="number" id="sal_pt" value="200" /></div>
+      <button class="btn-calc" onclick="calcSalary()">Calculate Take-Home</button>
+    </div>
+    <div class="tool-card animate-up" id="sal_result" style="animation-delay:.1s">
+      <h2>📊 Salary Breakdown</h2>
+      <div class="result-placeholder"><div class="icon">💼</div>Enter your CTC and click Calculate</div>
+    </div>
+  </div>
+  ${relatedTools(['emi','profit'])}
+  <div class="seo-section animate-up" style="margin-top:20px">
+    <h2>Understanding Your Salary</h2>
+    <p>CTC (Cost to Company) includes all benefits and deductions. Your take-home pay is what's deposited in your bank after all deductions like PF, tax, and professional tax.</p>
+    <h3>Key Components</h3>
+    <ul>
+      <li><strong>Basic Salary</strong> — Core component, usually 40–50% of CTC</li>
+      <li><strong>HRA</strong> — House Rent Allowance, tax-exempt if you pay rent</li>
+      <li><strong>PF</strong> — Provident Fund, deducted from basic at 12%</li>
+      <li><strong>Professional Tax</strong> — State-specific deduction</li>
+    </ul>
+  </div>`;
+}
+
+function calcSalary() {
+  const ctc      = parseFloat(document.getElementById('sal_ctc').value);
+  const basicPct = parseFloat(document.getElementById('sal_basic_pct').value) / 100;
+  const pfPct    = parseFloat(document.getElementById('sal_pf').value) / 100;
+  const pt       = parseFloat(document.getElementById('sal_pt').value);
+
+  const monthly    = ctc / 12;
+  const basic      = monthly * basicPct;
+  const hra        = basic * 0.4;
+  const special    = monthly - basic - hra;
+  const pfDeduct   = basic * pfPct;
+  const totalDeduct = pfDeduct + pt;
+  const takeHome   = monthly - totalDeduct;
+
+  document.getElementById('sal_result').innerHTML = `
+    <h2>📊 Monthly Breakdown</h2>
+    <div class="result-box">
+      <div class="result-row"><span class="result-label">Gross Monthly</span><span class="result-value big">₹${fmt(monthly)}</span></div>
+      <div class="result-row"><span class="result-label">Basic Salary</span><span class="result-value">₹${fmt(basic)}</span></div>
+      <div class="result-row"><span class="result-label">HRA</span><span class="result-value">₹${fmt(hra)}</span></div>
+      <div class="result-row"><span class="result-label">Special Allowance</span><span class="result-value">₹${fmt(special)}</span></div>
+      <div class="result-row"><span class="result-label" style="color:var(--red)">PF Deduction</span><span class="result-value" style="color:var(--red)">– ₹${fmt(pfDeduct)}</span></div>
+      <div class="result-row"><span class="result-label" style="color:var(--red)">Professional Tax</span><span class="result-value" style="color:var(--red)">– ₹${fmt(pt)}</span></div>
+      <div class="result-row"><span class="result-label"><strong>In-Hand Monthly</strong></span><span class="result-value big" style="color:var(--green)">₹${fmt(takeHome)}</span></div>
+    </div>
+    <div style="background:var(--bg);padding:12px;border-radius:10px;font-size:.85rem;color:var(--text-2)">
+      📅 Annual In-Hand: <strong>₹${fmt(takeHome * 12)}</strong>
+    </div>`;
+}
+
+/* ════════════════════════════════
+   TOOL: Calorie Calculator
+════════════════════════════════ */
+function calorieHTML() {
+  return `
+  <div class="tool-layout">
+    <div class="tool-card animate-up">
+      <h2>🥗 Calorie Calculator</h2>
+      <div class="form-group"><label>Age (years)</label><input type="number" id="cal_age" value="25" /></div>
+      <div class="form-group"><label>Gender</label><select id="cal_gender"><option value="male">Male</option><option value="female">Female</option></select></div>
+      <div class="form-group"><label>Weight (kg)</label><input type="number" id="cal_wt" value="70" /></div>
+      <div class="form-group"><label>Height (cm)</label><input type="number" id="cal_ht" value="170" /></div>
+      <div class="form-group">
+        <label>Activity Level</label>
+        <select id="cal_act">
+          <option value="1.2">Sedentary (little/no exercise)</option>
+          <option value="1.375" selected>Lightly active (1-3 days/week)</option>
+          <option value="1.55">Moderately active (3-5 days/week)</option>
+          <option value="1.725">Very active (6-7 days/week)</option>
+          <option value="1.9">Extra active (physical job)</option>
+        </select>
+      </div>
+      <button class="btn-calc" onclick="calcCalorie()">Calculate Calories</button>
+    </div>
+    <div class="tool-card animate-up" id="cal_result" style="animation-delay:.1s">
+      <h2>📊 Results</h2>
+      <div class="result-placeholder"><div class="icon">🥗</div>Fill in your details and click Calculate</div>
+    </div>
+  </div>
+  ${relatedTools(['bmi','age'])}`;
+}
+
+function calcCalorie() {
+  const age = parseFloat(document.getElementById('cal_age').value);
+  const gender = document.getElementById('cal_gender').value;
+  const wt = parseFloat(document.getElementById('cal_wt').value);
+  const ht = parseFloat(document.getElementById('cal_ht').value);
+  const act = parseFloat(document.getElementById('cal_act').value);
+  const bmr = gender === 'male'
+    ? 88.362 + 13.397*wt + 4.799*ht - 5.677*age
+    : 447.593 + 9.247*wt + 3.098*ht - 4.330*age;
+  const tdee = bmr * act;
+  document.getElementById('cal_result').innerHTML = `
+    <h2>📊 Daily Calorie Needs</h2>
+    <div class="result-box">
+      <div class="result-row"><span class="result-label">BMR (Base Metabolic Rate)</span><span class="result-value">${Math.round(bmr)} kcal</span></div>
+      <div class="result-row"><span class="result-label">Maintenance Calories</span><span class="result-value big">${Math.round(tdee)} kcal</span></div>
+      <div class="result-row"><span class="result-label">Weight Loss (−500 kcal)</span><span class="result-value" style="color:var(--orange)">${Math.round(tdee-500)} kcal</span></div>
+      <div class="result-row"><span class="result-label">Weight Gain (+500 kcal)</span><span class="result-value" style="color:var(--green)">${Math.round(tdee+500)} kcal</span></div>
+    </div>
+    <div style="background:var(--bg);padding:12px;border-radius:10px;font-size:.85rem;color:var(--text-2)">
+      💡 These are estimates using the Mifflin-St Jeor equation. Consult a nutritionist for personalised advice.
+    </div>`;
+}
+
+/* ════════════════════════════════
+   TOOL: Profit Calculator
+════════════════════════════════ */
+function profitHTML() {
+  return `
+  <div class="tool-layout">
+    <div class="tool-card animate-up">
+      <h2>📈 Profit Calculator</h2>
+      <div class="form-group"><label>Cost Price (₹)</label><input type="number" id="pr_cp" value="1000" /></div>
+      <div class="form-group"><label>Selling Price (₹)</label><input type="number" id="pr_sp" value="1400" /></div>
+      <button class="btn-calc" onclick="calcProfit()">Calculate Profit</button>
+    </div>
+    <div class="tool-card animate-up" id="pr_result" style="animation-delay:.1s">
+      <h2>📊 Results</h2>
+      <div class="result-placeholder"><div class="icon">📈</div>Enter cost & selling price</div>
+    </div>
+  </div>
+  ${relatedTools(['emi','salary'])}`;
+}
+
+function calcProfit() {
+  const cp = parseFloat(document.getElementById('pr_cp').value);
+  const sp = parseFloat(document.getElementById('pr_sp').value);
+  const profit = sp - cp;
+  const pct = (profit / cp * 100).toFixed(2);
+  const isProfit = profit >= 0;
+  document.getElementById('pr_result').innerHTML = `
+    <h2>📊 Results</h2>
+    <div class="result-box">
+      <div class="result-row"><span class="result-label">${isProfit?'Profit':'Loss'}</span><span class="result-value big" style="color:${isProfit?'var(--green)':'var(--red)'}">₹${fmt(Math.abs(profit))}</span></div>
+      <div class="result-row"><span class="result-label">${isProfit?'Profit':'Loss'} Percentage</span><span class="result-value" style="color:${isProfit?'var(--green)':'var(--red)'}">%${Math.abs(pct)}</span></div>
+      <div class="result-row"><span class="result-label">Cost Price</span><span class="result-value">₹${fmt(cp)}</span></div>
+      <div class="result-row"><span class="result-label">Selling Price</span><span class="result-value">₹${fmt(sp)}</span></div>
+    </div>`;
+}
+
+/* ════════════════════════════════
+   TOOL: GPA Calculator
+════════════════════════════════ */
+function gpaHTML() {
+  return `
+  <div class="tool-card animate-up" style="max-width:600px">
+    <h2>🎓 GPA Calculator</h2>
+    <div id="gpa_rows">
+      ${[1,2,3].map(i=>`
+      <div style="display:grid;grid-template-columns:1fr 100px 80px;gap:10px;margin-bottom:10px;align-items:end">
+        <div class="form-group" style="margin:0"><label>Subject ${i}</label><input type="text" placeholder="e.g. Maths" /></div>
+        <div class="form-group" style="margin:0"><label>Grade</label>
+          <select class="gpa_grade">
+            <option value="10">O (10)</option><option value="9">A+ (9)</option>
+            <option value="8" selected>A (8)</option><option value="7">B+ (7)</option>
+            <option value="6">B (6)</option><option value="5">C (5)</option><option value="0">F (0)</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin:0"><label>Credits</label><input type="number" class="gpa_credit" value="4" min="1" max="6" /></div>
+      </div>`).join('')}
+    </div>
+    <div style="display:flex;gap:10px;margin-bottom:16px">
+      <button onclick="addGPARow()" style="flex:1;padding:10px;border:1.5px dashed var(--border);border-radius:10px;color:var(--blue);font-weight:600;background:var(--blue-light);transition:all .2s">+ Add Subject</button>
+      <button class="btn-calc" style="flex:1" onclick="calcGPA()">Calculate GPA</button>
+    </div>
+    <div id="gpa_result"></div>
+  </div>
+  ${relatedTools(['age','typing'])}`;
+}
+
+function addGPARow() {
+  const div = document.createElement('div');
+  const n = document.querySelectorAll('#gpa_rows > div').length + 1;
+  div.style.cssText = 'display:grid;grid-template-columns:1fr 100px 80px;gap:10px;margin-bottom:10px;align-items:end';
+  div.innerHTML = `
+    <div class="form-group" style="margin:0"><label>Subject ${n}</label><input type="text" placeholder="Subject name" /></div>
+    <div class="form-group" style="margin:0"><label>Grade</label>
+      <select class="gpa_grade">
+        <option value="10">O (10)</option><option value="9">A+ (9)</option>
+        <option value="8" selected>A (8)</option><option value="7">B+ (7)</option>
+        <option value="6">B (6)</option><option value="5">C (5)</option><option value="0">F (0)</option>
+      </select>
+    </div>
+    <div class="form-group" style="margin:0"><label>Credits</label><input type="number" class="gpa_credit" value="4" min="1" max="6" /></div>`;
+  document.getElementById('gpa_rows').appendChild(div);
+}
+
+function calcGPA() {
+  const grades  = [...document.querySelectorAll('.gpa_grade')].map(s=>parseFloat(s.value));
+  const credits = [...document.querySelectorAll('.gpa_credit')].map(i=>parseFloat(i.value)||0);
+  let tp=0, tc=0;
+  grades.forEach((g,i) => { tp += g * credits[i]; tc += credits[i]; });
+  const gpa = tc ? (tp/tc).toFixed(2) : 0;
+  document.getElementById('gpa_result').innerHTML = `
+    <div class="result-box">
+      <div class="result-row"><span class="result-label">Your GPA</span><span class="result-value big">${gpa} / 10</span></div>
+      <div class="result-row"><span class="result-label">Total Credits</span><span class="result-value">${tc}</span></div>
+      <div class="result-row"><span class="result-label">Grade Points Earned</span><span class="result-value">${tp.toFixed(1)}</span></div>
+    </div>`;
+}
+
+/* ════════════════════════════════
+   TOOL: Typing Speed Test
+════════════════════════════════ */
+const TYPING_TEXTS = [
+  "The quick brown fox jumps over the lazy dog near the river bank on a sunny afternoon.",
+  "Success is not final and failure is not fatal. It is the courage to continue that counts.",
+  "Technology is best when it brings people together and makes their lives easier and more fun.",
+];
+let typingTimer, typingStart, typingActive = false;
+
+function typingHTML() {
+  return `
+  <div class="tool-card animate-up" style="max-width:700px">
+    <h2>⌨️ Typing Speed Test</h2>
+    <div style="background:var(--bg);border-radius:12px;padding:20px;margin-bottom:16px;font-size:1rem;line-height:1.8;font-family:monospace;letter-spacing:.02em" id="typing_text"></div>
+    <textarea id="typing_input" rows="3" style="width:100%;padding:12px;border:1.5px solid var(--border);border-radius:10px;font-family:monospace;font-size:.95rem;resize:none;outline:none;transition:border-color .2s;background:var(--bg);color:var(--text)" placeholder="Start typing here when ready…" oninput="typingInput()" onkeydown="typingKey(event)"></textarea>
+    <div style="display:flex;gap:12px;margin-top:12px;align-items:center">
+      <div style="flex:1;text-align:center;background:var(--blue-light);padding:12px;border-radius:10px">
+        <div style="font-size:.75rem;color:var(--text-3);margin-bottom:2px">WPM</div>
+        <div id="typing_wpm" style="font-family:var(--font-head);font-size:1.6rem;font-weight:800;color:var(--blue)">—</div>
+      </div>
+      <div style="flex:1;text-align:center;background:var(--bg);padding:12px;border-radius:10px;border:1.5px solid var(--border)">
+        <div style="font-size:.75rem;color:var(--text-3);margin-bottom:2px">Accuracy</div>
+        <div id="typing_acc" style="font-family:var(--font-head);font-size:1.6rem;font-weight:800;color:var(--green)">—</div>
+      </div>
+      <div style="flex:1;text-align:center;background:var(--bg);padding:12px;border-radius:10px;border:1.5px solid var(--border)">
+        <div style="font-size:.75rem;color:var(--text-3);margin-bottom:2px">Time</div>
+        <div id="typing_time" style="font-family:var(--font-head);font-size:1.6rem;font-weight:800;color:var(--text)">0s</div>
+      </div>
+    </div>
+    <button class="btn-calc" style="margin-top:12px" onclick="resetTyping()">🔄 New Test</button>
+  </div>
+  ${relatedTools(['age','gpa'])}`;
+}
+
+function startTypingTest() {
+  const txt = TYPING_TEXTS[Math.floor(Math.random() * TYPING_TEXTS.length)];
+  const el = document.getElementById('typing_text');
+  if (!el) return;
+  el.innerHTML = txt.split('').map((c,i) => `<span id="tc${i}">${c}</span>`).join('');
+  typingActive = false;
+  window._typingText = txt;
+  window._typingIdx  = 0;
+}
+
+function typingKey(e) {
+  if (!typingActive) {
+    typingActive = true;
+    typingStart  = Date.now();
+    typingTimer  = setInterval(() => {
+      const s = Math.floor((Date.now() - typingStart) / 1000);
+      const el = document.getElementById('typing_time');
+      if (el) el.textContent = s + 's';
+    }, 500);
+  }
+}
+
+function typingInput() {
+  const input = document.getElementById('typing_input').value;
+  const target = window._typingText || '';
+  let correct = 0;
+  for (let i = 0; i < target.length; i++) {
+    const span = document.getElementById('tc' + i);
+    if (!span) continue;
+    if (i < input.length) {
+      span.style.color      = input[i] === target[i] ? '#10b981' : '#ef4444';
+      span.style.background = input[i] === target[i] ? 'transparent' : '#fee2e2';
+      if (input[i] === target[i]) correct++;
+    } else {
+      span.style.color = ''; span.style.background = '';
+    }
+  }
+  if (input.length >= target.length) {
+    clearInterval(typingTimer);
+    const secs = (Date.now() - typingStart) / 60000;
+    const words = target.trim().split(' ').length;
+    const wpm = Math.round(words / secs);
+    const acc = Math.round((correct / target.length) * 100);
+    document.getElementById('typing_wpm').textContent = wpm;
+    document.getElementById('typing_acc').textContent = acc + '%';
+  }
+}
+
+function resetTyping() {
+  clearInterval(typingTimer);
+  typingActive = false;
+  const inp = document.getElementById('typing_input');
+  if (inp) inp.value = '';
+  const wpm = document.getElementById('typing_wpm');
+  const acc = document.getElementById('typing_acc');
+  const tm  = document.getElementById('typing_time');
+  if (wpm) wpm.textContent = '—';
+  if (acc) acc.textContent = '—';
+  if (tm)  tm.textContent  = '0s';
+  startTypingTest();
+}
+
+/* ════════════════════════════════
+   TOOL: Time Zone Converter
+════════════════════════════════ */
+function timezoneHTML() {
+  const zones = ['Asia/Kolkata','America/New_York','America/Los_Angeles','Europe/London','Europe/Paris','Asia/Tokyo','Asia/Dubai','Australia/Sydney'];
+  const opts = zones.map(z => `<option value="${z}">${z.replace('/',' / ')}</option>`).join('');
+  return `
+  <div class="tool-card animate-up" style="max-width:600px">
+    <h2>🌍 Time Zone Converter</h2>
+    <div class="form-group"><label>Date & Time</label><input type="datetime-local" id="tz_input" /></div>
+    <div class="form-group"><label>From Time Zone</label><select id="tz_from">${opts}</select></div>
+    <div class="form-group"><label>To Time Zone</label><select id="tz_to">${opts.replace('value="America/New_York"','value="America/New_York" selected')}</select></div>
+    <button class="btn-calc" onclick="calcTZ()">Convert Time</button>
+    <div id="tz_result" style="margin-top:16px"></div>
+  </div>
+  ${relatedTools(['random','data'])}`;
+}
+
+function calcTZ() {
+  const input = document.getElementById('tz_input').value;
+  if (!input) { alert('Please select a date and time'); return; }
+  const from = document.getElementById('tz_from').value;
+  const to   = document.getElementById('tz_to').value;
+  try {
+    const dt = new Date(input);
+    const fromStr = dt.toLocaleString('en-IN', { timeZone: from, dateStyle:'full', timeStyle:'short' });
+    const toStr   = dt.toLocaleString('en-IN', { timeZone: to,   dateStyle:'full', timeStyle:'short' });
+    document.getElementById('tz_result').innerHTML = `
+      <div class="result-box">
+        <div class="result-row"><span class="result-label">🟢 ${from}</span><span class="result-value" style="font-size:.9rem">${fromStr}</span></div>
+        <div class="result-row"><span class="result-label">🔵 ${to}</span><span class="result-value" style="font-size:.9rem">${toStr}</span></div>
+      </div>`;
+  } catch(e) {
+    document.getElementById('tz_result').innerHTML = '<p style="color:var(--red)">Error converting time zones.</p>';
+  }
+}
+// set default datetime
+setTimeout(() => {
+  const inp = document.getElementById('tz_input');
+  if (inp) { const n = new Date(); n.setMinutes(n.getMinutes() - n.getTimezoneOffset()); inp.value = n.toISOString().slice(0,16); }
+}, 100);
+
+/* ════════════════════════════════
+   TOOL: Random Generator
+════════════════════════════════ */
+function randomHTML() {
+  return `
+  <div class="tool-card animate-up" style="max-width:600px">
+    <h2>🎲 Random Generator</h2>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="background:var(--bg);border-radius:12px;padding:20px">
+        <h3 style="font-family:var(--font-head);font-size:.9rem;margin-bottom:12px">🔢 Random Number</h3>
+        <div style="display:flex;gap:10px;align-items:flex-end">
+          <div class="form-group" style="flex:1;margin:0"><label>Min</label><input type="number" id="rnd_min" value="1" /></div>
+          <div class="form-group" style="flex:1;margin:0"><label>Max</label><input type="number" id="rnd_max" value="100" /></div>
+          <button onclick="genNumber()" style="padding:10px 20px;background:var(--blue);color:#fff;border-radius:10px;font-weight:700;font-family:var(--font-head)">Roll</button>
+        </div>
+        <div id="rnd_num" style="margin-top:12px;font-family:var(--font-head);font-size:2.5rem;font-weight:800;color:var(--blue);text-align:center"></div>
+      </div>
+      <div style="background:var(--bg);border-radius:12px;padding:20px">
+        <h3 style="font-family:var(--font-head);font-size:.9rem;margin-bottom:12px">🔀 Random from List</h3>
+        <div class="form-group" style="margin-bottom:10px"><label>Items (comma separated)</label><input type="text" id="rnd_list" value="Apple, Banana, Cherry, Mango, Grape" /></div>
+        <button onclick="genList()" style="padding:10px 20px;background:var(--purple);color:#fff;border-radius:10px;font-weight:700;font-family:var(--font-head)">Pick Random</button>
+        <div id="rnd_pick" style="margin-top:12px;font-family:var(--font-head);font-size:1.6rem;font-weight:800;color:var(--purple);text-align:center"></div>
+      </div>
+      <div style="background:var(--bg);border-radius:12px;padding:20px">
+        <h3 style="font-family:var(--font-head);font-size:.9rem;margin-bottom:12px">🆔 Random UUID</h3>
+        <button onclick="genUUID()" style="padding:10px 20px;background:var(--orange);color:#fff;border-radius:10px;font-weight:700;font-family:var(--font-head)">Generate</button>
+        <div id="rnd_uuid" style="margin-top:12px;font-family:monospace;font-size:.85rem;color:var(--orange);word-break:break-all"></div>
+      </div>
+    </div>
+  </div>
+  ${relatedTools(['timezone','data'])}`;
+}
+
+function genNumber() {
+  const min = parseInt(document.getElementById('rnd_min').value);
+  const max = parseInt(document.getElementById('rnd_max').value);
+  document.getElementById('rnd_num').textContent = Math.floor(Math.random()*(max-min+1))+min;
+}
+function genList() {
+  const items = document.getElementById('rnd_list').value.split(',').map(x=>x.trim()).filter(Boolean);
+  document.getElementById('rnd_pick').textContent = items[Math.floor(Math.random()*items.length)] || '—';
+}
+function genUUID() {
+  document.getElementById('rnd_uuid').textContent = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0;return(c==='x'?r:r&0x3|0x8).toString(16)});
+}
+
+/* ════════════════════════════════
+   TOOL: Data Usage Calculator
+════════════════════════════════ */
+function dataHTML() {
+  return `
+  <div class="tool-card animate-up" style="max-width:600px">
+    <h2>📶 Data Usage Calculator</h2>
+    <div class="form-group"><label>Video Streaming (hours/day)</label><input type="number" id="du_video" value="2" step="0.5" /></div>
+    <div class="form-group"><label>Video Quality</label><select id="du_quality"><option value="0.7">SD (480p)</option><option value="1.5" selected>HD (720p)</option><option value="3">Full HD (1080p)</option><option value="7">4K Ultra HD</option></select></div>
+    <div class="form-group"><label>Social Media (hours/day)</label><input type="number" id="du_social" value="1" step="0.5" /></div>
+    <div class="form-group"><label>Browsing (hours/day)</label><input type="number" id="du_browse" value="1" step="0.5" /></div>
+    <div class="form-group"><label>Music Streaming (hours/day)</label><input type="number" id="du_music" value="1" step="0.5" /></div>
+    <button class="btn-calc" onclick="calcData()">Calculate Usage</button>
+    <div id="du_result" style="margin-top:16px"></div>
+  </div>
+  ${relatedTools(['timezone','random'])}`;
+}
+
+function calcData() {
+  const v = parseFloat(document.getElementById('du_video').value)||0;
+  const q = parseFloat(document.getElementById('du_quality').value);
+  const s = parseFloat(document.getElementById('du_social').value)||0;
+  const b = parseFloat(document.getElementById('du_browse').value)||0;
+  const m = parseFloat(document.getElementById('du_music').value)||0;
+  const daily = v*q + s*0.15 + b*0.05 + m*0.072;
+  document.getElementById('du_result').innerHTML = `
+    <div class="result-box">
+      <div class="result-row"><span class="result-label">Daily Usage</span><span class="result-value big">${daily.toFixed(2)} GB</span></div>
+      <div class="result-row"><span class="result-label">Weekly</span><span class="result-value">${(daily*7).toFixed(2)} GB</span></div>
+      <div class="result-row"><span class="result-label">Monthly (30 days)</span><span class="result-value">${(daily*30).toFixed(2)} GB</span></div>
+      <div class="result-row"><span class="result-label">Recommended Plan</span><span class="result-value" style="color:var(--blue)">${daily*30 < 10 ? '10 GB' : daily*30 < 30 ? '30 GB' : daily*30 < 75 ? '75 GB' : 'Unlimited'}</span></div>
+    </div>`;
+}
+
+/* ════════ HELPERS ════════ */
+function fmt(n) {
+  return Math.round(n).toLocaleString('en-IN');
+}
+
+function toggleMenu() {
+  const links = document.querySelector('.nav-links');
+  links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+  links.style.position = 'absolute'; links.style.top = '64px'; links.style.left = '0';
+  links.style.right = '0'; links.style.background = 'var(--white)';
+  links.style.padding = '16px 24px'; links.style.flexDirection = 'column';
+  links.style.borderBottom = '1px solid var(--border)'; links.style.zIndex = '99';
+}
+</script>
+</body>
+</html>
