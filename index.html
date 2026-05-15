@@ -562,7 +562,7 @@
       <li><a href="#" class="active" onclick="showPage('home');return false">Home</a></li>
       <li><a href="#categories" onclick="showPage('home');setTimeout(()=>document.getElementById('categories').scrollIntoView({behavior:'smooth'}),100);return false">Tools</a></li>
       <li><a href="#categories" onclick="showPage('home');return false">Categories</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#" onclick="showSection('about');return false">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-search" style="position:relative">
@@ -1605,24 +1605,21 @@ function toggleMenu() {
   links.style.padding = '16px 24px'; links.style.flexDirection = 'column';
   links.style.borderBottom = '1px solid var(--border)'; links.style.zIndex = '99';
 }
+  function showSection(name) {
+  // Hide all pages
+  document.getElementById('home-page').style.display = 'none';
+  document.getElementById('tool-page').style.display = 'none';
+  document.querySelectorAll('.static-page').forEach(el => el.style.display = 'none');
+  // Show requested section
+  if (name === 'home') {
+    document.getElementById('home-page').style.display = 'block';
+  } else {
+    const el = document.getElementById('page-' + name);
+    if (el) el.style.display = 'block';
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 </script>
-  <footer style="
-text-align:center;
-padding:20px;
-margin-top:40px;
-position:relative;
-z-index:99999;
-background:white;
-display:block;
-width:100%;
-">
-
-  <a href="./about.html" target="_self" style="margin:10px; display:inline-block;">About</a>
-
-<a href="./contact.html" target="_self" style="margin:10px; display:inline-block;">Contact</a>
-
-<a href="./privacy.html" target="_self" style="margin:10px; display:inline-block;">Privacy Policy</a>
-
 </footer>
   <div style="
 text-align:center;
@@ -1633,12 +1630,70 @@ top:0;
 z-index:999999;
 ">
 
-<a href="./about.html" style="margin:15px;">About</a>
+<!-- Replace all instances of href="./about.html" with: -->
+<a href="#" onclick="showSection('about');return false">About</a>
 
-<a href="./contact.html" style="margin:15px;">Contact</a>
+<!-- Replace href="./contact.html" with: -->
+<a href="#" onclick="showSection('contact');return false">Contact</a>
 
-<a href="./privacy.html" style="margin:15px;">Privacy Policy</a>
+<!-- Replace href="./privacy.html" with: -->
+<a href="#" onclick="showSection('privacy');return false">Privacy Policy</a>
 
+</div>
+  <!-- ABOUT PAGE -->
+<div id="page-about" class="static-page" style="display:none">
+  <section class="section">
+    <div class="section-head">
+      <span class="section-label">Who We Are</span>
+      <h2>About QuickTools</h2>
+    </div>
+    <div class="seo-section">
+      <p>QuickTools is a free, no-login online toolkit built for students, professionals, and everyday users. Our goal is to make complex calculations simple and fast — right in your browser, with zero friction.</p>
+      <h3>Our Mission</h3>
+      <p>We believe powerful tools should be free and accessible to everyone. From EMI calculations to BMI tracking, we cover finance, health, education, and utilities — all in one place.</p>
+      <h3>Why We Built This</h3>
+      <p>We were frustrated by cluttered, ad-heavy, slow calculator sites. So we built QuickTools — clean, fast, and mobile-friendly by default.</p>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT PAGE -->
+<div id="page-contact" class="static-page" style="display:none">
+  <section class="section">
+    <div class="section-head">
+      <span class="section-label">Get In Touch</span>
+      <h2>Contact Us</h2>
+    </div>
+    <div class="tool-card" style="max-width:560px">
+      <div class="form-group"><label>Your Name</label><input type="text" placeholder="e.g. Ravi Kumar" /></div>
+      <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@example.com" /></div>
+      <div class="form-group"><label>Message</label>
+        <textarea rows="5" style="width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:10px;font-family:var(--font-body);font-size:.95rem;resize:vertical;outline:none;background:var(--bg);color:var(--text)" placeholder="How can we help you?"></textarea>
+      </div>
+      <button class="btn-calc" onclick="alert('Thanks! We\'ll get back to you soon.')">Send Message</button>
+    </div>
+  </section>
+</div>
+
+<!-- PRIVACY POLICY PAGE -->
+<div id="page-privacy" class="static-page" style="display:none">
+  <section class="section">
+    <div class="section-head">
+      <span class="section-label">Legal</span>
+      <h2>Privacy Policy</h2>
+    </div>
+    <div class="seo-section">
+      <p>Last updated: May 2025</p>
+      <h3>Information We Collect</h3>
+      <p>QuickTools does not collect any personal data. All calculations happen entirely in your browser — nothing is sent to our servers.</p>
+      <h3>Cookies</h3>
+      <p>We use Google Analytics (via gtag.js) to understand how people use the site. This may set anonymous cookies. No personally identifiable information is collected.</p>
+      <h3>Third-Party Services</h3>
+      <p>We use Google Analytics and Google Fonts. These services have their own privacy policies. We do not sell or share any user data.</p>
+      <h3>Contact</h3>
+      <p>If you have privacy concerns, please reach out via our Contact page.</p>
+    </div>
+  </section>
 </div>
 </body>
 </html>
