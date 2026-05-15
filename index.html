@@ -1606,13 +1606,22 @@ function toggleMenu() {
   links.style.borderBottom = '1px solid var(--border)'; links.style.zIndex = '99';
 }
 </script>
-  <footer style="text-align:center; padding:20px; margin-top:40px; position:relative; z-index:9999;">
+  <footer style="
+text-align:center;
+padding:20px;
+margin-top:40px;
+position:relative;
+z-index:99999;
+background:white;
+display:block;
+width:100%;
+">
 
-  <a href="./about.html" style="margin:10px;">About</a>
+  <a href="./about.html" target="_self" style="margin:10px; display:inline-block;">About</a>
 
-  <a href="./contact.html" style="margin:10px;">Contact</a>
+<a href="./contact.html" target="_self" style="margin:10px; display:inline-block;">Contact</a>
 
-  <a href="./privacy.html" style="margin:10px;">Privacy Policy</a>
+<a href="./privacy.html" target="_self" style="margin:10px; display:inline-block;">Privacy Policy</a>
 
 </footer>
 </body>
