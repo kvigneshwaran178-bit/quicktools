@@ -1,0 +1,875 @@
+<!-- File: percentage-calculator.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Percentage Calculator Online – Free & Instant | QuickTools</title>
+<meta name="description" content="Free percentage calculator online. Calculate percentage increase, decrease, difference, and simple percentage of any number instantly. No login required."/>
+<meta name="keywords" content="percentage calculator online, percentage increase calculator, percentage decrease calculator, simple percentage calculator for students, how to calculate percentage, percent of a number"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="QuickTools"/>
+<meta name="theme-color" content="#0a0a12"/>
+<link rel="canonical" href="https://kvigneshwaran178-bit.github.io/quicktools/percentage-calculator.html"/>
+
+<!-- Open Graph -->
+<meta property="og:title" content="Percentage Calculator Online – Free & Instant | QuickTools"/>
+<meta property="og:description" content="Calculate percentage increase, decrease, and simple percentages instantly. Free, no login, mobile-friendly."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://kvigneshwaran178-bit.github.io/quicktools/percentage-calculator.html"/>
+<meta property="og:image" content="https://kvigneshwaran178-bit.github.io/quicktools/og-image.png"/>
+<meta property="og:site_name" content="QuickTools"/>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Percentage Calculator Online – Free | QuickTools"/>
+<meta name="twitter:description" content="Instant percentage calculator. Increase, decrease, difference – all in one free tool."/>
+<meta name="twitter:image" content="https://kvigneshwaran178-bit.github.io/quicktools/og-image.png"/>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+
+<!-- Schema: WebPage -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Percentage Calculator Online",
+  "url":"https://kvigneshwaran178-bit.github.io/quicktools/percentage-calculator.html",
+  "description":"Free online percentage calculator. Calculate percentage of a number, percentage increase, decrease, and difference instantly.",
+  "isPartOf":{"@type":"WebSite","name":"QuickTools","url":"https://kvigneshwaran178-bit.github.io/quicktools/"},
+  "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://kvigneshwaran178-bit.github.io/quicktools/"},
+    {"@type":"ListItem","position":2,"name":"Percentage Calculator"}
+  ]}
+}
+</script>
+
+<!-- Schema: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How do I calculate the percentage of a number?","acceptedAnswer":{"@type":"Answer","text":"To find X% of Y, use the formula: (X / 100) × Y. For example, 25% of 200 = (25/100) × 200 = 50."}},
+    {"@type":"Question","name":"How do I calculate percentage increase?","acceptedAnswer":{"@type":"Answer","text":"Percentage increase = ((New Value − Old Value) / Old Value) × 100. Example: from 80 to 100 → ((100−80)/80)×100 = 25% increase."}},
+    {"@type":"Question","name":"How do I calculate percentage decrease?","acceptedAnswer":{"@type":"Answer","text":"Percentage decrease = ((Old Value − New Value) / Old Value) × 100. Example: from 100 to 80 → ((100−80)/100)×100 = 20% decrease."}},
+    {"@type":"Question","name":"What is the formula for percentage difference?","acceptedAnswer":{"@type":"Answer","text":"Percentage difference = (|V1 − V2| / ((V1 + V2)/2)) × 100. This gives the difference relative to the average of both values."}},
+    {"@type":"Question","name":"Is this percentage calculator free?","acceptedAnswer":{"@type":"Answer","text":"Yes, all tools on QuickTools are completely free. No signup, no login, no hidden charges — ever."}}
+  ]
+}
+</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f7f6f2;
+  --bg2:#eeede8;
+  --bg3:#e4e3dc;
+  --surface:#ffffff;
+  --ink:#0a0a12;
+  --ink2:#3a3a4a;
+  --ink3:#7a7a8a;
+  --accent:#1a1aff;
+  --accent2:#ff3d5a;
+  --accent3:#00c896;
+  --accent4:#f5a623;
+  --border:rgba(0,0,0,.09);
+  --border2:rgba(0,0,0,.05);
+  --r:12px;
+  --rl:20px;
+  --rx:32px;
+  --sh:0 2px 12px rgba(0,0,0,.07);
+  --shm:0 8px 32px rgba(0,0,0,.1);
+  --ease:cubic-bezier(.4,0,.2,1);
+  --spring:cubic-bezier(.34,1.56,.64,1);
+}
+body.dark{
+  --bg:#0a0a12;
+  --bg2:#111120;
+  --bg3:#18182a;
+  --surface:#16162a;
+  --ink:#f0f0fa;
+  --ink2:#a0a0bc;
+  --ink3:#55556a;
+  --border:rgba(255,255,255,.08);
+  --border2:rgba(255,255,255,.04);
+  --sh:0 2px 12px rgba(0,0,0,.3);
+  --shm:0 8px 32px rgba(0,0,0,.4);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;transition:background .3s,color .3s}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+img{display:block;max-width:100%}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:99px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* ── SKIP LINK ── */
+.skip{position:absolute;top:-50px;left:16px;z-index:9999;background:var(--accent);color:#fff;padding:8px 16px;border-radius:8px;font-weight:600;transition:top .2s}
+.skip:focus{top:16px}
+
+/* ── NAVBAR ── */
+.nav{position:sticky;top:0;z-index:500;height:60px;background:rgba(247,246,242,.9);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:background .3s}
+body.dark .nav{background:rgba(10,10,18,.9)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;height:100%;display:flex;align-items:center;gap:12px}
+.logo{display:flex;align-items:center;gap:8px;font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:var(--ink);flex-shrink:0}
+.logo-mark{width:32px;height:32px;background:var(--accent);border-radius:9px;display:grid;place-items:center;color:#fff;font-size:.85rem;flex-shrink:0;box-shadow:0 4px 12px rgba(26,26,255,.35)}
+.nav-links{display:flex;align-items:center;gap:2px;margin-left:12px}
+.nav-links a{padding:5px 12px;border-radius:8px;font-size:.85rem;font-weight:500;color:var(--ink2);transition:background .2s,color .2s;white-space:nowrap}
+.nav-links a:hover{background:var(--bg2);color:var(--ink)}
+.nav-actions{display:flex;align-items:center;gap:8px;margin-left:auto}
+.btn-icon{width:36px;height:36px;border-radius:9px;background:var(--bg2);border:1px solid var(--border);display:grid;place-items:center;font-size:.95rem;color:var(--ink2);transition:all .2s;flex-shrink:0}
+.btn-icon:hover{background:var(--accent);color:#fff;border-color:transparent}
+.ham{display:none;flex-direction:column;gap:5px;padding:7px;border-radius:8px;transition:background .2s}
+.ham:hover{background:var(--bg2)}
+.ham span{display:block;width:19px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s,opacity .2s}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.drawer{display:none;position:fixed;top:60px;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);padding:16px 20px 24px;z-index:490;flex-direction:column;gap:4px;animation:slideDown .2s var(--ease) both;box-shadow:var(--shm)}
+.drawer.open{display:flex}
+.drawer a{padding:10px 14px;border-radius:9px;font-size:.95rem;font-weight:500;color:var(--ink2);transition:background .2s}
+.drawer a:hover{background:var(--bg2);color:var(--ink)}
+@keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── BREADCRUMB ── */
+.breadcrumb{max-width:1200px;margin:0 auto;padding:16px 20px 0;display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--ink3);flex-wrap:wrap}
+.breadcrumb a{color:var(--accent);font-weight:600}
+.breadcrumb a:hover{text-decoration:underline}
+
+/* ── HERO ── */
+.hero{padding:56px 20px 48px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 80% 0%,rgba(26,26,255,.07) 0%,transparent 60%),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(0,200,150,.05) 0%,transparent 60%);pointer-events:none;z-index:0}
+body.dark .hero::before{background:radial-gradient(ellipse 60% 60% at 80% 0%,rgba(26,26,255,.15) 0%,transparent 60%),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(0,200,150,.1) 0%,transparent 60%)}
+.hero-inner{position:relative;z-index:1;max-width:760px;margin:0 auto;text-align:center}
+.hero-chip{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--border);border-radius:99px;padding:5px 14px 5px 8px;font-size:.78rem;font-weight:600;color:var(--ink2);margin-bottom:24px;box-shadow:var(--sh)}
+.hero-chip-dot{width:20px;height:20px;background:var(--accent);border-radius:50%;display:grid;place-items:center;font-size:.65rem;color:#fff}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--ink);margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{font-size:1.05rem;color:var(--ink2);max-width:520px;margin:0 auto 0;line-height:1.65}
+
+/* ── LAYOUT ── */
+.main-wrap{max-width:1200px;margin:0 auto;padding:0 20px 64px;display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start}
+@media(max-width:860px){.main-wrap{grid-template-columns:1fr}}
+
+/* ── CALC CARD ── */
+.calc-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:28px;box-shadow:var(--sh)}
+
+/* TABS */
+.tabs{display:flex;gap:6px;background:var(--bg2);border-radius:12px;padding:4px;margin-bottom:24px;flex-wrap:wrap}
+.tab-btn{flex:1;padding:9px 12px;border-radius:9px;font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:var(--ink2);transition:all .2s;text-align:center;white-space:nowrap;min-width:80px}
+.tab-btn.active{background:var(--surface);color:var(--accent);box-shadow:var(--sh)}
+.tab-panel{display:none}
+.tab-panel.active{display:block;animation:fadeUp .3s var(--ease) both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* FORM */
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.8rem;font-weight:600;color:var(--ink2);margin-bottom:6px;letter-spacing:.01em}
+.form-group input,.form-group select{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:var(--r);font-family:'DM Sans',sans-serif;font-size:.95rem;color:var(--ink);background:var(--bg);outline:none;transition:border-color .2s,box-shadow .2s,background .2s}
+.form-group input:focus,.form-group select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,26,255,.1);background:var(--surface)}
+.btn-calc{width:100%;padding:13px;background:var(--accent);color:#fff;border-radius:var(--r);font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.01em;transition:all .2s var(--spring);box-shadow:0 4px 16px rgba(26,26,255,.3)}
+.btn-calc:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,26,255,.4);opacity:.95}
+.btn-calc:active{transform:translateY(0)}
+.btn-reset{width:100%;margin-top:8px;padding:10px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);font-family:'DM Sans',sans-serif;font-size:.875rem;font-weight:500;color:var(--ink2);transition:all .2s}
+.btn-reset:hover{background:var(--bg3);color:var(--ink)}
+
+/* RESULT */
+.result-box{background:linear-gradient(135deg,rgba(26,26,255,.06),rgba(0,200,150,.04));border:1.5px solid rgba(26,26,255,.15);border-radius:var(--r);padding:20px;margin-top:16px;display:none;animation:fadeUp .4s var(--spring) both}
+.result-box.show{display:block}
+.result-label{font-size:.78rem;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
+.result-value{font-family:'Syne',sans-serif;font-size:2.6rem;font-weight:800;color:var(--accent);letter-spacing:-.03em;line-height:1}
+.result-sub{font-size:.85rem;color:var(--ink2);margin-top:8px;line-height:1.5}
+.result-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border2)}
+.result-row:last-child{border-bottom:none}
+.result-row span:first-child{font-size:.83rem;color:var(--ink2)}
+.result-row span:last-child{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:var(--ink)}
+
+/* COPY BTN */
+.copy-btn{margin-top:14px;display:flex;align-items:center;gap:6px;padding:8px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;font-size:.8rem;font-weight:600;color:var(--ink2);transition:all .2s;cursor:pointer}
+.copy-btn:hover{background:var(--accent);color:#fff;border-color:transparent}
+
+/* SHARE */
+.share-row{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+.share-btn{display:flex;align-items:center;gap:5px;padding:8px 14px;border-radius:8px;font-size:.78rem;font-weight:600;cursor:pointer;border:none;transition:all .2s}
+.share-wa{background:#25D366;color:#fff}
+.share-tw{background:#000;color:#fff}
+.share-cp{background:var(--bg2);color:var(--ink2);border:1px solid var(--border)}
+.share-btn:hover{opacity:.88;transform:translateY(-1px)}
+
+/* ── SIDEBAR ── */
+.sidebar{display:flex;flex-direction:column;gap:18px}
+.sidebar-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:22px;box-shadow:var(--sh)}
+.sidebar-title{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.related-list{display:flex;flex-direction:column;gap:4px}
+.related-link{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:var(--r);font-size:.875rem;color:var(--ink2);transition:all .2s;cursor:pointer;border:1px solid transparent}
+.related-link:hover{background:var(--bg2);color:var(--accent);border-color:var(--border)}
+.related-link .rl-emoji{font-size:1.1rem;width:26px;text-align:center}
+.tips-list{display:flex;flex-direction:column;gap:10px}
+.tip-item{display:flex;align-items:flex-start;gap:10px;padding:10px;background:var(--bg2);border-radius:var(--r)}
+.tip-num{width:22px;height:22px;background:var(--accent);color:#fff;border-radius:50%;display:grid;place-items:center;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:1px}
+.tip-text{font-size:.82rem;color:var(--ink2);line-height:1.5}
+
+/* ── SECTIONS ── */
+.section{max-width:1200px;margin:0 auto;padding:56px 20px}
+.section-sm{padding:32px 20px}
+
+/* SEO CONTENT */
+.seo-wrap{max-width:1200px;margin:0 auto;padding:0 20px 64px}
+.prose-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:40px;box-shadow:var(--sh)}
+.prose-card h2{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--ink);margin-bottom:14px;letter-spacing:-.02em}
+.prose-card h3{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin:24px 0 10px}
+.prose-card p{color:var(--ink2);font-size:.925rem;line-height:1.75;margin-bottom:12px}
+.prose-card ul{padding-left:18px;margin-bottom:12px}
+.prose-card ul li{color:var(--ink2);font-size:.925rem;line-height:1.65;margin-bottom:6px}
+.formula-box{background:var(--bg2);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0;padding:16px 20px;margin:14px 0;font-family:monospace;font-size:.95rem;color:var(--ink);letter-spacing:.01em}
+
+/* FORMULA CARDS */
+.formula-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-bottom:32px}
+.formula-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);padding:20px;transition:transform .2s var(--spring),box-shadow .2s}
+.formula-card:hover{transform:translateY(-4px);box-shadow:var(--shm)}
+.formula-card-icon{font-size:1.8rem;margin-bottom:10px}
+.formula-card h3{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:8px}
+.formula-card p{font-size:.8rem;color:var(--ink2);line-height:1.5;margin-bottom:10px}
+.formula-card .fm{font-family:monospace;font-size:.82rem;background:var(--surface);border-radius:6px;padding:6px 10px;color:var(--accent);border:1px solid var(--border)}
+
+/* HOW IT WORKS */
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:24px}
+.step-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:22px;position:relative;overflow:hidden}
+.step-num{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;color:var(--accent);opacity:.1;position:absolute;top:10px;right:14px;line-height:1}
+.step-icon{font-size:1.4rem;margin-bottom:10px}
+.step-card h3{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:6px}
+.step-card p{font-size:.8rem;color:var(--ink2);line-height:1.5}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px;max-width:800px;margin:24px auto 0}
+.faq-item{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:var(--accent)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px 20px;text-align:left;font-family:'Syne',sans-serif;font-size:.92rem;font-weight:700;color:var(--ink);cursor:pointer;transition:background .2s;gap:12px}
+.faq-q:hover{background:var(--bg2)}
+.faq-icon{width:24px;height:24px;border-radius:50%;background:var(--bg2);display:grid;place-items:center;font-size:.7rem;color:var(--ink2);flex-shrink:0;transition:transform .25s,background .2s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--accent);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease),padding .3s}
+.faq-item.open .faq-a{max-height:200px}
+.faq-a-inner{padding:0 20px 18px;font-size:.875rem;color:var(--ink2);line-height:1.7}
+
+/* CTA */
+.cta-section{background:var(--ink);border-radius:24px;padding:56px 40px;text-align:center;position:relative;overflow:hidden;margin:0 20px}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 80% 20%,rgba(26,26,255,.25),transparent),radial-gradient(ellipse 40% 50% at 20% 80%,rgba(0,200,150,.15),transparent);pointer-events:none}
+body.dark .cta-section{background:var(--bg3);border:1px solid var(--border)}
+.cta-inner{position:relative;z-index:1}
+.cta-section h2{font-family:'Syne',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:#fff;margin-bottom:12px;letter-spacing:-.02em}
+body.dark .cta-section h2{color:var(--ink)}
+.cta-section p{color:rgba(255,255,255,.6);margin-bottom:28px;font-size:.95rem;max-width:480px;margin-left:auto;margin-right:auto}
+body.dark .cta-section p{color:var(--ink2)}
+.btn-cta{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--accent);border-radius:99px;padding:14px 28px;font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;transition:all .2s var(--spring);box-shadow:0 4px 20px rgba(0,0,0,.2)}
+.btn-cta:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+body.dark .btn-cta{background:var(--accent);color:#fff}
+
+/* SECTION HEADER */
+.sec-head{text-align:center;margin-bottom:36px}
+.sec-label{display:inline-flex;align-items:center;gap:6px;font-size:.75rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.sec-label::before{content:'';width:14px;height:2px;background:var(--accent);border-radius:2px}
+.sec-head h2{font-family:'Syne',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;line-height:1.2;letter-spacing:-.02em;color:var(--ink)}
+.sec-head p{color:var(--ink2);margin-top:8px;font-size:.95rem}
+
+/* FOOTER */
+.footer{background:var(--ink);color:rgba(255,255,255,.65);padding:48px 20px 20px}
+body.dark .footer{background:#05050e}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:40px;margin-bottom:40px}
+.footer-logo{display:flex;align-items:center;gap:8px;font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:#fff;margin-bottom:12px}
+.footer-logo-mark{width:28px;height:28px;background:var(--accent);border-radius:7px;display:grid;place-items:center;font-size:.8rem;color:#fff}
+.footer-desc{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.65;max-width:200px}
+.footer-col h4{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.8);text-transform:uppercase;letter-spacing:.09em;margin-bottom:14px}
+.footer-col ul{display:flex;flex-direction:column;gap:8px}
+.footer-col ul li a{font-size:.8rem;color:rgba(255,255,255,.4);transition:color .2s}
+.footer-col ul li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-bottom p{font-size:.75rem;color:rgba(255,255,255,.28)}
+
+/* MOBILE NAV */
+.mob-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(247,246,242,.95);backdrop-filter:blur(20px);border-top:1px solid var(--border);z-index:400;padding:6px 4px calc(env(safe-area-inset-bottom,0px)+6px)}
+body.dark .mob-nav{background:rgba(10,10,18,.95)}
+.mob-nav-items{display:flex;justify-content:space-around}
+.mn-it{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 10px;border-radius:9px;font-size:.58rem;font-weight:700;color:var(--ink3);cursor:pointer;letter-spacing:.02em;text-transform:uppercase;transition:color .2s;min-width:48px}
+.mn-it:hover,.mn-it.active{color:var(--accent)}
+.mn-ic{font-size:1.1rem}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .ham{display:flex}
+  .mob-nav{display:block}
+  body{padding-bottom:66px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:28px}
+  .cta-section{margin:0 12px;padding:36px 22px}
+}
+@media(max-width:480px){
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .hero h1{font-size:1.9rem}
+  .formula-grid{grid-template-columns:1fr}
+}
+
+/* NOTICE */
+.notice{background:linear-gradient(135deg,rgba(245,166,35,.1),rgba(26,26,255,.06));border:1px solid rgba(245,166,35,.25);border-radius:var(--r);padding:12px 16px;font-size:.82rem;color:var(--ink2);line-height:1.55;margin-top:14px}
+.notice strong{color:var(--ink)}
+</style>
+</head>
+<body>
+<a class="skip" href="#calculator">Skip to calculator</a>
+
+<!-- ── NAVBAR ── -->
+<header class="nav" role="banner">
+  <nav class="nav-inner" aria-label="Main navigation">
+    <a class="logo" href="index.html" aria-label="QuickTools Home">
+      <div class="logo-mark" aria-hidden="true">⚡</div>
+      Quick<span style="color:var(--accent)">Tools</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#categories">All Tools</a></li>
+      <li><a href="index.html#about" onclick="window.location='index.html'">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-icon" id="darkToggle" onclick="toggleDark()" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+      <button class="ham" id="ham" onclick="toggleDrawer()" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="drawer" id="drawer" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">🏠 Home</a>
+    <a href="index.html#categories">🔧 All Tools</a>
+    <a href="bmi-calculator.html">⚖️ BMI Calculator</a>
+    <a href="emi-calculator.html">💰 EMI Calculator</a>
+    <a href="age-calculator.html">🎂 Age Calculator</a>
+    <a href="gst-calculator.html">🧾 GST Calculator</a>
+    <a href="sip-calculator.html">📈 SIP Calculator</a>
+  </div>
+</header>
+
+<!-- ── BREADCRUMB ── -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="index.html">Home</a>
+  <span aria-hidden="true">›</span>
+  <span>Finance Tools</span>
+  <span aria-hidden="true">›</span>
+  <span>Percentage Calculator</span>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-inner">
+    <div class="hero-chip" aria-label="Free online tool">
+      <div class="hero-chip-dot" aria-hidden="true">%</div>
+      Free · No Login · Instant Results
+    </div>
+    <h1 id="hero-heading">Percentage Calculator<br><em>Online — Free & Fast</em></h1>
+    <p class="hero-sub">Calculate percentage of a number, percentage increase, decrease, and difference instantly. Perfect for students, professionals, and everyday calculations.</p>
+  </div>
+</section>
+
+<!-- ── MAIN ── -->
+<div class="main-wrap" id="calculator">
+  <!-- ── CALCULATOR ── -->
+  <div>
+    <div class="calc-card">
+      <!-- Tabs -->
+      <div class="tabs" role="tablist" aria-label="Calculator modes">
+        <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-basic" onclick="switchTab(this,'basic')">% of Number</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-increase" onclick="switchTab(this,'increase')">Increase</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-decrease" onclick="switchTab(this,'decrease')">Decrease</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-diff" onclick="switchTab(this,'diff')">Difference</button>
+      </div>
+
+      <!-- Tab: % of Number -->
+      <div id="tab-basic" class="tab-panel active" role="tabpanel">
+        <div class="form-group">
+          <label for="b_pct">What is <strong>X%</strong> of <strong>Y</strong>?</label>
+        </div>
+        <div class="form-group">
+          <label for="b_pct">Percentage (X)</label>
+          <input type="number" id="b_pct" placeholder="e.g. 25" inputmode="decimal" min="0" step="any"/>
+        </div>
+        <div class="form-group">
+          <label for="b_num">Number (Y)</label>
+          <input type="number" id="b_num" placeholder="e.g. 200" inputmode="decimal" step="any"/>
+        </div>
+        <button class="btn-calc" onclick="calcBasic()" aria-label="Calculate percentage">Calculate →</button>
+        <button class="btn-reset" onclick="resetBasic()" aria-label="Reset fields">Reset</button>
+        <div class="result-box" id="res-basic" role="region" aria-live="polite" aria-label="Calculation result">
+          <div class="result-label">Result</div>
+          <div class="result-value" id="res-basic-val">—</div>
+          <div class="result-sub" id="res-basic-sub"></div>
+          <button class="copy-btn" onclick="copyResult('res-basic-val')" aria-label="Copy result">📋 Copy Result</button>
+        </div>
+      </div>
+
+      <!-- Tab: Increase -->
+      <div id="tab-increase" class="tab-panel" role="tabpanel">
+        <div class="form-group">
+          <label for="inc_orig">Original Value</label>
+          <input type="number" id="inc_orig" placeholder="e.g. 1000" inputmode="decimal" step="any"/>
+        </div>
+        <div class="form-group">
+          <label for="inc_pct">Percentage Increase (%)</label>
+          <input type="number" id="inc_pct" placeholder="e.g. 15" inputmode="decimal" min="0" step="any"/>
+        </div>
+        <button class="btn-calc" onclick="calcIncrease()" aria-label="Calculate percentage increase">Calculate →</button>
+        <button class="btn-reset" onclick="resetIncrease()" aria-label="Reset fields">Reset</button>
+        <div class="result-box" id="res-inc" role="region" aria-live="polite">
+          <div class="result-label">New Value After Increase</div>
+          <div class="result-value" id="res-inc-val">—</div>
+          <div style="margin-top:14px">
+            <div class="result-row"><span>Original Value</span><span id="ri-orig">—</span></div>
+            <div class="result-row"><span>Increase Amount</span><span id="ri-amt" style="color:var(--accent3)">—</span></div>
+            <div class="result-row"><span>New Value</span><span id="ri-new" style="color:var(--accent)">—</span></div>
+          </div>
+          <button class="copy-btn" onclick="copyResult('res-inc-val')" aria-label="Copy result">📋 Copy Result</button>
+        </div>
+      </div>
+
+      <!-- Tab: Decrease -->
+      <div id="tab-decrease" class="tab-panel" role="tabpanel">
+        <div class="form-group">
+          <label for="dec_orig">Original Value</label>
+          <input type="number" id="dec_orig" placeholder="e.g. 1000" inputmode="decimal" step="any"/>
+        </div>
+        <div class="form-group">
+          <label for="dec_pct">Percentage Decrease (%)</label>
+          <input type="number" id="dec_pct" placeholder="e.g. 20" inputmode="decimal" min="0" step="any"/>
+        </div>
+        <button class="btn-calc" onclick="calcDecrease()" aria-label="Calculate percentage decrease">Calculate →</button>
+        <button class="btn-reset" onclick="resetDecrease()" aria-label="Reset fields">Reset</button>
+        <div class="result-box" id="res-dec" role="region" aria-live="polite">
+          <div class="result-label">New Value After Decrease</div>
+          <div class="result-value" id="res-dec-val">—</div>
+          <div style="margin-top:14px">
+            <div class="result-row"><span>Original Value</span><span id="rd-orig">—</span></div>
+            <div class="result-row"><span>Decrease Amount</span><span id="rd-amt" style="color:var(--accent2)">—</span></div>
+            <div class="result-row"><span>New Value</span><span id="rd-new" style="color:var(--accent)">—</span></div>
+          </div>
+          <button class="copy-btn" onclick="copyResult('res-dec-val')" aria-label="Copy result">📋 Copy Result</button>
+        </div>
+      </div>
+
+      <!-- Tab: Difference -->
+      <div id="tab-diff" class="tab-panel" role="tabpanel">
+        <div class="form-group">
+          <label for="df_v1">Value 1 (Old Value)</label>
+          <input type="number" id="df_v1" placeholder="e.g. 80" inputmode="decimal" step="any"/>
+        </div>
+        <div class="form-group">
+          <label for="df_v2">Value 2 (New Value)</label>
+          <input type="number" id="df_v2" placeholder="e.g. 100" inputmode="decimal" step="any"/>
+        </div>
+        <button class="btn-calc" onclick="calcDiff()" aria-label="Calculate percentage difference">Calculate →</button>
+        <button class="btn-reset" onclick="resetDiff()" aria-label="Reset fields">Reset</button>
+        <div class="result-box" id="res-diff" role="region" aria-live="polite">
+          <div class="result-label">Percentage Change</div>
+          <div class="result-value" id="res-diff-val">—</div>
+          <div style="margin-top:14px">
+            <div class="result-row"><span>Change Type</span><span id="rdf-type">—</span></div>
+            <div class="result-row"><span>Absolute Difference</span><span id="rdf-abs">—</span></div>
+            <div class="result-row"><span>% Difference (avg-based)</span><span id="rdf-avg">—</span></div>
+          </div>
+          <button class="copy-btn" onclick="copyResult('res-diff-val')" aria-label="Copy result">📋 Copy Result</button>
+        </div>
+      </div>
+
+      <!-- Share -->
+      <div class="share-row" aria-label="Share this tool">
+        <button class="share-btn share-wa" onclick="shareWA()" aria-label="Share on WhatsApp">📱 WhatsApp</button>
+        <button class="share-btn share-tw" onclick="shareTW()" aria-label="Share on Twitter">𝕏 Tweet</button>
+        <button class="share-btn share-cp" onclick="shareCopy()" aria-label="Copy link">🔗 Copy Link</button>
+      </div>
+    </div>
+
+    <div class="notice" style="margin-top:16px">
+      <strong>Note:</strong> All calculations happen instantly in your browser. No data is ever stored or sent to any server.
+    </div>
+  </div>
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar" aria-label="Sidebar">
+    <!-- Quick Reference -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">📐 Quick Formulas</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="background:var(--bg2);border-radius:var(--r);padding:12px">
+          <div style="font-size:.72rem;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">X% of Y</div>
+          <div style="font-family:monospace;font-size:.88rem;color:var(--accent)">(X ÷ 100) × Y</div>
+        </div>
+        <div style="background:var(--bg2);border-radius:var(--r);padding:12px">
+          <div style="font-size:.72rem;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">% Increase</div>
+          <div style="font-family:monospace;font-size:.88rem;color:var(--accent3)">((New−Old) ÷ Old) × 100</div>
+        </div>
+        <div style="background:var(--bg2);border-radius:var(--r);padding:12px">
+          <div style="font-size:.72rem;font-weight:700;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">% Decrease</div>
+          <div style="font-family:monospace;font-size:.88rem;color:var(--accent2)">((Old−New) ÷ Old) × 100</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Tools -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">🔗 Related Tools</div>
+      <div class="related-list">
+        <a class="related-link" href="discount-calculator.html"><span class="rl-emoji">🏷️</span> Discount Calculator</a>
+        <a class="related-link" href="gst-calculator.html"><span class="rl-emoji">🧾</span> GST Calculator</a>
+        <a class="related-link" href="emi-calculator.html"><span class="rl-emoji">💰</span> EMI Calculator</a>
+        <a class="related-link" href="sip-calculator.html"><span class="rl-emoji">📈</span> SIP Calculator</a>
+        <a class="related-link" href="bmi-calculator.html"><span class="rl-emoji">⚖️</span> BMI Calculator</a>
+        <a class="related-link" href="age-calculator.html"><span class="rl-emoji">🎂</span> Age Calculator</a>
+        <a class="related-link" href="word-counter.html"><span class="rl-emoji">📝</span> Word Counter</a>
+      </div>
+    </div>
+
+    <!-- Tips -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">💡 Quick Tips</div>
+      <div class="tips-list">
+        <div class="tip-item"><div class="tip-num">1</div><div class="tip-text">To find what % X is of Y: (X ÷ Y) × 100</div></div>
+        <div class="tip-item"><div class="tip-num">2</div><div class="tip-text">Markup vs margin: same numbers, different bases</div></div>
+        <div class="tip-item"><div class="tip-num">3</div><div class="tip-text">A 20% increase then 20% decrease ≠ original value</div></div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- ── SEO FORMULA SECTION ── -->
+<section class="section" style="padding-top:0">
+  <div class="sec-head">
+    <div class="sec-label">Formulas & Examples</div>
+    <h2>How Percentage Calculations Work</h2>
+    <p>Master every type of percentage calculation with these clear formulas</p>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card">
+      <div class="formula-card-icon">🎯</div>
+      <h3>Percentage of a Number</h3>
+      <p>Find X% of any value. Most common use: discounts, tax, tips.</p>
+      <div class="fm">Result = (X / 100) × Y</div>
+      <p style="margin-top:8px;font-size:.78rem;color:var(--ink3)">Example: 25% of 200 = 50</p>
+    </div>
+    <div class="formula-card">
+      <div class="formula-card-icon">📈</div>
+      <h3>Percentage Increase</h3>
+      <p>How much has a value grown? Useful for salary hikes, price rises.</p>
+      <div class="fm">((New − Old) / Old) × 100</div>
+      <p style="margin-top:8px;font-size:.78rem;color:var(--ink3)">Example: 80→100 = 25% increase</p>
+    </div>
+    <div class="formula-card">
+      <div class="formula-card-icon">📉</div>
+      <h3>Percentage Decrease</h3>
+      <p>How much has a value fallen? Great for sale discounts, depreciation.</p>
+      <div class="fm">((Old − New) / Old) × 100</div>
+      <p style="margin-top:8px;font-size:.78rem;color:var(--ink3)">Example: 100→80 = 20% decrease</p>
+    </div>
+    <div class="formula-card">
+      <div class="formula-card-icon">↔️</div>
+      <h3>Percentage Difference</h3>
+      <p>Relative difference between two values without a defined direction.</p>
+      <div class="fm">|V1−V2| / ((V1+V2)/2) × 100</div>
+      <p style="margin-top:8px;font-size:.78rem;color:var(--ink3)">Example: 80 vs 100 = 22.2%</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW TO USE ── -->
+<div class="seo-wrap">
+  <div class="prose-card">
+    <h2>What Is a Percentage Calculator?</h2>
+    <p>A <strong>percentage calculator</strong> is a free online tool that helps you compute percentages instantly without manual arithmetic. Whether you're a student solving homework problems, a professional analyzing data, or a shopper calculating discounts — our tool covers every scenario in seconds.</p>
+
+    <h3>Types of Percentage Calculations</h3>
+    <p>Our calculator handles four common percentage problems:</p>
+    <ul>
+      <li><strong>Percentage of a number</strong> — Find what X% of Y equals (e.g., 15% of ₹2,000 = ₹300)</li>
+      <li><strong>Percentage increase</strong> — Calculate new value after a % rise (e.g., salary hike of 10%)</li>
+      <li><strong>Percentage decrease</strong> — Calculate new value after a % fall (e.g., price drop of 30%)</li>
+      <li><strong>Percentage difference</strong> — Compare two values to find how much they differ as a %</li>
+    </ul>
+
+    <h3>Real-World Examples</h3>
+    <p>Here are everyday situations where our <em>simple percentage calculator</em> saves time:</p>
+    <ul>
+      <li>🛍️ <strong>Shopping:</strong> Product costs ₹1,500 with a 20% discount → you save ₹300, pay ₹1,200</li>
+      <li>💼 <strong>Salary:</strong> Current CTC ₹6L, 12% hike → new CTC = ₹6.72L</li>
+      <li>📊 <strong>Marks:</strong> Scored 85 out of 100 → that's 85%</li>
+      <li>🧾 <strong>GST:</strong> Item costs ₹500, add 18% GST → total = ₹590</li>
+      <li>📈 <strong>Stocks:</strong> Share was ₹200, now ₹240 → 20% increase</li>
+    </ul>
+
+    <h3>Percentage Calculator for Students</h3>
+    <p>Students use percentages constantly — in math problems, exam scores, and science experiments. Our <em>simple percentage calculator for students</em> shows the formula alongside the answer, helping you understand the logic — not just get the result. Great for Class 5 to 12 math, CA foundations, and competitive exams like CAT, GMAT, and SSC.</p>
+
+    <div class="formula-box">💡 Tip: To find what percentage A is of B → (A ÷ B) × 100<br>Example: What % is 45 of 180? → (45 ÷ 180) × 100 = 25%</div>
+  </div>
+</div>
+
+<!-- ── STEPS ── -->
+<section class="section" style="padding-top:0">
+  <div class="sec-head">
+    <div class="sec-label">How to Use</div>
+    <h2>3 Simple Steps</h2>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card"><div class="step-num">1</div><div class="step-icon">🖱️</div><h3>Choose Calculator Type</h3><p>Pick from % of number, increase, decrease, or difference — based on what you need.</p></div>
+    <div class="step-card"><div class="step-num">2</div><div class="step-icon">✏️</div><h3>Enter Your Values</h3><p>Type in the numbers. Our tool accepts decimals, negative values, and large numbers.</p></div>
+    <div class="step-card"><div class="step-num">3</div><div class="step-icon">⚡</div><h3>Get Instant Results</h3><p>Click Calculate and see your result instantly with a full breakdown.</p></div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section" style="padding-top:0" aria-labelledby="faq-heading">
+  <div class="sec-head">
+    <div class="sec-label">Got Questions?</div>
+    <h2 id="faq-heading">Frequently Asked Questions</h2>
+  </div>
+  <div class="faq-list" role="list">
+    <div class="faq-item" role="listitem">
+      <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+        How do I calculate the percentage of a number?
+        <div class="faq-icon" aria-hidden="true">+</div>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">To find X% of Y, use the formula: <strong>(X / 100) × Y</strong>. For example, to find 25% of 200: (25 / 100) × 200 = 50. Our calculator does this instantly for any values you enter.</div></div>
+    </div>
+    <div class="faq-item" role="listitem">
+      <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+        How do I calculate percentage increase?
+        <div class="faq-icon" aria-hidden="true">+</div>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Percentage increase = <strong>((New Value − Old Value) / Old Value) × 100</strong>. Example: price went from ₹80 to ₹100 → ((100 − 80) / 80) × 100 = <strong>25% increase</strong>.</div></div>
+    </div>
+    <div class="faq-item" role="listitem">
+      <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+        What is percentage decrease and how is it calculated?
+        <div class="faq-icon" aria-hidden="true">+</div>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Percentage decrease = <strong>((Old Value − New Value) / Old Value) × 100</strong>. Example: salary dropped from ₹100 to ₹80 → ((100 − 80) / 100) × 100 = <strong>20% decrease</strong>.</div></div>
+    </div>
+    <div class="faq-item" role="listitem">
+      <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+        What's the difference between percentage change and percentage difference?
+        <div class="faq-icon" aria-hidden="true">+</div>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner"><strong>Percentage change</strong> requires a starting value (direction matters). <strong>Percentage difference</strong> is symmetric — it compares two values without a defined "old" or "new" using their average as the base: |V1−V2| / ((V1+V2)/2) × 100.</div></div>
+    </div>
+    <div class="faq-item" role="listitem">
+      <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+        Is this percentage calculator free to use?
+        <div class="faq-icon" aria-hidden="true">+</div>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Yes — 100% free, forever. No signup, no login, no credit card, no ads disrupting your workflow. All tools on QuickTools are free for everyone.</div></div>
+    </div>
+    <div class="faq-item" role="listitem">
+      <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+        Can I calculate reverse percentage (find original value)?
+        <div class="faq-icon" aria-hidden="true">+</div>
+      </button>
+      <div class="faq-a"><div class="faq-a-inner">Yes! To find the original value when you know the new value after an increase, use: <strong>Original = New Value / (1 + %/100)</strong>. For a decrease: <strong>Original = New Value / (1 − %/100)</strong>. Use the Increase/Decrease tabs and work backwards.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<div style="max-width:1200px;margin:0 auto;padding:0 0 64px">
+  <div class="cta-section">
+    <div class="cta-inner">
+      <h2>Explore More Free Tools</h2>
+      <p>QuickTools has 20+ free calculators for finance, health, education, and more — all free, no login.</p>
+      <a href="index.html" class="btn-cta">Browse All Tools →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo"><div class="footer-logo-mark">⚡</div>QuickTools</div>
+        <p class="footer-desc">Free online calculators and smart daily tools. Fast, accurate, always free.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Finance</h4>
+        <ul>
+          <li><a href="percentage-calculator.html">Percentage Calculator</a></li>
+          <li><a href="emi-calculator.html">EMI Calculator</a></li>
+          <li><a href="gst-calculator.html">GST Calculator</a></li>
+          <li><a href="sip-calculator.html">SIP Calculator</a></li>
+          <li><a href="discount-calculator.html">Discount Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Health & Study</h4>
+        <ul>
+          <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+          <li><a href="age-calculator.html">Age Calculator</a></li>
+          <li><a href="word-counter.html">Word Counter</a></li>
+          <li><a href="password-generator.html">Password Generator</a></li>
+          <li><a href="qr-generator.html">QR Code Generator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 QuickTools. All rights reserved. Built with ❤️ for the web.</p>
+      <p style="font-size:.72rem;color:rgba(255,255,255,.22)">percentage-calculator.html</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ── MOBILE NAV ── -->
+<nav class="mob-nav" aria-label="Mobile bottom navigation">
+  <div class="mob-nav-items">
+    <div class="mn-it" onclick="location.href='index.html'" aria-label="Home"><span class="mn-ic">🏠</span>Home</div>
+    <div class="mn-it active" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Calculator"><span class="mn-ic">%</span>Calc</div>
+    <div class="mn-it" onclick="location.href='emi-calculator.html'" aria-label="EMI Calculator"><span class="mn-ic">💰</span>EMI</div>
+    <div class="mn-it" onclick="location.href='bmi-calculator.html'" aria-label="BMI Calculator"><span class="mn-ic">⚖️</span>BMI</div>
+    <div class="mn-it" onclick="toggleDark()" aria-label="Toggle dark mode"><span class="mn-ic" id="mobThemeIc">🌙</span>Theme</div>
+  </div>
+</nav>
+
+<script>
+/* ── DARK MODE ── */
+(function(){const s=localStorage.getItem('qt-dark');if(s==='true')applyDark(true);})();
+function toggleDark(){applyDark(!document.body.classList.contains('dark'));}
+function applyDark(on){
+  document.body.classList.toggle('dark',on);
+  const ic=on?'☀️':'🌙';
+  document.getElementById('darkToggle').textContent=ic;
+  const m=document.getElementById('mobThemeIc');if(m)m.textContent=ic;
+  localStorage.setItem('qt-dark',on);
+}
+
+/* ── DRAWER ── */
+function toggleDrawer(){
+  const d=document.getElementById('drawer');
+  const h=document.getElementById('ham');
+  const o=d.classList.toggle('open');
+  h.classList.toggle('open',o);
+  h.setAttribute('aria-expanded',o);
+}
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.nav'))document.getElementById('drawer').classList.remove('open'),document.getElementById('ham').classList.remove('open');
+});
+
+/* ── TABS ── */
+function switchTab(btn,id){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-'+id).classList.add('active');
+}
+
+/* ── CALCULATORS ── */
+function fmtNum(n){return parseFloat(n.toFixed(4)).toLocaleString('en-IN',{maximumFractionDigits:4});}
+function showResult(id){const el=document.getElementById(id);el.classList.add('show');el.scrollIntoView({behavior:'smooth',block:'nearest'});}
+
+// Basic
+function calcBasic(){
+  const p=parseFloat(document.getElementById('b_pct').value);
+  const n=parseFloat(document.getElementById('b_num').value);
+  if(isNaN(p)||isNaN(n)){alert('Please enter valid numbers.');return;}
+  const res=(p/100)*n;
+  document.getElementById('res-basic-val').textContent=fmtNum(res);
+  document.getElementById('res-basic-sub').textContent=`${p}% of ${fmtNum(n)} = ${fmtNum(res)}`;
+  showResult('res-basic');
+}
+function resetBasic(){document.getElementById('b_pct').value='';document.getElementById('b_num').value='';document.getElementById('res-basic').classList.remove('show');}
+
+// Increase
+function calcIncrease(){
+  const orig=parseFloat(document.getElementById('inc_orig').value);
+  const pct=parseFloat(document.getElementById('inc_pct').value);
+  if(isNaN(orig)||isNaN(pct)){alert('Please enter valid numbers.');return;}
+  const amt=orig*(pct/100);
+  const nv=orig+amt;
+  document.getElementById('res-inc-val').textContent=fmtNum(nv);
+  document.getElementById('ri-orig').textContent=fmtNum(orig);
+  document.getElementById('ri-amt').textContent='+'+fmtNum(amt);
+  document.getElementById('ri-new').textContent=fmtNum(nv);
+  showResult('res-inc');
+}
+function resetIncrease(){document.getElementById('inc_orig').value='';document.getElementById('inc_pct').value='';document.getElementById('res-inc').classList.remove('show');}
+
+// Decrease
+function calcDecrease(){
+  const orig=parseFloat(document.getElementById('dec_orig').value);
+  const pct=parseFloat(document.getElementById('dec_pct').value);
+  if(isNaN(orig)||isNaN(pct)){alert('Please enter valid numbers.');return;}
+  const amt=orig*(pct/100);
+  const nv=orig-amt;
+  document.getElementById('res-dec-val').textContent=fmtNum(nv);
+  document.getElementById('rd-orig').textContent=fmtNum(orig);
+  document.getElementById('rd-amt').textContent='−'+fmtNum(amt);
+  document.getElementById('rd-new').textContent=fmtNum(nv);
+  showResult('res-dec');
+}
+function resetDecrease(){document.getElementById('dec_orig').value='';document.getElementById('dec_pct').value='';document.getElementById('res-dec').classList.remove('show');}
+
+// Difference
+function calcDiff(){
+  const v1=parseFloat(document.getElementById('df_v1').value);
+  const v2=parseFloat(document.getElementById('df_v2').value);
+  if(isNaN(v1)||isNaN(v2)){alert('Please enter valid numbers.');return;}
+  const change=((v2-v1)/Math.abs(v1))*100;
+  const avgDiff=(Math.abs(v1-v2)/((v1+v2)/2))*100;
+  const type=change>=0?'📈 Increase':'📉 Decrease';
+  document.getElementById('res-diff-val').textContent=(change>=0?'+':'')+fmtNum(change)+'%';
+  document.getElementById('res-diff-val').style.color=change>=0?'var(--accent3)':'var(--accent2)';
+  document.getElementById('rdf-type').textContent=type;
+  document.getElementById('rdf-abs').textContent=fmtNum(Math.abs(v2-v1));
+  document.getElementById('rdf-avg').textContent=fmtNum(avgDiff)+'%';
+  showResult('res-diff');
+}
+function resetDiff(){document.getElementById('df_v1').value='';document.getElementById('df_v2').value='';document.getElementById('res-diff').classList.remove('show');}
+
+/* ── COPY ── */
+function copyResult(id){
+  const val=document.getElementById(id).textContent;
+  navigator.clipboard.writeText(val).then(()=>{
+    const btn=event.target;const orig=btn.textContent;btn.textContent='✅ Copied!';setTimeout(()=>btn.textContent=orig,2000);
+  }).catch(()=>alert(val));
+}
+
+/* ── SHARE ── */
+function shareWA(){window.open('https://wa.me/?text='+encodeURIComponent('Free Percentage Calculator — '+window.location.href),'_blank');}
+function shareTW(){window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('Free Percentage Calculator by QuickTools')+' '+encodeURIComponent(window.location.href),'_blank');}
+function shareCopy(){navigator.clipboard.writeText(window.location.href).then(()=>alert('Link copied to clipboard!'));}
+
+/* ── FAQ ── */
+function toggleFAQ(btn){
+  const item=btn.closest('.faq-item');
+  const o=item.classList.toggle('open');
+  btn.setAttribute('aria-expanded',o);
+}
+
+/* ── ENTER KEY ── */
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter'){
+    const ap=document.querySelector('.tab-panel.active');
+    if(ap){const cb=ap.querySelector('.btn-calc');if(cb)cb.click();}
+  }
+});
+</script>
+</body>
+</html>
