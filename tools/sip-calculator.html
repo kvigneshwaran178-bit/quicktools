@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- META & SEO -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIP Calculator India – Monthly SIP Returns & Maturity Calculator | QuickTools</title>
+  <meta name="description" content="Free SIP Calculator India – Calculate SIP returns, maturity amount, wealth gain & inflation-adjusted value. Best online SIP investment calculator for mutual funds. Instant results, no login." />
+  <meta name="keywords" content="SIP calculator India, SIP returns calculator, mutual fund SIP calculator, monthly SIP calculator, SIP investment calculator, SIP maturity calculator, compound SIP calculator, SIP future value calculator, wealth growth SIP calculator, free SIP calculator online" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="QuickTools" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <link rel="canonical" href="https://kvigneshwaran178-bit.github.io/quicktools/tools/sip-calculator.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SIP Calculator India – Free SIP Returns & Maturity Calculator" />
+  <meta property="og:description" content="Calculate SIP returns, maturity amount & inflation-adjusted value instantly. Best free online SIP calculator for mutual fund investments in India." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kvigneshwaran178-bit.github.io/quicktools/tools/sip-calculator.html" />
+  <meta property="og:image" content="https://kvigneshwaran178-bit.github.io/quicktools/og-image.png" />
+  <meta property="og:site_name" content="QuickTools" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SIP Calculator India – Free SIP Returns Calculator" />
+  <meta name="twitter:description" content="Calculate SIP maturity amount, returns & wealth gain instantly. Free, no login required." />
+  <meta name="twitter:image" content="https://kvigneshwaran178-bit.github.io/quicktools/og-image.png" />
+
+  <!-- Schema: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "SIP Calculator India",
+    "description": "Free online SIP calculator to compute monthly SIP returns, maturity amount, and wealth gain for mutual fund investments in India.",
+    "url": "https://kvigneshwaran178-bit.github.io/quicktools/tools/sip-calculator.html",
+    "isPartOf": { "@type": "WebSite", "name": "QuickTools", "url": "https://kvigneshwaran178-bit.github.io/quicktools/" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kvigneshwaran178-bit.github.io/quicktools/" },
+        { "@type": "ListItem", "position": 2, "name": "Finance Tools", "item": "https://kvigneshwaran178-bit.github.io/quicktools/#categories" },
+        { "@type": "ListItem", "position": 3, "name": "SIP Calculator" }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Schema: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a SIP (Systematic Investment Plan)?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A SIP (Systematic Investment Plan) allows you to invest a fixed amount in a mutual fund at regular intervals — typically monthly. It helps build wealth over time through the power of compounding and rupee cost averaging." }
+      },
+      {
+        "@type": "Question",
+        "name": "How is SIP return calculated?",
+        "acceptedAnswer": { "@type": "Answer", "text": "SIP returns are calculated using the formula: M = P × {[(1 + r)ⁿ – 1] / r} × (1 + r), where M = Maturity Amount, P = Monthly Investment, r = Monthly Rate of Return (Annual Rate ÷ 12 ÷ 100), n = Number of Months." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is SIP return guaranteed?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. SIP returns are market-linked and not guaranteed. The expected return rate entered in the calculator is an estimate based on historical mutual fund performance. Actual returns may vary." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good expected return rate for SIP in India?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Historically, large-cap equity mutual funds in India have delivered 10–12% CAGR, mid-cap funds 12–15%, and small-cap funds 15–18% over long periods. Debt funds typically return 6–8%. Use 10–12% as a conservative estimate for long-term equity SIPs." }
+      },
+      {
+        "@type": "Question",
+        "name": "How does inflation affect SIP returns?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Inflation erodes the purchasing power of your returns. The real return = ((1 + nominal rate) / (1 + inflation rate) – 1) × 100. Our calculator shows the inflation-adjusted (real) value of your SIP maturity so you know your true wealth gain." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much should I invest in SIP monthly?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A common rule is to invest at least 20% of your monthly income via SIP. Start small (even ₹500/month) and increase by 10% annually (SIP step-up) to build significant wealth over time." }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts: Syne + DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ══════════════════════════════════
+       DESIGN TOKENS
+    ══════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #06060c;
+      --bg-2:       #0d0d1a;
+      --bg-3:       #13131f;
+      --bg-card:    #10101e;
+      --border:     rgba(255,255,255,.07);
+      --border-2:   rgba(255,255,255,.12);
+
+      --ink:        #f0f0f8;
+      --ink-2:      #9090b0;
+      --ink-3:      #50506a;
+
+      /* Accent — teal/cyan vivid */
+      --accent:     #00e5c3;
+      --accent-2:   #0ab8ff;
+      --accent-3:   #7b5cff;
+      --accent-dim: rgba(0,229,195,.10);
+      --accent-glow:rgba(0,229,195,.22);
+
+      --gold:       #ffb547;
+      --rose:       #ff5e7d;
+      --emerald:    #00e5c3;
+
+      --font-head: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+
+      --r-sm:  8px;
+      --r-md:  14px;
+      --r-lg:  22px;
+      --r-xl:  30px;
+      --r-full:999px;
+
+      --sh-card:  0 2px 20px rgba(0,0,0,.4), 0 1px 4px rgba(0,0,0,.3);
+      --sh-glow:  0 0 40px rgba(0,229,195,.15);
+
+      --ease:        cubic-bezier(.4,0,.2,1);
+      --ease-spring: cubic-bezier(.34,1.56,.64,1);
+      --dur:         .22s;
+    }
+
+    /* Light mode override */
+    body.light {
+      --bg:         #f0f2f8;
+      --bg-2:       #e8eaf2;
+      --bg-3:       #dfe1ed;
+      --bg-card:    #ffffff;
+      --border:     rgba(0,0,0,.07);
+      --border-2:   rgba(0,0,0,.14);
+      --ink:        #0d0d1a;
+      --ink-2:      #444460;
+      --ink-3:      #9090b0;
+      --accent-dim: rgba(0,229,195,.12);
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background .3s var(--ease), color .3s var(--ease);
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--bg-3); border-radius: 99px; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    /* ══════════════════════════════════
+       SKIP LINK
+    ══════════════════════════════════ */
+    .skip-link {
+      position: absolute; top: -40px; left: 16px; z-index: 9999;
+      background: var(--accent); color: #000;
+      padding: 8px 16px; border-radius: var(--r-sm);
+      font-weight: 700; font-size: .875rem;
+      transition: top .2s;
+    }
+    .skip-link:focus { top: 16px; }
+
+    /* ══════════════════════════════════
+       HEADER
+    ══════════════════════════════════ */
+    .header {
+      position: sticky; top: 0; z-index: 500;
+      height: 62px;
+      background: rgba(6,6,12,.85);
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+      border-bottom: 1px solid var(--border);
+      transition: background .3s;
+    }
+    body.light .header { background: rgba(240,242,248,.88); }
+
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 20px; height: 100%;
+      display: flex; align-items: center; gap: 4px;
+    }
+
+    .logo {
+      display: flex; align-items: center; gap: 9px;
+      font-family: var(--font-head); font-weight: 800; font-size: 1.15rem;
+      letter-spacing: -.02em; color: var(--ink); margin-right: 12px;
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      border-radius: 9px;
+      display: grid; place-items: center;
+      font-size: .85rem;
+      box-shadow: 0 4px 14px var(--accent-glow);
+    }
+    .logo-text em { font-style: normal; color: var(--accent); }
+
+    .nav-links { display: flex; align-items: center; gap: 1px; }
+    .nav-links a {
+      padding: 6px 11px; border-radius: var(--r-sm);
+      font-size: .83rem; font-weight: 500; color: var(--ink-2);
+      transition: background var(--dur), color var(--dur);
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: var(--bg-3); color: var(--ink); }
+
+    .nav-spacer { flex: 1; }
+
+    .btn-theme {
+      width: 36px; height: 36px; border-radius: var(--r-sm);
+      background: var(--bg-3); border: 1px solid var(--border);
+      display: grid; place-items: center;
+      font-size: .95rem;
+      transition: all var(--dur);
+    }
+    .btn-theme:hover { border-color: var(--accent); box-shadow: 0 0 12px var(--accent-glow); }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      padding: 8px; border-radius: var(--r-sm); margin-left: 4px;
+    }
+    .hamburger span {
+      display: block; width: 18px; height: 2px;
+      background: var(--ink); border-radius: 2px;
+      transition: transform var(--dur), opacity var(--dur);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-drawer {
+      display: none; flex-direction: column; gap: 4px;
+      position: fixed; top: 62px; left: 0; right: 0;
+      background: var(--bg-card); border-bottom: 1px solid var(--border);
+      padding: 12px 16px 20px; z-index: 490;
+      box-shadow: 0 20px 40px rgba(0,0,0,.4);
+      animation: slideDown .2s var(--ease);
+    }
+    .mobile-drawer.open { display: flex; }
+    .mobile-drawer a {
+      padding: 10px 12px; border-radius: var(--r-sm);
+      font-size: .9rem; font-weight: 500; color: var(--ink-2);
+      transition: background var(--dur);
+    }
+    .mobile-drawer a:hover { background: var(--bg-3); color: var(--ink); }
+
+    /* ══════════════════════════════════
+       BREADCRUMB
+    ══════════════════════════════════ */
+    .breadcrumb-bar {
+      background: var(--bg-2);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 0;
+    }
+    .breadcrumb {
+      max-width: 1200px; margin: 0 auto; padding: 0 20px;
+      display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+      font-size: .78rem; color: var(--ink-3);
+    }
+    .breadcrumb a { color: var(--accent); font-weight: 600; transition: opacity var(--dur); }
+    .breadcrumb a:hover { opacity: .75; }
+    .bc-sep { color: var(--ink-3); }
+
+    /* ══════════════════════════════════
+       HERO
+    ══════════════════════════════════ */
+    .hero {
+      position: relative; overflow: hidden;
+      padding: 64px 20px 56px;
+      text-align: center;
+    }
+    .hero-mesh {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 65% 55% at 15% 30%, rgba(0,229,195,.12) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 50% at 85% 70%, rgba(123,92,255,.10) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 35% at 55% 10%, rgba(10,184,255,.07) 0%, transparent 65%);
+    }
+
+    /* Animated grid */
+    .hero-grid {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: linear-gradient(var(--border) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 80%);
+      opacity: .45;
+    }
+
+    .hero-inner { position: relative; z-index: 1; max-width: 740px; margin: 0 auto; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--bg-card); border: 1px solid var(--border-2);
+      border-radius: var(--r-full); padding: 5px 14px 5px 8px;
+      font-size: .75rem; font-weight: 600; color: var(--ink-2);
+      margin-bottom: 24px;
+      animation: fadeUp .6s var(--ease) both;
+    }
+    .hero-badge-dot {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      display: grid; place-items: center; font-size: .65rem; color: #000; font-weight: 800;
+    }
+
+    .hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800; line-height: 1.1; letter-spacing: -.03em;
+      color: var(--ink);
+      margin-bottom: 18px;
+      animation: fadeUp .6s .1s var(--ease) both;
+    }
+    .hero h1 .accent-text {
+      background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1rem; color: var(--ink-2); max-width: 480px;
+      margin: 0 auto 32px; line-height: 1.7;
+      animation: fadeUp .6s .2s var(--ease) both;
+    }
+
+    .hero-tags {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+      animation: fadeUp .6s .3s var(--ease) both;
+    }
+    .hero-tag {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--r-full); padding: 5px 13px;
+      font-size: .76rem; font-weight: 600; color: var(--ink-2);
+    }
+
+    /* ══════════════════════════════════
+       MAIN LAYOUT
+    ══════════════════════════════════ */
+    .main-wrap {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 20px 64px;
+    }
+
+    /* ══════════════════════════════════
+       CALCULATOR CARD
+    ══════════════════════════════════ */
+    .calc-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 28px;
+      box-shadow: var(--sh-card);
+      transition: border-color var(--dur);
+    }
+    .card:hover { border-color: var(--border-2); }
+
+    .card-title {
+      font-family: var(--font-head);
+      font-size: 1.05rem; font-weight: 700; letter-spacing: -.01em;
+      color: var(--ink); margin-bottom: 22px;
+      display: flex; align-items: center; gap: 9px;
+    }
+    .card-title-icon {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: var(--accent-dim); border: 1px solid rgba(0,229,195,.2);
+      display: grid; place-items: center; font-size: .95rem; flex-shrink: 0;
+    }
+
+    /* Input group */
+    .inp-group { margin-bottom: 18px; }
+    .inp-group label {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: .8rem; font-weight: 600; color: var(--ink-2);
+      margin-bottom: 7px; letter-spacing: .01em;
+    }
+    .inp-group label .val-badge {
+      font-family: var(--font-head);
+      font-size: .9rem; font-weight: 700; color: var(--accent);
+    }
+
+    .inp-wrap {
+      position: relative;
+    }
+    .inp-prefix {
+      position: absolute; left: 13px; top: 50%; transform: translateY(-50%);
+      font-size: .88rem; font-weight: 600; color: var(--ink-3); pointer-events: none;
+    }
+    .inp-suffix {
+      position: absolute; right: 13px; top: 50%; transform: translateY(-50%);
+      font-size: .82rem; font-weight: 600; color: var(--ink-3); pointer-events: none;
+    }
+
+    .inp-group input[type="number"],
+    .inp-group input[type="range"],
+    .inp-group select {
+      width: 100%; border: none; outline: none;
+      font-family: var(--font-body); color: var(--ink);
+      background: var(--bg-2);
+      border-radius: var(--r-sm);
+      transition: all var(--dur);
+    }
+
+    .inp-group input[type="number"] {
+      padding: 10px 36px 10px 32px;
+      font-size: .95rem;
+      border: 1.5px solid var(--border);
+    }
+    .inp-group input[type="number"]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0,229,195,.1);
+      background: var(--bg-3);
+    }
+
+    /* Slider */
+    .inp-group input[type="range"] {
+      -webkit-appearance: none; appearance: none;
+      height: 4px; border-radius: 99px;
+      margin-top: 5px; cursor: pointer; padding: 0;
+      border: none;
+    }
+    .inp-group input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent-glow);
+      cursor: pointer;
+      transition: transform var(--dur);
+    }
+    .inp-group input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    /* Toggle row */
+    .toggle-row {
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--bg-2); border: 1px solid var(--border);
+      border-radius: var(--r-sm); padding: 11px 14px;
+      margin-bottom: 14px; cursor: pointer;
+      transition: background var(--dur);
+    }
+    .toggle-row:hover { background: var(--bg-3); }
+    .toggle-label { font-size: .84rem; font-weight: 600; color: var(--ink-2); }
+    .toggle-switch {
+      width: 40px; height: 22px; border-radius: 99px;
+      background: var(--bg-3); border: 1px solid var(--border-2);
+      position: relative; transition: background var(--dur);
+      flex-shrink: 0;
+    }
+    .toggle-switch.on { background: var(--accent); }
+    .toggle-switch::after {
+      content: '';
+      position: absolute; top: 3px; left: 3px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: #fff;
+      transition: transform var(--dur) var(--ease-spring);
+    }
+    .toggle-switch.on::after { transform: translateX(18px); }
+
+    /* CTA button */
+    .btn-calc {
+      width: 100%; padding: 13px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #000;
+      border-radius: var(--r-sm);
+      font-family: var(--font-head); font-size: .95rem; font-weight: 800;
+      letter-spacing: -.01em;
+      box-shadow: 0 4px 20px var(--accent-glow);
+      transition: opacity var(--dur), transform var(--dur) var(--ease-spring), box-shadow var(--dur);
+      margin-top: 4px;
+    }
+    .btn-calc:hover { opacity: .9; transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow); }
+    .btn-calc:active { transform: translateY(0); }
+
+    /* ══════════════════════════════════
+       RESULT PANEL
+    ══════════════════════════════════ */
+    .result-placeholder {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; min-height: 260px;
+      color: var(--ink-3); font-size: .875rem; text-align: center; gap: 10px;
+    }
+    .result-placeholder .ph-icon { font-size: 2.8rem; opacity: .4; }
+
+    /* Result hero number */
+    .result-hero {
+      text-align: center; padding: 20px 0 16px;
+    }
+    .result-hero-label {
+      font-size: .72rem; text-transform: uppercase; letter-spacing: .1em;
+      color: var(--ink-3); margin-bottom: 4px;
+    }
+    .result-hero-val {
+      font-family: var(--font-head);
+      font-size: 2.4rem; font-weight: 800; letter-spacing: -.03em;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Result rows */
+    .result-rows { margin: 4px 0 16px; }
+    .rr {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 0; border-bottom: 1px solid var(--border);
+    }
+    .rr:last-child { border-bottom: none; }
+    .rr-label { font-size: .82rem; color: var(--ink-2); display: flex; align-items: center; gap: 7px; }
+    .rr-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .rr-val { font-family: var(--font-head); font-size: .96rem; font-weight: 700; color: var(--ink); }
+    .rr-val.green { color: var(--emerald); }
+    .rr-val.gold  { color: var(--gold); }
+    .rr-val.rose  { color: var(--rose); }
+
+    /* Donut chart */
+    .donut-wrap {
+      display: flex; flex-direction: column; align-items: center;
+      margin: 12px 0 16px; gap: 12px;
+    }
+    .donut-legend {
+      display: flex; gap: 18px; flex-wrap: wrap; justify-content: center;
+    }
+    .dl-item { display: flex; align-items: center; gap: 6px; font-size: .78rem; color: var(--ink-2); }
+    .dl-dot { width: 9px; height: 9px; border-radius: 50%; }
+
+    /* Progress bar */
+    .progress-row { margin-bottom: 10px; }
+    .progress-meta {
+      display: flex; justify-content: space-between;
+      font-size: .75rem; color: var(--ink-3); margin-bottom: 5px;
+    }
+    .progress-track {
+      height: 6px; background: var(--bg-3); border-radius: 99px; overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%; border-radius: 99px;
+      transition: width .8s var(--ease);
+    }
+
+    /* XIRR badge */
+    .xirr-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--accent-dim); border: 1px solid rgba(0,229,195,.25);
+      border-radius: var(--r-full); padding: 5px 12px;
+      font-size: .78rem; font-weight: 700; color: var(--accent);
+      margin-top: 2px;
+    }
+
+    /* ══════════════════════════════════
+       YEAR-BY-YEAR TABLE
+    ══════════════════════════════════ */
+    .table-card { margin-top: 20px; }
+    .table-ovx { overflow-x: auto; margin-top: 16px; }
+    table.breakdown {
+      width: 100%; border-collapse: collapse;
+      font-size: .8rem;
+    }
+    table.breakdown th {
+      text-align: left; padding: 10px 14px;
+      background: var(--bg-2); color: var(--ink-2);
+      font-weight: 700; font-size: .73rem; text-transform: uppercase; letter-spacing: .06em;
+      border-bottom: 1px solid var(--border-2);
+      white-space: nowrap;
+    }
+    table.breakdown td {
+      padding: 9px 14px; border-bottom: 1px solid var(--border);
+      color: var(--ink-2); white-space: nowrap;
+    }
+    table.breakdown tr:hover td { background: var(--bg-2); }
+    table.breakdown td.accent { color: var(--accent); font-weight: 700; }
+    table.breakdown td.gold   { color: var(--gold);   font-weight: 700; }
+    table.breakdown td.green  { color: var(--emerald); font-weight: 700; }
+
+    /* ══════════════════════════════════
+       CONTENT SECTIONS
+    ══════════════════════════════════ */
+    .section { margin-top: 56px; }
+
+    .section-label {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .section-label::before {
+      content: ''; width: 12px; height: 2px;
+      background: var(--accent); border-radius: 2px;
+    }
+
+    .section h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800; letter-spacing: -.03em; color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .prose { color: var(--ink-2); font-size: .9rem; line-height: 1.75; }
+    .prose p { margin-bottom: 12px; }
+    .prose strong { color: var(--ink); }
+    .prose h3 {
+      font-family: var(--font-head); font-size: 1rem; font-weight: 700;
+      color: var(--accent); margin: 24px 0 8px;
+    }
+    .prose ul { padding-left: 20px; margin-bottom: 12px; }
+    .prose ul li { margin-bottom: 6px; }
+
+    /* Formula box */
+    .formula-box {
+      background: var(--bg-2); border: 1px solid var(--border-2);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--r-md); padding: 20px 22px; margin: 18px 0;
+    }
+    .formula-box .formula-title {
+      font-size: .72rem; text-transform: uppercase; letter-spacing: .1em;
+      color: var(--accent); font-weight: 700; margin-bottom: 8px;
+    }
+    .formula-expr {
+      font-family: 'Courier New', monospace;
+      font-size: 1rem; color: var(--ink); font-weight: 700;
+      letter-spacing: .02em;
+    }
+    .formula-vars {
+      margin-top: 10px; display: flex; flex-direction: column; gap: 4px;
+    }
+    .formula-vars span { font-size: .78rem; color: var(--ink-2); }
+
+    /* Info cards grid */
+    .info-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px; margin-top: 20px;
+    }
+    .info-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--r-md); padding: 20px;
+      transition: border-color var(--dur), transform var(--dur) var(--ease-spring);
+    }
+    .info-card:hover { border-color: var(--border-2); transform: translateY(-2px); }
+    .info-card-icon { font-size: 1.6rem; margin-bottom: 10px; }
+    .info-card h3 {
+      font-family: var(--font-head); font-size: .88rem; font-weight: 700;
+      color: var(--ink); margin-bottom: 6px;
+    }
+    .info-card p { font-size: .78rem; color: var(--ink-2); line-height: 1.55; }
+
+    /* Example cards */
+    .example-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; margin-top: 20px; }
+    .example-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--r-md); padding: 20px;
+    }
+    .example-card-head {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 14px;
+    }
+    .example-chip {
+      background: var(--accent-dim); border: 1px solid rgba(0,229,195,.2);
+      border-radius: var(--r-full); padding: 3px 10px;
+      font-size: .7rem; font-weight: 700; color: var(--accent);
+    }
+    .example-title { font-family: var(--font-head); font-size: .9rem; font-weight: 700; color: var(--ink); }
+    .example-rows { display: flex; flex-direction: column; gap: 6px; }
+    .ex-row { display: flex; justify-content: space-between; font-size: .78rem; }
+    .ex-label { color: var(--ink-3); }
+    .ex-val { font-weight: 700; color: var(--ink); }
+    .ex-val.accent { color: var(--accent); }
+
+    /* ══════════════════════════════════
+       FAQ
+    ══════════════════════════════════ */
+    .faq-list { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; }
+    .faq-item {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--r-md); overflow: hidden;
+    }
+    .faq-item.open { border-color: rgba(0,229,195,.3); }
+    .faq-q {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 18px; text-align: left; cursor: pointer;
+      font-family: var(--font-head); font-size: .9rem; font-weight: 700; color: var(--ink);
+      transition: background var(--dur);
+    }
+    .faq-q:hover { background: var(--bg-2); }
+    .faq-icon {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--bg-3); display: grid; place-items: center;
+      font-size: .7rem; color: var(--ink-2); flex-shrink: 0;
+      transition: transform var(--dur), background var(--dur), color var(--dur);
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--accent); color: #000; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s var(--ease); }
+    .faq-item.open .faq-a { max-height: 220px; }
+    .faq-a-inner { padding: 0 18px 16px; font-size: .845rem; color: var(--ink-2); line-height: 1.7; }
+
+    /* ══════════════════════════════════
+       RELATED TOOLS
+    ══════════════════════════════════ */
+    .related-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px; margin-top: 20px;
+    }
+    .related-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--r-md); padding: 16px;
+      text-align: center; cursor: pointer;
+      transition: all var(--dur);
+      text-decoration: none; display: block;
+    }
+    .related-card:hover { border-color: var(--accent); background: var(--accent-dim); transform: translateY(-2px); }
+    .rc-emoji { font-size: 1.5rem; margin-bottom: 6px; }
+    .rc-name { font-size: .78rem; font-weight: 700; color: var(--ink-2); }
+    .related-card:hover .rc-name { color: var(--accent); }
+
+    /* ══════════════════════════════════
+       CTA SECTION
+    ══════════════════════════════════ */
+    .cta-section {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--r-xl); padding: 48px;
+      margin-top: 56px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 70% 70% at 50% 50%, rgba(0,229,195,.07), transparent);
+    }
+    .cta-section h2 {
+      font-family: var(--font-head); font-size: 1.6rem; font-weight: 800;
+      color: var(--ink); letter-spacing: -.02em; margin-bottom: 10px;
+      position: relative;
+    }
+    .cta-section p { color: var(--ink-2); font-size: .9rem; margin-bottom: 22px; position: relative; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; }
+    .btn-cta-primary {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #000; border-radius: var(--r-sm);
+      padding: 11px 24px; font-family: var(--font-head); font-weight: 800; font-size: .9rem;
+      box-shadow: 0 4px 16px var(--accent-glow);
+      transition: opacity var(--dur), transform var(--dur) var(--ease-spring);
+    }
+    .btn-cta-primary:hover { opacity: .9; transform: translateY(-2px); }
+    .btn-cta-sec {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--bg-2); border: 1px solid var(--border-2);
+      color: var(--ink); border-radius: var(--r-sm);
+      padding: 11px 24px; font-family: var(--font-head); font-weight: 700; font-size: .9rem;
+      transition: all var(--dur);
+    }
+    .btn-cta-sec:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ══════════════════════════════════
+       FOOTER
+    ══════════════════════════════════ */
+    .footer {
+      background: var(--bg-2);
+      border-top: 1px solid var(--border);
+      padding: 40px 20px 24px;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px; margin-bottom: 36px;
+    }
+    .footer-logo {
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--font-head); font-weight: 800; font-size: 1.1rem;
+      color: var(--ink); margin-bottom: 10px;
+    }
+    .footer-logo-mark {
+      width: 28px; height: 28px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      border-radius: 8px; display: grid; place-items: center; font-size: .8rem;
+    }
+    .footer-desc { font-size: .8rem; color: var(--ink-3); line-height: 1.6; max-width: 220px; }
+    .footer-col h4 {
+      font-family: var(--font-head); font-size: .72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: var(--ink-2); margin-bottom: 14px;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul li a {
+      font-size: .8rem; color: var(--ink-3);
+      transition: color var(--dur);
+    }
+    .footer-col ul li a:hover { color: var(--accent); }
+    .footer-bottom {
+      border-top: 1px solid var(--border); padding-top: 18px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 10px;
+    }
+    .footer-bottom p { font-size: .75rem; color: var(--ink-3); }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { font-size: .75rem; color: var(--ink-3); transition: color var(--dur); }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ══════════════════════════════════
+       ANIMATIONS
+    ══════════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(.94); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .anim-up   { animation: fadeUp .55s var(--ease) both; }
+    .anim-up-1 { animation: fadeUp .55s .08s var(--ease) both; }
+    .anim-up-2 { animation: fadeUp .55s .16s var(--ease) both; }
+    .anim-pop  { animation: popIn .4s var(--ease-spring) both; }
+
+    /* ══════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════ */
+    @media (max-width: 900px) {
+      .calc-section { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 24px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero h1 { font-size: 2rem; }
+      .cta-section { padding: 32px 20px; }
+    }
+    @media (max-width: 540px) {
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    /* Range track fill using CSS custom property */
+    input[type="range"] {
+      background: linear-gradient(to right, var(--accent) 0%, var(--accent) var(--pct, 50%), var(--bg-3) var(--pct, 50%), var(--bg-3) 100%);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a class="logo" href="../index.html" aria-label="QuickTools Home">
+        <div class="logo-mark" aria-hidden="true">⚡</div>
+        <span class="logo-text">Quick<em>Tools</em></span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#categories">All Tools</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-spacer"></div>
+      <button class="btn-theme" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="mobile-drawer" id="mobileDrawer">
+      <a href="../index.html">🏠 Home</a>
+      <a href="../index.html#categories">🔧 All Tools</a>
+      <a href="../about.html">ℹ️ About</a>
+      <a href="../contact.html">✉️ Contact</a>
+      <a href="../privacy.html">🔒 Privacy Policy</a>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-bar">
+    <div class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="bc-sep" aria-hidden="true">›</span>
+      <a href="../index.html#categories">Finance Tools</a>
+      <span class="bc-sep" aria-hidden="true">›</span>
+      <span>SIP Calculator</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-mesh" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-badge anim-up">
+        <div class="hero-badge-dot">₹</div>
+        Free SIP Calculator India — No Login Required
+      </div>
+      <h1 id="hero-heading" class="anim-up-1">
+        Calculate Your<br><span class="accent-text">SIP Returns</span> Instantly
+      </h1>
+      <p class="hero-sub anim-up-2">
+        India's most accurate free SIP calculator. Find your mutual fund maturity value, total wealth gain, and inflation-adjusted returns — all in seconds.
+      </p>
+      <div class="hero-tags">
+        <span class="hero-tag">📈 Compound Returns</span>
+        <span class="hero-tag">🔒 100% Free</span>
+        <span class="hero-tag">📱 Mobile Ready</span>
+        <span class="hero-tag">🎯 Inflation Adjusted</span>
+        <span class="hero-tag">📊 Year-by-Year Breakdown</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main class="main-wrap" id="main-content">
+
+    <!-- CALCULATOR -->
+    <div class="calc-section anim-pop" id="calcSection">
+      <!-- Input Card -->
+      <div class="card">
+        <div class="card-title">
+          <div class="card-title-icon">📱</div>
+          SIP Details
+        </div>
+
+        <!-- Monthly Investment -->
+        <div class="inp-group">
+          <label for="sip_monthly">
+            Monthly Investment
+            <span class="val-badge" id="lbl_monthly">₹5,000</span>
+          </label>
+          <div class="inp-wrap">
+            <span class="inp-prefix">₹</span>
+            <input type="number" id="sip_monthly" value="5000" min="100" max="1000000" step="100"
+              oninput="syncSlider('sip_monthly','sl_monthly',100,100000); update()"
+              aria-label="Monthly SIP amount in rupees" />
+          </div>
+          <input type="range" id="sl_monthly" min="100" max="100000" step="500" value="5000"
+            oninput="syncInput('sl_monthly','sip_monthly'); update()"
+            aria-label="Monthly investment slider" />
+        </div>
+
+        <!-- Expected Return -->
+        <div class="inp-group">
+          <label for="sip_rate">
+            Expected Annual Return
+            <span class="val-badge" id="lbl_rate">12%</span>
+          </label>
+          <div class="inp-wrap">
+            <input type="number" id="sip_rate" value="12" min="1" max="36" step="0.5"
+              style="padding: 10px 36px 10px 14px"
+              oninput="syncSlider('sip_rate','sl_rate',1,36); update()"
+              aria-label="Expected annual return rate in percent" />
+            <span class="inp-suffix">%</span>
+          </div>
+          <input type="range" id="sl_rate" min="1" max="36" step="0.5" value="12"
+            oninput="syncInput('sl_rate','sip_rate'); update()"
+            aria-label="Return rate slider" />
+        </div>
+
+        <!-- Tenure -->
+        <div class="inp-group">
+          <label for="sip_years">
+            Investment Period
+            <span class="val-badge" id="lbl_years">10 yrs</span>
+          </label>
+          <div class="inp-wrap">
+            <input type="number" id="sip_years" value="10" min="1" max="40" step="1"
+              style="padding: 10px 50px 10px 14px"
+              oninput="syncSlider('sip_years','sl_years',1,40); update()"
+              aria-label="Investment period in years" />
+            <span class="inp-suffix">yrs</span>
+          </div>
+          <input type="range" id="sl_years" min="1" max="40" step="1" value="10"
+            oninput="syncInput('sl_years','sip_years'); update()"
+            aria-label="Years slider" />
+        </div>
+
+        <!-- Step-up toggle -->
+        <div class="toggle-row" onclick="toggleStepup()" id="stepupToggleRow" role="button" tabindex="0" aria-label="Toggle annual SIP step-up">
+          <span class="toggle-label">🚀 Annual SIP Step-Up</span>
+          <div class="toggle-switch" id="stepupSwitch"></div>
+        </div>
+
+        <!-- Step-up input (hidden by default) -->
+        <div id="stepup_wrap" style="display:none" class="inp-group">
+          <label for="sip_stepup">
+            Step-Up Rate
+            <span class="val-badge" id="lbl_stepup">10%</span>
+          </label>
+          <div class="inp-wrap">
+            <input type="number" id="sip_stepup" value="10" min="1" max="50" step="1"
+              style="padding: 10px 36px 10px 14px"
+              oninput="syncSlider('sip_stepup','sl_stepup',1,50); update()"
+              aria-label="Annual step-up percentage" />
+            <span class="inp-suffix">%</span>
+          </div>
+          <input type="range" id="sl_stepup" min="1" max="50" step="1" value="10"
+            oninput="syncInput('sl_stepup','sip_stepup'); update()"
+            aria-label="Step-up rate slider" />
+        </div>
+
+        <!-- Inflation toggle -->
+        <div class="toggle-row" onclick="toggleInflation()" id="inflToggleRow" role="button" tabindex="0" aria-label="Toggle inflation adjustment">
+          <span class="toggle-label">📉 Inflation Adjustment</span>
+          <div class="toggle-switch" id="inflSwitch"></div>
+        </div>
+
+        <!-- Inflation rate input -->
+        <div id="infl_wrap" style="display:none" class="inp-group">
+          <label for="sip_infl">
+            Inflation Rate
+            <span class="val-badge" id="lbl_infl">6%</span>
+          </label>
+          <div class="inp-wrap">
+            <input type="number" id="sip_infl" value="6" min="1" max="20" step="0.5"
+              style="padding: 10px 36px 10px 14px"
+              oninput="syncSlider('sip_infl','sl_infl',1,20); update()"
+              aria-label="Inflation rate percent" />
+            <span class="inp-suffix">%</span>
+          </div>
+          <input type="range" id="sl_infl" min="1" max="20" step="0.5" value="6"
+            oninput="syncInput('sl_infl','sip_infl'); update()"
+            aria-label="Inflation slider" />
+        </div>
+
+        <button class="btn-calc" onclick="calcSIP()" aria-label="Calculate SIP returns">
+          Calculate SIP Returns →
+        </button>
+      </div>
+
+      <!-- Result Card -->
+      <div class="card" id="result_card">
+        <div class="card-title">
+          <div class="card-title-icon">📊</div>
+          Your SIP Results
+        </div>
+        <div class="result-placeholder" id="result_placeholder">
+          <div class="ph-icon">📈</div>
+          <p>Enter your SIP details and tap <strong>Calculate</strong> to see your wealth projection.</p>
+        </div>
+        <div id="result_body" style="display:none"></div>
+      </div>
+    </div>
+
+    <!-- YEAR-BY-YEAR TABLE -->
+    <div class="card table-card anim-up-1" id="table_card" style="display:none">
+      <div class="card-title">
+        <div class="card-title-icon">📋</div>
+        Year-by-Year Wealth Growth
+      </div>
+      <div class="table-ovx">
+        <table class="breakdown" id="breakdown_table">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Annual Investment</th>
+              <th>Total Invested</th>
+              <th>Returns Earned</th>
+              <th>Portfolio Value</th>
+            </tr>
+          </thead>
+          <tbody id="breakdown_body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- WHAT IS SIP -->
+    <div class="section anim-up">
+      <div class="section-label">Learn</div>
+      <h2>What is a SIP Investment?</h2>
+      <div class="prose">
+        <p>A <strong>Systematic Investment Plan (SIP)</strong> is a method of investing a fixed amount regularly — typically monthly — into a mutual fund scheme. Rather than investing a lump sum, SIP lets you invest small amounts over time, making wealth creation accessible to everyone.</p>
+        <p>SIP leverages two powerful financial concepts: <strong>Rupee Cost Averaging</strong> (you buy more units when markets are low and fewer when high) and <strong>Power of Compounding</strong> (your returns generate their own returns over time). Over long periods, even a small monthly SIP can create substantial wealth.</p>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-icon">⚡</div>
+          <h3>Rupee Cost Averaging</h3>
+          <p>By investing the same amount monthly, you automatically buy more units when prices fall and fewer when they rise — reducing your average cost per unit over time.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🔁</div>
+          <h3>Power of Compounding</h3>
+          <p>Your investment returns are reinvested to generate their own returns. The longer you invest, the more exponential the growth — time is your most valuable asset.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">📐</div>
+          <h3>Disciplined Investing</h3>
+          <p>SIP instills financial discipline. An auto-debit mandate means you invest before you spend — the fundamental rule of wealth creation.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🛡️</div>
+          <h3>Market Volatility Buffer</h3>
+          <p>Unlike lump sum investments, SIP spreads your entry points across time, making you less vulnerable to the risk of investing at market peaks.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMULA -->
+    <div class="section anim-up">
+      <div class="section-label">Formula</div>
+      <h2>How is SIP Return Calculated?</h2>
+      <div class="prose">
+        <p>Our SIP calculator uses the <strong>standard Future Value of Annuity formula</strong> used by financial institutions and mutual fund companies across India:</p>
+      </div>
+
+      <div class="formula-box">
+        <div class="formula-title">SIP Maturity Formula</div>
+        <div class="formula-expr">M = P × {[(1 + r)ⁿ − 1] ÷ r} × (1 + r)</div>
+        <div class="formula-vars">
+          <span><strong>M</strong> = Maturity Amount (total corpus at the end)</span>
+          <span><strong>P</strong> = Monthly SIP investment amount (₹)</span>
+          <span><strong>r</strong> = Monthly rate of return = Annual Rate ÷ 12 ÷ 100</span>
+          <span><strong>n</strong> = Total number of months = Years × 12</span>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>For SIP with Annual Step-Up</h3>
+        <p>When you increase your SIP amount by a fixed percentage every year, each year's contribution is calculated separately using the base formula and summed. This better reflects real-world SIP behaviour where your income and investments grow over time.</p>
+
+        <h3>Inflation-Adjusted Real Value</h3>
+        <p>The real (inflation-adjusted) value of your maturity amount is: <strong>Real Value = Maturity Amount ÷ (1 + inflation rate)ⁿ</strong> where n is the number of years. This tells you what your money will actually be worth in today's purchasing power.</p>
+
+        <h3>CAGR (Compound Annual Growth Rate)</h3>
+        <p>CAGR represents the annualised growth of your investment as a single percentage: <strong>CAGR = ((Maturity / Total Invested)^(1/n) − 1) × 100</strong>. This helps compare SIP performance against other investment options like FD, gold, or real estate.</p>
+      </div>
+    </div>
+
+    <!-- EXAMPLES -->
+    <div class="section anim-up">
+      <div class="section-label">Examples</div>
+      <h2>SIP Investment Examples</h2>
+      <div class="example-grid">
+        <div class="example-card">
+          <div class="example-card-head">
+            <span class="example-chip">Starter</span>
+            <span class="example-title">Young Professional</span>
+          </div>
+          <div class="example-rows">
+            <div class="ex-row"><span class="ex-label">Monthly SIP</span><span class="ex-val">₹2,000</span></div>
+            <div class="ex-row"><span class="ex-label">Duration</span><span class="ex-val">20 Years</span></div>
+            <div class="ex-row"><span class="ex-label">Expected Return</span><span class="ex-val">12% p.a.</span></div>
+            <div class="ex-row"><span class="ex-label">Total Invested</span><span class="ex-val">₹4.8 Lakh</span></div>
+            <div class="ex-row"><span class="ex-label">Maturity Value</span><span class="ex-val accent">₹19.8 Lakh</span></div>
+            <div class="ex-row"><span class="ex-label">Wealth Gain</span><span class="ex-val accent">4.1× your money</span></div>
+          </div>
+        </div>
+        <div class="example-card">
+          <div class="example-card-head">
+            <span class="example-chip">Growth</span>
+            <span class="example-title">Mid-Career Investor</span>
+          </div>
+          <div class="example-rows">
+            <div class="ex-row"><span class="ex-label">Monthly SIP</span><span class="ex-val">₹10,000</span></div>
+            <div class="ex-row"><span class="ex-label">Duration</span><span class="ex-val">15 Years</span></div>
+            <div class="ex-row"><span class="ex-label">Expected Return</span><span class="ex-val">12% p.a.</span></div>
+            <div class="ex-row"><span class="ex-label">Total Invested</span><span class="ex-val">₹18 Lakh</span></div>
+            <div class="ex-row"><span class="ex-label">Maturity Value</span><span class="ex-val accent">₹50.5 Lakh</span></div>
+            <div class="ex-row"><span class="ex-label">Wealth Gain</span><span class="ex-val accent">2.8× your money</span></div>
+          </div>
+        </div>
+        <div class="example-card">
+          <div class="example-card-head">
+            <span class="example-chip">Wealth</span>
+            <span class="example-title">Retirement Planner</span>
+          </div>
+          <div class="example-rows">
+            <div class="ex-row"><span class="ex-label">Monthly SIP</span><span class="ex-val">₹25,000</span></div>
+            <div class="ex-row"><span class="ex-label">Duration</span><span class="ex-val">25 Years</span></div>
+            <div class="ex-row"><span class="ex-label">Expected Return</span><span class="ex-val">12% p.a.</span></div>
+            <div class="ex-row"><span class="ex-label">Total Invested</span><span class="ex-val">₹75 Lakh</span></div>
+            <div class="ex-row"><span class="ex-label">Maturity Value</span><span class="ex-val accent">₹4.7 Crore</span></div>
+            <div class="ex-row"><span class="ex-label">Wealth Gain</span><span class="ex-val accent">6.3× your money</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="section anim-up">
+      <div class="section-label">FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list" role="list">
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+            What is a SIP (Systematic Investment Plan)?
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">A SIP (Systematic Investment Plan) allows you to invest a fixed amount in a mutual fund at regular intervals — typically monthly. It helps build wealth over time through the power of compounding and rupee cost averaging, and is one of the most disciplined ways to invest in equity markets.</div></div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+            How is SIP maturity amount calculated?
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">SIP maturity is calculated using the Future Value of Annuity formula: M = P × {[(1 + r)ⁿ – 1] / r} × (1 + r), where M = Maturity Amount, P = Monthly SIP amount, r = Monthly rate of return (Annual Rate ÷ 12 ÷ 100), and n = Total months (Years × 12).</div></div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+            Are SIP returns guaranteed?
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">No. SIP returns in mutual funds are market-linked and not guaranteed. The expected return entered in the calculator is an estimate based on historical performance. Actual returns depend on market conditions, fund performance, and economic factors. Past performance does not guarantee future results. Always consult a SEBI-registered financial advisor.</div></div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+            What is a good expected SIP return rate for India?
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Historically, large-cap equity mutual funds in India have delivered 10–12% CAGR, mid-cap funds 12–15%, and small-cap funds 15–18% over long periods. Debt funds typically return 6–8%. For long-term equity SIP calculations, 10–12% is considered a realistic and conservative estimate. Avoid using overly optimistic rates for planning.</div></div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+            What is SIP Step-Up and why is it useful?
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">A SIP Step-Up (or top-up SIP) means increasing your monthly SIP amount by a fixed percentage every year — for example, 10% annually. As your income grows, increasing your SIP proportionally can dramatically boost your final corpus. A ₹5,000 SIP with a 10% annual step-up over 20 years at 12% returns can give nearly 2× the corpus of a flat ₹5,000 SIP.</div></div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+            How does inflation affect my SIP returns?
+            <div class="faq-icon">+</div>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Inflation erodes the purchasing power of your returns. For example, ₹1 crore after 20 years at 6% inflation is worth only about ₹31 lakh in today's money. Our calculator shows the real (inflation-adjusted) value of your maturity amount so you can understand your true wealth gain and plan accordingly for goals like retirement or education.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATED TOOLS -->
+    <div class="section anim-up">
+      <div class="section-label">Explore More</div>
+      <h2>Related Financial Tools</h2>
+      <div class="related-grid">
+        <a href="../tools/emi-calculator.html" class="related-card">
+          <div class="rc-emoji">💰</div>
+          <div class="rc-name">EMI Calculator</div>
+        </a>
+        <a href="../tools/gst-calculator.html" class="related-card">
+          <div class="rc-emoji">🧾</div>
+          <div class="rc-name">GST Calculator</div>
+        </a>
+        <a href="../tools/percentage-calculator.html" class="related-card">
+          <div class="rc-emoji">📊</div>
+          <div class="rc-name">Percentage Calculator</div>
+        </a>
+        <a href="../tools/salary-calculator.html" class="related-card">
+          <div class="rc-emoji">💼</div>
+          <div class="rc-name">Salary Calculator</div>
+        </a>
+        <a href="../tools/profit-calculator.html" class="related-card">
+          <div class="rc-emoji">📈</div>
+          <div class="rc-name">Profit Calculator</div>
+        </a>
+        <a href="../tools/age-calculator.html" class="related-card">
+          <div class="rc-emoji">🎂</div>
+          <div class="rc-name">Age Calculator</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <div class="cta-bg" aria-hidden="true"></div>
+      <h2>Explore 20+ Free Tools on QuickTools</h2>
+      <p>EMI, BMI, GPA, Typing Speed, Salary, Calorie Calculator and more — all free, no login needed.</p>
+      <div class="cta-btns">
+        <a href="../index.html" class="btn-cta-primary">Browse All Tools →</a>
+        <a href="../index.html#categories" class="btn-cta-sec">View Categories</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">
+            <div class="footer-logo-mark" aria-hidden="true">⚡</div>
+            QuickTools
+          </div>
+          <p class="footer-desc">Your go-to hub for free online calculators and smart daily tools. Fast, accurate, always free.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Finance</h4>
+          <ul>
+            <li><a href="../tools/emi-calculator.html">EMI Calculator</a></li>
+            <li><a href="../tools/sip-calculator.html">SIP Calculator</a></li>
+            <li><a href="../tools/salary-calculator.html">Salary Calculator</a></li>
+            <li><a href="../tools/profit-calculator.html">Profit Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Health &amp; Study</h4>
+          <ul>
+            <li><a href="../tools/bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="../tools/age-calculator.html">Age Calculator</a></li>
+            <li><a href="../tools/gpa-calculator.html">GPA Calculator</a></li>
+            <li><a href="../tools/percentage-calculator.html">Percentage Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../index.html">All Tools</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 QuickTools. All rights reserved. Built with ❤️ for India.</p>
+        <div class="footer-links">
+          <a href="../privacy.html">Privacy</a>
+          <a href="../contact.html">Contact</a>
+          <a href="../about.html">About</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    /* ─── THEME ─── */
+    const saved = localStorage.getItem('qt-theme');
+    if (saved === 'light') applyTheme(true);
+
+    function toggleTheme() { applyTheme(!document.body.classList.contains('light')); }
+    function applyTheme(light) {
+      document.body.classList.toggle('light', light);
+      document.getElementById('themeToggle').textContent = light ? '🌙' : '☀️';
+      localStorage.setItem('qt-theme', light ? 'light' : 'dark');
+    }
+
+    /* ─── MOBILE MENU ─── */
+    function toggleMenu() {
+      const d = document.getElementById('mobileDrawer');
+      const h = document.getElementById('hamburger');
+      const open = d.classList.toggle('open');
+      h.classList.toggle('open', open);
+      h.setAttribute('aria-expanded', open);
+    }
+
+    /* ─── SLIDER ↔ INPUT SYNC ─── */
+    function syncSlider(inputId, sliderId, min, max) {
+      const v = parseFloat(document.getElementById(inputId).value);
+      const sl = document.getElementById(sliderId);
+      if (sl) {
+        sl.value = Math.min(max, Math.max(min, v));
+        updateSliderFill(sl);
+      }
+    }
+    function syncInput(sliderId, inputId) {
+      const v = document.getElementById(sliderId).value;
+      document.getElementById(inputId).value = v;
+      updateSliderFill(document.getElementById(sliderId));
+    }
+    function updateSliderFill(sl) {
+      const min = parseFloat(sl.min), max = parseFloat(sl.max), val = parseFloat(sl.value);
+      const pct = ((val - min) / (max - min)) * 100;
+      sl.style.setProperty('--pct', pct + '%');
+    }
+
+    /* Init slider fills */
+    document.querySelectorAll('input[type="range"]').forEach(updateSliderFill);
+
+    /* ─── LIVE LABEL UPDATE ─── */
+    function fmt(n) { return Math.round(n).toLocaleString('en-IN'); }
+    function fmtC(n) {
+      if (n >= 10000000) return '₹' + (n/10000000).toFixed(2) + ' Cr';
+      if (n >= 100000)   return '₹' + (n/100000).toFixed(2) + ' L';
+      return '₹' + fmt(n);
+    }
+
+    function update() {
+      const m = parseFloat(document.getElementById('sip_monthly').value)||0;
+      const r = parseFloat(document.getElementById('sip_rate').value)||0;
+      const y = parseFloat(document.getElementById('sip_years').value)||0;
+      const su = parseFloat(document.getElementById('sip_stepup').value)||0;
+      const inf= parseFloat(document.getElementById('sip_infl').value)||0;
+
+      document.getElementById('lbl_monthly').textContent = '₹' + fmt(m);
+      document.getElementById('lbl_rate').textContent    = r + '%';
+      document.getElementById('lbl_years').textContent   = y + (y===1?' yr':' yrs');
+      document.getElementById('lbl_stepup').textContent  = su + '%';
+      document.getElementById('lbl_infl').textContent    = inf + '%';
+    }
+    update();
+
+    /* ─── TOGGLES ─── */
+    let useStepup = false, useInflation = false;
+
+    function toggleStepup() {
+      useStepup = !useStepup;
+      document.getElementById('stepupSwitch').classList.toggle('on', useStepup);
+      document.getElementById('stepup_wrap').style.display = useStepup ? 'block' : 'none';
+    }
+    function toggleInflation() {
+      useInflation = !useInflation;
+      document.getElementById('inflSwitch').classList.toggle('on', useInflation);
+      document.getElementById('infl_wrap').style.display = useInflation ? 'block' : 'none';
+    }
+
+    /* ─── MAIN CALCULATION ─── */
+    function calcSIP() {
+      const P   = parseFloat(document.getElementById('sip_monthly').value);
+      const ar  = parseFloat(document.getElementById('sip_rate').value);
+      const yrs = parseInt(document.getElementById('sip_years').value);
+      const stepupPct = useStepup ? (parseFloat(document.getElementById('sip_stepup').value)||0) : 0;
+      const inflPct   = useInflation ? (parseFloat(document.getElementById('sip_infl').value)||0) : 0;
+
+      if (!P || !ar || !yrs || P<=0 || ar<=0 || yrs<=0) {
+        alert('Please enter valid positive values for all fields.'); return;
+      }
+
+      const r = ar / 12 / 100;
+
+      /* Calculate with optional step-up */
+      let totalInvested = 0, maturity = 0;
+      const yearRows = [];
+
+      if (stepupPct > 0) {
+        let annualSIP = P * 12;
+        let portfolioVal = 0;
+        let cumInvested = 0;
+        for (let yr = 1; yr <= yrs; yr++) {
+          const monthlyThisYear = annualSIP / 12;
+          cumInvested += annualSIP;
+          /* Grow existing portfolio for 12 months, then add monthly SIPs */
+          for (let mo = 0; mo < 12; mo++) {
+            portfolioVal = (portfolioVal + monthlyThisYear) * (1 + r);
+          }
+          yearRows.push({ yr, annualInv: annualSIP, cumInv: cumInvested, portfolio: portfolioVal });
+          annualSIP *= (1 + stepupPct/100);
+        }
+        totalInvested = cumInvested;
+        maturity = portfolioVal;
+      } else {
+        /* Standard formula: M = P × [(1+r)^n - 1] / r × (1+r) */
+        const n = yrs * 12;
+        maturity = P * (Math.pow(1+r, n) - 1) / r * (1+r);
+        totalInvested = P * n;
+
+        let portfolioVal = 0, cumInv = 0;
+        for (let yr = 1; yr <= yrs; yr++) {
+          const moStart = (yr-1)*12, moEnd = yr*12;
+          const nEnd = yrs*12 - moStart;
+          /* Value after yr years of investing */
+          portfolioVal = P * (Math.pow(1+r, yr*12) - 1) / r * (1+r);
+          cumInv = P * yr * 12;
+          yearRows.push({ yr, annualInv: P*12, cumInv, portfolio: portfolioVal });
+        }
+      }
+
+      const wealthGain = maturity - totalInvested;
+      const wealthGainPct = (wealthGain / totalInvested * 100).toFixed(1);
+      const cagr = (Math.pow(maturity/totalInvested, 1/yrs) - 1) * 100;
+
+      /* Inflation-adjusted value */
+      const realVal = useInflation && inflPct > 0
+        ? maturity / Math.pow(1 + inflPct/100, yrs)
+        : null;
+
+      /* Build donut SVG */
+      const pctInv = totalInvested / maturity, pctRet = 1 - pctInv;
+      const donutSVG = buildDonut(pctInv, pctRet);
+
+      /* Render results */
+      document.getElementById('result_placeholder').style.display = 'none';
+      document.getElementById('result_body').style.display = 'block';
+      document.getElementById('result_body').innerHTML = `
+        <div class="result-hero">
+          <div class="result-hero-label">Total Corpus at Maturity</div>
+          <div class="result-hero-val">${fmtC(maturity)}</div>
+        </div>
+
+        <div class="donut-wrap">
+          ${donutSVG}
+          <div class="donut-legend">
+            <div class="dl-item"><div class="dl-dot" style="background:var(--accent-3)"></div>Total Invested — ${Math.round(pctInv*100)}%</div>
+            <div class="dl-item"><div class="dl-dot" style="background:var(--accent)"></div>Returns Earned — ${Math.round(pctRet*100)}%</div>
+          </div>
+        </div>
+
+        <div class="result-rows">
+          <div class="rr"><span class="rr-label"><span class="rr-dot" style="background:var(--accent-3)"></span>Total Invested</span><span class="rr-val">${fmtC(totalInvested)}</span></div>
+          <div class="rr"><span class="rr-label"><span class="rr-dot" style="background:var(--accent)"></span>Wealth Gain</span><span class="rr-val green">${fmtC(wealthGain)} (+${wealthGainPct}%)</span></div>
+          <div class="rr"><span class="rr-label"><span class="rr-dot" style="background:var(--gold)"></span>CAGR</span><span class="rr-val gold">${cagr.toFixed(2)}% p.a.</span></div>
+          ${realVal ? `<div class="rr"><span class="rr-label"><span class="rr-dot" style="background:var(--rose)"></span>Real Value (Inflation-Adj.)</span><span class="rr-val rose">${fmtC(realVal)}</span></div>` : ''}
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <div class="xirr-badge">✦ ${fmtC(maturity)} at ${yrs} years</div>
+          ${useStepup ? `<div class="xirr-badge" style="background:rgba(123,92,255,.12);border-color:rgba(123,92,255,.3);color:var(--accent-3)">🚀 Step-Up Active</div>` : ''}
+        </div>
+      `;
+
+      /* Year-by-year table */
+      let rows = '';
+      yearRows.forEach(row => {
+        const ret = row.portfolio - row.cumInv;
+        rows += `<tr>
+          <td>Year ${row.yr}</td>
+          <td>₹${fmt(row.annualInv)}</td>
+          <td>₹${fmt(row.cumInv)}</td>
+          <td class="green">₹${fmt(Math.max(0, ret))}</td>
+          <td class="accent">${fmtC(row.portfolio)}</td>
+        </tr>`;
+      });
+      document.getElementById('breakdown_body').innerHTML = rows;
+      document.getElementById('table_card').style.display = 'block';
+
+      /* Scroll to results on mobile */
+      if (window.innerWidth < 900) {
+        document.getElementById('result_card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    /* ─── DONUT SVG ─── */
+    function buildDonut(pctInv, pctRet) {
+      const cx=60, cy=60, r=50, stroke=12;
+      const circ = 2 * Math.PI * r;
+      const dash1 = circ * pctInv;
+      const dash2 = circ * pctRet;
+      return `<svg viewBox="0 0 120 120" width="130" height="130" aria-hidden="true">
+        <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="var(--bg-3)" stroke-width="${stroke}" />
+        <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="var(--accent-3)"
+          stroke-width="${stroke}" stroke-dasharray="${dash1} ${circ - dash1}"
+          stroke-dashoffset="${circ * 0.25}" stroke-linecap="round" />
+        <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="var(--accent)"
+          stroke-width="${stroke}" stroke-dasharray="${dash2} ${circ - dash2}"
+          stroke-dashoffset="${circ * (0.25 - pctInv)}" stroke-linecap="round" />
+        <circle cx="${cx}" cy="${cy}" r="${r - stroke/2 - 6}" fill="var(--bg-card)" />
+        <text x="${cx}" y="${cy - 5}" text-anchor="middle" font-size="8" fill="var(--ink-3)" font-family="DM Sans">Returns</text>
+        <text x="${cx}" y="${cy + 8}" text-anchor="middle" font-size="11" fill="var(--accent)" font-weight="800" font-family="Syne">${Math.round(pctRet*100)}%</text>
+      </svg>`;
+    }
+
+    /* ─── FAQ ─── */
+    function toggleFAQ(btn) {
+      const item = btn.closest('.faq-item');
+      const open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    }
+
+    /* ─── AUTO-CALC ON LOAD ─── */
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('input[type="range"]').forEach(sl => updateSliderFill(sl));
+      calcSIP();
+    });
+
+    /* ─── KEYBOARD: close menu ─── */
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        document.getElementById('mobileDrawer').classList.remove('open');
+        document.getElementById('hamburger').classList.remove('open');
+      }
+    });
+
+    /* ─── ACCESSIBILITY: enter on togglerows ─── */
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        if (e.target.id === 'stepupToggleRow') toggleStepup();
+        if (e.target.id === 'inflToggleRow') toggleInflation();
+      }
+    });
+  </script>
+</body>
+</html>
