@@ -1100,7 +1100,14 @@
 
           <!-- Quick tags -->
           <div class="hero-tags" aria-label="Popular tools">
-            <button class="hero-tag" onclick="openTool('emi')"  aria-label="Open EMI Calculator">💰 EMI Calculator</button>
+            <a href="./tools/emi-calculator.html"
+   class="hero-tag"
+   aria-label="Open EMI Calculator"
+   style="text-decoration:none">
+
+   💰 EMI Calculator
+
+</a>>
             <button class="hero-tag" onclick="openTool('bmi')"  aria-label="Open BMI Calculator">⚖️ BMI Calculator</button>
             <a href="./tools/age-calculator.html" class="hero-tag" aria-label="Open Age Calculator" style="text-decoration:none">🎂 Age Calculator</a>
             <a href="./tools/percentage-calculator.html"
@@ -1148,16 +1155,29 @@
 
         <div class="featured-row" role="list">
 
-          <article class="feat-card fc-blue anim-up" role="listitem" onclick="openTool('emi')" tabindex="0" onkeydown="if(event.key==='Enter') openTool('emi')" aria-label="EMI Calculator">
-            <div class="feat-card-bg"></div>
-            <div class="feat-card-top">
-              <div class="feat-icon">💰</div>
-              <span class="feat-badge-pill badge-hot">🔥 Hot</span>
-            </div>
-            <h3>EMI Calculator</h3>
-            <p>Calculate monthly loan installments with full yearly breakdown</p>
-            <div class="feat-arrow" aria-hidden="true">→</div>
-          </article>
+          <a href="./tools/emi-calculator.html"
+   class="feat-card fc-violet anim-up-3"
+   role="listitem"
+   aria-label="EMI Calculator"
+   style="text-decoration:none;color:inherit;display:block">
+
+  <div class="feat-card-bg"></div>
+
+  <div class="feat-card-top">
+    <div class="feat-icon">💰</div>
+    <span class="feat-badge-pill badge-pop">🔥 Popular</span>
+  </div>
+
+  <h3>EMI Calculator</h3>
+
+  <p>
+    Calculate home loan EMI, monthly payments,
+    total interest and repayment instantly.
+  </p>
+
+  <div class="feat-arrow" aria-hidden="true">→</div>
+
+</a>
 
           <article class="feat-card fc-green anim-up-1" role="listitem" onclick="openTool('bmi')" tabindex="0" onkeydown="if(event.key==='Enter') openTool('bmi')" aria-label="BMI Calculator">
             <div class="feat-card-bg"></div>
