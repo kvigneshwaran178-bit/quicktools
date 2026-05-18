@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ═══════════════════════════════════
+       META & SEO
+  ═══════════════════════════════════ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Word Counter – Count Words, Characters &amp; Text Online | QuickTools</title>
+  <meta name="description" content="Use our free Word Counter to instantly count words, characters, sentences, paragraphs and reading time online. No login required. Live text analysis for essays, articles &amp; more." />
+  <meta name="keywords" content="word counter, online word counter, character counter, text word counter, essay word counter, free word counter, online character counter, paragraph counter, sentence counter, word count checker, text analyzer tool, writing word counter, article word counter, live word counter, online text counter, words and characters counter, typing word counter, instant word count tool" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="QuickTools" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <link rel="canonical" href="https://kvigneshwaran178-bit.github.io/quicktools/tools/word-counter.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Free Word Counter – Count Words, Characters &amp; Text Online" />
+  <meta property="og:description" content="Instantly count words, characters, sentences, paragraphs and reading time. Free, no login, live word counter tool." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kvigneshwaran178-bit.github.io/quicktools/tools/word-counter.html" />
+  <meta property="og:image" content="https://kvigneshwaran178-bit.github.io/quicktools/og-image.png" />
+  <meta property="og:site_name" content="QuickTools" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Word Counter – Count Words, Characters &amp; Text Online" />
+  <meta name="twitter:description" content="Instantly count words, characters, sentences, paragraphs and reading time. Free, live word counter." />
+  <meta name="twitter:image" content="https://kvigneshwaran178-bit.github.io/quicktools/og-image.png" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+  <link rel="manifest" href="../site.webmanifest" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free Word Counter",
+    "url": "https://kvigneshwaran178-bit.github.io/quicktools/tools/word-counter.html",
+    "description": "Free online word counter tool to instantly count words, characters, sentences, paragraphs and reading time.",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "creator": { "@type": "Organization", "name": "QuickTools", "url": "https://kvigneshwaran178-bit.github.io/quicktools/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the word counter work?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Our word counter splits your text by spaces and punctuation to accurately count words in real time. Characters, sentences, and paragraphs are tallied live as you type." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a word limit?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. You can paste any amount of text — short tweets, long articles, even entire book chapters — and it will count accurately." }
+      },
+      {
+        "@type": "Question",
+        "name": "How is reading time calculated?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Reading time is estimated based on the average adult reading speed of 238 words per minute. Speaking time uses 125 words per minute." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my text stored or shared?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely not. All analysis happens 100% in your browser. No text is ever sent to any server." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the ideal word count for an essay?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Typical lengths: high school essays 500–800 words, college essays 800–1500 words, research papers 2000–8000 words, blog posts 1000–2000 words for best SEO." }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZSPRSF37G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XZSPRSF37G');
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ══════════════════════════════════
+       TOKENS & RESET
+    ══════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:        #0d0d14;
+      --ink-2:      #44445a;
+      --ink-3:      #9292aa;
+      --surface:    #ffffff;
+      --surface-2:  #f6f6fa;
+      --surface-3:  #ebebf5;
+      --border:     rgba(0,0,0,.08);
+      --border-2:   rgba(0,0,0,.04);
+
+      --teal:       #00c9a7;
+      --teal-dim:   #e6faf6;
+      --teal-dark:  #009e84;
+      --blue:       #4f6ef7;
+      --blue-dim:   #eef0fe;
+      --violet:     #8b5cf6;
+      --amber:      #f59e0b;
+      --rose:       #f43f5e;
+      --emerald:    #10c97a;
+      --orange:     #f97316;
+
+      --font-head: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+
+      --r-sm:   8px;
+      --r-md:   14px;
+      --r-lg:   20px;
+      --r-xl:   28px;
+      --r-full: 999px;
+
+      --sh-xs: 0 1px 3px rgba(0,0,0,.05);
+      --sh-sm: 0 2px 10px rgba(0,0,0,.07), 0 1px 3px rgba(0,0,0,.04);
+      --sh-md: 0 8px 28px rgba(0,0,0,.09), 0 2px 8px rgba(0,0,0,.04);
+      --sh-lg: 0 20px 64px rgba(0,0,0,.11), 0 4px 16px rgba(0,0,0,.05);
+      --sh-teal: 0 6px 28px rgba(0,201,167,.28);
+
+      --ease: cubic-bezier(.4,0,.2,1);
+      --spring: cubic-bezier(.34,1.56,.64,1);
+      --dur: .2s;
+      --dur-md: .34s;
+    }
+
+    body.dark {
+      --ink:        #f0f0fa;
+      --ink-2:      #a0a0bc;
+      --ink-3:      #55556a;
+      --surface:    #0e0e1a;
+      --surface-2:  #161628;
+      --surface-3:  #1e1e35;
+      --border:     rgba(255,255,255,.08);
+      --border-2:   rgba(255,255,255,.04);
+      --teal-dim:   #0e2720;
+      --blue-dim:   #1a1f4a;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font-body);
+      background: var(--surface);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background .3s var(--ease), color .3s var(--ease);
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    img { display: block; max-width: 100%; }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 99px; }
+    :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 4px; }
+
+    /* ══════════════════════════════════
+       SKIP LINK
+    ══════════════════════════════════ */
+    .skip-link {
+      position: absolute; top: -44px; left: 16px; z-index: 9999;
+      background: var(--teal); color: #fff;
+      padding: 8px 16px; border-radius: var(--r-sm);
+      font-weight: 600; font-size: .875rem;
+      transition: top .2s;
+    }
+    .skip-link:focus { top: 14px; }
+
+    /* ══════════════════════════════════
+       HEADER
+    ══════════════════════════════════ */
+    .header {
+      position: sticky; top: 0; z-index: 500;
+      height: 62px;
+      background: rgba(255,255,255,.84);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      transition: background .3s var(--ease);
+    }
+    body.dark .header { background: rgba(14,14,26,.9); }
+
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 20px; height: 100%;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .logo {
+      display: flex; align-items: center; gap: 9px;
+      font-family: var(--font-head); font-weight: 800; font-size: 1.18rem;
+      flex-shrink: 0; letter-spacing: -.02em;
+    }
+    .logo-mark {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--teal), var(--blue));
+      border-radius: 9px;
+      display: grid; place-items: center;
+      font-size: .85rem; color: #fff;
+      box-shadow: var(--sh-teal);
+    }
+    .logo-text { color: var(--ink); }
+    .logo-text span { color: var(--teal); }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 2px; margin-left: 10px;
+    }
+    .nav-links a {
+      padding: 6px 11px; border-radius: var(--r-sm);
+      font-size: .875rem; font-weight: 500; color: var(--ink-2);
+      transition: background var(--dur), color var(--dur);
+      white-space: nowrap;
+    }
+    .nav-links a:hover, .nav-links a.active { background: var(--surface-2); color: var(--ink); }
+
+    .nav-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+
+    .btn-icon {
+      width: 36px; height: 36px; border-radius: var(--r-sm);
+      background: var(--surface-2); border: 1.5px solid var(--border);
+      display: grid; place-items: center;
+      font-size: .9rem; color: var(--ink-2);
+      transition: all var(--dur) var(--ease);
+    }
+    .btn-icon:hover { background: var(--teal-dim); color: var(--teal); border-color: transparent; }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      padding: 8px; border-radius: var(--r-sm);
+      transition: background var(--dur);
+    }
+    .hamburger:hover { background: var(--surface-2); }
+    .hamburger span {
+      display: block; width: 20px; height: 2px;
+      background: var(--ink); border-radius: 2px;
+      transition: transform var(--dur) var(--ease), opacity var(--dur);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-drawer {
+      display: none; position: fixed; top: 62px; left: 0; right: 0;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 14px 20px 22px; z-index: 490;
+      box-shadow: var(--sh-lg);
+      flex-direction: column; gap: 4px;
+    }
+    .mobile-drawer.open { display: flex; }
+    .mobile-drawer a {
+      padding: 10px 14px; border-radius: var(--r-sm);
+      font-size: .95rem; font-weight: 500; color: var(--ink-2);
+      transition: background var(--dur);
+    }
+    .mobile-drawer a:hover { background: var(--surface-2); color: var(--ink); }
+
+    /* ══════════════════════════════════
+       HERO
+    ══════════════════════════════════ */
+    .hero {
+      position: relative; overflow: hidden;
+      padding: 72px 20px 60px;
+      text-align: center;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 65% 55% at 15% 10%, rgba(0,201,167,.10) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 55% at 85% 90%, rgba(79,110,247,.08) 0%, transparent 60%),
+        radial-gradient(ellipse 45% 35% at 70% 5%, rgba(139,92,246,.06) 0%, transparent 55%);
+    }
+    body.dark .hero-bg {
+      background:
+        radial-gradient(ellipse 65% 55% at 15% 10%, rgba(0,201,167,.18) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 55% at 85% 90%, rgba(79,110,247,.14) 0%, transparent 60%),
+        radial-gradient(ellipse 45% 35% at 70% 5%, rgba(139,92,246,.10) 0%, transparent 55%);
+    }
+
+    /* Floating grid dots */
+    .hero-dots {
+      position: absolute; inset: 0; pointer-events: none; z-index: 0; opacity: .4;
+      background-image: radial-gradient(circle, var(--ink-3) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 10%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 10%, transparent 80%);
+    }
+
+    .hero-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+
+    .breadcrumb-row {
+      display: flex; align-items: center; gap: 6px;
+      font-size: .78rem; color: var(--ink-3);
+      margin-bottom: 20px; justify-content: center; flex-wrap: wrap;
+    }
+    .breadcrumb-row a { color: var(--teal); font-weight: 600; }
+    .breadcrumb-row span { color: var(--ink-3); }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--teal-dim); border: 1.5px solid rgba(0,201,167,.25);
+      border-radius: var(--r-full); padding: 5px 14px 5px 8px;
+      font-size: .75rem; font-weight: 700; color: var(--teal-dark);
+      margin-bottom: 22px;
+      animation: fadeUp .6s var(--ease) both;
+    }
+    body.dark .hero-badge { color: var(--teal); }
+    .badge-dot {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), var(--blue));
+      display: grid; place-items: center; font-size: .65rem; color: #fff;
+    }
+
+    .hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 5.5vw, 3.4rem);
+      font-weight: 800; line-height: 1.1; letter-spacing: -.03em;
+      color: var(--ink); margin-bottom: 18px;
+      animation: fadeUp .6s .1s var(--ease) both;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(120deg, var(--teal) 0%, var(--blue) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem; color: var(--ink-2);
+      max-width: 480px; margin: 0 auto 36px; line-height: 1.7;
+      animation: fadeUp .6s .2s var(--ease) both;
+    }
+
+    /* ══════════════════════════════════
+       STATS STRIP
+    ══════════════════════════════════ */
+    .stats-strip {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 24px;
+      padding: 20px 20px 0; max-width: 700px; margin: 0 auto;
+      animation: fadeUp .6s .3s var(--ease) both;
+    }
+    .stat-pill {
+      display: flex; align-items: center; gap: 8px;
+      font-size: .82rem; color: var(--ink-2); font-weight: 500;
+    }
+    .stat-pill-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--teal);
+    }
+
+    /* ══════════════════════════════════
+       MAIN LAYOUT
+    ══════════════════════════════════ */
+    .page-wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px 80px; }
+
+    /* ══════════════════════════════════
+       COUNTER CARD
+    ══════════════════════════════════ */
+    .counter-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-xl);
+      box-shadow: var(--sh-lg);
+      overflow: hidden;
+      animation: fadeUp .5s .1s var(--ease) both;
+    }
+
+    .counter-top {
+      display: grid; grid-template-columns: 1fr 280px;
+      gap: 0;
+    }
+
+    /* Textarea side */
+    .textarea-wrap {
+      padding: 28px;
+      border-right: 1.5px solid var(--border);
+    }
+
+    .textarea-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .textarea-label {
+      font-family: var(--font-head); font-size: .95rem; font-weight: 700;
+      color: var(--ink); display: flex; align-items: center; gap: 8px;
+    }
+    .textarea-label .label-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--teal);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: .6; transform: scale(1.3); }
+    }
+
+    .btn-group { display: flex; gap: 8px; }
+
+    .btn-sm {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 7px 13px; border-radius: var(--r-sm);
+      font-size: .78rem; font-weight: 600; font-family: var(--font-body);
+      transition: all var(--dur) var(--ease);
+      white-space: nowrap;
+    }
+    .btn-outline {
+      background: var(--surface-2); border: 1.5px solid var(--border);
+      color: var(--ink-2);
+    }
+    .btn-outline:hover { background: var(--teal-dim); border-color: var(--teal); color: var(--teal-dark); }
+    body.dark .btn-outline:hover { color: var(--teal); }
+
+    .btn-teal {
+      background: linear-gradient(135deg, var(--teal), #00b09b);
+      color: #fff; border: none;
+      box-shadow: var(--sh-teal);
+    }
+    .btn-teal:hover { opacity: .9; transform: translateY(-1px); box-shadow: 0 8px 28px rgba(0,201,167,.35); }
+
+    #mainTextarea {
+      width: 100%; min-height: 280px; max-height: 500px;
+      border: 1.5px solid var(--border); border-radius: var(--r-md);
+      padding: 16px; resize: vertical;
+      font-family: var(--font-body); font-size: .95rem;
+      color: var(--ink); background: var(--surface-2);
+      line-height: 1.7; outline: none;
+      transition: border-color var(--dur), box-shadow var(--dur), background var(--dur);
+    }
+    #mainTextarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(0,201,167,.14);
+      background: var(--surface);
+    }
+    #mainTextarea::placeholder { color: var(--ink-3); }
+
+    .char-bar {
+      margin-top: 10px; height: 4px;
+      background: var(--surface-3); border-radius: 99px; overflow: hidden;
+    }
+    .char-bar-fill {
+      height: 100%; border-radius: 99px;
+      background: linear-gradient(90deg, var(--teal), var(--blue));
+      transition: width .3s var(--ease);
+      width: 0%;
+    }
+
+    /* Stats side */
+    .stats-panel {
+      padding: 28px 22px;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .stats-panel-title {
+      font-family: var(--font-head); font-size: .875rem; font-weight: 700;
+      color: var(--ink); margin-bottom: 4px; letter-spacing: -.01em;
+    }
+
+    .stat-card {
+      background: var(--surface-2); border: 1.5px solid var(--border);
+      border-radius: var(--r-md); padding: 14px 16px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: border-color var(--dur), transform var(--dur) var(--spring);
+    }
+    .stat-card:hover { border-color: var(--teal); transform: translateX(3px); }
+    .stat-card-left { display: flex; align-items: center; gap: 10px; }
+    .stat-card-icon {
+      width: 34px; height: 34px; border-radius: 9px;
+      display: grid; place-items: center; font-size: 1rem; flex-shrink: 0;
+    }
+    .stat-card-name { font-size: .78rem; font-weight: 600; color: var(--ink-2); }
+    .stat-card-value {
+      font-family: var(--font-head); font-size: 1.35rem;
+      font-weight: 800; color: var(--ink); letter-spacing: -.02em;
+      transition: color .2s;
+    }
+    .stat-card-value.changed { color: var(--teal); }
+
+    /* Color variants */
+    .sc-teal  .stat-card-icon { background: var(--teal-dim); }
+    .sc-blue  .stat-card-icon { background: var(--blue-dim); }
+    .sc-violet .stat-card-icon { background: #f3f0ff; }
+    .sc-amber .stat-card-icon { background: #fff8e7; }
+    .sc-emerald .stat-card-icon { background: #e8fdf4; }
+    .sc-rose  .stat-card-icon { background: #fff1f4; }
+    body.dark .sc-violet .stat-card-icon { background: #1e1640; }
+    body.dark .sc-amber  .stat-card-icon { background: #1e1500; }
+    body.dark .sc-emerald .stat-card-icon { background: #0e2218; }
+    body.dark .sc-rose    .stat-card-icon { background: #200c12; }
+
+    /* Time row at bottom */
+    .time-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 10px; padding: 20px 28px;
+      border-top: 1.5px solid var(--border);
+      background: var(--surface-2);
+    }
+    .time-item {
+      background: var(--surface); border: 1.5px solid var(--border);
+      border-radius: var(--r-md); padding: 16px 18px;
+      display: flex; align-items: center; gap: 12px;
+      transition: border-color var(--dur);
+    }
+    .time-item:hover { border-color: var(--teal); }
+    .time-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .time-label { font-size: .75rem; color: var(--ink-3); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+    .time-value {
+      font-family: var(--font-head); font-size: 1.1rem;
+      font-weight: 800; color: var(--ink); letter-spacing: -.01em;
+      transition: color .2s;
+    }
+
+    /* Unique word density */
+    .density-row {
+      padding: 20px 28px;
+      border-top: 1.5px solid var(--border);
+    }
+    .density-title { font-family: var(--font-head); font-size: .875rem; font-weight: 700; color: var(--ink); margin-bottom: 14px; }
+    .density-list { display: flex; flex-direction: column; gap: 8px; }
+    .density-item { display: flex; align-items: center; gap: 10px; }
+    .density-word { font-size: .82rem; font-weight: 600; color: var(--ink-2); min-width: 80px; }
+    .density-bar-wrap { flex: 1; height: 6px; background: var(--surface-3); border-radius: 99px; overflow: hidden; }
+    .density-bar-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--teal), var(--blue)); transition: width .4s var(--ease); }
+    .density-count { font-size: .78rem; font-weight: 700; color: var(--teal-dark); min-width: 28px; text-align: right; }
+    body.dark .density-count { color: var(--teal); }
+    .density-empty { font-size: .85rem; color: var(--ink-3); font-style: italic; padding: 8px 0; }
+
+    /* Copy toast */
+    .toast {
+      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(80px);
+      background: var(--ink); color: #fff;
+      padding: 11px 22px; border-radius: var(--r-full);
+      font-size: .875rem; font-weight: 600;
+      box-shadow: var(--sh-lg); z-index: 9999;
+      transition: transform .3s var(--spring), opacity .3s;
+      opacity: 0; pointer-events: none;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+    /* ══════════════════════════════════
+       SECTION WRAPPER
+    ══════════════════════════════════ */
+    .section { margin-top: 72px; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: .72rem; font-weight: 700; letter-spacing: .09em;
+      text-transform: uppercase; color: var(--teal);
+      margin-bottom: 8px;
+    }
+    .section-label::before { content: ''; width: 14px; height: 2px; background: var(--teal); border-radius: 2px; }
+    .section-head h2 {
+      font-family: var(--font-head); font-size: clamp(1.5rem, 2.8vw, 2rem);
+      font-weight: 800; letter-spacing: -.03em; color: var(--ink);
+    }
+    .section-head p { color: var(--ink-2); margin-top: 6px; font-size: .95rem; max-width: 480px; }
+
+    /* ══════════════════════════════════
+       INFO CARDS
+    ══════════════════════════════════ */
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; }
+    .info-card {
+      background: var(--surface); border: 1.5px solid var(--border);
+      border-radius: var(--r-lg); padding: 24px;
+      transition: transform var(--dur-md) var(--spring), box-shadow var(--dur-md), border-color var(--dur);
+    }
+    .info-card:hover { transform: translateY(-4px); box-shadow: var(--sh-md); border-color: rgba(0,201,167,.3); }
+    .info-card-icon { font-size: 1.6rem; margin-bottom: 12px; }
+    .info-card h3 { font-family: var(--font-head); font-size: .95rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+    .info-card p { font-size: .83rem; color: var(--ink-2); line-height: 1.6; }
+
+    /* ══════════════════════════════════
+       TIPS SECTION
+    ══════════════════════════════════ */
+    .tips-wrap {
+      background: linear-gradient(135deg, var(--ink) 0%, #1a1a2e 100%);
+      border-radius: var(--r-xl); padding: 52px 44px;
+      position: relative; overflow: hidden; margin-top: 72px;
+    }
+    body.dark .tips-wrap { background: linear-gradient(135deg, #1a1a2e, var(--surface-3)); border: 1px solid var(--border); }
+    .tips-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 60% 60% at 90% 20%, rgba(0,201,167,.15), transparent),
+                  radial-gradient(ellipse 50% 50% at 10% 80%, rgba(79,110,247,.12), transparent);
+    }
+    .tips-inner { position: relative; z-index: 1; }
+    .tips-wrap .section-label { color: rgba(255,255,255,.5); }
+    .tips-wrap .section-label::before { background: rgba(255,255,255,.5); }
+    .tips-wrap h2 { font-family: var(--font-head); font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 800; color: #fff; letter-spacing: -.03em; margin-bottom: 32px; }
+    body.dark .tips-wrap h2 { color: var(--ink); }
+    .tips-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+    .tip-item {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--r-lg); padding: 20px;
+      transition: background var(--dur), transform var(--dur) var(--spring);
+    }
+    .tip-item:hover { background: rgba(255,255,255,.12); transform: translateY(-3px); }
+    .tip-num {
+      font-family: var(--font-head); font-size: 1.8rem; font-weight: 800;
+      color: var(--teal); line-height: 1; margin-bottom: 8px; letter-spacing: -.04em;
+    }
+    .tip-item h3 { font-family: var(--font-head); font-size: .875rem; font-weight: 700; color: #fff; margin-bottom: 5px; }
+    .tip-item p  { font-size: .8rem; color: rgba(255,255,255,.5); line-height: 1.55; }
+    body.dark .tip-item h3 { color: var(--ink); }
+    body.dark .tip-item p  { color: var(--ink-2); }
+
+    /* ══════════════════════════════════
+       WORD COUNT GOALS TABLE
+    ══════════════════════════════════ */
+    .goals-table-wrap {
+      background: var(--surface); border: 1.5px solid var(--border);
+      border-radius: var(--r-lg); overflow: hidden;
+      margin-top: 24px;
+    }
+    .goals-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+    .goals-table th {
+      text-align: left; padding: 13px 18px;
+      background: var(--surface-2); font-weight: 700;
+      color: var(--ink-2); border-bottom: 2px solid var(--border);
+      font-family: var(--font-head); font-size: .78rem;
+      text-transform: uppercase; letter-spacing: .06em;
+    }
+    .goals-table td { padding: 13px 18px; border-bottom: 1px solid var(--border); color: var(--ink-2); }
+    .goals-table tr:last-child td { border-bottom: none; }
+    .goals-table tr:hover td { background: var(--teal-dim); }
+    .goals-table .goal-type { font-weight: 700; color: var(--ink); }
+    .goals-badge {
+      display: inline-block; padding: 2px 10px; border-radius: var(--r-full);
+      font-size: .7rem; font-weight: 700;
+    }
+    .gb-low    { background: #e8fdf4; color: var(--emerald); }
+    .gb-mid    { background: #eef0fe; color: var(--blue); }
+    .gb-high   { background: #f3f0ff; color: var(--violet); }
+    .gb-expert { background: var(--teal-dim); color: var(--teal-dark); }
+    body.dark .gb-low { background: #0e2218; color: var(--emerald); }
+    body.dark .gb-mid { background: #1a1f4a; color: var(--blue); }
+    body.dark .gb-high { background: #1e1640; color: var(--violet); }
+    body.dark .gb-expert { color: var(--teal); }
+
+    /* ══════════════════════════════════
+       FAQ
+    ══════════════════════════════════ */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+    .faq-item {
+      background: var(--surface); border: 1.5px solid var(--border);
+      border-radius: var(--r-md); overflow: hidden;
+      transition: border-color var(--dur);
+    }
+    .faq-item.open { border-color: var(--teal); }
+    .faq-q {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 17px 20px; text-align: left;
+      font-family: var(--font-head); font-size: .9rem; font-weight: 700;
+      color: var(--ink); cursor: pointer;
+      transition: background var(--dur);
+    }
+    .faq-q:hover { background: var(--surface-2); }
+    .faq-icon {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: var(--surface-2); display: grid; place-items: center;
+      font-size: .75rem; color: var(--ink-2); flex-shrink: 0;
+      transition: transform var(--dur) var(--ease), background var(--dur);
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--teal); color: #fff; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s var(--ease); }
+    .faq-item.open .faq-a { max-height: 220px; }
+    .faq-a-inner { padding: 0 20px 17px; font-size: .875rem; color: var(--ink-2); line-height: 1.7; }
+
+    /* ══════════════════════════════════
+       RELATED TOOLS
+    ══════════════════════════════════ */
+    .related-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 12px; margin-top: 24px;
+    }
+    .related-card {
+      background: var(--surface); border: 1.5px solid var(--border);
+      border-radius: var(--r-lg); padding: 20px 16px;
+      text-align: center; cursor: pointer;
+      text-decoration: none; color: inherit; display: block;
+      transition: all var(--dur) var(--ease);
+    }
+    .related-card:hover { border-color: var(--teal); background: var(--teal-dim); transform: translateY(-3px); box-shadow: var(--sh-sm); }
+    .related-card:hover .rc-name { color: var(--teal-dark); }
+    body.dark .related-card:hover .rc-name { color: var(--teal); }
+    .rc-emoji { font-size: 1.5rem; margin-bottom: 7px; }
+    .rc-name { font-size: .8rem; font-weight: 700; color: var(--ink-2); font-family: var(--font-head); }
+    .rc-cat  { font-size: .7rem; color: var(--ink-3); margin-top: 3px; }
+
+    /* ══════════════════════════════════
+       CTA
+    ══════════════════════════════════ */
+    .cta-section {
+      text-align: center; margin-top: 72px;
+      background: linear-gradient(135deg, var(--teal-dim) 0%, var(--blue-dim) 100%);
+      border: 1.5px solid rgba(0,201,167,.2);
+      border-radius: var(--r-xl); padding: 56px 32px;
+    }
+    body.dark .cta-section { background: linear-gradient(135deg, #0e2720 0%, #1a1f4a 100%); border-color: rgba(0,201,167,.2); }
+    .cta-section h2 { font-family: var(--font-head); font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; color: var(--ink); letter-spacing: -.03em; margin-bottom: 12px; }
+    .cta-section p { color: var(--ink-2); font-size: .95rem; margin-bottom: 28px; max-width: 420px; margin-left: auto; margin-right: auto; }
+    .cta-section p { margin-bottom: 28px; }
+    .btn-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, var(--teal), var(--blue));
+      color: #fff; border-radius: var(--r-full);
+      padding: 14px 30px; font-family: var(--font-head); font-size: .95rem; font-weight: 700;
+      box-shadow: var(--sh-teal);
+      transition: opacity var(--dur), transform var(--dur) var(--spring);
+    }
+    .btn-cta:hover { opacity: .9; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,201,167,.35); }
+
+    /* ══════════════════════════════════
+       FOOTER
+    ══════════════════════════════════ */
+    .footer {
+      background: var(--ink); color: rgba(255,255,255,.65);
+      padding: 52px 20px 22px; margin-top: 80px;
+    }
+    body.dark .footer { background: #07070f; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top {
+      display: grid; grid-template-columns: 2fr repeat(3, 1fr);
+      gap: 48px; margin-bottom: 44px;
+    }
+    .footer-logo {
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--font-head); font-weight: 800; font-size: 1.15rem;
+      color: #fff; margin-bottom: 12px;
+    }
+    .footer-logo-mark {
+      width: 28px; height: 28px;
+      background: linear-gradient(135deg, var(--teal), var(--blue));
+      border-radius: 8px; display: grid; place-items: center; font-size: .8rem; color: #fff;
+    }
+    .footer-desc { font-size: .82rem; color: rgba(255,255,255,.4); line-height: 1.65; max-width: 210px; }
+    .footer-col h4 { font-family: var(--font-head); font-size: .75rem; font-weight: 700; color: rgba(255,255,255,.85); text-transform: uppercase; letter-spacing: .09em; margin-bottom: 14px; }
+    .footer-col ul { display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul li a { font-size: .82rem; color: rgba(255,255,255,.4); transition: color var(--dur); }
+    .footer-col ul li a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.07); padding-top: 18px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 10px;
+    }
+    .footer-bottom p { font-size: .75rem; color: rgba(255,255,255,.28); }
+    .social-row { display: flex; gap: 7px; }
+    .social-btn {
+      width: 30px; height: 30px; border-radius: 8px;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1);
+      display: grid; place-items: center; font-size: .75rem;
+      color: rgba(255,255,255,.4); cursor: pointer;
+      transition: background var(--dur), color var(--dur);
+    }
+    .social-btn:hover { background: var(--teal); color: #fff; border-color: transparent; }
+
+    /* ══════════════════════════════════
+       MOBILE BOTTOM NAV
+    ══════════════════════════════════ */
+    .mobile-nav {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid var(--border); z-index: 400;
+      padding: 6px 4px calc(env(safe-area-inset-bottom, 0px) + 6px);
+    }
+    body.dark .mobile-nav { background: rgba(14,14,26,.92); }
+    .mobile-nav-items { display: flex; justify-content: space-around; }
+    .mn-item {
+      display: flex; flex-direction: column; align-items: center; gap: 3px;
+      padding: 5px 10px; border-radius: 10px;
+      font-size: .58rem; font-weight: 700; color: var(--ink-3);
+      cursor: pointer; letter-spacing: .02em; text-transform: uppercase;
+      transition: color var(--dur); min-width: 48px;
+    }
+    .mn-item.active, .mn-item:hover { color: var(--teal); }
+    .mn-icon { font-size: 1.1rem; }
+
+    /* ══════════════════════════════════
+       ANIMATIONS
+    ══════════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ══════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════ */
+    @media (max-width: 900px) {
+      .counter-top { grid-template-columns: 1fr; }
+      .textarea-wrap { border-right: none; border-bottom: 1.5px solid var(--border); }
+      .stats-panel { flex-direction: row; flex-wrap: wrap; padding: 20px 24px; }
+      .stat-card { flex: 1 1 120px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .mobile-nav { display: block; }
+      body { padding-bottom: 64px; }
+      .hero { padding: 52px 16px 44px; }
+      .page-wrap { padding: 0 16px 64px; }
+      .time-row { grid-template-columns: 1fr; }
+      .tips-wrap { padding: 36px 22px; }
+      .footer-top { grid-template-columns: 1fr; gap: 22px; }
+      .footer-desc { max-width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .counter-top { grid-template-columns: 1fr; }
+      .tips-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.85rem; }
+    }
+
+    .mt-8 { margin-top: 32px; }
+    .ovx { overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ══════════════════════════════════
+       HEADER
+  ══════════════════════════════════ -->
+  <header class="header" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a class="logo" href="../index.html" aria-label="QuickTools Home">
+        <div class="logo-mark" aria-hidden="true">⚡</div>
+        <span class="logo-text">Quick<span>Tools</span></span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#categories">All Tools</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn-icon" id="darkToggle" onclick="toggleDark()" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+        <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-drawer" id="mobileDrawer" role="navigation" aria-label="Mobile navigation">
+      <a href="../index.html">🏠 Home</a>
+      <a href="../index.html#categories">🔧 All Tools</a>
+      <a href="../about.html">ℹ️ About</a>
+      <a href="../contact.html">✉️ Contact</a>
+      <a href="../privacy.html">🔒 Privacy Policy</a>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-dots" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <nav class="breadcrumb-row" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span aria-hidden="true">›</span>
+        <span>Utility Tools</span>
+        <span aria-hidden="true">›</span>
+        <span>Word Counter</span>
+      </nav>
+
+      <div class="hero-badge">
+        <div class="badge-dot" aria-hidden="true">✦</div>
+        Live Analysis — No Login Required
+      </div>
+
+      <h1 id="hero-heading">
+        Free <em>Word Counter</em><br />Online Tool
+      </h1>
+
+      <p class="hero-sub">
+        Instantly count words, characters, sentences, paragraphs and reading time.
+        The fastest free text analyzer for writers, students &amp; professionals.
+      </p>
+
+      <div class="stats-strip" aria-label="Tool features">
+        <div class="stat-pill"><div class="stat-pill-dot"></div>Live word count</div>
+        <div class="stat-pill"><div class="stat-pill-dot"></div>Character counter</div>
+        <div class="stat-pill"><div class="stat-pill-dot"></div>Reading time estimate</div>
+        <div class="stat-pill"><div class="stat-pill-dot"></div>100% free &amp; private</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════════ -->
+  <main id="main-content" class="page-wrap">
+
+    <!-- ─── COUNTER TOOL ─── -->
+    <div class="counter-card" aria-label="Word counter tool">
+      <div class="counter-top">
+
+        <!-- Textarea -->
+        <div class="textarea-wrap">
+          <div class="textarea-header">
+            <div class="textarea-label">
+              <div class="label-dot" aria-hidden="true"></div>
+              Type or Paste Your Text
+            </div>
+            <div class="btn-group">
+              <button class="btn-sm btn-outline" onclick="copyText()" aria-label="Copy text">📋 Copy</button>
+              <button class="btn-sm btn-outline" onclick="clearText()" aria-label="Clear text">🗑️ Clear</button>
+            </div>
+          </div>
+          <textarea
+            id="mainTextarea"
+            rows="12"
+            placeholder="Start typing or paste your essay, article, blog post, or any text here to get instant word count, character count, sentence count, reading time and more…"
+            aria-label="Text input for word counting"
+            oninput="analyzeText()"
+          ></textarea>
+          <div class="char-bar" aria-hidden="true">
+            <div class="char-bar-fill" id="charBarFill"></div>
+          </div>
+        </div>
+
+        <!-- Stats panel -->
+        <aside class="stats-panel" aria-label="Text statistics">
+          <div class="stats-panel-title">📊 Live Statistics</div>
+
+          <div class="stat-card sc-teal">
+            <div class="stat-card-left">
+              <div class="stat-card-icon" aria-hidden="true">📝</div>
+              <div class="stat-card-name">Words</div>
+            </div>
+            <div class="stat-card-value" id="stat-words">0</div>
+          </div>
+
+          <div class="stat-card sc-blue">
+            <div class="stat-card-left">
+              <div class="stat-card-icon" aria-hidden="true">🔤</div>
+              <div class="stat-card-name">Characters</div>
+            </div>
+            <div class="stat-card-value" id="stat-chars">0</div>
+          </div>
+
+          <div class="stat-card sc-violet">
+            <div class="stat-card-left">
+              <div class="stat-card-icon" aria-hidden="true">🔡</div>
+              <div class="stat-card-name">No Spaces</div>
+            </div>
+            <div class="stat-card-value" id="stat-nospace">0</div>
+          </div>
+
+          <div class="stat-card sc-amber">
+            <div class="stat-card-left">
+              <div class="stat-card-icon" aria-hidden="true">💬</div>
+              <div class="stat-card-name">Sentences</div>
+            </div>
+            <div class="stat-card-value" id="stat-sentences">0</div>
+          </div>
+
+          <div class="stat-card sc-emerald">
+            <div class="stat-card-left">
+              <div class="stat-card-icon" aria-hidden="true">¶</div>
+              <div class="stat-card-name">Paragraphs</div>
+            </div>
+            <div class="stat-card-value" id="stat-paragraphs">0</div>
+          </div>
+
+          <div class="stat-card sc-rose">
+            <div class="stat-card-left">
+              <div class="stat-card-icon" aria-hidden="true">🆔</div>
+              <div class="stat-card-name">Unique Words</div>
+            </div>
+            <div class="stat-card-value" id="stat-unique">0</div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Reading / Speaking Time -->
+      <div class="time-row">
+        <div class="time-item">
+          <div class="time-icon" aria-hidden="true">👁️</div>
+          <div>
+            <div class="time-label">Reading Time</div>
+            <div class="time-value" id="stat-readtime">— sec</div>
+          </div>
+        </div>
+        <div class="time-item">
+          <div class="time-icon" aria-hidden="true">🎙️</div>
+          <div>
+            <div class="time-label">Speaking Time</div>
+            <div class="time-value" id="stat-speaktime">— sec</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top word density -->
+      <div class="density-row">
+        <div class="density-title">🔍 Top Keywords (Density)</div>
+        <div class="density-list" id="densityList">
+          <div class="density-empty">Paste text above to see keyword density…</div>
+        </div>
+      </div>
+    </div><!-- /.counter-card -->
+
+    <!-- ─── WHAT IS SECTION ─── -->
+    <section class="section" aria-labelledby="what-heading">
+      <div class="section-head">
+        <div class="section-label">About This Tool</div>
+        <h2 id="what-heading">What Does Our Word Counter Do?</h2>
+        <p>Everything you need to analyze your writing in one clean, fast tool.</p>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-icon">📝</div>
+          <h3>Live Word Count</h3>
+          <p>Words are counted instantly as you type, using accurate whitespace and punctuation detection — no need to click any button.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🔤</div>
+          <h3>Character Counter</h3>
+          <p>Track total characters (with and without spaces) — essential for SEO meta descriptions, tweets, SMS, and platform limits.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">💬</div>
+          <h3>Sentence Counter</h3>
+          <p>Counts sentences by detecting terminal punctuation (. ! ?) so you can check readability and pacing of your writing.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">¶</div>
+          <h3>Paragraph Counter</h3>
+          <p>Detects paragraph breaks to help you structure long-form content like essays, blog posts, and articles correctly.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">👁️</div>
+          <h3>Reading Time</h3>
+          <p>Calculated at 238 WPM — the average adult silent reading speed — so you can predict how long readers spend on your content.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🔍</div>
+          <h3>Keyword Density</h3>
+          <p>Shows your top 8 most-used meaningful words, helping writers spot repetition and optimize content for SEO focus keywords.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── WORD COUNT GOALS ─── -->
+    <section class="section" aria-labelledby="goals-heading">
+      <div class="section-head">
+        <div class="section-label">Word Count Guide</div>
+        <h2 id="goals-heading">Ideal Word Counts by Content Type</h2>
+        <p>Use these benchmarks to hit the right length for your writing goal.</p>
+      </div>
+
+      <div class="goals-table-wrap ovx">
+        <table class="goals-table" aria-label="Word count goals by content type">
+          <thead>
+            <tr>
+              <th>Content Type</th>
+              <th>Recommended Words</th>
+              <th>Level</th>
+              <th>Why It Matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="goal-type">Tweet / Social Post</td><td>40–100 words</td><td><span class="goals-badge gb-low">Micro</span></td><td>Short, punchy, high engagement</td></tr>
+            <tr><td class="goal-type">SMS / Push Notification</td><td>10–50 words</td><td><span class="goals-badge gb-low">Micro</span></td><td>160 character limit applies</td></tr>
+            <tr><td class="goal-type">Email Subject Line</td><td>6–10 words</td><td><span class="goals-badge gb-low">Micro</span></td><td>Best open rates under 60 chars</td></tr>
+            <tr><td class="goal-type">Product Description</td><td>150–300 words</td><td><span class="goals-badge gb-mid">Short</span></td><td>Enough detail without overload</td></tr>
+            <tr><td class="goal-type">High School Essay</td><td>500–800 words</td><td><span class="goals-badge gb-mid">Short</span></td><td>Standard academic requirement</td></tr>
+            <tr><td class="goal-type">College Essay / Blog Post</td><td>800–1,500 words</td><td><span class="goals-badge gb-high">Medium</span></td><td>Covers topic with good depth</td></tr>
+            <tr><td class="goal-type">SEO Blog Article</td><td>1,500–2,500 words</td><td><span class="goals-badge gb-high">Medium</span></td><td>Sweet spot for Google ranking</td></tr>
+            <tr><td class="goal-type">Research Paper</td><td>2,000–8,000 words</td><td><span class="goals-badge gb-expert">Long</span></td><td>Depends on journal guidelines</td></tr>
+            <tr><td class="goal-type">Dissertation / Thesis</td><td>20,000–80,000 words</td><td><span class="goals-badge gb-expert">Expert</span></td><td>Undergraduate to doctoral level</td></tr>
+            <tr><td class="goal-type">Novel / Book</td><td>60,000–100,000 words</td><td><span class="goals-badge gb-expert">Expert</span></td><td>Genre varies (50k–120k typical)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ─── WRITING TIPS ─── -->
+    <div class="tips-wrap" aria-labelledby="tips-heading">
+      <div class="tips-bg" aria-hidden="true"></div>
+      <div class="tips-inner">
+        <div class="section-label">Writing Tips</div>
+        <h2 id="tips-heading">10 Tips to Write Cleaner, Stronger Text</h2>
+        <div class="tips-grid" role="list">
+          <div class="tip-item" role="listitem">
+            <div class="tip-num">01</div>
+            <h3>Cut Filler Words</h3>
+            <p>Remove "very," "really," "just," and "quite." These add words without adding meaning.</p>
+          </div>
+          <div class="tip-item" role="listitem">
+            <div class="tip-num">02</div>
+            <h3>Aim for One Idea Per Sentence</h3>
+            <p>Long sentences confuse readers. Break complex thoughts into shorter, clearer ones.</p>
+          </div>
+          <div class="tip-item" role="listitem">
+            <div class="tip-num">03</div>
+            <h3>Use Active Voice</h3>
+            <p>"The dog bit the man" beats "The man was bitten by the dog." Active is shorter and stronger.</p>
+          </div>
+          <div class="tip-item" role="listitem">
+            <div class="tip-num">04</div>
+            <h3>Vary Sentence Length</h3>
+            <p>Mix short punchy sentences with longer ones to create rhythm and keep readers engaged.</p>
+          </div>
+          <div class="tip-item" role="listitem">
+            <div class="tip-num">05</div>
+            <h3>Watch Keyword Density</h3>
+            <p>For SEO, keep your primary keyword at 1–2% of total words. Over-stuffing hurts rankings.</p>
+          </div>
+          <div class="tip-item" role="listitem">
+            <div class="tip-num">06</div>
+            <h3>Strong First Sentences</h3>
+            <p>Readers decide in seconds. Start paragraphs with your most important point, not build-up.</p>
+          </div>
+          <div class="tip-item" role="listitem">
+            <div class="tip-num">07</div>
+            <h3>Use the Flesch Score</h3>
+            <p>Aim for grade 8–9 reading level for most web content. Short words and sentences help.</p>
+          </div>
+          <div class="tip-item" role="listitem">
+            <div class="tip-num">08</div>
+            <h3>Break Up Paragraphs</h3>
+            <p>Online readers scan. Keep paragraphs to 3–4 sentences max for better digital readability.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── FAQ ─── -->
+    <section class="section" aria-labelledby="faq-heading">
+      <div class="section-head">
+        <div class="section-label">Got Questions?</div>
+        <h2 id="faq-heading">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list" role="list">
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+            How does the word counter count words exactly?
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Text is split by whitespace (spaces, tabs, newlines). Consecutive spaces are collapsed. Empty strings are filtered out. Hyphenated words like "well-known" count as one word. Numbers like "2025" also count as a word.</div></div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+            Is there a maximum word or character limit?
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">No hard limit. You can paste an entire book chapter or research paper and the tool will count it accurately. Performance may vary slightly for extremely large texts (100,000+ words) depending on your device.</div></div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+            How is reading time calculated?
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Reading time uses 238 words per minute — the widely cited average adult silent reading speed from research. Speaking time uses 125 words per minute, standard for presentations. Both are estimates; actual speed varies per person.</div></div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+            Is my text safe? Is it stored anywhere?
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">100% safe. All analysis is performed entirely in your browser using JavaScript. Nothing is ever sent to our servers. We cannot see, store, or access your text. You can use this tool on confidential documents without any privacy risk.</div></div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+            What is "characters without spaces"?
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">This counts only actual typed characters — letters, numbers, and punctuation — excluding spaces. It's useful for platforms like Twitter (which counts characters differently), or when you need to know the density of actual content characters.</div></div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+            What is the ideal blog post word count for SEO?
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">For SEO, most studies suggest 1,500–2,500 words works best for ranking well in Google for informational queries. Long-form content (2,500–4,000 words) can rank for competitive keywords. However, quality always matters more than pure word count.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── RELATED TOOLS ─── -->
+    <section class="section" aria-labelledby="related-heading">
+      <div class="section-head">
+        <div class="section-label">More Tools</div>
+        <h2 id="related-heading">Related Tools You'll Love</h2>
+      </div>
+      <div class="related-grid">
+        <a href="../tools/age-calculator.html" class="related-card" aria-label="Age Calculator">
+          <div class="rc-emoji">🎂</div>
+          <div class="rc-name">Age Calculator</div>
+          <div class="rc-cat">Education</div>
+        </a>
+        <a href="../tools/percentage-calculator.html" class="related-card" aria-label="Percentage Calculator">
+          <div class="rc-emoji">📊</div>
+          <div class="rc-name">Percentage Calc</div>
+          <div class="rc-cat">Math</div>
+        </a>
+        <a href="../tools/emi-calculator.html" class="related-card" aria-label="EMI Calculator">
+          <div class="rc-emoji">💰</div>
+          <div class="rc-name">EMI Calculator</div>
+          <div class="rc-cat">Finance</div>
+        </a>
+        <a href="../tools/bmi-calculator.html" class="related-card" aria-label="BMI Calculator">
+          <div class="rc-emoji">⚖️</div>
+          <div class="rc-name">BMI Calculator</div>
+          <div class="rc-cat">Health</div>
+        </a>
+        <a href="../tools/gpa-calculator.html" class="related-card" aria-label="GPA Calculator">
+          <div class="rc-emoji">🎓</div>
+          <div class="rc-name">GPA Calculator</div>
+          <div class="rc-cat">Education</div>
+        </a>
+        <a href="../tools/typing-speed-test.html" class="related-card" aria-label="Typing Speed Test">
+          <div class="rc-emoji">⌨️</div>
+          <div class="rc-name">Typing Speed Test</div>
+          <div class="rc-cat">Education</div>
+        </a>
+        <a href="../tools/salary-calculator.html" class="related-card" aria-label="Salary Calculator">
+          <div class="rc-emoji">💼</div>
+          <div class="rc-name">Salary Calculator</div>
+          <div class="rc-cat">Finance</div>
+        </a>
+        <a href="../tools/gst-calculator.html" class="related-card" aria-label="GST Calculator">
+          <div class="rc-emoji">🧾</div>
+          <div class="rc-name">GST Calculator</div>
+          <div class="rc-cat">Finance</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ─── CTA ─── -->
+    <section class="cta-section" aria-label="Explore more tools">
+      <h2>Need More Smart Tools?</h2>
+      <p>Explore 20+ free calculators for finance, health, education and everyday life — all in one place.</p>
+      <a href="../index.html" class="btn-cta">Explore All Tools →</a>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">
+            <div class="footer-logo-mark" aria-hidden="true">⚡</div>
+            QuickTools
+          </div>
+          <p class="footer-desc">Free online calculators and smart daily tools. Fast, accurate, always free.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Finance</h4>
+          <ul>
+            <li><a href="../tools/emi-calculator.html">EMI Calculator</a></li>
+            <li><a href="../tools/salary-calculator.html">Salary Calculator</a></li>
+            <li><a href="../tools/profit-calculator.html">Profit Calculator</a></li>
+            <li><a href="../tools/gst-calculator.html">GST Calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Health &amp; Study</h4>
+          <ul>
+            <li><a href="../tools/bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="../tools/age-calculator.html">Age Calculator</a></li>
+            <li><a href="../tools/gpa-calculator.html">GPA Calculator</a></li>
+            <li><a href="../tools/typing-speed-test.html">Typing Speed Test</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../index.html">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 QuickTools. All rights reserved. Built with ❤️ for the web.</p>
+        <div class="social-row" aria-label="Social links">
+          <div class="social-btn" role="link" tabindex="0" title="Twitter / X" aria-label="Twitter">𝕏</div>
+          <div class="social-btn" role="link" tabindex="0" title="Facebook" aria-label="Facebook">f</div>
+          <div class="social-btn" role="link" tabindex="0" title="Instagram" aria-label="Instagram">📸</div>
+          <div class="social-btn" role="link" tabindex="0" title="YouTube" aria-label="YouTube">▶</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="mobile-nav" aria-label="Mobile bottom navigation">
+    <div class="mobile-nav-items">
+      <a class="mn-item" href="../index.html" aria-label="Home">
+        <span class="mn-icon" aria-hidden="true">🏠</span>Home
+      </a>
+      <a class="mn-item" href="../index.html#categories" aria-label="All Tools">
+        <span class="mn-icon" aria-hidden="true">🔧</span>Tools
+      </a>
+      <div class="mn-item active" aria-label="Word Counter (current page)">
+        <span class="mn-icon" aria-hidden="true">📝</span>Counter
+      </div>
+      <a class="mn-item" href="../about.html" aria-label="About">
+        <span class="mn-icon" aria-hidden="true">ℹ️</span>About
+      </a>
+      <div class="mn-item" onclick="toggleDark()" aria-label="Toggle dark mode">
+        <span class="mn-icon" id="mobileThemeIcon" aria-hidden="true">🌙</span>Theme
+      </div>
+    </div>
+  </nav>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ══════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════ -->
+  <script>
+    /* ─── DARK MODE ─── */
+    const savedDark = localStorage.getItem('qt-dark');
+    if (savedDark === 'true') applyDark(true);
+
+    function toggleDark() { applyDark(!document.body.classList.contains('dark')); }
+    function applyDark(on) {
+      document.body.classList.toggle('dark', on);
+      const icon = on ? '☀️' : '🌙';
+      document.getElementById('darkToggle').textContent = icon;
+      const mti = document.getElementById('mobileThemeIcon');
+      if (mti) mti.textContent = icon;
+      localStorage.setItem('qt-dark', on);
+    }
+
+    /* ─── HAMBURGER ─── */
+    function toggleDrawer() {
+      const d = document.getElementById('mobileDrawer');
+      const h = document.getElementById('hamburger');
+      const open = d.classList.toggle('open');
+      h.classList.toggle('open', open);
+      h.setAttribute('aria-expanded', open);
+    }
+
+    /* ─── FAQ ─── */
+    function toggleFAQ(btn) {
+      const item = btn.closest('.faq-item');
+      const open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    }
+
+    /* ─── STOPWORDS (skip in density) ─── */
+    const STOPWORDS = new Set([
+      'the','a','an','and','or','but','in','on','at','to','for','of','with',
+      'it','is','was','are','be','been','being','have','has','had','do','does',
+      'did','will','would','shall','should','may','might','must','can','could',
+      'not','no','nor','so','yet','both','either','neither','this','that','these',
+      'those','i','you','he','she','we','they','what','which','who','whom',
+      'its','their','our','my','your','his','her','from','by','as','if','then',
+      'than','so','up','out','about','into','through','during','before','after',
+      'above','below','between','each','more','also','very','just','over','such',
+      'only','same','too','any','all','each','every','most','other','some','such',
+      'how','when','where','there','here','let','get','got','like','new','well'
+    ]);
+
+    /* ─── ANALYZE TEXT ─── */
+    let prevWords = 0;
+
+    function analyzeText() {
+      const text = document.getElementById('mainTextarea').value;
+
+      /* Words */
+      const words = text.trim() === '' ? [] : text.trim().split(/\s+/).filter(w => w.length > 0);
+      const wordCount = words.length;
+
+      /* Characters */
+      const charCount   = text.length;
+      const noSpaceCount = text.replace(/\s/g, '').length;
+
+      /* Sentences */
+      const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+      const sentenceCount = sentences.length;
+
+      /* Paragraphs */
+      const paragraphs = text.split(/\n\s*\n/).filter(p => p.trim().length > 0);
+      const paraCount = text.trim() === '' ? 0 : Math.max(paragraphs.length, text.trim().length > 0 ? 1 : 0);
+
+      /* Unique words */
+      const uniqueWords = new Set(words.map(w => w.toLowerCase().replace(/[^a-z0-9]/g, '')).filter(w => w.length > 0));
+      const uniqueCount = uniqueWords.size;
+
+      /* Time */
+      const readMin  = wordCount / 238;
+      const speakMin = wordCount / 125;
+
+      function formatTime(mins) {
+        if (mins === 0) return '— sec';
+        const totalSec = Math.round(mins * 60);
+        if (totalSec < 60) return totalSec + ' sec';
+        const m = Math.floor(totalSec / 60);
+        const s = totalSec % 60;
+        return s > 0 ? `${m} min ${s} sec` : `${m} min`;
+      }
+
+      /* Update UI */
+      updateStat('stat-words',      wordCount);
+      updateStat('stat-chars',      charCount);
+      updateStat('stat-nospace',    noSpaceCount);
+      updateStat('stat-sentences',  sentenceCount);
+      updateStat('stat-paragraphs', paraCount);
+      updateStat('stat-unique',     uniqueCount);
+
+      document.getElementById('stat-readtime').textContent  = formatTime(readMin);
+      document.getElementById('stat-speaktime').textContent = formatTime(speakMin);
+
+      /* Progress bar (max 5000 chars visual) */
+      const barPct = Math.min(100, (charCount / 5000) * 100);
+      document.getElementById('charBarFill').style.width = barPct + '%';
+
+      /* Keyword density */
+      renderDensity(words);
+    }
+
+    function updateStat(id, val) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = val.toLocaleString();
+      el.classList.add('changed');
+      setTimeout(() => el.classList.remove('changed'), 300);
+    }
+
+    function renderDensity(words) {
+      const list = document.getElementById('densityList');
+      if (words.length === 0) {
+        list.innerHTML = '<div class="density-empty">Paste text above to see keyword density…</div>';
+        return;
+      }
+
+      const freq = {};
+      words.forEach(w => {
+        const clean = w.toLowerCase().replace(/[^a-z0-9\-']/g, '');
+        if (clean.length > 2 && !STOPWORDS.has(clean)) {
+          freq[clean] = (freq[clean] || 0) + 1;
+        }
+      });
+
+      const sorted = Object.entries(freq).sort((a,b) => b[1]-a[1]).slice(0, 8);
+      if (sorted.length === 0) {
+        list.innerHTML = '<div class="density-empty">No significant keywords found yet…</div>';
+        return;
+      }
+
+      const max = sorted[0][1];
+      list.innerHTML = sorted.map(([word, count]) => {
+        const pct = Math.round((count / max) * 100);
+        const density = ((count / words.length) * 100).toFixed(1);
+        return `
+          <div class="density-item">
+            <div class="density-word" title="${density}% density">${word}</div>
+            <div class="density-bar-wrap">
+              <div class="density-bar-fill" style="width:${pct}%"></div>
+            </div>
+            <div class="density-count">${count}×</div>
+          </div>`;
+      }).join('');
+    }
+
+    /* ─── COPY ─── */
+    function copyText() {
+      const text = document.getElementById('mainTextarea').value;
+      if (!text.trim()) { showToast('Nothing to copy!'); return; }
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('✅ Text copied to clipboard!');
+      }).catch(() => {
+        // Fallback
+        const el = document.getElementById('mainTextarea');
+        el.select();
+        document.execCommand('copy');
+        showToast('✅ Text copied!');
+      });
+    }
+
+    /* ─── CLEAR ─── */
+    function clearText() {
+      if (!document.getElementById('mainTextarea').value.trim()) return;
+      document.getElementById('mainTextarea').value = '';
+      analyzeText();
+      showToast('🗑️ Text cleared');
+    }
+
+    /* ─── TOAST ─── */
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2400);
+    }
+
+    /* Trigger sample text hint on first visit */
+    window.addEventListener('load', () => {
+      // Pre-warm the textarea with a tiny placeholder analysis reset
+      analyzeText();
+    });
+  </script>
+</body>
+</html>
