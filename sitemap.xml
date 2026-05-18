@@ -1,9 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://kvigneshwaran178-bit.github.io/quicktools/</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <url>
+    <loc>https://kvigneshwaran178-bit.github.io/quicktools/tools/age-calculator.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kvigneshwaran178-bit.github.io/quicktools/tools/percentage-calculator.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kvigneshwaran178-bit.github.io/quicktools/tools/emi-calculator.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kvigneshwaran178-bit.github.io/quicktools/tools/gst-calculator.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kvigneshwaran178-bit.github.io/quicktools/tools/sip-calculator.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kvigneshwaran178-bit.github.io/quicktools/tools/loan-calculator.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kvigneshwaran178-bit.github.io/quicktools/tools/compound-interest-calculator.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kvigneshwaran178-bit.github.io/quicktools/tools/discount-calculator.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kvigneshwaran178-bit.github.io/quicktools/tools/qr-code-generator.html</loc>
+  </url>
+
+  <url>
+    <loc>https://kvigneshwaran178-bit.github.io/quicktools/tools/password-generator.html</loc>
+  </url>
+
 </urlset>
