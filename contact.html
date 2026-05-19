@@ -1,15 +1,545 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Contact - QuickTools</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – QuickTools</title>
+  <meta name="description" content="Get in touch with the QuickTools team. Send us a message, suggest a tool, or report an issue." />
+  <link rel="canonical" href="https://quicktools.in/contact.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:       #0a0a0f;
+      --ink-2:     #3d3d50;
+      --ink-3:     #8888a0;
+      --surface:   #ffffff;
+      --surface-2: #f4f4f8;
+      --surface-3: #eeeef5;
+      --border:    rgba(0,0,0,.08);
+      --blue:      #4f6ef7;
+      --blue-dim:  #eef0fe;
+      --blue-dark: #3554e6;
+      --violet:    #8b5cf6;
+      --emerald:   #10c97a;
+      --sh-sm: 0 2px 8px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --sh-md: 0 8px 24px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04);
+      --sh-xl: 0 32px 80px rgba(79,110,247,.20);
+      --r-sm: 8px;
+      --r-md: 14px;
+      --r-lg: 20px;
+      --r-full: 999px;
+      --font-head: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Space Grotesk', sans-serif;
+      --ease: cubic-bezier(.4,0,.2,1);
+      --dur: .22s;
+    }
+
+    body.dark {
+      --ink:       #f0f0fa;
+      --ink-2:     #a0a0bc;
+      --ink-3:     #55556a;
+      --surface:   #0f0f1a;
+      --surface-2: #16162a;
+      --surface-3: #1e1e35;
+      --border:    rgba(255,255,255,.08);
+      --blue-dim:  #1a1f4a;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--surface);
+      color: var(--ink);
+      line-height: 1.6;
+      min-height: 100vh;
+      transition: background .3s var(--ease), color .3s var(--ease);
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── NAVBAR ── */
+    .header {
+      position: sticky; top: 0; z-index: 500;
+      height: 64px;
+      background: rgba(255,255,255,.82);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      transition: background .3s var(--ease);
+    }
+    body.dark .header { background: rgba(15,15,26,.88); }
+
+    .nav-inner {
+      max-width: 1240px; margin: 0 auto;
+      padding: 0 20px; height: 100%;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--font-head); font-weight: 800; font-size: 1.2rem;
+      color: var(--ink); flex-shrink: 0; letter-spacing: -.02em;
+    }
+    .logo-mark {
+      width: 34px; height: 34px;
+      background: linear-gradient(135deg, var(--blue), var(--violet));
+      border-radius: 9px;
+      display: grid; place-items: center;
+      font-size: .9rem; color: #fff;
+      box-shadow: 0 4px 12px rgba(79,110,247,.4);
+    }
+    .logo-text span { color: var(--blue); }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 2px; margin-left: 8px;
+    }
+    .nav-links a {
+      padding: 6px 12px; border-radius: var(--r-sm);
+      font-size: .875rem; font-weight: 500; color: var(--ink-2);
+      transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+    }
+    .nav-links a:hover { background: var(--surface-2); color: var(--ink); }
+    .nav-links a.active { background: var(--blue-dim); color: var(--blue); }
+
+    .nav-actions { margin-left: auto; display: flex; gap: 8px; }
+    .btn-icon {
+      width: 36px; height: 36px; border-radius: var(--r-sm);
+      background: var(--surface-2); border: 1.5px solid var(--border);
+      display: grid; place-items: center;
+      font-size: .95rem; color: var(--ink-2); cursor: pointer;
+      transition: all var(--dur) var(--ease);
+    }
+    .btn-icon:hover { background: var(--blue-dim); color: var(--blue); border-color: transparent; }
+
+    /* ── HERO ── */
+    .page-hero {
+      background: linear-gradient(160deg, var(--blue-dim) 0%, var(--surface) 60%);
+      padding: 64px 20px 52px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(79,110,247,.10), transparent);
+      pointer-events: none;
+    }
+    .page-hero-inner { position: relative; z-index: 1; }
+    .page-label {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: .75rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--blue);
+      margin-bottom: 12px;
+    }
+    .page-label::before { content: ''; width: 14px; height: 2px; background: var(--blue); border-radius: 2px; }
+    .page-hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800; letter-spacing: -.03em; line-height: 1.12;
+      margin-bottom: 12px;
+    }
+    .page-hero p { color: var(--ink-2); font-size: 1.05rem; max-width: 480px; margin: 0 auto; }
+
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px; justify-content: center;
+      font-size: .8rem; color: var(--ink-3); margin-top: 18px;
+    }
+    .breadcrumb a { color: var(--blue); font-weight: 600; }
+
+    /* ── MAIN ── */
+    .main-wrap { max-width: 1240px; margin: 0 auto; padding: 56px 20px 80px; }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 32px;
+      align-items: start;
+    }
+    @media (max-width: 860px) { .contact-layout { grid-template-columns: 1fr; } }
+
+    /* ── FORM CARD ── */
+    .form-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 36px;
+      box-shadow: var(--sh-md);
+    }
+    .form-card-title {
+      font-family: var(--font-head);
+      font-size: 1.25rem; font-weight: 800;
+      letter-spacing: -.02em; color: var(--ink);
+      margin-bottom: 28px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .form-card-title .icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: var(--blue-dim); color: var(--blue);
+      display: grid; place-items: center; font-size: 1.1rem;
+    }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block; font-size: .82rem; font-weight: 600;
+      color: var(--ink-2); margin-bottom: 7px; letter-spacing: .01em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 12px 16px;
+      border: 1.5px solid var(--border); border-radius: var(--r-sm);
+      font-family: var(--font-body); font-size: .95rem; color: var(--ink);
+      background: var(--surface-2);
+      outline: none;
+      transition: border-color var(--dur), box-shadow var(--dur), background var(--dur);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(79,110,247,.12);
+      background: var(--surface);
+    }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+
+    .btn-submit {
+      width: 100%; padding: 14px;
+      background: linear-gradient(135deg, var(--blue), var(--violet));
+      color: #fff; border: none; border-radius: var(--r-sm);
+      font-family: var(--font-head); font-size: 1rem; font-weight: 700;
+      cursor: pointer; letter-spacing: -.01em;
+      box-shadow: 0 4px 16px rgba(79,110,247,.35);
+      transition: opacity .2s, transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s;
+      margin-top: 4px;
+    }
+    .btn-submit:hover { opacity: .92; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79,110,247,.4); }
+    .btn-submit:active { transform: translateY(0); }
+
+    /* ── SUCCESS STATE ── */
+    .success-state {
+      display: none;
+      flex-direction: column; align-items: center; text-align: center;
+      padding: 40px 20px; gap: 16px;
+    }
+    .success-state.show { display: flex; }
+    .success-icon {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--emerald), #00d68f);
+      display: grid; place-items: center;
+      font-size: 2rem;
+      box-shadow: 0 8px 24px rgba(16,201,122,.3);
+      animation: popIn .5s cubic-bezier(.34,1.56,.64,1) both;
+    }
+    .success-state h3 {
+      font-family: var(--font-head); font-size: 1.4rem; font-weight: 800;
+      color: var(--ink); letter-spacing: -.02em;
+    }
+    .success-state p { color: var(--ink-2); font-size: .9rem; }
+    .btn-back {
+      padding: 10px 24px; border-radius: var(--r-full);
+      background: var(--blue-dim); color: var(--blue); border: none;
+      font-family: var(--font-head); font-size: .875rem; font-weight: 700;
+      cursor: pointer; margin-top: 8px;
+      transition: background .2s, transform .2s;
+    }
+    .btn-back:hover { background: var(--blue); color: #fff; transform: translateY(-1px); }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 16px; }
+
+    .info-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 24px;
+      box-shadow: var(--sh-sm);
+    }
+    .info-card-title {
+      font-family: var(--font-head); font-size: .95rem; font-weight: 800;
+      color: var(--ink); letter-spacing: -.01em; margin-bottom: 16px;
+    }
+
+    .contact-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 12px 0; border-bottom: 1px solid var(--border);
+    }
+    .contact-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .ci-icon {
+      width: 36px; height: 36px; border-radius: 9px;
+      background: var(--blue-dim); color: var(--blue);
+      display: grid; place-items: center; font-size: 1rem;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .ci-label { font-size: .75rem; font-weight: 600; color: var(--ink-3); text-transform: uppercase; letter-spacing: .05em; }
+    .ci-value { font-size: .88rem; color: var(--ink-2); margin-top: 2px; }
+    .ci-value a { color: var(--blue); }
+    .ci-value a:hover { text-decoration: underline; }
+
+    .faq-mini { margin-top: 4px; }
+    .faq-mini-item { border-bottom: 1px solid var(--border); }
+    .faq-mini-item:last-child { border-bottom: none; }
+    .faq-mini-q {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 0; font-family: var(--font-body); font-size: .875rem;
+      font-weight: 600; color: var(--ink); text-align: left; gap: 8px;
+      transition: color .2s;
+    }
+    .faq-mini-q:hover { color: var(--blue); }
+    .faq-mini-chevron { color: var(--ink-3); font-size: .8rem; transition: transform .2s; flex-shrink: 0; }
+    .faq-mini-item.open .faq-mini-chevron { transform: rotate(180deg); }
+    .faq-mini-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .3s ease, padding .3s ease;
+      font-size: .83rem; color: var(--ink-2); line-height: 1.6;
+    }
+    .faq-mini-item.open .faq-mini-a { max-height: 200px; padding-bottom: 12px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink); color: rgba(255,255,255,.7);
+      padding: 40px 20px 24px;
+    }
+    body.dark footer { background: #07070f; }
+    .footer-inner { max-width: 1240px; margin: 0 auto; }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: .78rem; color: rgba(255,255,255,.3); }
+    .footer-logo {
+      display: flex; align-items: center; gap: 9px;
+      font-family: var(--font-head); font-weight: 800; font-size: 1.1rem;
+      color: #fff; margin-bottom: 16px;
+    }
+    .footer-logo-mark {
+      width: 28px; height: 28px;
+      background: linear-gradient(135deg, var(--blue), var(--violet));
+      border-radius: 7px; display: grid; place-items: center;
+      font-size: .8rem; color: #fff;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(.6); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .anim-up { animation: fadeUp .5s cubic-bezier(.4,0,.2,1) both; }
+    .anim-up-1 { animation: fadeUp .5s .1s cubic-bezier(.4,0,.2,1) both; }
+  </style>
 </head>
 <body>
 
-<h1>Contact</h1>
+<!-- ── NAVBAR ── -->
+<header class="header">
+  <nav class="nav-inner">
+    <a class="logo" href="../index.html">
+      <div class="logo-mark">⚡</div>
+      <span class="logo-text">Quick<span>Tools</span></span>
+    </a>
+    <ul class="nav-links" style="list-style:none;display:flex;align-items:center;gap:2px;margin-left:8px">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#categories">All Tools</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./contact.html" class="active">Contact</a></li>
+      <li><a href="./privacy.html">Privacy Policy</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-icon" id="themeBtn" onclick="toggleDark()" title="Toggle dark mode">🌙</button>
+    </div>
+  </nav>
+</header>
 
-<p>Email: kvigneshwaran178@gmail.com</p>
+<!-- ── PAGE HERO ── -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-label">Get In Touch</div>
+    <h1>Contact Us</h1>
+    <p>Have a question, suggestion, or found a bug? We'd love to hear from you.</p>
+    <nav class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>›</span>
+      <span>Contact</span>
+    </nav>
+  </div>
+</section>
 
-<a href="index.html">Back to Home</a>
+<!-- ── MAIN ── -->
+<main class="main-wrap">
+  <div class="contact-layout">
 
+    <!-- Form -->
+    <div class="form-card anim-up">
+      <div class="form-card-title">
+        <div class="icon">✉️</div>
+        Send Us a Message
+      </div>
+
+      <!-- Form fields -->
+      <div id="formFields">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="c_name">Your Name</label>
+            <input type="text" id="c_name" placeholder="e.g. Ravi Kumar" autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="c_email">Email Address</label>
+            <input type="email" id="c_email" placeholder="you@example.com" autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="c_subject">Subject</label>
+          <select id="c_subject">
+            <option value="">Select a topic…</option>
+            <option>Tool Suggestion</option>
+            <option>Bug Report</option>
+            <option>General Question</option>
+            <option>Partnership / Collaboration</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="c_msg">Message</label>
+          <textarea id="c_msg" placeholder="How can we help you? Describe your issue or suggestion in detail…"></textarea>
+        </div>
+
+        <button class="btn-submit" onclick="submitForm()">Send Message →</button>
+      </div>
+
+      <!-- Success state -->
+      <div class="success-state" id="successState">
+        <div class="success-icon">✓</div>
+        <h3>Message Sent!</h3>
+        <p>Thanks for reaching out. We'll get back to you within 24–48 hours.</p>
+        <button class="btn-back" onclick="resetForm()">Send Another Message</button>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar anim-up-1">
+
+      <div class="info-card">
+        <div class="info-card-title">📬 Contact Information</div>
+        <div class="contact-item">
+          <div class="ci-icon">📧</div>
+          <div>
+            <div class="ci-label">Email</div>
+            <div class="ci-value"><a href="mailto:kvigneshwaran178@gmail.com">kvigneshwaran178@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">⏱️</div>
+          <div>
+            <div class="ci-label">Response Time</div>
+            <div class="ci-value">Usually within 24–48 hours</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div>
+            <div class="ci-label">Based In</div>
+            <div class="ci-value">India 🇮🇳</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-title">❓ Quick FAQ</div>
+        <div class="faq-mini">
+          <div class="faq-mini-item">
+            <button class="faq-mini-q" onclick="toggleFAQ(this)">
+              Is QuickTools really free?
+              <span class="faq-mini-chevron">▾</span>
+            </button>
+            <div class="faq-mini-a">Yes! Every tool is completely free, forever. No login, no subscription, no hidden fees.</div>
+          </div>
+          <div class="faq-mini-item">
+            <button class="faq-mini-q" onclick="toggleFAQ(this)">
+              Can I suggest a new tool?
+              <span class="faq-mini-chevron">▾</span>
+            </button>
+            <div class="faq-mini-a">Absolutely! Use the form above, select "Tool Suggestion" and describe what you'd like us to build.</div>
+          </div>
+          <div class="faq-mini-item">
+            <button class="faq-mini-q" onclick="toggleFAQ(this)">
+              Is my data safe?
+              <span class="faq-mini-chevron">▾</span>
+            </button>
+            <div class="faq-mini-a">All calculations happen in your browser. Nothing is sent to our servers. Your data stays private.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <div class="footer-logo-mark">⚡</div>
+      QuickTools
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 QuickTools. All rights reserved. Built with ❤️ for the web.</p>
+      <p style="font-size:.78rem;color:rgba(255,255,255,.3)">Free online calculators for everyone 🌿</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* Dark mode */
+  (function(){
+    const saved = localStorage.getItem('qt-dark');
+    if (saved === 'true') { document.body.classList.add('dark'); document.getElementById('themeBtn').textContent = '☀️'; }
+  })();
+  function toggleDark() {
+    const on = document.body.classList.toggle('dark');
+    document.getElementById('themeBtn').textContent = on ? '☀️' : '🌙';
+    localStorage.setItem('qt-dark', on);
+  }
+
+  /* Form submit */
+  function submitForm() {
+    const name  = document.getElementById('c_name').value.trim();
+    const email = document.getElementById('c_email').value.trim();
+    const msg   = document.getElementById('c_msg').value.trim();
+    if (!name || !email || !msg) {
+      alert('Please fill in your name, email, and message.');
+      return;
+    }
+    document.getElementById('formFields').style.display = 'none';
+    document.getElementById('successState').classList.add('show');
+  }
+
+  function resetForm() {
+    document.getElementById('c_name').value = '';
+    document.getElementById('c_email').value = '';
+    document.getElementById('c_subject').value = '';
+    document.getElementById('c_msg').value = '';
+    document.getElementById('successState').classList.remove('show');
+    document.getElementById('formFields').style.display = '';
+  }
+
+  /* Mini FAQ */
+  function toggleFAQ(btn) {
+    const item = btn.closest('.faq-mini-item');
+    const open = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  }
+</script>
 </body>
 </html>
