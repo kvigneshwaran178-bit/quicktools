@@ -1,18 +1,328 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>About - QuickTools</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – QuickTools</title>
+  <meta name="description" content="Learn about QuickTools — free, fast, no-login online calculators for everyone." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0a0a0f; --ink-2: #3d3d50; --ink-3: #8888a0;
+      --surface: #ffffff; --surface-2: #f4f4f8; --surface-3: #eeeef5;
+      --border: rgba(0,0,0,.08);
+      --blue: #4f6ef7; --blue-dim: #eef0fe; --violet: #8b5cf6; --emerald: #10c97a;
+      --sh-sm: 0 2px 8px rgba(0,0,0,.06); --sh-md: 0 8px 24px rgba(0,0,0,.08);
+      --r-sm: 8px; --r-md: 14px; --r-lg: 20px; --r-xl: 28px; --r-full: 999px;
+      --font-head: 'Plus Jakarta Sans', sans-serif; --font-body: 'Space Grotesk', sans-serif;
+      --ease: cubic-bezier(.4,0,.2,1); --dur: .22s;
+    }
+    body.dark {
+      --ink: #f0f0fa; --ink-2: #a0a0bc; --ink-3: #55556a;
+      --surface: #0f0f1a; --surface-2: #16162a; --surface-3: #1e1e35;
+      --border: rgba(255,255,255,.08); --blue-dim: #1a1f4a;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--surface); color: var(--ink); line-height: 1.6; min-height: 100vh; transition: background .3s, color .3s; }
+    a { text-decoration: none; color: inherit; }
+
+    /* NAVBAR */
+    .header { position: sticky; top: 0; z-index: 500; height: 64px; background: rgba(255,255,255,.82); backdrop-filter: blur(24px) saturate(180%); border-bottom: 1px solid var(--border); transition: background .3s; }
+    body.dark .header { background: rgba(15,15,26,.88); }
+    .nav-inner { max-width: 1240px; margin: 0 auto; padding: 0 20px; height: 100%; display: flex; align-items: center; gap: 16px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-head); font-weight: 800; font-size: 1.2rem; color: var(--ink); flex-shrink: 0; letter-spacing: -.02em; }
+    .logo-mark { width: 34px; height: 34px; background: linear-gradient(135deg, var(--blue), var(--violet)); border-radius: 9px; display: grid; place-items: center; font-size: .9rem; color: #fff; box-shadow: 0 4px 12px rgba(79,110,247,.4); }
+    .logo span { color: var(--blue); }
+    .nav-links { display: flex; align-items: center; gap: 2px; margin-left: 8px; }
+    .nav-links a { padding: 6px 12px; border-radius: var(--r-sm); font-size: .875rem; font-weight: 500; color: var(--ink-2); transition: background var(--dur), color var(--dur); }
+    .nav-links a:hover { background: var(--surface-2); color: var(--ink); }
+    .nav-links a.active { background: var(--blue-dim); color: var(--blue); }
+    .nav-actions { margin-left: auto; display: flex; gap: 8px; }
+    .btn-icon { width: 36px; height: 36px; border-radius: var(--r-sm); background: var(--surface-2); border: 1.5px solid var(--border); display: grid; place-items: center; font-size: .95rem; color: var(--ink-2); cursor: pointer; transition: all var(--dur); }
+    .btn-icon:hover { background: var(--blue-dim); color: var(--blue); border-color: transparent; }
+    .hamburger { display: none; background: var(--surface-2); border: 1.5px solid var(--border); width: 38px; height: 38px; border-radius: var(--r-sm); cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+    .hamburger span { display: block; width: 18px; height: 2px; background: var(--ink); border-radius: 2px; }
+    .mobile-drawer { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 20px 24px; z-index: 490; flex-direction: column; gap: 4px; }
+    .mobile-drawer.open { display: flex; }
+    .mobile-drawer a { padding: 10px 14px; border-radius: var(--r-sm); font-size: .95rem; font-weight: 500; color: var(--ink-2); display: block; }
+    .mobile-drawer a:hover { background: var(--surface-2); color: var(--ink); }
+    @media (max-width: 640px) { .nav-links { display: none; } .hamburger { display: flex; } }
+
+    /* HERO */
+    .page-hero { background: linear-gradient(160deg, var(--blue-dim) 0%, var(--surface) 60%); padding: 64px 20px 52px; text-align: center; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(79,110,247,.10), transparent); pointer-events: none; }
+    .hero-inner { position: relative; z-index: 1; }
+    .page-label { display: inline-flex; align-items: center; gap: 6px; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+    .page-label::before { content: ''; width: 14px; height: 2px; background: var(--blue); border-radius: 2px; }
+    .page-hero h1 { font-family: var(--font-head); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.12; margin-bottom: 12px; }
+    .page-hero h1 em { font-style: normal; color: var(--blue); }
+    .page-hero p { color: var(--ink-2); font-size: 1.05rem; max-width: 480px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 6px; justify-content: center; font-size: .8rem; color: var(--ink-3); margin-top: 18px; }
+    .breadcrumb a { color: var(--blue); font-weight: 600; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* LAYOUT */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 64px 0; }
+    .section-sm { padding: 48px 0; }
+
+    /* MISSION */
+    .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+    @media (max-width: 680px) { .mission-grid { grid-template-columns: 1fr; } }
+    .mission-text h2 { font-family: var(--font-head); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.15; margin-bottom: 16px; }
+    .mission-text h2 em { font-style: normal; color: var(--blue); }
+    .mission-text p { color: var(--ink-2); font-size: .95rem; line-height: 1.75; }
+    .mission-text p + p { margin-top: 12px; }
+    .mission-visual { background: linear-gradient(135deg, var(--blue-dim), rgba(139,92,246,.08)); border: 1.5px solid rgba(79,110,247,.15); border-radius: var(--r-xl); padding: 28px; display: flex; flex-direction: column; gap: 14px; }
+    .mv-stat { display: flex; align-items: center; gap: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 16px 20px; }
+    .ms-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--blue-dim); display: grid; place-items: center; font-size: 1.3rem; flex-shrink: 0; }
+    .ms-num { font-family: var(--font-head); font-size: 1.6rem; font-weight: 800; color: var(--blue); letter-spacing: -.03em; line-height: 1; }
+    .ms-label { font-size: .78rem; color: var(--ink-3); margin-top: 2px; }
+
+    /* VALUES */
+    .sec-label { display: inline-flex; align-items: center; gap: 6px; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
+    .sec-label::before { content: ''; width: 14px; height: 2px; background: var(--blue); border-radius: 2px; }
+    .sec-title { font-family: var(--font-head); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.2; margin-bottom: 10px; }
+    .sec-desc { color: var(--ink-2); font-size: .95rem; max-width: 500px; }
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-top: 32px; }
+    .value-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--r-lg); padding: 24px; transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s; }
+    .value-card:hover { transform: translateY(-4px); box-shadow: var(--sh-md); }
+    .value-icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .value-card h3 { font-family: var(--font-head); font-size: .95rem; font-weight: 700; margin-bottom: 6px; }
+    .value-card p { font-size: .83rem; color: var(--ink-2); line-height: 1.6; }
+
+    /* TECH */
+    .card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--r-lg); padding: 32px; box-shadow: var(--sh-sm); }
+    .tech-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .tech-tag { display: inline-flex; align-items: center; gap: 6px; background: var(--surface-2); border: 1.5px solid var(--border); border-radius: var(--r-full); padding: 7px 16px; font-size: .82rem; font-weight: 600; color: var(--ink-2); }
+
+    /* TEAM */
+    .team-card { display: flex; align-items: center; gap: 20px; background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--r-lg); padding: 24px; box-shadow: var(--sh-sm); }
+    @media (max-width: 500px) { .team-card { flex-direction: column; text-align: center; } }
+    .avatar { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), var(--violet)); display: grid; place-items: center; font-size: 2rem; flex-shrink: 0; box-shadow: 0 4px 16px rgba(79,110,247,.3); }
+    .team-info h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 800; margin-bottom: 4px; }
+    .team-info .role { font-size: .82rem; color: var(--blue); font-weight: 600; margin-bottom: 8px; }
+    .team-info p { font-size: .85rem; color: var(--ink-2); line-height: 1.6; }
+
+    /* DARK BANNER */
+    .dark-banner { background: var(--ink); border-radius: var(--r-xl); padding: 52px 40px; position: relative; overflow: hidden; text-align: center; }
+    body.dark .dark-banner { background: var(--surface-3); border: 1px solid var(--border); }
+    .dark-banner::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 60% 60% at 90% 20%, rgba(79,110,247,.2), transparent), radial-gradient(ellipse 50% 50% at 10% 80%, rgba(139,92,246,.15), transparent); }
+    .dark-banner-inner { position: relative; z-index: 1; }
+    .dark-banner h2 { font-family: var(--font-head); font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; color: #fff; letter-spacing: -.03em; margin-bottom: 12px; }
+    body.dark .dark-banner h2 { color: var(--ink); }
+    .dark-banner p { color: rgba(255,255,255,.65); font-size: .95rem; max-width: 440px; margin: 0 auto 28px; }
+    body.dark .dark-banner p { color: var(--ink-2); }
+    .banner-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-white { padding: 12px 26px; background: #fff; color: var(--blue); border: none; border-radius: var(--r-md); font-family: var(--font-head); font-size: .9rem; font-weight: 700; cursor: pointer; text-decoration: none; transition: transform .2s, box-shadow .2s; display: inline-block; }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.2); }
+    .btn-outline-white { padding: 12px 26px; background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.4); border-radius: var(--r-md); font-family: var(--font-head); font-size: .9rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: background .2s, border-color .2s; display: inline-block; }
+    .btn-outline-white:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.7); }
+
+    /* FOOTER */
+    footer { background: var(--ink); padding: 40px 20px 24px; }
+    body.dark footer { background: #07070f; }
+    .footer-inner { max-width: 1240px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+    @media (max-width: 680px) { .footer-top { grid-template-columns: 1fr; gap: 24px; } }
+    .footer-logo { display: flex; align-items: center; gap: 9px; font-family: var(--font-head); font-weight: 800; font-size: 1.1rem; color: #fff; margin-bottom: 10px; }
+    .footer-logo-mark { width: 28px; height: 28px; background: linear-gradient(135deg, var(--blue), var(--violet)); border-radius: 7px; display: grid; place-items: center; font-size: .8rem; color: #fff; }
+    .footer-desc { font-size: .83rem; color: rgba(255,255,255,.4); line-height: 1.65; max-width: 240px; }
+    .footer-col h4 { font-family: var(--font-head); font-size: .78rem; font-weight: 700; color: rgba(255,255,255,.9); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col ul a { font-size: .83rem; color: rgba(255,255,255,.45); transition: color .2s; }
+    .footer-col ul a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom p { font-size: .78rem; color: rgba(255,255,255,.3); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .anim-up   { animation: fadeUp .5s cubic-bezier(.4,0,.2,1) both; }
+    .anim-up-1 { animation: fadeUp .5s .1s cubic-bezier(.4,0,.2,1) both; }
+    .anim-up-2 { animation: fadeUp .5s .2s cubic-bezier(.4,0,.2,1) both; }
+  </style>
 </head>
 <body>
 
-<h1>About QuickTools</h1>
+<header class="header">
+  <nav class="nav-inner">
+    <a class="logo" href="../index.html">
+      <div class="logo-mark">⚡</div>
+      Quick<span>Tools</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#categories">All Tools</a>
+      <a href="./about.html" class="active">About</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./privacy.html">Privacy Policy</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-icon" id="themeBtn" onclick="toggleDark()" title="Toggle dark mode">🌙</button>
+      <button class="hamburger" id="hamburger" onclick="toggleDrawer()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="../index.html">🏠 Home</a>
+    <a href="../index.html#categories">🔧 All Tools</a>
+    <a href="./about.html">ℹ️ About</a>
+    <a href="./contact.html">✉️ Contact</a>
+    <a href="./privacy.html">🔒 Privacy Policy</a>
+  </div>
+</header>
 
-<p>
-QuickTools provides free online calculators, converters,
-productivity tools, and smart utilities for daily use.
-</p>
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="page-label">Who We Are</div>
+    <h1>About <em>QuickTools</em></h1>
+    <p>Built for speed. Designed for everyone. Free, forever.</p>
+    <nav class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>›</span>
+      <span>About</span>
+    </nav>
+  </div>
+</section>
 
-<a href="index.html">Back to Home</a>
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="mission-grid anim-up">
+        <div class="mission-text">
+          <h2>Our <em>Mission</em> is Simple</h2>
+          <p>We were frustrated by cluttered, ad-heavy, slow calculator sites. So we built QuickTools — clean, fast, and mobile-friendly by default.</p>
+          <p>No paywalls. No signup. No tracking of personal data. Just tools that work, instantly, for everyone.</p>
+          <p style="margin-top:12px">We believe powerful tools should be accessible to everyone, regardless of where they are or what device they use.</p>
+        </div>
+        <div class="mission-visual anim-up-1">
+          <div class="mv-stat">
+            <div class="ms-icon">⚡</div>
+            <div><div class="ms-num">20+</div><div class="ms-label">Free Tools Available</div></div>
+          </div>
+          <div class="mv-stat">
+            <div class="ms-icon">🔒</div>
+            <div><div class="ms-num">0</div><div class="ms-label">Data Collected</div></div>
+          </div>
+          <div class="mv-stat">
+            <div class="ms-icon">🆓</div>
+            <div><div class="ms-num">∞</div><div class="ms-label">Always Free, Forever</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="section-sm" style="background:var(--surface-2);padding:56px 0;">
+    <div class="container">
+      <div class="anim-up">
+        <div class="sec-label">What We Stand For</div>
+        <div class="sec-title">Our Core Values</div>
+        <div class="sec-desc">Everything we build is guided by these principles.</div>
+      </div>
+      <div class="values-grid">
+        <div class="value-card"><div class="value-icon">⚡</div><h3>Lightning Fast</h3><p>Results in milliseconds. No waiting, no loading screens, no lag.</p></div>
+        <div class="value-card"><div class="value-icon">🔓</div><h3>Always Free</h3><p>Every tool, forever free. No subscriptions, no hidden fees, no paywalls.</p></div>
+        <div class="value-card"><div class="value-icon">🔒</div><h3>Privacy First</h3><p>All calculations happen in your browser. Nothing is sent to servers.</p></div>
+        <div class="value-card"><div class="value-icon">📱</div><h3>Mobile Friendly</h3><p>Works beautifully on every screen — phone, tablet, or desktop.</p></div>
+        <div class="value-card"><div class="value-icon">♿</div><h3>Accessible</h3><p>Built with accessibility in mind — keyboard navigation, ARIA labels, and clear UX.</p></div>
+        <div class="value-card"><div class="value-icon">🌿</div><h3>No Clutter</h3><p>No ads, no pop-ups, no dark patterns. Just the tool you need.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="anim-up" style="margin-bottom:24px">
+        <div class="sec-label">Under the Hood</div>
+        <div class="sec-title">Technology</div>
+      </div>
+      <div class="card anim-up-1">
+        <p style="color:var(--ink-2);line-height:1.75;font-size:.95rem">QuickTools is a fully static website built with pure <strong>HTML, CSS, and JavaScript</strong> — no frameworks, no build tools, no servers. All calculations happen entirely in your browser, which means it's lightning-fast, privacy-respecting, and works even on a slow connection.</p>
+        <p style="color:var(--ink-2);line-height:1.75;font-size:.95rem;margin-top:12px">We use <strong>Google Analytics</strong> (anonymous) for aggregate usage insights and <strong>Google Fonts</strong> for typography. That's it — no other third-party services.</p>
+        <div class="tech-row">
+          <span class="tech-tag">🌐 HTML5</span>
+          <span class="tech-tag">🎨 CSS3</span>
+          <span class="tech-tag">⚙️ Vanilla JavaScript</span>
+          <span class="tech-tag">🔤 Google Fonts</span>
+          <span class="tech-tag">📊 Google Analytics</span>
+          <span class="tech-tag">🚀 Static Hosting</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" style="padding-bottom:48px">
+    <div class="container">
+      <div class="anim-up" style="margin-bottom:24px">
+        <div class="sec-label">The People</div>
+        <div class="sec-title">Built by</div>
+      </div>
+      <div class="team-card anim-up-1">
+        <div class="avatar">👨‍💻</div>
+        <div class="team-info">
+          <h3>K. Vigneshwaran</h3>
+          <div class="role">Founder & Developer</div>
+          <p>Passionate about building useful, accessible tools for everyone. Designed and built QuickTools from scratch to make everyday calculations simple and fast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" style="padding-bottom:64px">
+    <div class="container">
+      <div class="dark-banner anim-up">
+        <div class="dark-banner-inner">
+          <h2>Try Our Free Tools Today</h2>
+          <p>20+ calculators for finance, health, education & more. No login, no cost, no catch.</p>
+          <div class="banner-btns">
+            <a href="../index.html#categories" class="btn-white">Browse All Tools</a>
+            <a href="./contact.html" class="btn-outline-white">Suggest a Tool</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo"><div class="footer-logo-mark">⚡</div>QuickTools</div>
+        <p class="footer-desc">Free, fast, and reliable online calculators for everyday life — no login required.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="./bmi-calculator.html">BMI Calculator</a></li>
+          <li><a href="../index.html#categories">All Tools</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="./privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 QuickTools. All rights reserved.</p>
+      <p>Free online calculators for everyone 🌿</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){ const s = localStorage.getItem('qt-dark'); if(s==='true'){document.body.classList.add('dark');document.getElementById('themeBtn').textContent='☀️';} })();
+  function toggleDark(){ const on=document.body.classList.toggle('dark'); document.getElementById('themeBtn').textContent=on?'☀️':'🌙'; localStorage.setItem('qt-dark',on); }
+  function toggleDrawer(){ document.getElementById('mobileDrawer').classList.toggle('open'); }
+  document.addEventListener('click',e=>{ if(!e.target.closest('.header')) document.getElementById('mobileDrawer').classList.remove('open'); });
+</script>
 </body>
 </html>
