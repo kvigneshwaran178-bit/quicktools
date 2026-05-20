@@ -1,18 +1,316 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Privacy Policy - QuickTools</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – QuickTools</title>
+  <meta name="description" content="QuickTools Privacy Policy — we collect no personal data. All calculations happen in your browser." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0a0a0f; --ink-2: #3d3d50; --ink-3: #8888a0;
+      --surface: #ffffff; --surface-2: #f4f4f8; --surface-3: #eeeef5;
+      --border: rgba(0,0,0,.08);
+      --blue: #4f6ef7; --blue-dim: #eef0fe; --violet: #8b5cf6; --emerald: #10c97a;
+      --sh-sm: 0 2px 8px rgba(0,0,0,.06); --sh-md: 0 8px 24px rgba(0,0,0,.08);
+      --r-sm: 8px; --r-md: 14px; --r-lg: 20px; --r-xl: 28px; --r-full: 999px;
+      --font-head: 'Plus Jakarta Sans', sans-serif; --font-body: 'Space Grotesk', sans-serif;
+      --ease: cubic-bezier(.4,0,.2,1); --dur: .22s;
+    }
+    body.dark {
+      --ink: #f0f0fa; --ink-2: #a0a0bc; --ink-3: #55556a;
+      --surface: #0f0f1a; --surface-2: #16162a; --surface-3: #1e1e35;
+      --border: rgba(255,255,255,.08); --blue-dim: #1a1f4a;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--surface); color: var(--ink); line-height: 1.6; min-height: 100vh; transition: background .3s, color .3s; }
+    a { text-decoration: none; color: inherit; }
+
+    /* NAVBAR */
+    .header { position: sticky; top: 0; z-index: 500; height: 64px; background: rgba(255,255,255,.82); backdrop-filter: blur(24px) saturate(180%); border-bottom: 1px solid var(--border); transition: background .3s; }
+    body.dark .header { background: rgba(15,15,26,.88); }
+    .nav-inner { max-width: 1240px; margin: 0 auto; padding: 0 20px; height: 100%; display: flex; align-items: center; gap: 16px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-head); font-weight: 800; font-size: 1.2rem; color: var(--ink); flex-shrink: 0; letter-spacing: -.02em; }
+    .logo-mark { width: 34px; height: 34px; background: linear-gradient(135deg, var(--blue), var(--violet)); border-radius: 9px; display: grid; place-items: center; font-size: .9rem; color: #fff; box-shadow: 0 4px 12px rgba(79,110,247,.4); }
+    .logo span { color: var(--blue); }
+    .nav-links { display: flex; align-items: center; gap: 2px; margin-left: 8px; }
+    .nav-links a { padding: 6px 12px; border-radius: var(--r-sm); font-size: .875rem; font-weight: 500; color: var(--ink-2); transition: background var(--dur), color var(--dur); }
+    .nav-links a:hover { background: var(--surface-2); color: var(--ink); }
+    .nav-links a.active { background: var(--blue-dim); color: var(--blue); }
+    .nav-actions { margin-left: auto; display: flex; gap: 8px; }
+    .btn-icon { width: 36px; height: 36px; border-radius: var(--r-sm); background: var(--surface-2); border: 1.5px solid var(--border); display: grid; place-items: center; font-size: .95rem; color: var(--ink-2); cursor: pointer; transition: all var(--dur); }
+    .btn-icon:hover { background: var(--blue-dim); color: var(--blue); border-color: transparent; }
+    .hamburger { display: none; background: var(--surface-2); border: 1.5px solid var(--border); width: 38px; height: 38px; border-radius: var(--r-sm); cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+    .hamburger span { display: block; width: 18px; height: 2px; background: var(--ink); border-radius: 2px; }
+    .mobile-drawer { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 20px 24px; z-index: 490; flex-direction: column; gap: 4px; }
+    .mobile-drawer.open { display: flex; }
+    .mobile-drawer a { padding: 10px 14px; border-radius: var(--r-sm); font-size: .95rem; font-weight: 500; color: var(--ink-2); display: block; }
+    .mobile-drawer a:hover { background: var(--surface-2); color: var(--ink); }
+    @media (max-width: 640px) { .nav-links { display: none; } .hamburger { display: flex; } }
+
+    /* HERO */
+    .page-hero { background: linear-gradient(160deg, var(--blue-dim) 0%, var(--surface) 60%); padding: 64px 20px 52px; text-align: center; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(79,110,247,.10), transparent); pointer-events: none; }
+    .hero-inner { position: relative; z-index: 1; }
+    .page-label { display: inline-flex; align-items: center; gap: 6px; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+    .page-label::before { content: ''; width: 14px; height: 2px; background: var(--blue); border-radius: 2px; }
+    .page-hero h1 { font-family: var(--font-head); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.12; margin-bottom: 12px; }
+    .page-hero h1 em { font-style: normal; color: var(--blue); }
+    .page-hero p { color: var(--ink-2); font-size: 1.05rem; max-width: 480px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 6px; justify-content: center; font-size: .8rem; color: var(--ink-3); margin-top: 18px; }
+    .breadcrumb a { color: var(--blue); font-weight: 600; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* LAYOUT */
+    .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 64px 0; }
+
+    /* HIGHLIGHTS */
+    .highlights { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; margin-bottom: 48px; }
+    .hl-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--r-lg); padding: 20px; text-align: center; box-shadow: var(--sh-sm); }
+    .hl-icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .hl-card h3 { font-family: var(--font-head); font-size: .85rem; font-weight: 700; margin-bottom: 4px; }
+    .hl-card p { font-size: .75rem; color: var(--ink-3); }
+
+    /* PROSE */
+    .policy-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--r-lg); padding: 36px; box-shadow: var(--sh-sm); }
+    .policy-section { padding: 24px 0; border-bottom: 1px solid var(--border); }
+    .policy-section:first-child { padding-top: 0; }
+    .policy-section:last-child { border-bottom: none; padding-bottom: 0; }
+    .policy-section h2 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 800; color: var(--ink); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .policy-section p { font-size: .9rem; color: var(--ink-2); line-height: 1.75; }
+    .policy-section p + p { margin-top: 10px; }
+    .policy-section ul { padding-left: 0; list-style: none; margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+    .policy-section ul li { font-size: .9rem; color: var(--ink-2); line-height: 1.6; padding-left: 20px; position: relative; }
+    .policy-section ul li::before { content: '→'; position: absolute; left: 0; color: var(--blue); font-weight: 700; font-size: .8rem; }
+
+    /* LAST UPDATED */
+    .last-updated { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-dim); color: var(--blue); border: 1px solid rgba(79,110,247,.2); border-radius: var(--r-full); padding: 6px 16px; font-size: .8rem; font-weight: 600; margin-bottom: 28px; }
+
+    /* CONTACT BOX */
+    .contact-box { background: linear-gradient(135deg, var(--blue-dim), rgba(139,92,246,.08)); border: 1.5px solid rgba(79,110,247,.15); border-radius: var(--r-lg); padding: 28px; text-align: center; margin-top: 32px; }
+    .contact-box h3 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; }
+    .contact-box p { font-size: .88rem; color: var(--ink-2); margin-bottom: 16px; }
+    .btn-blue { display: inline-block; padding: 11px 24px; background: linear-gradient(135deg, var(--blue), var(--violet)); color: #fff; border-radius: var(--r-md); font-family: var(--font-head); font-size: .875rem; font-weight: 700; transition: opacity .2s, transform .2s; }
+    .btn-blue:hover { opacity: .9; transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer { background: var(--ink); padding: 40px 20px 24px; }
+    body.dark footer { background: #07070f; }
+    .footer-inner { max-width: 1240px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+    @media (max-width: 680px) { .footer-top { grid-template-columns: 1fr; gap: 24px; } }
+    .footer-logo { display: flex; align-items: center; gap: 9px; font-family: var(--font-head); font-weight: 800; font-size: 1.1rem; color: #fff; margin-bottom: 10px; }
+    .footer-logo-mark { width: 28px; height: 28px; background: linear-gradient(135deg, var(--blue), var(--violet)); border-radius: 7px; display: grid; place-items: center; font-size: .8rem; color: #fff; }
+    .footer-desc { font-size: .83rem; color: rgba(255,255,255,.4); line-height: 1.65; max-width: 240px; }
+    .footer-col h4 { font-family: var(--font-head); font-size: .78rem; font-weight: 700; color: rgba(255,255,255,.9); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col ul a { font-size: .83rem; color: rgba(255,255,255,.45); transition: color .2s; }
+    .footer-col ul a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom p { font-size: .78rem; color: rgba(255,255,255,.3); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .anim-up   { animation: fadeUp .5s cubic-bezier(.4,0,.2,1) both; }
+    .anim-up-1 { animation: fadeUp .5s .1s cubic-bezier(.4,0,.2,1) both; }
+  </style>
 </head>
 <body>
 
-<h1>Privacy Policy</h1>
+<header class="header">
+  <nav class="nav-inner">
+    <a class="logo" href="../index.html">
+      <div class="logo-mark">⚡</div>
+      Quick<span>Tools</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#categories">All Tools</a>
+      <a href="./about.html">About</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./privacy.html" class="active">Privacy Policy</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-icon" id="themeBtn" onclick="toggleDark()" title="Toggle dark mode">🌙</button>
+      <button class="hamburger" id="hamburger" onclick="toggleDrawer()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="../index.html">🏠 Home</a>
+    <a href="../index.html#categories">🔧 All Tools</a>
+    <a href="./about.html">ℹ️ About</a>
+    <a href="./contact.html">✉️ Contact</a>
+    <a href="./privacy.html">🔒 Privacy Policy</a>
+  </div>
+</header>
 
-<p>
-QuickTools may use cookies and analytics tools
-to improve user experience and website performance.
-</p>
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="page-label">Legal</div>
+    <h1><em>Privacy</em> Policy</h1>
+    <p>We respect your privacy. No personal data is collected or stored.</p>
+    <nav class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>›</span>
+      <span>Privacy Policy</span>
+    </nav>
+  </div>
+</section>
 
-<a href="index.html">Back to Home</a>
+<main>
+  <section class="section">
+    <div class="container">
+
+      <div class="anim-up">
+        <div class="last-updated">📅 Last updated: May 2025</div>
+
+        <div class="highlights">
+          <div class="hl-card"><div class="hl-icon">🔒</div><h3>No Data Collected</h3><p>We don't collect any personal information</p></div>
+          <div class="hl-card"><div class="hl-icon">🧠</div><h3>Browser Only</h3><p>All calculations stay in your browser</p></div>
+          <div class="hl-card"><div class="hl-icon">🚫</div><h3>No Login</h3><p>No account, no tracking, no profile</p></div>
+          <div class="hl-card"><div class="hl-icon">📢</div><h3>No Ads</h3><p>We don't serve ads or sell your data</p></div>
+        </div>
+      </div>
+
+      <div class="policy-card anim-up-1">
+
+        <div class="policy-section">
+          <h2>📋 Overview</h2>
+          <p>QuickTools ("we", "our", or "the site") is a free online calculator platform. This Privacy Policy explains how we handle information when you use our website at <strong>quicktools.in</strong>.</p>
+          <p>The short version: <strong>we collect virtually no personal data</strong>. All tool calculations happen entirely in your browser and are never transmitted to us.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>📊 Information We Collect</h2>
+          <p>We do <strong>not</strong> collect personal data such as your name, email, address, or payment information. We do not require you to create an account.</p>
+          <p>We use <strong>Google Analytics</strong> (via gtag.js) to collect anonymous, aggregated usage statistics including:</p>
+          <ul>
+            <li>Pages visited and time spent on each page</li>
+            <li>General geographic region (country/city level)</li>
+            <li>Device type, browser, and operating system</li>
+            <li>Referral source (how you found us)</li>
+          </ul>
+          <p style="margin-top:10px">This data is anonymous and cannot be used to identify you personally. It helps us understand which tools are most useful and how to improve the site.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>🧮 Calculator Data</h2>
+          <p>All values you enter into QuickTools calculators (e.g. your height, weight, loan amount, income) are processed <strong>entirely within your browser</strong>. This data is <strong>never sent to our servers</strong> and is discarded when you close or refresh the page.</p>
+          <p>We have no access to any inputs you enter into our tools.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>🍪 Cookies</h2>
+          <p>We use minimal cookies:</p>
+          <ul>
+            <li><strong>Dark mode preference</strong> — stored in <code>localStorage</code> on your device to remember your theme choice. Not transmitted anywhere.</li>
+            <li><strong>Google Analytics cookies</strong> — anonymous cookies set by Google Analytics to track aggregate site usage. You can opt out via <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--blue)">Google Analytics Opt-out</a>.</li>
+          </ul>
+          <p style="margin-top:10px">We do not use advertising cookies, tracking pixels, or any third-party marketing cookies.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>🤝 Third-Party Services</h2>
+          <p>QuickTools uses two external services:</p>
+          <ul>
+            <li><strong>Google Analytics</strong> — for anonymous usage statistics. Governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--blue)">Google's Privacy Policy</a>.</li>
+            <li><strong>Google Fonts</strong> — for web typography. May log your IP address per <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--blue)">Google's Privacy Policy</a>.</li>
+          </ul>
+          <p style="margin-top:10px">We do not sell, rent, or share any data with advertisers or other third parties.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>👤 Your Rights</h2>
+          <p>Since we do not collect personal data, there is nothing to access, correct, or delete. If you have questions or concerns about privacy on QuickTools, you can contact us at any time.</p>
+          <p>If you wish to opt out of Google Analytics tracking, use the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--blue)">Google Analytics Opt-out Browser Add-on</a>.</p>
+        </div>
+
+        <div class="policy-section">
+          <h2>🔄 Changes to This Policy</h2>
+          <p>We may update this Privacy Policy occasionally. The "Last updated" date at the top of this page reflects the most recent revision. Continued use of the site after changes constitutes acceptance of the updated policy.</p>
+        </div>
+
+      </div>
+
+      <div class="contact-box anim-up-1">
+        <h3>Questions about privacy?</h3>
+        <p>We're happy to answer any privacy-related questions. Reach out anytime.</p>
+        <a href="./contact.html" class="btn-blue">Contact Us →</a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo"><div class="footer-logo-mark">⚡</div>QuickTools</div>
+        <p class="footer-desc">Free, fast, and reliable online calculators for everyday life — no login required.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="./bmi-calculator.html">BMI Calculator</a></li>
+          <li><a href="../index.html#categories">All Tools</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="./privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 QuickTools. All rights reserved.</p>
+      <p>Free online calculators for everyone 🌿</p>
+    </div>
+  </div>
+</footer>
+  <script>
+(function () {
+  const savedTheme = localStorage.getItem('qt-dark');
+
+  if (savedTheme === 'true') {
+    document.body.classList.add('dark');
+
+    const themeBtn = document.getElementById('themeBtn');
+    if (themeBtn) {
+      themeBtn.textContent = '☀️';
+    }
+  }
+})();
+
+function toggleDark() {
+  const enabled = document.body.classList.toggle('dark');
+
+  const themeBtn = document.getElementById('themeBtn');
+  if (themeBtn) {
+    themeBtn.textContent = enabled ? '☀️' : '🌙';
+  }
+
+  localStorage.setItem('qt-dark', enabled);
+}
+
+function toggleDrawer() {
+  document.getElementById('mobileDrawer').classList.toggle('open');
+}
+
+document.addEventListener('click', function (e) {
+  if (!e.target.closest('.header')) {
+    document.getElementById('mobileDrawer').classList.remove('open');
+  }
+});
+</script>
 
 </body>
 </html>
