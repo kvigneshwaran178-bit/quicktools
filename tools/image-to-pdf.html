@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Image to PDF Converter – Convert JPG, PNG &amp; WEBP to PDF Online | QuickTools</title>
+  <meta name="description" content="Convert JPG, PNG, JPEG and WEBP images to PDF online for free. Fast, secure and high quality Image to PDF Converter with instant download. No upload needed – works in your browser." />
+  <link rel="canonical" href="https://quicktools.example.com/tools/image-to-pdf-converter.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Free Image to PDF Converter – Convert JPG, PNG &amp; WEBP to PDF Online" />
+  <meta property="og:description" content="Convert JPG, PNG, JPEG and WEBP images to PDF online for free. Fast, secure and high quality Image to PDF Converter with instant download." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://quicktools.example.com/tools/image-to-pdf-converter.html" />
+  <meta property="og:image" content="https://quicktools.example.com/assets/og-image-to-pdf.png" />
+  <meta property="og:site_name" content="QuickTools" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Image to PDF Converter – Convert JPG, PNG &amp; WEBP to PDF Online" />
+  <meta name="twitter:description" content="Convert JPG, PNG, JPEG and WEBP images to PDF online for free. Fast, secure, no signup required." />
+  <meta name="twitter:image" content="https://quicktools.example.com/assets/og-image-to-pdf.png" />
+
+  <!-- Schema: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Image to PDF Converter",
+    "url": "https://quicktools.example.com/tools/image-to-pdf-converter.html",
+    "description": "Convert JPG, PNG, JPEG and WEBP images to PDF online for free. Fast, secure and high quality.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- Schema: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I convert an image to PDF for free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Simply drag and drop your JPG, PNG, WEBP or JPEG images onto our converter, arrange them in the desired order, choose your page size and margin settings, then click 'Download PDF'. No signup or installation required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this image to PDF converter secure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All conversion happens entirely in your browser using JavaScript. Your images are never uploaded to any server, making it 100% private and secure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What image formats are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We support JPG, JPEG, PNG, and WEBP image formats. You can convert one image or merge multiple images into a single PDF."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I merge multiple images into one PDF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! You can upload multiple images and reorder them by dragging. All selected images will be merged into a single multi-page PDF."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What page sizes are available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can choose from A4, A3, Letter, and Legal page sizes. You can also adjust the margin (None, Small, Medium, Large) to fit your needs."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://quicktools.example.com/"},
+      {"@type":"ListItem","position":2,"name":"Tools","item":"https://quicktools.example.com/tools/"},
+      {"@type":"ListItem","position":3,"name":"Image to PDF Converter","item":"https://quicktools.example.com/tools/image-to-pdf-converter.html"}
+    ]
+  }
+  </script>
+
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <style>
+    /* ── Google Fonts ── */
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+    /* ── CSS Variables ── */
+    :root {
+      --bg: #f4f2ee;
+      --bg2: #eceae4;
+      --surface: #ffffff;
+      --surface2: #faf9f6;
+      --border: #dedad2;
+      --accent: #e05c2a;
+      --accent2: #f0864e;
+      --accent-dim: #f3ece6;
+      --text: #1a1714;
+      --text2: #5a5450;
+      --text3: #9a9390;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --shadow: 0 2px 16px rgba(0,0,0,0.07);
+      --shadow-lg: 0 8px 48px rgba(0,0,0,0.12);
+      --font-head: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --nav-h: 64px;
+      --transition: 0.22s cubic-bezier(.4,0,.2,1);
+    }
+    [data-theme="dark"] {
+      --bg: #131210;
+      --bg2: #1c1a17;
+      --surface: #201e1a;
+      --surface2: #26231e;
+      --border: #302c26;
+      --accent: #f07040;
+      --accent2: #f59060;
+      --accent-dim: #2e1e12;
+      --text: #f0ece6;
+      --text2: #a09890;
+      --text3: #605850;
+      --shadow: 0 2px 16px rgba(0,0,0,0.3);
+      --shadow-lg: 0 8px 48px rgba(0,0,0,0.5);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      transition: background var(--transition), color var(--transition);
+      overflow-x: hidden;
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg2); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+    /* ── Navbar ── */
+    .navbar {
+      position: sticky; top: 0; z-index: 100;
+      height: var(--nav-h);
+      background: rgba(244,242,238,0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      padding: 0 clamp(16px,4vw,40px);
+      gap: 8px;
+      transition: background var(--transition);
+    }
+    [data-theme="dark"] .navbar {
+      background: rgba(19,18,16,0.9);
+    }
+    .nav-logo {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.03em;
+      margin-right: auto;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .nav-logo span {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 30px; height: 30px; border-radius: 8px;
+      background: var(--accent); color: #fff;
+      font-size: 0.85rem; font-weight: 800;
+    }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a {
+      font-size: 0.875rem; font-weight: 500;
+      color: var(--text2); text-decoration: none;
+      padding: 6px 12px; border-radius: 8px;
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover { color: var(--text); background: var(--surface); }
+    .btn-theme {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text2); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; transition: all var(--transition);
+      margin-left: 4px;
+    }
+    .btn-theme:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-mobile-toggle {
+      display: none; width: 36px; height: 36px; border-radius: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text); cursor: pointer; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    @media (max-width: 700px) {
+      .nav-links { display: none; position: absolute; top: var(--nav-h); left: 0; right: 0;
+        background: var(--surface); border-bottom: 1px solid var(--border);
+        flex-direction: column; padding: 12px 16px; gap: 2px; z-index: 99; }
+      .nav-links.open { display: flex; }
+      .nav-mobile-toggle { display: flex; }
+    }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      padding: 12px clamp(16px,4vw,40px);
+      font-size: 0.8rem; color: var(--text3);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .breadcrumb a { color: var(--text3); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb .sep { opacity: 0.5; }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: clamp(40px,7vw,80px) clamp(16px,4vw,40px) clamp(32px,5vw,60px);
+      max-width: 760px; margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--accent-dim); color: var(--accent);
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 99px; margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 800; letter-spacing: -0.04em; line-height: 1.12;
+      color: var(--text); margin-bottom: 16px;
+    }
+    .hero h1 em { color: var(--accent); font-style: normal; }
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text2); max-width: 560px; margin: 0 auto 28px;
+    }
+    .hero-features {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+      margin-bottom: 0;
+    }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 99px; padding: 5px 14px;
+      font-size: 0.82rem; font-weight: 500; color: var(--text2);
+    }
+    .hero-pill svg { color: var(--accent); }
+
+    /* ── Main Wrapper ── */
+    .main-wrap {
+      max-width: 980px; margin: 0 auto;
+      padding: 0 clamp(12px,3vw,32px) 60px;
+    }
+
+    /* ── Tool Card ── */
+    .tool-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      margin-bottom: 40px;
+      animation: fadeUp 0.5s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .tool-header {
+      padding: 24px 28px 0;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .tool-header h2 {
+      font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em;
+    }
+
+    /* ── Settings Bar ── */
+    .settings-bar {
+      padding: 16px 28px;
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface2);
+    }
+    .settings-group { display: flex; align-items: center; gap: 8px; }
+    .settings-label { font-size: 0.8rem; font-weight: 600; color: var(--text3); white-space: nowrap; }
+    select, .settings-select {
+      font-family: var(--font-body);
+      font-size: 0.85rem; font-weight: 500;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 7px 12px; border-radius: var(--radius-sm);
+      cursor: pointer; outline: none;
+      transition: border-color var(--transition);
+    }
+    select:hover, select:focus { border-color: var(--accent); }
+
+    /* ── Drop Zone ── */
+    .drop-zone {
+      margin: 24px 28px;
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 48px 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--transition);
+      background: var(--surface2);
+      position: relative;
+    }
+    .drop-zone:hover, .drop-zone.drag-over {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+    }
+    .drop-zone input[type="file"] {
+      position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+    }
+    .drop-icon {
+      width: 64px; height: 64px; border-radius: 18px;
+      background: var(--accent-dim);
+      display: inline-flex; align-items: center; justify-content: center;
+      margin-bottom: 16px; font-size: 1.8rem;
+      transition: transform var(--transition);
+    }
+    .drop-zone:hover .drop-icon { transform: scale(1.08); }
+    .drop-zone h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+    .drop-zone p { font-size: 0.875rem; color: var(--text2); }
+    .drop-zone .file-types {
+      display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap;
+    }
+    .file-type-badge {
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 3px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;
+      color: var(--text2);
+    }
+
+    /* ── Preview Grid ── */
+    #preview-section { display: none; margin: 0 28px 24px; }
+    .preview-header {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;
+    }
+    .preview-header h3 { font-family: var(--font-head); font-size: 1rem; font-weight: 700; }
+    .preview-count {
+      background: var(--accent-dim); color: var(--accent);
+      font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 99px;
+    }
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 12px;
+    }
+    .preview-item {
+      position: relative;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      cursor: grab;
+      transition: all var(--transition);
+      animation: fadeIn 0.3s ease both;
+      user-select: none;
+    }
+    @keyframes fadeIn { from { opacity:0; transform:scale(0.9); } to { opacity:1; transform:scale(1); } }
+    .preview-item:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(0,0,0,0.1); transform: translateY(-2px); }
+    .preview-item.dragging { opacity: 0.4; transform: scale(0.95); }
+    .preview-item.drag-target { border-color: var(--accent); background: var(--accent-dim); }
+    .preview-img-wrap {
+      aspect-ratio: 3/4; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--bg2);
+    }
+    .preview-img-wrap img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .preview-info {
+      padding: 6px 8px;
+      font-size: 0.7rem; color: var(--text2);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .preview-order {
+      position: absolute; top: 6px; left: 6px;
+      background: var(--accent); color: #fff;
+      width: 22px; height: 22px; border-radius: 6px;
+      font-size: 0.7rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .preview-del {
+      position: absolute; top: 6px; right: 6px;
+      background: rgba(0,0,0,0.55); color: #fff;
+      width: 22px; height: 22px; border-radius: 6px;
+      font-size: 0.8rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background var(--transition);
+      border: none;
+    }
+    .preview-del:hover { background: #d93025; }
+
+    /* ── Actions ── */
+    .tool-actions {
+      padding: 0 28px 28px;
+      display: flex; gap: 12px; flex-wrap: wrap;
+    }
+    .btn-primary {
+      flex: 1; min-width: 200px;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--accent); color: #fff;
+      border: none; border-radius: var(--radius-sm);
+      padding: 14px 24px; font-family: var(--font-body);
+      font-size: 1rem; font-weight: 600; cursor: pointer;
+      transition: all var(--transition); text-decoration: none;
+    }
+    .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(224,92,42,0.35); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:disabled { background: var(--border); color: var(--text3); cursor: not-allowed; transform: none; box-shadow: none; }
+    .btn-secondary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--surface); color: var(--text);
+      border: 1px solid var(--border); border-radius: var(--radius-sm);
+      padding: 14px 20px; font-family: var(--font-body);
+      font-size: 0.9rem; font-weight: 500; cursor: pointer;
+      transition: all var(--transition);
+    }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+
+    /* ── Progress ── */
+    #progress-wrap { display: none; margin: 0 28px 20px; }
+    .progress-bar {
+      height: 6px; background: var(--bg2); border-radius: 99px; overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 99px; width: 0%; transition: width 0.3s ease;
+    }
+    .progress-label { font-size: 0.8rem; color: var(--text2); margin-top: 6px; text-align: center; }
+
+    /* ── Status Message ── */
+    #status-msg {
+      display: none; margin: 0 28px 16px;
+      padding: 12px 16px; border-radius: var(--radius-sm);
+      font-size: 0.875rem; font-weight: 500;
+    }
+    #status-msg.success { background: #e6f9f0; color: #1a7a4a; border: 1px solid #b2e8cc; }
+    #status-msg.error   { background: #fdecea; color: #c62828; border: 1px solid #f5c6c2; }
+    [data-theme="dark"] #status-msg.success { background: #0e2a1c; color: #5de8a0; border-color: #1a5035; }
+    [data-theme="dark"] #status-msg.error   { background: #2a0e0e; color: #ff8080; border-color: #5a1a1a; }
+
+    /* ── Section ── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: clamp(24px,4vw,40px);
+      margin-bottom: 24px;
+    }
+    .section-title {
+      font-family: var(--font-head);
+      font-size: 1.4rem; font-weight: 800; letter-spacing: -0.03em;
+      margin-bottom: 16px; color: var(--text);
+    }
+    .section p { color: var(--text2); margin-bottom: 12px; line-height: 1.7; }
+
+    /* ── Steps ── */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; margin-top: 4px; }
+    .step {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 20px;
+      transition: border-color var(--transition);
+    }
+    .step:hover { border-color: var(--accent); }
+    .step-num {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: var(--accent-dim); color: var(--accent);
+      font-family: var(--font-head); font-size: 1rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 12px;
+    }
+    .step h4 { font-family: var(--font-head); font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+    .step p { font-size: 0.85rem; color: var(--text2); margin: 0; }
+
+    /* ── Features Grid ── */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 14px; margin-top: 4px; }
+    .feature-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 16px;
+    }
+    .feature-icon {
+      font-size: 1.4rem; flex-shrink: 0;
+      width: 40px; height: 40px; border-radius: 10px;
+      background: var(--accent-dim);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .feature-item h4 { font-family: var(--font-head); font-size: 0.9rem; font-weight: 700; margin-bottom: 3px; }
+    .feature-item p  { font-size: 0.82rem; color: var(--text2); margin: 0; line-height: 1.5; }
+
+    /* ── Formula ── */
+    .formula-box {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 20px 24px;
+      font-family: 'Courier New', monospace; font-size: 0.9rem;
+      color: var(--accent); overflow-x: auto; margin: 14px 0;
+    }
+
+    /* ── FAQ ── */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    .faq-item {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); overflow: hidden;
+    }
+    .faq-q {
+      width: 100%; text-align: left; padding: 16px 20px;
+      font-family: var(--font-head); font-size: 0.95rem; font-weight: 700;
+      color: var(--text); background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      transition: color var(--transition);
+    }
+    .faq-q:hover { color: var(--accent); }
+    .faq-q .arrow { font-size: 0.75rem; color: var(--text3); transition: transform var(--transition); }
+    .faq-q.open .arrow { transform: rotate(180deg); color: var(--accent); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.2s ease;
+      padding: 0 20px;
+      font-size: 0.875rem; color: var(--text2); line-height: 1.7;
+    }
+    .faq-a.open { max-height: 300px; padding: 0 20px 16px; }
+
+    /* ── Related Tools ── */
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 12px; }
+    .related-card {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 16px 18px;
+      text-decoration: none; color: var(--text);
+      display: flex; align-items: center; gap: 12px;
+      transition: all var(--transition);
+    }
+    .related-card:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow); }
+    .related-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .related-card span { font-size: 0.875rem; font-weight: 600; font-family: var(--font-head); }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+      border-radius: var(--radius); padding: clamp(32px,5vw,56px);
+      text-align: center; margin-bottom: 24px; color: #fff;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .cta-section h2 { font-family: var(--font-head); font-size: clamp(1.5rem,3vw,2.2rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; position: relative; }
+    .cta-section p  { opacity: 0.88; max-width: 480px; margin: 0 auto 24px; position: relative; }
+    .cta-section .btn-white {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; color: var(--accent);
+      border: none; border-radius: var(--radius-sm);
+      padding: 13px 28px; font-family: var(--font-body);
+      font-size: 1rem; font-weight: 700; cursor: pointer;
+      transition: all var(--transition); text-decoration: none;
+      position: relative;
+    }
+    .cta-section .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: clamp(32px,5vw,56px) clamp(16px,4vw,40px) 24px;
+    }
+    .footer-inner {
+      max-width: 980px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr repeat(3,auto); gap: 40px; flex-wrap: wrap;
+    }
+    @media (max-width: 680px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 400px) { .footer-inner { grid-template-columns: 1fr; } }
+    .footer-brand p { font-size: 0.85rem; color: var(--text2); margin-top: 8px; max-width: 220px; line-height: 1.6; }
+    .footer-col h4 { font-family: var(--font-head); font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .footer-col a {
+      display: block; font-size: 0.85rem; color: var(--text2);
+      text-decoration: none; margin-bottom: 8px;
+      transition: color var(--transition);
+    }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom {
+      max-width: 980px; margin: 32px auto 0;
+      padding-top: 20px; border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+      font-size: 0.8rem; color: var(--text3);
+    }
+
+    /* ── Drag hint ── */
+    .drag-hint {
+      text-align: center; font-size: 0.78rem; color: var(--text3);
+      margin-top: 0; margin-bottom: 10px;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+
+    /* ── Responsive tweak ── */
+    @media (max-width: 600px) {
+      .tool-header, .settings-bar, .drop-zone, #preview-section, .tool-actions, #progress-wrap, #status-msg { margin-left: 16px; margin-right: 16px; }
+      .tool-header { padding: 16px 16px 0; }
+      .settings-bar { padding: 12px 16px; }
+      .drop-zone { margin: 16px; padding: 36px 16px; }
+      .tool-actions { padding: 0 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav class="navbar" aria-label="Site navigation">
+  <a href="../index.html" class="nav-logo" aria-label="QuickTools Home">
+    <span>Q</span>QuickTools
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="../index.html">Home</a>
+    <a href="../index.html#tools">All Tools</a>
+    <a href="../about.html">About</a>
+    <a href="../contact.html">Contact</a>
+    <a href="../privacy.html">Privacy Policy</a>
+  </div>
+  <button class="btn-theme" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+  <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
+</nav>
+
+<!-- ── BREADCRUMB ── -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="../index.html#tools">Tools</a>
+  <span class="sep">›</span>
+  <span aria-current="page">Image to PDF Converter</span>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="hero-badge">
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="5"/></svg>
+    Free &amp; No Upload Required
+  </div>
+  <h1>Convert <em>Images to PDF</em><br>Instantly &amp; Securely</h1>
+  <p>Convert JPG, PNG, WEBP and JPEG images to PDF online. Drag, reorder, customize &amp; download — no server upload, 100% private.</p>
+  <div class="hero-features">
+    <span class="hero-pill">
+      <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor"><path d="M16.7 5.3a1 1 0 0 0-1.4 0L8 12.6 4.7 9.3a1 1 0 0 0-1.4 1.4l4 4a1 1 0 0 0 1.4 0l8-8a1 1 0 0 0 0-1.4z"/></svg>
+      JPG, PNG, WEBP, JPEG
+    </span>
+    <span class="hero-pill">
+      <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor"><path d="M16.7 5.3a1 1 0 0 0-1.4 0L8 12.6 4.7 9.3a1 1 0 0 0-1.4 1.4l4 4a1 1 0 0 0 1.4 0l8-8a1 1 0 0 0 0-1.4z"/></svg>
+      Multiple Images → One PDF
+    </span>
+    <span class="hero-pill">
+      <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor"><path d="M16.7 5.3a1 1 0 0 0-1.4 0L8 12.6 4.7 9.3a1 1 0 0 0-1.4 1.4l4 4a1 1 0 0 0 1.4 0l8-8a1 1 0 0 0 0-1.4z"/></svg>
+      Works 100% In-Browser
+    </span>
+    <span class="hero-pill">
+      <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor"><path d="M16.7 5.3a1 1 0 0 0-1.4 0L8 12.6 4.7 9.3a1 1 0 0 0-1.4 1.4l4 4a1 1 0 0 0 1.4 0l8-8a1 1 0 0 0 0-1.4z"/></svg>
+      Free Forever
+    </span>
+  </div>
+</header>
+
+<!-- ── MAIN ── -->
+<main class="main-wrap">
+
+  <!-- ── TOOL CARD ── -->
+  <article class="tool-card" role="main" aria-label="Image to PDF Converter Tool">
+
+    <div class="tool-header">
+      <h2>🖼️ Image to PDF Converter</h2>
+      <span style="font-size:0.8rem;color:var(--text3);">Drag images to reorder</span>
+    </div>
+
+    <!-- Settings -->
+    <div class="settings-bar">
+      <div class="settings-group">
+        <span class="settings-label">Page Size:</span>
+        <select id="pageSize" aria-label="Select page size">
+          <option value="a4">A4 (210×297mm)</option>
+          <option value="a3">A3 (297×420mm)</option>
+          <option value="letter">Letter (8.5×11in)</option>
+          <option value="legal">Legal (8.5×14in)</option>
+        </select>
+      </div>
+      <div class="settings-group">
+        <span class="settings-label">Orientation:</span>
+        <select id="orientation" aria-label="Select orientation">
+          <option value="portrait">Portrait</option>
+          <option value="landscape">Landscape</option>
+        </select>
+      </div>
+      <div class="settings-group">
+        <span class="settings-label">Margin:</span>
+        <select id="margin" aria-label="Select margin">
+          <option value="0">None</option>
+          <option value="10" selected>Small (10mm)</option>
+          <option value="20">Medium (20mm)</option>
+          <option value="30">Large (30mm)</option>
+        </select>
+      </div>
+      <div class="settings-group">
+        <span class="settings-label">Fit:</span>
+        <select id="imageFit" aria-label="Image fit option">
+          <option value="fit">Fit Page</option>
+          <option value="fill">Fill Page</option>
+          <option value="original">Original Size</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Drop Zone -->
+    <div class="drop-zone" id="dropZone" role="button" tabindex="0" aria-label="Drop images here or click to upload">
+      <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp,image/jpg" multiple aria-label="Upload images" />
+      <div class="drop-icon">🖼️</div>
+      <h3>Drag &amp; Drop Images Here</h3>
+      <p>or click to browse files from your device</p>
+      <div class="file-types">
+        <span class="file-type-badge">JPG</span>
+        <span class="file-type-badge">JPEG</span>
+        <span class="file-type-badge">PNG</span>
+        <span class="file-type-badge">WEBP</span>
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div id="status-msg" role="alert" aria-live="polite"></div>
+
+    <!-- Progress -->
+    <div id="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <p class="progress-label" id="progressLabel">Processing images...</p>
+    </div>
+
+    <!-- Preview -->
+    <section id="preview-section" aria-label="Image preview">
+      <div class="preview-header">
+        <h3>Images Preview</h3>
+        <span class="preview-count" id="previewCount">0 images</span>
+      </div>
+      <p class="drag-hint">✋ Drag thumbnails to reorder pages</p>
+      <div class="preview-grid" id="previewGrid"></div>
+    </section>
+
+    <!-- Actions -->
+    <div class="tool-actions">
+      <button class="btn-primary" id="convertBtn" disabled aria-label="Convert images to PDF and download">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M12 15V3m0 12-4-4m4 4 4-4"/><path d="M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
+        Download PDF
+      </button>
+      <button class="btn-secondary" id="clearBtn" aria-label="Clear all images">
+        🗑 Clear All
+      </button>
+    </div>
+  </article>
+
+  <!-- ── HOW IT WORKS ── -->
+  <section class="section" aria-labelledby="how-title">
+    <h2 class="section-title" id="how-title">How to Convert Image to PDF</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Upload Images</h4>
+        <p>Drag and drop or click to upload JPG, PNG, WEBP or JPEG images.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Reorder Pages</h4>
+        <p>Drag thumbnails to reorder how images appear in the final PDF.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Customize Settings</h4>
+        <p>Choose page size (A4, Letter…), orientation, margin, and fit.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>Download PDF</h4>
+        <p>Click Download PDF and your file is ready instantly — no waiting.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES ── -->
+  <section class="section" aria-labelledby="features-title">
+    <h2 class="section-title" id="features-title">Why Use QuickTools Image to PDF Converter?</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">🔒</div>
+        <div>
+          <h4>100% Private &amp; Secure</h4>
+          <p>Your images are never uploaded to any server. All conversion happens inside your browser.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">⚡</div>
+        <div>
+          <h4>Blazing Fast</h4>
+          <p>Client-side PDF generation means instant results with no server wait times.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🖼️</div>
+        <div>
+          <h4>Multiple Formats</h4>
+          <p>Supports JPG, JPEG, PNG, and WEBP — the most popular image formats worldwide.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">📄</div>
+        <div>
+          <h4>Merge into One PDF</h4>
+          <p>Upload multiple images and merge them all into a single, organized PDF document.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">↕️</div>
+        <div>
+          <h4>Reorder Pages</h4>
+          <p>Drag and drop thumbnails to control the exact order of pages in your PDF.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">📐</div>
+        <div>
+          <h4>Page &amp; Margin Control</h4>
+          <p>Choose A4, A3, Letter, or Legal. Set margins and portrait or landscape orientation.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">📱</div>
+        <div>
+          <h4>Works on Mobile</h4>
+          <p>Fully responsive design works perfectly on smartphones, tablets and desktops.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🆓</div>
+        <div>
+          <h4>Completely Free</h4>
+          <p>No signup, no subscription, no watermarks. Free for personal and professional use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FORMULA / TECHNICAL ── -->
+  <section class="section" aria-labelledby="how-works-title">
+    <h2 class="section-title" id="how-works-title">How Image to PDF Conversion Works</h2>
+    <p>Our converter uses the <strong>jsPDF</strong> library running entirely in your browser. Each image is rendered onto a PDF page with your chosen settings:</p>
+    <div class="formula-box">
+      Available Width  = Page Width  - (Left Margin + Right Margin)<br>
+      Available Height = Page Height - (Top Margin  + Bottom Margin)<br><br>
+      Scale = min(Available Width / Image Width,  Available Height / Image Height)<br><br>
+      Final Width  = Image Width  × Scale<br>
+      Final Height = Image Height × Scale<br><br>
+      X Offset = Left Margin + (Available Width  - Final Width)  / 2<br>
+      Y Offset = Top Margin  + (Available Height - Final Height) / 2
+    </div>
+    <p>This ensures your image is centered and fits perfectly within the selected page and margin settings. The <strong>Fill</strong> mode scales the image to cover the entire page, and <strong>Original Size</strong> preserves the pixel dimensions of the source image.</p>
+    <p>All images are encoded as base64 data URLs in memory — nothing is sent to any external server at any stage.</p>
+  </section>
+
+  <!-- ── EXAMPLES ── -->
+  <section class="section" aria-labelledby="examples-title">
+    <h2 class="section-title" id="examples-title">Common Use Cases</h2>
+    <p>Here are popular scenarios where this free image to PDF converter is useful:</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">📸</div>
+        <h4>Photo Albums</h4>
+        <p>Combine multiple holiday or event photos into a single shareable PDF document.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">📋</div>
+        <h4>Scanned Documents</h4>
+        <p>Convert scanned JPG images of receipts, forms, or contracts into proper PDF files.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">🎨</div>
+        <h4>Portfolio &amp; Design</h4>
+        <p>Package PNG or WEBP design assets and mockups into a PDF portfolio for clients.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">📝</div>
+        <h4>Assignment Submission</h4>
+        <p>Students can convert handwritten notes photos to PDF for digital submission.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="section" aria-labelledby="faq-title">
+    <h2 class="section-title" id="faq-title">Frequently Asked Questions</h2>
+    <div class="faq-list" role="list">
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">How do I convert an image to PDF for free?<span class="arrow">▼</span></button>
+        <div class="faq-a">Upload your JPG, PNG, WEBP or JPEG images using the drag-and-drop zone or file browser above. Arrange them in order, pick your page size and margin, then hit "Download PDF". No account or payment needed — it's completely free.</div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">Is this image to PDF converter safe and private?<span class="arrow">▼</span></button>
+        <div class="faq-a">Yes — your files never leave your device. The conversion runs entirely in your web browser using JavaScript. There is no server, no upload, no data collection. Your images stay 100% private.</div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">What image formats can I convert to PDF?<span class="arrow">▼</span></button>
+        <div class="faq-a">We support JPG (JPEG) and PNG — the two most common photo formats — plus WEBP, the modern format used by Google and mobile devices. You can mix different formats in the same PDF conversion.</div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">Can I merge multiple images into one PDF?<span class="arrow">▼</span></button>
+        <div class="faq-a">Absolutely. Upload as many images as you like and they will all be combined into a single PDF, one image per page. You can drag the thumbnails to control the page order before downloading.</div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">What page sizes are available?<span class="arrow">▼</span></button>
+        <div class="faq-a">You can choose A4 (standard international), A3 (large format), Letter (US standard), or Legal (US long). Portrait and Landscape orientations are both available, as are four margin options: None, Small (10mm), Medium (20mm), and Large (30mm).</div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">Does it work on mobile phones and tablets?<span class="arrow">▼</span></button>
+        <div class="faq-a">Yes. The tool is fully responsive and works on Android and iOS browsers including Chrome, Safari, Firefox, and Edge. You can select images from your phone's gallery directly.</div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">Will there be a watermark on my PDF?<span class="arrow">▼</span></button>
+        <div class="faq-a">No watermarks, ever. Your downloaded PDF will be clean with only your images and no QuickTools branding or watermarks added.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RELATED TOOLS ── -->
+  <section class="section" aria-labelledby="related-title">
+    <h2 class="section-title" id="related-title">Related Tools</h2>
+    <div class="related-grid">
+      <a href="../tools/pdf-to-image-converter.html" class="related-card">
+        <span class="related-icon">📄</span>
+        <span>PDF to Image Converter</span>
+      </a>
+      <a href="../tools/image-compressor.html" class="related-card">
+        <span class="related-icon">📦</span>
+        <span>Image Compressor</span>
+      </a>
+      <a href="../tools/jpg-to-png-converter.html" class="related-card">
+        <span class="related-icon">🔄</span>
+        <span>JPG to PNG Converter</span>
+      </a>
+      <a href="../tools/png-to-jpg-converter.html" class="related-card">
+        <span class="related-icon">🖼️</span>
+        <span>PNG to JPG Converter</span>
+      </a>
+      <a href="../tools/webp-to-jpg-converter.html" class="related-card">
+        <span class="related-icon">🌐</span>
+        <span>WEBP to JPG Converter</span>
+      </a>
+      <a href="../tools/image-resizer.html" class="related-card">
+        <span class="related-icon">📐</span>
+        <span>Image Resizer</span>
+      </a>
+      <a href="../tools/pdf-merger.html" class="related-card">
+        <span class="related-icon">📎</span>
+        <span>PDF Merger</span>
+      </a>
+      <a href="../tools/pdf-compressor.html" class="related-card">
+        <span class="related-icon">🗜️</span>
+        <span>PDF Compressor</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <div class="cta-section">
+    <h2>Ready to Convert Your Images?</h2>
+    <p>Free, fast, and private. No account needed. Works on any device.</p>
+    <a href="#" class="btn-white" onclick="document.getElementById('dropZone').click();return false;">
+      🚀 Start Converting Now
+    </a>
+  </div>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="../index.html" class="nav-logo" style="display:inline-flex;margin-bottom:0;font-size:1.1rem;">
+        <span style="width:26px;height:26px;font-size:0.75rem;">Q</span>QuickTools
+      </a>
+      <p>Free online tools for everyday tasks. Fast, secure, and always free.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <a href="../tools/image-to-pdf-converter.html">Image to PDF</a>
+      <a href="../tools/image-compressor.html">Image Compressor</a>
+      <a href="../tools/image-resizer.html">Image Resizer</a>
+      <a href="../tools/pdf-merger.html">PDF Merger</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="../about.html">About Us</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-col">
+      <h4>More Tools</h4>
+      <a href="../tools/emi-calculator.html">EMI Calculator</a>
+      <a href="../tools/gst-calculator.html">GST Calculator</a>
+      <a href="../tools/age-calculator.html">Age Calculator</a>
+      <a href="../tools/percentage-calculator.html">Percentage Calculator</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 QuickTools. All rights reserved.</span>
+    <span>Made with ♥ for the web</span>
+  </div>
+</footer>
+
+<!-- ── JAVASCRIPT ── -->
+<script>
+(function() {
+  'use strict';
+
+  /* ── Theme ── */
+  const themeBtn = document.getElementById('themeToggle');
+  const root = document.documentElement;
+  let dark = localStorage.getItem('qt-theme') === 'dark';
+  function applyTheme() {
+    root.setAttribute('data-theme', dark ? 'dark' : 'light');
+    themeBtn.textContent = dark ? '☀️' : '🌙';
+  }
+  applyTheme();
+  themeBtn.addEventListener('click', () => { dark = !dark; localStorage.setItem('qt-theme', dark ? 'dark' : 'light'); applyTheme(); });
+
+  /* ── Mobile Nav ── */
+  document.getElementById('mobileToggle').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+
+  /* ── State ── */
+  let images = []; // [{file, dataUrl, name, size}]
+  let dragSrc = null;
+
+  /* ── Elements ── */
+  const dropZone   = document.getElementById('dropZone');
+  const fileInput  = document.getElementById('fileInput');
+  const previewSec = document.getElementById('preview-section');
+  const previewGrid= document.getElementById('previewGrid');
+  const previewCnt = document.getElementById('previewCount');
+  const convertBtn = document.getElementById('convertBtn');
+  const clearBtn   = document.getElementById('clearBtn');
+  const statusMsg  = document.getElementById('status-msg');
+  const progWrap   = document.getElementById('progress-wrap');
+  const progFill   = document.getElementById('progressFill');
+  const progLabel  = document.getElementById('progressLabel');
+
+  /* ── File handling ── */
+  fileInput.addEventListener('change', e => addFiles(e.target.files));
+
+  dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault(); dropZone.classList.remove('drag-over');
+    addFiles(e.dataTransfer.files);
+  });
+
+  function addFiles(fileList) {
+    const allowed = ['image/jpeg','image/png','image/webp'];
+    const newFiles = Array.from(fileList).filter(f => allowed.includes(f.type));
+    if (!newFiles.length) { showStatus('Please select valid image files (JPG, PNG, WEBP).', 'error'); return; }
+
+    let loaded = 0;
+    newFiles.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = e => {
+        images.push({ file, dataUrl: e.target.result, name: file.name, size: file.size });
+        loaded++;
+        if (loaded === newFiles.length) renderPreviews();
+      };
+      reader.readAsDataURL(file);
+    });
+    hideStatus();
+  }
+
+  /* ── Render Previews ── */
+  function renderPreviews() {
+    previewGrid.innerHTML = '';
+    images.forEach((img, i) => {
+      const item = document.createElement('div');
+      item.className = 'preview-item';
+      item.draggable = true;
+      item.dataset.index = i;
+
+      item.innerHTML = `
+        <div class="preview-order">${i + 1}</div>
+        <button class="preview-del" data-i="${i}" aria-label="Remove image ${i+1}" title="Remove">✕</button>
+        <div class="preview-img-wrap">
+          <img src="${img.dataUrl}" alt="Page ${i+1}: ${img.name}" loading="lazy" />
+        </div>
+        <div class="preview-info">${truncate(img.name, 18)}</div>
+      `;
+
+      /* Drag-to-reorder */
+      item.addEventListener('dragstart', e => {
+        dragSrc = i;
+        item.classList.add('dragging');
+        e.dataTransfer.effectAllowed = 'move';
+      });
+      item.addEventListener('dragend', () => {
+        item.classList.remove('dragging');
+        document.querySelectorAll('.preview-item').forEach(el => el.classList.remove('drag-target'));
+      });
+      item.addEventListener('dragover', e => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        document.querySelectorAll('.preview-item').forEach(el => el.classList.remove('drag-target'));
+        item.classList.add('drag-target');
+      });
+      item.addEventListener('drop', e => {
+        e.preventDefault();
+        if (dragSrc === null || dragSrc === i) return;
+        const dragged = images.splice(dragSrc, 1)[0];
+        images.splice(i, 0, dragged);
+        renderPreviews();
+      });
+
+      previewGrid.appendChild(item);
+    });
+
+    /* Delete buttons */
+    previewGrid.querySelectorAll('.preview-del').forEach(btn => {
+      btn.addEventListener('click', () => {
+        images.splice(parseInt(btn.dataset.i), 1);
+        renderPreviews();
+      });
+    });
+
+    previewSec.style.display = images.length ? 'block' : 'none';
+    previewCnt.textContent = `${images.length} image${images.length !== 1 ? 's' : ''}`;
+    convertBtn.disabled = images.length === 0;
+    fileInput.value = '';
+  }
+
+  /* ── Clear ── */
+  clearBtn.addEventListener('click', () => {
+    images = [];
+    renderPreviews();
+    hideStatus();
+    hideProgress();
+  });
+
+  /* ── Convert ── */
+  convertBtn.addEventListener('click', async () => {
+    if (!images.length) return;
+    if (typeof window.jspdf === 'undefined') {
+      showStatus('PDF library not loaded. Please check your internet connection and refresh.', 'error');
+      return;
+    }
+
+    convertBtn.disabled = true;
+    showProgress(0, 'Initialising PDF…');
+
+    const pageSize   = document.getElementById('pageSize').value;
+    const orientation= document.getElementById('orientation').value;
+    const marginMM   = parseInt(document.getElementById('margin').value);
+    const fitMode    = document.getElementById('imageFit').value;
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ orientation, unit: 'mm', format: pageSize });
+    const pW = doc.internal.pageSize.getWidth();
+    const pH = doc.internal.pageSize.getHeight();
+
+    try {
+      for (let i = 0; i < images.length; i++) {
+        showProgress(Math.round((i / images.length) * 90), `Processing image ${i + 1} of ${images.length}…`);
+
+        if (i > 0) doc.addPage(pageSize, orientation);
+
+        const imgData  = images[i].dataUrl;
+        const format   = getImgFormat(images[i].file.type);
+        const dims     = await getImageDimensions(imgData);
+        const iW = dims.w, iH = dims.h;
+
+        let x, y, w, h;
+
+        if (fitMode === 'original') {
+          const pxPerMM = 3.7795;
+          w = iW / pxPerMM; h = iH / pxPerMM;
+          x = (pW - w) / 2; y = (pH - h) / 2;
+        } else if (fitMode === 'fill') {
+          const scale = Math.max((pW) / iW, (pH) / iH);
+          w = iW * scale; h = iH * scale;
+          x = (pW - w) / 2; y = (pH - h) / 2;
+        } else { /* fit */
+          const avW = pW - marginMM * 2;
+          const avH = pH - marginMM * 2;
+          const scale = Math.min(avW / iW, avH / iH);
+          w = iW * scale; h = iH * scale;
+          x = marginMM + (avW - w) / 2;
+          y = marginMM + (avH - h) / 2;
+        }
+
+        doc.addImage(imgData, format, x, y, w, h, undefined, 'FAST');
+        await sleep(10); // allow UI update
+      }
+
+      showProgress(95, 'Generating PDF file…');
+      await sleep(20);
+      doc.save('quicktools-image-to-pdf.pdf');
+      showProgress(100, 'Done!');
+      showStatus(`✅ PDF created with ${images.length} page${images.length !== 1 ? 's' : ''} and downloaded successfully!`, 'success');
+    } catch (err) {
+      showStatus('❌ Error creating PDF: ' + err.message, 'error');
+      console.error(err);
+    } finally {
+      convertBtn.disabled = false;
+      setTimeout(hideProgress, 1500);
+    }
+  });
+
+  /* ── Helpers ── */
+  function getImgFormat(mimeType) {
+    if (mimeType === 'image/png')  return 'PNG';
+    if (mimeType === 'image/webp') return 'WEBP';
+    return 'JPEG';
+  }
+
+  function getImageDimensions(dataUrl) {
+    return new Promise(resolve => {
+      const img = new Image();
+      img.onload = () => resolve({ w: img.naturalWidth, h: img.naturalHeight });
+      img.src = dataUrl;
+    });
+  }
+
+  function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+  function truncate(str, max) { return str.length > max ? str.slice(0, max - 1) + '…' : str; }
+
+  function showProgress(pct, label) {
+    progWrap.style.display = 'block';
+    progFill.style.width = pct + '%';
+    progLabel.textContent = label;
+  }
+  function hideProgress() {
+    progWrap.style.display = 'none';
+    progFill.style.width = '0%';
+  }
+  function showStatus(msg, type) {
+    statusMsg.style.display = 'block';
+    statusMsg.className = type;
+    statusMsg.textContent = msg;
+  }
+  function hideStatus() {
+    statusMsg.style.display = 'none';
+    statusMsg.textContent = '';
+  }
+
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling;
+      const isOpen = answer.classList.contains('open');
+      document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-q').forEach(b => { b.classList.remove('open'); b.setAttribute('aria-expanded','false'); });
+      if (!isOpen) {
+        answer.classList.add('open');
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
