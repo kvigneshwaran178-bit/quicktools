@@ -1225,29 +1225,7 @@ body.light-mode{
       </div>
     </div>
   </footer>
-// ─── THEME TOGGLE ─────────────────────────────
-const themeToggle = document.getElementById('themeToggle');
-
-// Load saved theme
-if(localStorage.getItem('theme') === 'light'){
-  document.body.classList.add('light-mode');
-  themeToggle.textContent = '☀️';
-}else{
-  themeToggle.textContent = '🌙';
-}
-
-// Toggle theme
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('light-mode');
-
-  const isLight = document.body.classList.contains('light-mode');
-
-  themeToggle.textContent = isLight ? '☀️' : '🌙';
-
-  localStorage.setItem('theme', isLight ? 'light' : 'dark');
-});
-
-  <script>
+ <script>
     // ─── STATE ───────────────────────────────────────────────────
     let unit   = 'metric';
     let gender = 'male';
@@ -1401,6 +1379,27 @@ themeToggle.addEventListener('click', () => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
     }, { threshold: 0.12 });
     revealEls.forEach(el => observer.observe(el));
+   // ─── THEME TOGGLE ─────────────────────────────
+const themeToggle = document.getElementById('themeToggle');
+
+// Load saved theme
+if(localStorage.getItem('theme') === 'light'){
+  document.body.classList.add('light-mode');
+  themeToggle.textContent = '☀️';
+}else{
+  themeToggle.textContent = '🌙';
+}
+
+// Toggle theme
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+
+  const isLight = document.body.classList.contains('light-mode');
+
+  themeToggle.textContent = isLight ? '☀️' : '🌙';
+
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+});
   </script>
 </body>
 </html>
