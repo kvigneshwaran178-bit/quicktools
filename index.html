@@ -1,39 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ═══════════════════════════════════
-       META & SEO
-  ═══════════════════════════════════ -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QuickTools – Free Online Calculators & Smart Daily Tools</title>
   <meta name="description" content="QuickTools offers 20+ free online calculators and smart utilities — EMI, BMI, Age, Salary, GPA, Typing Speed, and more. Fast, free, no login required." />
-  <meta name="keywords" content="online calculator, EMI calculator, BMI calculator, age calculator, salary calculator, GPA calculator, free tools, smart tools" />
+  <meta name="keywords" content="online calculator, EMI calculator, BMI calculator, age calculator, salary calculator, GPA calculator, free tools, smart tools, PDF compressor, image converter, SIP calculator" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="QuickTools" />
-  <meta name="theme-color" content="#0f172a" />
-
-  <!-- Open Graph -->
+  <meta name="theme-color" content="#0a0a14" />
   <meta property="og:title" content="QuickTools – Free Online Calculators & Smart Daily Tools" />
   <meta property="og:description" content="20+ free calculators and smart utilities in one place. No login. No clutter." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kvigneshwaran178-bit.github.io/quicktools/" />
   <meta property="og:image" content="https://kvigneshwaran178-bit.github.io/quicktools/og-image.png" />
   <meta property="og:site_name" content="QuickTools" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="QuickTools – Free Online Calculators & Smart Daily Tools" />
   <meta name="twitter:description" content="20+ free calculators and smart utilities in one place. Fast, free, no login." />
   <meta name="twitter:image" content="https://kvigneshwaran178-bit.github.io/quicktools/og-image.png" />
-
-  <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   <link rel="manifest" href="site.webmanifest" />
-
-  <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -48,8 +37,6 @@
     }
   }
   </script>
-
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZSPRSF37G"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -57,245 +44,244 @@
     gtag('js', new Date());
     gtag('config', 'G-XZSPRSF37G');
   </script>
-
-  <!-- Fonts: Clash Display + DM Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
 
   <style>
-    /* ══════════════════════════════════
-       DESIGN TOKENS & RESET
-    ══════════════════════════════════ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Brand */
-      --ink:       #0a0a0f;
-      --ink-2:     #3d3d50;
-      --ink-3:     #8888a0;
-      --surface:   #ffffff;
-      --surface-2: #f4f4f8;
-      --surface-3: #eeeef5;
-      --border:    rgba(0,0,0,.08);
-      --border-2:  rgba(0,0,0,.05);
+      --bg:         #07070f;
+      --bg-2:       #0e0e1c;
+      --bg-3:       #141428;
+      --bg-card:    #0f0f1e;
+      --surface:    #1a1a2e;
+      --border:     rgba(255,255,255,.07);
+      --border-2:   rgba(255,255,255,.04);
+      --text:       #f0f0f8;
+      --text-2:     #9090b0;
+      --text-3:     #55556a;
 
-      /* Accent palette */
-      --blue:      #4f6ef7;
-      --blue-dim:  #eef0fe;
-      --blue-dark: #3554e6;
-      --emerald:   #10c97a;
-      --amber:     #f59e0b;
-      --rose:      #f43f5e;
-      --violet:    #8b5cf6;
-      --sky:       #0ea5e9;
-      --orange:    #f97316;
+      --cyan:       #00d4ff;
+      --cyan-dim:   rgba(0,212,255,.1);
+      --cyan-glow:  0 0 40px rgba(0,212,255,.25);
+      --lime:       #a3e635;
+      --lime-dim:   rgba(163,230,53,.1);
+      --violet:     #818cf8;
+      --violet-dim: rgba(129,140,248,.1);
+      --rose:       #fb7185;
+      --amber:      #fbbf24;
+      --teal:       #2dd4bf;
+      --orange:     #fb923c;
+      --emerald:    #34d399;
 
-      /* Glow */
-      --glow-blue:    0 0 40px rgba(79,110,247,.18);
-      --glow-emerald: 0 0 40px rgba(16,201,122,.18);
+      --grad-main:  linear-gradient(135deg, #00d4ff 0%, #818cf8 100%);
+      --grad-warm:  linear-gradient(135deg, #fb923c 0%, #fb7185 100%);
+      --grad-green: linear-gradient(135deg, #a3e635 0%, #2dd4bf 100%);
+      --grad-violet:linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
 
-      /* Shadows */
-      --sh-xs: 0 1px 2px rgba(0,0,0,.05);
-      --sh-sm: 0 2px 8px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
-      --sh-md: 0 8px 24px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04);
-      --sh-lg: 0 20px 60px rgba(0,0,0,.10), 0 4px 12px rgba(0,0,0,.05);
-      --sh-xl: 0 32px 80px rgba(79,110,247,.20);
-
-      /* Radius */
-      --r-sm:  8px;
-      --r-md:  14px;
-      --r-lg:  20px;
-      --r-xl:  28px;
+      --r-sm:   8px;
+      --r-md:   14px;
+      --r-lg:   20px;
+      --r-xl:   28px;
+      --r-2xl:  36px;
       --r-full: 999px;
 
-      /* Typography */
-      --font-head: 'Plus Jakarta Sans', sans-serif;
-      --font-body: 'Space Grotesk', sans-serif;
+      --font-head: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
 
-      /* Motion */
       --ease: cubic-bezier(.4,0,.2,1);
-      --ease-spring: cubic-bezier(.34,1.56,.64,1);
-      --dur: .22s;
-      --dur-md: .36s;
+      --spring: cubic-bezier(.34,1.56,.64,1);
+      --dur: .2s;
+      --dur-md: .35s;
+
+      --sh-glow: 0 0 0 1px rgba(0,212,255,.15), 0 8px 32px rgba(0,212,255,.1);
+      --sh-card: 0 1px 1px rgba(0,0,0,.4), 0 4px 16px rgba(0,0,0,.3);
+      --sh-lg:   0 20px 60px rgba(0,0,0,.5), 0 4px 16px rgba(0,0,0,.3);
     }
 
-    /* Dark mode tokens */
-    body.dark {
-      --ink:       #f0f0fa;
-      --ink-2:     #a0a0bc;
-      --ink-3:     #55556a;
-      --surface:   #0f0f1a;
-      --surface-2: #16162a;
-      --surface-3: #1e1e35;
-      --border:    rgba(255,255,255,.08);
-      --border-2:  rgba(255,255,255,.04);
-      --blue-dim:  #1a1f4a;
+    body.light {
+      --bg:         #f8f8fc;
+      --bg-2:       #f0f0f8;
+      --bg-3:       #e8e8f2;
+      --bg-card:    #ffffff;
+      --surface:    #f4f4fb;
+      --border:     rgba(0,0,0,.07);
+      --border-2:   rgba(0,0,0,.04);
+      --text:       #0a0a14;
+      --text-2:     #4a4a6a;
+      --text-3:     #9090b0;
+      --cyan-dim:   rgba(0,160,200,.08);
+      --violet-dim: rgba(80,90,200,.08);
+      --lime-dim:   rgba(80,160,20,.08);
+      --sh-card: 0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.06);
+      --sh-lg: 0 20px 60px rgba(0,0,0,.12), 0 4px 16px rgba(0,0,0,.08);
     }
 
     html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-
     body {
       font-family: var(--font-body);
-      background: var(--surface);
-      color: var(--ink);
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
       transition: background .3s var(--ease), color .3s var(--ease);
     }
-
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
     button { cursor: pointer; border: none; background: none; font-family: inherit; }
     img { display: block; max-width: 100%; }
 
-    /* Scrollbar */
-    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 99px; }
+    ::-webkit-scrollbar-thumb { background: var(--surface); border-radius: 99px; }
+    :focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 4px; }
 
-    /* Focus visible */
-    :focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
-
-    /* ══════════════════════════════════
-       SKIP LINK (accessibility)
-    ══════════════════════════════════ */
     .skip-link {
       position: absolute; top: -40px; left: 16px; z-index: 9999;
-      background: var(--blue); color: #fff;
+      background: var(--cyan); color: #000;
       padding: 8px 16px; border-radius: var(--r-sm);
-      font-weight: 600; font-size: .875rem;
+      font-weight: 700; font-size: .875rem;
       transition: top .2s;
     }
     .skip-link:focus { top: 16px; }
 
+    /* ─── NOISE TEXTURE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      background-size: 256px;
+      opacity: .4;
+    }
+
     /* ══════════════════════════════════
-       HEADER / NAV
+       HEADER
     ══════════════════════════════════ */
     .header {
       position: sticky; top: 0; z-index: 500;
       height: 64px;
-      background: rgba(255,255,255,.82);
+      background: rgba(7,7,15,.85);
       backdrop-filter: blur(24px) saturate(180%);
       -webkit-backdrop-filter: blur(24px) saturate(180%);
       border-bottom: 1px solid var(--border);
-      transition: background .3s var(--ease), border-color .3s var(--ease);
+      transition: background .3s var(--ease);
     }
-    body.dark .header {
-      background: rgba(15,15,26,.88);
-    }
+    body.light .header { background: rgba(248,248,252,.9); }
 
     .nav-inner {
-      max-width: 1240px; margin: 0 auto;
-      padding: 0 20px; height: 100%;
-      display: flex; align-items: center; gap: 16px;
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 24px; height: 100%;
+      display: flex; align-items: center; gap: 12px;
     }
 
-    /* Logo */
     .logo {
       display: flex; align-items: center; gap: 10px;
-      font-family: var(--font-head); font-weight: 800; font-size: 1.2rem;
-      color: var(--ink); flex-shrink: 0; letter-spacing: -.02em;
+      font-family: var(--font-head); font-weight: 800; font-size: 1.15rem;
+      color: var(--text); flex-shrink: 0; letter-spacing: -.02em;
     }
     .logo-mark {
       width: 34px; height: 34px;
-      background: linear-gradient(135deg, var(--blue), var(--violet));
-      border-radius: 9px;
+      background: var(--grad-main);
+      border-radius: 10px;
       display: grid; place-items: center;
-      font-size: .9rem; color: #fff;
-      box-shadow: 0 4px 12px rgba(79,110,247,.4);
+      font-size: .9rem;
+      box-shadow: 0 0 20px rgba(0,212,255,.3);
       flex-shrink: 0;
+      position: relative;
     }
-    .logo-text span { color: var(--blue); }
+    .logo-mark::after {
+      content: '';
+      position: absolute; inset: -1px;
+      border-radius: 11px;
+      background: var(--grad-main);
+      opacity: .3;
+      filter: blur(6px);
+      z-index: -1;
+    }
+    .logo span { color: var(--cyan); }
 
-    /* Nav links */
     .nav-links {
       display: flex; align-items: center; gap: 2px;
-      margin-left: 8px;
+      margin-left: 12px;
     }
     .nav-links a {
-      padding: 6px 12px; border-radius: var(--r-sm);
-      font-size: .875rem; font-weight: 500; color: var(--ink-2);
-      transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+      padding: 6px 13px; border-radius: var(--r-sm);
+      font-size: .875rem; font-weight: 500; color: var(--text-2);
+      transition: background var(--dur), color var(--dur);
       white-space: nowrap;
     }
-    .nav-links a:hover { background: var(--surface-2); color: var(--ink); }
+    .nav-links a:hover { background: var(--bg-3); color: var(--text); }
 
-    /* Search pill */
-    .nav-search-wrap {
-      flex: 1; max-width: 300px; position: relative;
-    }
+    .nav-search-wrap { flex: 1; max-width: 280px; position: relative; }
     .nav-search {
       display: flex; align-items: center; gap: 8px;
-      background: var(--surface-2); border: 1.5px solid var(--border);
+      background: var(--bg-2);
+      border: 1px solid var(--border);
       border-radius: var(--r-full); padding: 7px 14px;
-      transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), background var(--dur) var(--ease);
+      transition: border-color var(--dur), box-shadow var(--dur);
     }
     .nav-search:focus-within {
-      border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(79,110,247,.12);
-      background: var(--surface);
+      border-color: rgba(0,212,255,.4);
+      box-shadow: 0 0 0 3px rgba(0,212,255,.08);
     }
     .nav-search input {
       border: none; outline: none; background: transparent;
-      font-family: var(--font-body); font-size: .85rem; color: var(--ink);
+      font-family: var(--font-body); font-size: .85rem; color: var(--text);
       width: 100%; min-width: 0;
     }
-    .nav-search input::placeholder { color: var(--ink-3); }
-    .nav-search-icon { color: var(--ink-3); font-size: .9rem; flex-shrink: 0; }
+    .nav-search input::placeholder { color: var(--text-3); }
+    .nav-search-icon { color: var(--text-3); font-size: .85rem; flex-shrink: 0; }
 
-    /* Nav actions */
     .nav-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
 
     .btn-icon {
       width: 36px; height: 36px; border-radius: var(--r-sm);
-      background: var(--surface-2); border: 1.5px solid var(--border);
+      background: var(--bg-2); border: 1px solid var(--border);
       display: grid; place-items: center;
-      font-size: .95rem; color: var(--ink-2);
+      font-size: .9rem; color: var(--text-2);
       transition: all var(--dur) var(--ease);
       flex-shrink: 0;
     }
-    .btn-icon:hover { background: var(--blue-dim); color: var(--blue); border-color: transparent; }
+    .btn-icon:hover { background: var(--cyan-dim); border-color: rgba(0,212,255,.3); color: var(--cyan); }
 
-    /* Hamburger */
     .hamburger {
       display: none; flex-direction: column; gap: 5px;
       padding: 8px; border-radius: var(--r-sm);
       transition: background var(--dur);
     }
-    .hamburger:hover { background: var(--surface-2); }
+    .hamburger:hover { background: var(--bg-2); }
     .hamburger span {
       display: block; width: 20px; height: 2px;
-      background: var(--ink); border-radius: 2px;
-      transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
+      background: var(--text); border-radius: 2px;
+      transition: transform var(--dur) var(--ease), opacity var(--dur);
     }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* Mobile drawer */
     .mobile-drawer {
       display: none; position: fixed; top: 64px; left: 0; right: 0;
-      background: var(--surface); border-bottom: 1px solid var(--border);
+      background: var(--bg-2); border-bottom: 1px solid var(--border);
       padding: 16px 20px 24px; z-index: 490;
       box-shadow: var(--sh-lg);
-      flex-direction: column; gap: 6px;
+      flex-direction: column; gap: 4px;
       animation: slideDown .2s var(--ease) both;
     }
     .mobile-drawer.open { display: flex; }
     .mobile-drawer a {
-      padding: 10px 14px; border-radius: var(--r-sm);
-      font-size: .95rem; font-weight: 500; color: var(--ink-2);
-      transition: background var(--dur);
+      padding: 11px 14px; border-radius: var(--r-sm);
+      font-size: .95rem; font-weight: 500; color: var(--text-2);
+      transition: background var(--dur), color var(--dur);
     }
-    .mobile-drawer a:hover { background: var(--surface-2); color: var(--ink); }
+    .mobile-drawer a:hover { background: var(--bg-3); color: var(--text); }
 
-    /* Search results dropdown */
     .search-dropdown {
       position: absolute; top: calc(100% + 8px); left: 0; right: 0;
-      background: var(--surface); border: 1.5px solid var(--border);
+      background: var(--bg-2); border: 1px solid var(--border);
       border-radius: var(--r-md); box-shadow: var(--sh-lg);
-      z-index: 600; max-height: 340px; overflow-y: auto;
+      z-index: 600; max-height: 320px; overflow-y: auto;
       display: none;
     }
     .search-dropdown.open { display: block; }
@@ -306,121 +292,126 @@
       border-bottom: 1px solid var(--border-2);
     }
     .search-item:last-child { border-bottom: none; }
-    .search-item:hover { background: var(--surface-2); }
-    .search-item .si-emoji { font-size: 1.2rem; width: 28px; text-align: center; }
-    .search-item .si-name { font-size: .875rem; font-weight: 600; color: var(--ink); }
-    .search-item .si-cat { font-size: .75rem; color: var(--ink-3); margin-top: 1px; }
-    .search-empty { padding: 20px 14px; text-align: center; font-size: .875rem; color: var(--ink-3); }
+    .search-item:hover { background: var(--bg-3); }
+    .search-item .si-emoji { font-size: 1.1rem; width: 26px; text-align: center; }
+    .search-item .si-name { font-size: .875rem; font-weight: 600; color: var(--text); }
+    .search-item .si-cat { font-size: .72rem; color: var(--text-3); margin-top: 1px; }
+    .search-empty { padding: 20px 14px; text-align: center; font-size: .875rem; color: var(--text-3); }
 
     /* ══════════════════════════════════
        HERO
     ══════════════════════════════════ */
     .hero {
       position: relative; overflow: hidden;
-      padding: 100px 20px 88px;
+      padding: 110px 24px 100px;
       text-align: center;
-      background: var(--surface);
     }
 
-    /* Mesh gradient background */
-    .hero-bg {
+    .hero-canvas {
       position: absolute; inset: 0; pointer-events: none; z-index: 0;
-      background:
-        radial-gradient(ellipse 70% 50% at 20% 20%, rgba(79,110,247,.10) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 60% at 80% 80%, rgba(139,92,246,.08) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 40% at 60% 10%, rgba(16,201,122,.06) 0%, transparent 60%);
+      overflow: hidden;
     }
-    body.dark .hero-bg {
-      background:
-        radial-gradient(ellipse 70% 50% at 20% 20%, rgba(79,110,247,.18) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 60% at 80% 80%, rgba(139,92,246,.14) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 40% at 60% 10%, rgba(16,201,122,.10) 0%, transparent 60%);
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(0,212,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
     }
-
-    /* Floating orbs */
+    body.light .hero-grid {
+      background-image:
+        linear-gradient(rgba(0,160,200,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,160,200,.06) 1px, transparent 1px);
+    }
     .hero-orb {
-      position: absolute; border-radius: 50%; pointer-events: none; z-index: 0;
-      filter: blur(60px); opacity: .55;
+      position: absolute; border-radius: 50%; pointer-events: none;
+      filter: blur(80px);
     }
-    .hero-orb-1 { width: 300px; height: 300px; background: rgba(79,110,247,.18); top: -80px; left: -60px; animation: float1 8s ease-in-out infinite; }
-    .hero-orb-2 { width: 250px; height: 250px; background: rgba(139,92,246,.14); bottom: -60px; right: -40px; animation: float2 10s ease-in-out infinite; }
-    .hero-orb-3 { width: 180px; height: 180px; background: rgba(16,201,122,.12); top: 40%; left: 60%; animation: float1 12s ease-in-out infinite reverse; }
+    .hero-orb-1 { width: 500px; height: 500px; background: rgba(0,212,255,.08); top: -150px; left: -100px; animation: floatA 10s ease-in-out infinite; }
+    .hero-orb-2 { width: 400px; height: 400px; background: rgba(129,140,248,.08); bottom: -100px; right: -80px; animation: floatB 13s ease-in-out infinite; }
+    .hero-orb-3 { width: 300px; height: 300px; background: rgba(163,230,53,.05); top: 30%; left: 55%; animation: floatA 15s ease-in-out infinite reverse; }
 
-    .hero-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+    .hero-inner { position: relative; z-index: 1; max-width: 820px; margin: 0 auto; }
 
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: var(--surface); border: 1.5px solid var(--border);
-      border-radius: var(--r-full); padding: 6px 14px 6px 10px;
-      font-size: .8rem; font-weight: 600; color: var(--ink-2);
-      margin-bottom: 28px;
-      box-shadow: var(--sh-sm);
-      animation: fadeSlideUp .6s var(--ease) both;
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,212,255,.08);
+      border: 1px solid rgba(0,212,255,.2);
+      border-radius: var(--r-full); padding: 6px 16px;
+      font-size: .78rem; font-weight: 600; color: var(--cyan);
+      margin-bottom: 28px; letter-spacing: .06em; text-transform: uppercase;
+      animation: fadeUp .7s var(--ease) both;
     }
-    .hero-badge-dot {
-      width: 22px; height: 22px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue), var(--emerald));
-      display: grid; place-items: center; font-size: .7rem;
+    .hero-eyebrow-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
+      animation: pulse 2s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(1.4); }
     }
 
     .hero h1 {
       font-family: var(--font-head);
-      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
-      font-weight: 800; line-height: 1.1; letter-spacing: -.03em;
-      color: var(--ink);
-      margin-bottom: 20px;
-      animation: fadeSlideUp .6s .1s var(--ease) both;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 800; line-height: 1.05; letter-spacing: -.035em;
+      color: var(--text);
+      margin-bottom: 22px;
+      animation: fadeUp .7s .1s var(--ease) both;
     }
-    .hero h1 em {
-      font-style: normal;
-      background: linear-gradient(135deg, var(--blue) 0%, var(--violet) 100%);
+    .hero h1 .line-accent {
+      background: var(--grad-main);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     .hero-sub {
-      font-size: 1.1rem; color: var(--ink-2); max-width: 500px;
-      margin: 0 auto 36px; line-height: 1.65;
-      animation: fadeSlideUp .6s .2s var(--ease) both;
+      font-size: 1.1rem; color: var(--text-2);
+      max-width: 520px; margin: 0 auto 40px; line-height: 1.7;
+      animation: fadeUp .7s .2s var(--ease) both;
     }
 
     /* Hero search */
     .hero-search-wrap {
-      position: relative; max-width: 580px; margin: 0 auto 28px;
-      animation: fadeSlideUp .6s .3s var(--ease) both;
+      position: relative; max-width: 600px; margin: 0 auto 32px;
+      animation: fadeUp .7s .3s var(--ease) both;
     }
     .hero-search {
       display: flex; align-items: center;
-      background: var(--surface);
-      border: 2px solid var(--border);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
       border-radius: var(--r-full);
-      padding: 6px 6px 6px 22px;
-      box-shadow: var(--sh-xl);
-      transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+      padding: 5px 5px 5px 24px;
+      box-shadow: var(--sh-card), inset 0 1px 0 rgba(255,255,255,.04);
+      transition: border-color var(--dur), box-shadow var(--dur);
     }
     .hero-search:focus-within {
-      border-color: var(--blue);
-      box-shadow: 0 0 0 4px rgba(79,110,247,.12), var(--sh-xl);
+      border-color: rgba(0,212,255,.35);
+      box-shadow: var(--sh-glow);
     }
     .hero-search input {
       flex: 1; border: none; outline: none; background: transparent;
-      font-family: var(--font-body); font-size: 1rem; color: var(--ink);
+      font-family: var(--font-body); font-size: 1rem; color: var(--text);
       min-width: 0;
     }
-    .hero-search input::placeholder { color: var(--ink-3); }
+    .hero-search input::placeholder { color: var(--text-3); }
     .hero-search-btn {
       flex-shrink: 0;
-      background: linear-gradient(135deg, var(--blue), var(--violet));
-      color: #fff; border-radius: var(--r-full);
-      padding: 10px 22px; font-size: .9rem; font-weight: 700;
+      background: var(--grad-main);
+      color: #000; border-radius: var(--r-full);
+      padding: 11px 26px; font-size: .9rem; font-weight: 700;
       font-family: var(--font-head); letter-spacing: -.01em;
-      transition: opacity var(--dur), transform var(--dur) var(--ease-spring);
-      box-shadow: 0 4px 14px rgba(79,110,247,.4);
+      transition: opacity var(--dur), transform var(--dur) var(--spring), box-shadow var(--dur);
+      box-shadow: 0 0 20px rgba(0,212,255,.3);
     }
-    .hero-search-btn:hover { opacity: .92; transform: scale(1.03); }
+    .hero-search-btn:hover { opacity: .9; transform: scale(1.03); box-shadow: 0 0 30px rgba(0,212,255,.4); }
     .hero-search-dropdown {
       position: absolute; top: calc(100% + 10px); left: 0; right: 0;
-      background: var(--surface); border: 1.5px solid var(--border);
+      background: var(--bg-2); border: 1px solid var(--border);
       border-radius: var(--r-lg); box-shadow: var(--sh-lg);
       z-index: 600; max-height: 340px; overflow-y: auto;
       display: none;
@@ -430,471 +421,425 @@
     /* Quick tags */
     .hero-tags {
       display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
-      animation: fadeSlideUp .6s .4s var(--ease) both;
+      animation: fadeUp .7s .4s var(--ease) both;
+      margin-bottom: 16px;
     }
     .hero-tag {
       display: inline-flex; align-items: center; gap: 5px;
-      background: var(--surface); border: 1.5px solid var(--border);
+      background: var(--bg-2); border: 1px solid var(--border);
       border-radius: var(--r-full); padding: 6px 14px;
-      font-size: .8rem; font-weight: 600; color: var(--ink-2);
-      cursor: pointer; box-shadow: var(--sh-xs);
+      font-size: .78rem; font-weight: 500; color: var(--text-2);
+      cursor: pointer;
       transition: all var(--dur) var(--ease);
     }
     .hero-tag:hover {
-      border-color: var(--blue); color: var(--blue);
-      background: var(--blue-dim);
+      border-color: rgba(0,212,255,.35);
+      color: var(--cyan);
+      background: var(--cyan-dim);
       transform: translateY(-2px);
-      box-shadow: var(--sh-sm);
     }
 
-    /* Stats bar */
+    /* Stats */
     .hero-stats {
-      display: flex; justify-content: center; flex-wrap: wrap; gap: 32px;
-      margin-top: 60px; padding-top: 40px;
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 40px;
+      margin-top: 64px; padding-top: 44px;
       border-top: 1px solid var(--border);
-      animation: fadeSlideUp .6s .5s var(--ease) both;
+      animation: fadeUp .7s .5s var(--ease) both;
     }
     .stat-item { text-align: center; }
     .stat-num {
-      font-family: var(--font-head); font-size: 1.6rem; font-weight: 800;
-      color: var(--ink); letter-spacing: -.03em; display: block;
+      font-family: var(--font-head); font-size: 1.7rem; font-weight: 800;
+      color: var(--text); letter-spacing: -.04em; display: block;
+      background: var(--grad-main);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    .stat-label { font-size: .78rem; color: var(--ink-3); margin-top: 2px; }
+    .stat-label { font-size: .75rem; color: var(--text-3); margin-top: 3px; letter-spacing: .02em; text-transform: uppercase; }
 
     /* ══════════════════════════════════
-       SECTION WRAPPER
+       SECTIONS
     ══════════════════════════════════ */
-    .section { max-width: 1240px; margin: 0 auto; padding: 72px 20px; }
-    .section-sm { padding: 48px 20px; }
+    .section { max-width: 1280px; margin: 0 auto; padding: 80px 24px; }
+    .section-sm { padding: 56px 24px; }
 
     .section-label {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: .75rem; font-weight: 700; letter-spacing: .08em;
-      text-transform: uppercase; color: var(--blue);
-      margin-bottom: 10px;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 12px;
     }
     .section-label::before {
-      content: ''; width: 14px; height: 2px;
-      background: var(--blue); border-radius: 2px;
+      content: ''; width: 16px; height: 2px;
+      background: var(--cyan); border-radius: 2px;
     }
     .section-head h2 {
-      font-family: var(--font-head); font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 800; line-height: 1.2; letter-spacing: -.03em; color: var(--ink);
+      font-family: var(--font-head); font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 800; line-height: 1.15; letter-spacing: -.03em; color: var(--text);
     }
-    .section-head p { color: var(--ink-2); margin-top: 8px; max-width: 440px; font-size: .95rem; }
+    .section-head p { color: var(--text-2); margin-top: 10px; max-width: 460px; font-size: .95rem; }
+
+    .section-header-row {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
+    }
+    .view-all-link {
+      font-size: .83rem; font-weight: 600; color: var(--cyan);
+      border: 1px solid rgba(0,212,255,.25); border-radius: var(--r-full);
+      padding: 7px 16px;
+      transition: background var(--dur), box-shadow var(--dur);
+      white-space: nowrap;
+    }
+    .view-all-link:hover { background: var(--cyan-dim); box-shadow: var(--cyan-glow); }
 
     /* ══════════════════════════════════
-       FEATURED TOOLS — horizontal scroll on mobile
+       POPULAR TOOLS GRID (Big Cards)
     ══════════════════════════════════ */
-    .featured-row {
+    .popular-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
-      margin-top: 28px;
+      margin-top: 32px;
     }
 
-    .feat-card {
+    .pop-card {
       position: relative; overflow: hidden;
-      background: var(--surface); border: 1.5px solid var(--border);
-      border-radius: var(--r-lg); padding: 28px 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl); padding: 28px 26px;
       cursor: pointer;
-      transition: transform var(--dur-md) var(--ease-spring), box-shadow var(--dur-md) var(--ease), border-color var(--dur) var(--ease);
+      transition: transform var(--dur-md) var(--spring), box-shadow var(--dur-md) var(--ease), border-color var(--dur);
+      display: block; color: inherit; text-decoration: none;
     }
-    .feat-card:hover { transform: translateY(-6px); box-shadow: var(--sh-lg); border-color: transparent; }
-
-    .feat-card-bg {
-      position: absolute; inset: 0; opacity: 0;
-      transition: opacity .3s var(--ease);
+    .pop-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--sh-lg);
+    }
+    .pop-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      opacity: 0;
+      transition: opacity .3s;
       pointer-events: none;
     }
-    .feat-card:hover .feat-card-bg { opacity: 1; }
+    .pop-card:hover::before { opacity: 1; }
 
-    .feat-card-top {
-      display: flex; align-items: flex-start; justify-content: space-between;
-      margin-bottom: 14px;
+    .pc-cyan::before   { background: radial-gradient(ellipse 80% 60% at 20% 20%, rgba(0,212,255,.06), transparent); }
+    .pc-violet::before { background: radial-gradient(ellipse 80% 60% at 20% 20%, rgba(129,140,248,.06), transparent); }
+    .pc-lime::before   { background: radial-gradient(ellipse 80% 60% at 20% 20%, rgba(163,230,53,.06), transparent); }
+    .pc-rose::before   { background: radial-gradient(ellipse 80% 60% at 20% 20%, rgba(251,113,133,.06), transparent); }
+    .pc-amber::before  { background: radial-gradient(ellipse 80% 60% at 20% 20%, rgba(251,191,36,.06), transparent); }
+    .pc-teal::before   { background: radial-gradient(ellipse 80% 60% at 20% 20%, rgba(45,212,191,.06), transparent); }
+    .pc-orange::before { background: radial-gradient(ellipse 80% 60% at 20% 20%, rgba(251,146,60,.06), transparent); }
+    .pc-emerald::before { background: radial-gradient(ellipse 80% 60% at 20% 20%, rgba(52,211,153,.06), transparent); }
+
+    .pc-cyan:hover     { border-color: rgba(0,212,255,.25); }
+    .pc-violet:hover   { border-color: rgba(129,140,248,.25); }
+    .pc-lime:hover     { border-color: rgba(163,230,53,.25); }
+    .pc-rose:hover     { border-color: rgba(251,113,133,.25); }
+    .pc-amber:hover    { border-color: rgba(251,191,36,.25); }
+    .pc-teal:hover     { border-color: rgba(45,212,191,.25); }
+    .pc-orange:hover   { border-color: rgba(251,146,60,.25); }
+    .pc-emerald:hover  { border-color: rgba(52,211,153,.25); }
+
+    .pop-card-top {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; margin-bottom: 18px;
     }
-    .feat-icon {
-      width: 48px; height: 48px; border-radius: 12px;
-      display: grid; place-items: center; font-size: 1.4rem;
+    .pop-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      display: grid; place-items: center; font-size: 1.5rem;
       flex-shrink: 0;
     }
-    .feat-badge-pill {
-      font-size: .65rem; font-weight: 700; padding: 3px 9px; border-radius: var(--r-full);
-      letter-spacing: .04em; text-transform: uppercase;
+    .pop-badge {
+      font-size: .65rem; font-weight: 700; padding: 4px 10px; border-radius: var(--r-full);
+      letter-spacing: .05em; text-transform: uppercase;
     }
-    .feat-card h3 {
-      font-family: var(--font-head); font-size: 1rem; font-weight: 700;
-      color: var(--ink); margin-bottom: 5px; letter-spacing: -.01em;
+    .pop-card h3 {
+      font-family: var(--font-head); font-size: 1.05rem; font-weight: 700;
+      color: var(--text); margin-bottom: 6px; letter-spacing: -.015em;
     }
-    .feat-card p { font-size: .82rem; color: var(--ink-3); line-height: 1.45; }
-    .feat-arrow {
-      position: absolute; bottom: 16px; right: 16px;
-      width: 28px; height: 28px; border-radius: 50%;
-      background: var(--surface-2); border: 1px solid var(--border);
-      display: grid; place-items: center; font-size: .8rem;
-      transition: background var(--dur), transform var(--dur) var(--ease-spring);
+    .pop-card p { font-size: .83rem; color: var(--text-2); line-height: 1.5; }
+    .pop-card-footer {
+      margin-top: 20px; display: flex; align-items: center; justify-content: space-between;
     }
-    .feat-card:hover .feat-arrow { background: var(--blue); color: #fff; transform: translate(2px, -2px); }
+    .pop-card-cta {
+      font-size: .8rem; font-weight: 600;
+      display: flex; align-items: center; gap: 5px;
+      transition: gap var(--dur) var(--spring);
+    }
+    .pop-card:hover .pop-card-cta { gap: 9px; }
+    .pop-users { font-size: .75rem; color: var(--text-3); }
 
-    /* Color variants */
-    .fc-blue   .feat-icon { background: #eef0fe; }
-    .fc-green  .feat-icon { background: #e8fdf4; }
-    .fc-amber  .feat-icon { background: #fff8e7; }
-    .fc-violet .feat-icon { background: #f3f0ff; }
-    .fc-rose   .feat-icon { background: #fff1f4; }
-    .fc-sky    .feat-icon { background: #e8f7ff; }
-    .fc-orange .feat-icon { background: #fff4ec; }
-    .fc-teal   .feat-icon { background: #e8fdf7; }
+    /* color-coded icons */
+    .pi-cyan    { background: rgba(0,212,255,.12); }
+    .pi-violet  { background: rgba(129,140,248,.12); }
+    .pi-lime    { background: rgba(163,230,53,.12); }
+    .pi-rose    { background: rgba(251,113,133,.12); }
+    .pi-amber   { background: rgba(251,191,36,.12); }
+    .pi-teal    { background: rgba(45,212,191,.12); }
+    .pi-orange  { background: rgba(251,146,60,.12); }
+    .pi-emerald { background: rgba(52,211,153,.12); }
 
-    .fc-blue   .feat-card-bg { background: linear-gradient(135deg, rgba(79,110,247,.04), transparent); }
-    .fc-green  .feat-card-bg { background: linear-gradient(135deg, rgba(16,201,122,.04), transparent); }
-    .fc-amber  .feat-card-bg { background: linear-gradient(135deg, rgba(245,158,11,.04), transparent); }
-    .fc-violet .feat-card-bg { background: linear-gradient(135deg, rgba(139,92,246,.04), transparent); }
+    .cta-cyan    { color: var(--cyan); }
+    .cta-violet  { color: var(--violet); }
+    .cta-lime    { color: var(--lime); }
+    .cta-rose    { color: var(--rose); }
+    .cta-amber   { color: var(--amber); }
+    .cta-teal    { color: var(--teal); }
+    .cta-orange  { color: var(--orange); }
+    .cta-emerald { color: var(--emerald); }
 
-    .badge-hot    { background: #fef2f2; color: var(--rose); }
-    .badge-pop    { background: #fff7ed; color: var(--orange); }
-    .badge-new    { background: #e8fdf4; color: var(--emerald); }
-    .badge-trend  { background: #f3f0ff; color: var(--violet); }
+    .badge-hot   { background: rgba(251,113,133,.12); color: var(--rose); }
+    .badge-trend { background: rgba(0,212,255,.12); color: var(--cyan); }
+    .badge-new   { background: rgba(163,230,53,.12); color: var(--lime); }
+    .badge-pop   { background: rgba(251,191,36,.12); color: var(--amber); }
 
     /* ══════════════════════════════════
-       CATEGORIES GRID
+       CATEGORY STRIP (Tab-style)
     ══════════════════════════════════ */
-    .cat-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 18px;
-      margin-top: 28px;
+    .cat-strip {
+      display: flex; align-items: center; gap: 8px;
+      flex-wrap: wrap; margin: 32px 0 24px;
     }
-
-    .cat-card {
-      background: var(--surface); border: 1.5px solid var(--border);
-      border-radius: var(--r-lg); padding: 24px;
-      transition: transform var(--dur-md) var(--ease-spring), box-shadow var(--dur-md) var(--ease), border-color var(--dur);
-      cursor: default;
-    }
-    .cat-card:hover { transform: translateY(-3px); box-shadow: var(--sh-md); }
-
-    .cat-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-    .cat-icon-wrap {
-      width: 44px; height: 44px; border-radius: 12px;
-      display: grid; place-items: center; font-size: 1.25rem;
-      flex-shrink: 0;
-    }
-    .cat-title {
-      font-family: var(--font-head); font-size: .95rem;
-      font-weight: 700; color: var(--ink); letter-spacing: -.01em;
-    }
-    .cat-count { font-size: .75rem; color: var(--ink-3); margin-top: 1px; }
-
-    .cat-tools-list { display: flex; flex-direction: column; gap: 3px; }
-    .cat-tool-link {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 9px 10px; border-radius: var(--r-sm);
-      font-size: .875rem; color: var(--ink-2);
-      transition: background var(--dur), color var(--dur);
+    .cat-tab {
+      display: flex; align-items: center; gap: 6px;
+      padding: 8px 16px; border-radius: var(--r-full);
+      font-size: .83rem; font-weight: 600; color: var(--text-2);
+      background: var(--bg-2); border: 1px solid var(--border);
       cursor: pointer;
+      transition: all var(--dur) var(--ease);
     }
-    .cat-tool-link:hover { background: var(--surface-2); color: var(--ink); }
-    .cat-tool-link .ctl-left { display: flex; align-items: center; gap: 8px; }
-    .cat-tool-link .ctl-arrow {
-      font-size: .7rem; color: var(--ink-3); opacity: 0;
-      transform: translateX(-4px);
-      transition: opacity var(--dur), transform var(--dur) var(--ease);
+    .cat-tab:hover,
+    .cat-tab.active {
+      background: var(--cyan-dim);
+      border-color: rgba(0,212,255,.3);
+      color: var(--cyan);
     }
-    .cat-tool-link:hover .ctl-arrow { opacity: 1; transform: translateX(0); }
 
     /* ══════════════════════════════════
-       ALL TOOLS GRID
+       CATEGORY SECTIONS
     ══════════════════════════════════ */
-    .tools-grid {
+    .cat-section { margin-top: 56px; }
+    .cat-section:first-child { margin-top: 0; }
+
+    .cat-title-row {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cat-icon-badge {
+      width: 40px; height: 40px; border-radius: 11px;
+      display: grid; place-items: center; font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .cat-title-row h3 {
+      font-family: var(--font-head); font-size: 1.1rem; font-weight: 800;
+      color: var(--text); letter-spacing: -.02em;
+    }
+    .cat-title-row p { font-size: .8rem; color: var(--text-3); margin-top: 1px; }
+
+    .tool-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 14px;
-      margin-top: 28px;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 10px;
     }
 
     .tool-pill {
-      display: flex; align-items: center; gap: 12px;
-      background: var(--surface); border: 1.5px solid var(--border);
-      border-radius: var(--r-md); padding: 14px 16px;
+      display: flex; align-items: center; gap: 11px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md); padding: 13px 15px;
       cursor: pointer;
       transition: all var(--dur) var(--ease);
+      text-decoration: none; color: inherit;
     }
     .tool-pill:hover {
-      border-color: var(--blue); background: var(--blue-dim);
-      transform: translateY(-2px); box-shadow: var(--sh-sm);
+      border-color: rgba(0,212,255,.25);
+      background: var(--cyan-dim);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,.2);
     }
-    .tool-pill:hover .tp-name { color: var(--blue); }
-    .tp-emoji { font-size: 1.2rem; flex-shrink: 0; }
-    .tp-name { font-size: .875rem; font-weight: 600; color: var(--ink); }
+    .tool-pill:hover .tp-name { color: var(--cyan); }
+    .tp-emoji { font-size: 1.15rem; flex-shrink: 0; }
+    .tp-name { font-size: .845rem; font-weight: 600; color: var(--text-2); line-height: 1.3; }
 
     /* ══════════════════════════════════
-       WHY SECTION — dark card
+       ALL TOOLS EXPANDED SECTION
+    ══════════════════════════════════ */
+    .all-tools-wrap { margin-top: 32px; }
+    .all-cat-block { margin-bottom: 40px; }
+
+    /* ══════════════════════════════════
+       WHY SECTION
     ══════════════════════════════════ */
     .why-section {
-      background: var(--ink);
-      border-radius: var(--r-xl); padding: 64px 48px;
-      margin: 0 20px; max-width: 1200px;
-      margin-left: auto; margin-right: auto;
       position: relative; overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-2xl); padding: 72px 56px;
+      margin: 0 24px;
     }
-    body.dark .why-section { background: var(--surface-3); border: 1px solid var(--border); }
+    body.light .why-section { background: #fff; }
 
-    .why-section-bg {
-      position: absolute; inset: 0; pointer-events: none;
+    .why-bg {
+      position: absolute; inset: 0; pointer-events: none; z-index: 0;
       background:
-        radial-gradient(ellipse 60% 60% at 90% 20%, rgba(79,110,247,.2), transparent),
-        radial-gradient(ellipse 50% 50% at 10% 80%, rgba(139,92,246,.15), transparent);
+        radial-gradient(ellipse 60% 60% at 95% 10%, rgba(0,212,255,.06), transparent),
+        radial-gradient(ellipse 50% 50% at 5% 90%, rgba(129,140,248,.05), transparent);
     }
-
     .why-inner { position: relative; z-index: 1; }
-    .why-section .section-label { color: rgba(255,255,255,.5); }
-    .why-section .section-label::before { background: rgba(255,255,255,.5); }
+    .why-section .section-label { color: var(--cyan); }
     .why-section h2 {
-      font-family: var(--font-head); font-size: clamp(1.6rem, 3vw, 2.4rem);
-      font-weight: 800; color: #fff; letter-spacing: -.03em; margin-bottom: 40px;
+      font-family: var(--font-head); font-size: clamp(1.7rem, 3vw, 2.6rem);
+      font-weight: 800; color: var(--text); letter-spacing: -.03em; margin-bottom: 48px;
     }
-    body.dark .why-section h2 { color: var(--ink); }
-
-    .why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;
+    }
     .why-item {
-      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
-      border-radius: var(--r-lg); padding: 24px;
-      transition: background var(--dur), transform var(--dur) var(--ease-spring);
+      background: var(--bg-2); border: 1px solid var(--border);
+      border-radius: var(--r-lg); padding: 26px;
+      transition: transform var(--dur) var(--spring), border-color var(--dur), box-shadow var(--dur);
     }
-    .why-item:hover { background: rgba(255,255,255,.1); transform: translateY(-3px); }
-    .why-emoji { font-size: 1.8rem; margin-bottom: 12px; }
-    .why-item h3 { font-family: var(--font-head); font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: 5px; }
-    .why-item p { font-size: .82rem; color: rgba(255,255,255,.55); line-height: 1.55; }
-    body.dark .why-item h3 { color: var(--ink); }
-    body.dark .why-item p { color: var(--ink-2); }
+    .why-item:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0,212,255,.2);
+      box-shadow: 0 8px 32px rgba(0,0,0,.2);
+    }
+    .why-emoji { font-size: 1.8rem; margin-bottom: 14px; display: block; }
+    .why-item h3 {
+      font-family: var(--font-head); font-size: .95rem; font-weight: 700;
+      color: var(--text); margin-bottom: 6px; letter-spacing: -.01em;
+    }
+    .why-item p { font-size: .82rem; color: var(--text-2); line-height: 1.6; }
 
     /* ══════════════════════════════════
-       FAQ SECTION
+       CTA BANNER
     ══════════════════════════════════ */
-    .faq-list { display: flex; flex-direction: column; gap: 10px; margin-top: 28px; max-width: 800px; }
-    .faq-item {
-      background: var(--surface); border: 1.5px solid var(--border);
-      border-radius: var(--r-md); overflow: hidden;
-      transition: border-color var(--dur);
+    .cta-banner {
+      position: relative; overflow: hidden;
+      background: var(--grad-main);
+      border-radius: var(--r-2xl); padding: 56px 48px;
+      margin: 0 24px;
+      text-align: center;
     }
-    .faq-item.open { border-color: var(--blue); }
-    .faq-q {
-      width: 100%; display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 20px; text-align: left;
-      font-family: var(--font-head); font-size: .95rem; font-weight: 700;
-      color: var(--ink); cursor: pointer;
+    .cta-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+      background-size: 256px; mix-blend-mode: overlay;
+    }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta-banner h2 {
+      font-family: var(--font-head); font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800; color: #000; letter-spacing: -.03em; margin-bottom: 12px;
+    }
+    .cta-banner p { color: rgba(0,0,0,.6); font-size: 1rem; margin-bottom: 28px; }
+    .cta-btn-wrap { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .cta-btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #000; color: #fff;
+      border-radius: var(--r-full); padding: 13px 28px;
+      font-family: var(--font-head); font-size: .9rem; font-weight: 700;
+      transition: opacity var(--dur), transform var(--dur) var(--spring);
+    }
+    .cta-btn-primary:hover { opacity: .88; transform: scale(1.03); }
+    .cta-btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,0,0,.12); color: #000;
+      border: 2px solid rgba(0,0,0,.2);
+      border-radius: var(--r-full); padding: 12px 28px;
+      font-family: var(--font-head); font-size: .9rem; font-weight: 700;
       transition: background var(--dur);
     }
-    .faq-q:hover { background: var(--surface-2); }
-    .faq-icon {
-      width: 24px; height: 24px; border-radius: 50%;
-      background: var(--surface-2); display: grid; place-items: center;
-      font-size: .75rem; color: var(--ink-2); flex-shrink: 0;
-      transition: transform var(--dur) var(--ease), background var(--dur);
-    }
-    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--blue); color: #fff; }
-    .faq-a {
-      max-height: 0; overflow: hidden;
-      transition: max-height .3s var(--ease), padding .3s var(--ease);
-    }
-    .faq-item.open .faq-a { max-height: 200px; }
-    .faq-a-inner { padding: 0 20px 18px; font-size: .875rem; color: var(--ink-2); line-height: 1.65; }
+    .cta-btn-secondary:hover { background: rgba(0,0,0,.2); }
 
     /* ══════════════════════════════════
-       TOOL PAGE
+       FAQ
     ══════════════════════════════════ */
-    .breadcrumb {
-      display: flex; align-items: center; gap: 6px;
-      font-size: .8rem; color: var(--ink-3); margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
-    .breadcrumb a { color: var(--blue); font-weight: 600; }
-    .breadcrumb span { color: var(--ink-3); }
-    .bc-sep { margin: 0 2px; }
-
-    .tool-layout {
+    .faq-grid {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 20px; align-items: start;
+      gap: 16px; margin-top: 32px;
     }
-
-    .tool-card {
-      background: var(--surface); border: 1.5px solid var(--border);
-      border-radius: var(--r-lg); padding: 28px;
-      box-shadow: var(--sh-sm);
+    .faq-item {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--r-lg); overflow: hidden;
+      transition: border-color var(--dur);
     }
-    .tool-card-title {
-      font-family: var(--font-head); font-size: 1.15rem; font-weight: 800;
-      color: var(--ink); margin-bottom: 22px;
-      display: flex; align-items: center; gap: 10px; letter-spacing: -.02em;
+    .faq-item.open { border-color: rgba(0,212,255,.3); }
+    .faq-q {
+      width: 100%; display: flex; align-items: flex-start; justify-content: space-between;
+      padding: 20px 22px; text-align: left; gap: 12px;
+      font-family: var(--font-head); font-size: .93rem; font-weight: 700;
+      color: var(--text); cursor: pointer;
+      transition: background var(--dur);
     }
-
-    .form-group { margin-bottom: 16px; }
-    .form-group label {
-      display: block; font-size: .82rem; font-weight: 600;
-      color: var(--ink-2); margin-bottom: 6px; letter-spacing: .01em;
+    .faq-q:hover { background: var(--bg-2); }
+    .faq-icon {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: var(--bg-3); display: grid; place-items: center;
+      font-size: .75rem; color: var(--text-2); flex-shrink: 0; margin-top: 1px;
+      transition: transform var(--dur), background var(--dur), color var(--dur);
     }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%; padding: 11px 14px;
-      border: 1.5px solid var(--border); border-radius: var(--r-sm);
-      font-family: var(--font-body); font-size: .95rem; color: var(--ink);
-      background: var(--surface-2);
-      outline: none;
-      transition: border-color var(--dur), box-shadow var(--dur), background var(--dur);
-    }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(79,110,247,.12);
-      background: var(--surface);
-    }
-    .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%238888a0'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
-
-    .btn-primary {
-      width: 100%; padding: 13px;
-      background: linear-gradient(135deg, var(--blue), var(--violet));
-      color: #fff; border-radius: var(--r-sm);
-      font-family: var(--font-head); font-size: .95rem; font-weight: 700;
-      letter-spacing: -.01em;
-      box-shadow: 0 4px 16px rgba(79,110,247,.35);
-      transition: opacity var(--dur), transform var(--dur) var(--ease-spring), box-shadow var(--dur);
-    }
-    .btn-primary:hover { opacity: .92; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(79,110,247,.4); }
-    .btn-primary:active { transform: translateY(0); }
-
-    .btn-secondary {
-      padding: 10px 18px; border-radius: var(--r-sm);
-      background: var(--surface-2); border: 1.5px solid var(--border);
-      font-family: var(--font-head); font-size: .875rem; font-weight: 700;
-      color: var(--ink); transition: all var(--dur);
-    }
-    .btn-secondary:hover { background: var(--blue-dim); border-color: var(--blue); color: var(--blue); }
-
-    /* Result box */
-    .result-box {
-      background: linear-gradient(135deg, var(--blue-dim), rgba(139,92,246,.06));
-      border: 1.5px solid rgba(79,110,247,.15);
-      border-radius: var(--r-md); padding: 20px; margin-bottom: 16px;
-    }
-    .result-row {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 9px 0; border-bottom: 1px solid rgba(79,110,247,.1);
-    }
-    .result-row:last-child { border-bottom: none; }
-    .result-label { font-size: .83rem; color: var(--ink-2); }
-    .result-value { font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--blue); }
-    .result-value.big { font-size: 1.45rem; letter-spacing: -.02em; }
-    .result-value.green { color: var(--emerald); }
-    .result-value.red { color: var(--rose); }
-
-    .result-placeholder {
-      text-align: center; padding: 36px 20px;
-      color: var(--ink-3); font-size: .875rem;
-    }
-    .result-placeholder .rp-icon { font-size: 2.5rem; margin-bottom: 10px; opacity: .5; }
-
-    /* Chart */
-    .chart-wrap { margin-top: 20px; }
-    .chart-wrap h3 { font-family: var(--font-head); font-size: .9rem; font-weight: 700; margin-bottom: 14px; color: var(--ink); }
-    .pie-chart-svg { display: block; margin: 0 auto 16px; }
-    .chart-legend { display: flex; flex-direction: column; gap: 8px; }
-    .legend-item { display: flex; align-items: center; gap: 8px; font-size: .82rem; color: var(--ink-2); }
-    .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
-
-    /* Breakdown table */
-    .breakdown-table { width: 100%; border-collapse: collapse; font-size: .8rem; }
-    .breakdown-table th { text-align: left; padding: 9px 12px; background: var(--surface-2); font-weight: 700; color: var(--ink-2); border-bottom: 2px solid var(--border); }
-    .breakdown-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); color: var(--ink-2); }
-    .breakdown-table tr:hover td { background: var(--blue-dim); }
-
-    /* Related tools */
-    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-top: 14px; }
-    .related-card {
-      background: var(--surface-2); border: 1.5px solid var(--border);
-      border-radius: var(--r-md); padding: 14px;
-      text-align: center; cursor: pointer;
-      transition: all var(--dur) var(--ease);
-    }
-    .related-card:hover { border-color: var(--blue); background: var(--blue-dim); transform: translateY(-2px); }
-    .related-card .rc-emoji { font-size: 1.4rem; margin-bottom: 5px; }
-    .related-card .rc-name { font-size: .78rem; font-weight: 600; color: var(--ink-2); }
-
-    /* SEO prose block */
-    .seo-prose {
-      background: var(--surface); border: 1.5px solid var(--border);
-      border-radius: var(--r-lg); padding: 32px; margin-top: 20px;
-    }
-    .seo-prose h2 { font-family: var(--font-head); font-size: 1.25rem; font-weight: 800; color: var(--ink); margin-bottom: 12px; }
-    .seo-prose h3 { font-family: var(--font-head); font-size: .95rem; font-weight: 700; color: var(--blue); margin: 18px 0 7px; }
-    .seo-prose p { color: var(--ink-2); font-size: .875rem; line-height: 1.7; }
-    .seo-prose ul { padding-left: 18px; margin-top: 6px; }
-    .seo-prose ul li { color: var(--ink-2); font-size: .875rem; margin-bottom: 5px; line-height: 1.55; }
-
-    /* Typing test specifics */
-    .typing-display { background: var(--surface-2); border-radius: var(--r-md); padding: 20px; margin-bottom: 14px; font-family: monospace; font-size: .95rem; line-height: 1.9; letter-spacing: .01em; }
-    .typing-input { width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: var(--r-sm); font-family: monospace; font-size: .95rem; resize: none; outline: none; background: var(--surface-2); color: var(--ink); transition: border-color var(--dur), box-shadow var(--dur); }
-    .typing-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(79,110,247,.12); background: var(--surface); }
-    .typing-stats { display: flex; gap: 12px; margin-top: 12px; }
-    .typing-stat { flex: 1; text-align: center; background: var(--surface-2); border: 1.5px solid var(--border); border-radius: var(--r-md); padding: 14px; }
-    .ts-label { font-size: .72rem; color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
-    .ts-value { font-family: var(--font-head); font-size: 1.6rem; font-weight: 800; color: var(--blue); }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--cyan-dim); color: var(--cyan); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s var(--ease); }
+    .faq-item.open .faq-a { max-height: 200px; }
+    .faq-a-inner { padding: 0 22px 20px; font-size: .875rem; color: var(--text-2); line-height: 1.7; }
 
     /* ══════════════════════════════════
        FOOTER
     ══════════════════════════════════ */
     .footer {
-      background: var(--ink); color: rgba(255,255,255,.7);
-      padding: 56px 20px 24px;
+      background: var(--bg-2);
+      border-top: 1px solid var(--border);
+      padding: 60px 24px 28px;
+      margin-top: 80px;
     }
-    body.dark .footer { background: #07070f; }
-
-    .footer-inner { max-width: 1240px; margin: 0 auto; }
+    .footer-inner { max-width: 1280px; margin: 0 auto; }
     .footer-top {
       display: grid; grid-template-columns: 1.8fr repeat(3, 1fr);
       gap: 48px; margin-bottom: 48px;
     }
-    .footer-brand {}
     .footer-logo {
       display: flex; align-items: center; gap: 9px;
-      font-family: var(--font-head); font-weight: 800; font-size: 1.2rem;
-      color: #fff; margin-bottom: 14px;
+      font-family: var(--font-head); font-weight: 800; font-size: 1.15rem;
+      color: var(--text); margin-bottom: 12px;
     }
     .footer-logo-mark {
-      width: 30px; height: 30px; background: linear-gradient(135deg, var(--blue), var(--violet));
+      width: 30px; height: 30px; background: var(--grad-main);
       border-radius: 8px; display: grid; place-items: center;
-      font-size: .85rem; color: #fff;
+      font-size: .85rem;
     }
-    .footer-desc { font-size: .83rem; color: rgba(255,255,255,.45); line-height: 1.65; max-width: 220px; }
-
+    .footer-desc { font-size: .82rem; color: var(--text-3); line-height: 1.7; max-width: 220px; }
     .footer-col h4 {
-      font-family: var(--font-head); font-size: .78rem; font-weight: 700;
-      color: rgba(255,255,255,.9); text-transform: uppercase; letter-spacing: .08em;
+      font-family: var(--font-head); font-size: .72rem; font-weight: 700;
+      color: var(--text-2); text-transform: uppercase; letter-spacing: .1em;
       margin-bottom: 16px;
     }
     .footer-col ul { display: flex; flex-direction: column; gap: 9px; }
     .footer-col ul li a, .footer-col ul li button {
-      font-size: .83rem; color: rgba(255,255,255,.45);
-      transition: color var(--dur); cursor: pointer; background: none; border: none;
-      font-family: var(--font-body); text-align: left;
+      font-size: .83rem; color: var(--text-3);
+      transition: color var(--dur); cursor: pointer;
+      background: none; border: none; font-family: var(--font-body); text-align: left;
     }
-    .footer-col ul li a:hover, .footer-col ul li button:hover { color: #fff; }
-
+    .footer-col ul li a:hover,
+    .footer-col ul li button:hover { color: var(--text); }
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,.08);
-      padding-top: 20px;
+      border-top: 1px solid var(--border); padding-top: 20px;
       display: flex; justify-content: space-between; align-items: center;
       flex-wrap: wrap; gap: 12px;
     }
-    .footer-bottom p { font-size: .78rem; color: rgba(255,255,255,.3); }
-
+    .footer-bottom p { font-size: .78rem; color: var(--text-3); }
     .social-row { display: flex; gap: 8px; }
     .social-btn {
       width: 32px; height: 32px; border-radius: 8px;
-      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1);
+      background: var(--bg-3); border: 1px solid var(--border);
       display: grid; place-items: center; font-size: .8rem;
-      color: rgba(255,255,255,.5); cursor: pointer;
+      color: var(--text-3); cursor: pointer;
       transition: background var(--dur), color var(--dur), border-color var(--dur);
     }
-    .social-btn:hover { background: var(--blue); color: #fff; border-color: transparent; }
+    .social-btn:hover { background: var(--cyan-dim); color: var(--cyan); border-color: rgba(0,212,255,.3); }
 
     /* ══════════════════════════════════
        MOBILE BOTTOM NAV
@@ -902,69 +847,83 @@
     .mobile-nav {
       display: none;
       position: fixed; bottom: 0; left: 0; right: 0;
-      background: rgba(255,255,255,.92);
+      background: rgba(7,7,15,.92);
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       border-top: 1px solid var(--border); z-index: 400;
       padding: 6px 4px calc(env(safe-area-inset-bottom, 0px) + 6px);
     }
-    body.dark .mobile-nav { background: rgba(15,15,26,.92); }
-
+    body.light .mobile-nav { background: rgba(248,248,252,.95); }
     .mobile-nav-items { display: flex; justify-content: space-around; }
     .mn-item {
       display: flex; flex-direction: column; align-items: center; gap: 3px;
-      padding: 6px 12px; border-radius: 10px;
-      font-size: .6rem; font-weight: 700; color: var(--ink-3);
+      padding: 7px 12px; border-radius: var(--r-sm);
+      font-size: .6rem; font-weight: 700; color: var(--text-3);
       cursor: pointer; letter-spacing: .02em; text-transform: uppercase;
-      transition: color var(--dur), background var(--dur);
-      min-width: 52px;
+      transition: color var(--dur); min-width: 52px;
     }
-    .mn-item.active, .mn-item:hover { color: var(--blue); }
-    .mn-icon { font-size: 1.15rem; }
+    .mn-item.active, .mn-item:hover { color: var(--cyan); }
+    .mn-icon { font-size: 1.1rem; }
 
     /* ══════════════════════════════════
        PAGE STATES
     ══════════════════════════════════ */
     #home-page  { display: block; }
-    #tool-page  { display: none;  }
+    #tool-page  { display: none; }
     .static-page { display: none; }
+
+    /* ══════════════════════════════════
+       SEO CONTENT BLOCK
+    ══════════════════════════════════ */
+    .seo-block {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--r-xl); padding: 40px;
+      margin-top: 24px;
+    }
+    .seo-block h2 {
+      font-family: var(--font-head); font-size: 1.3rem; font-weight: 800;
+      color: var(--text); margin-bottom: 14px; letter-spacing: -.02em;
+    }
+    .seo-block h3 {
+      font-family: var(--font-head); font-size: .95rem; font-weight: 700;
+      color: var(--cyan); margin: 20px 0 7px;
+    }
+    .seo-block p { color: var(--text-2); font-size: .875rem; line-height: 1.75; }
+    .seo-block ul { padding-left: 18px; margin-top: 8px; }
+    .seo-block ul li { color: var(--text-2); font-size: .875rem; margin-bottom: 5px; line-height: 1.6; }
 
     /* ══════════════════════════════════
        ANIMATIONS
     ══════════════════════════════════ */
-    @keyframes fadeSlideUp {
-      from { opacity: 0; transform: translateY(20px); }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }
     }
     @keyframes slideDown {
       from { opacity: 0; transform: translateY(-8px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    @keyframes float1 {
+    @keyframes floatA {
       0%, 100% { transform: translate(0, 0) scale(1); }
-      50%       { transform: translate(20px, -20px) scale(1.05); }
+      50%       { transform: translate(24px, -28px) scale(1.04); }
     }
-    @keyframes float2 {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50%       { transform: translate(-15px, 20px) scale(1.04); }
-    }
-    @keyframes popIn {
-      from { opacity: 0; transform: scale(.94) translateY(8px); }
-      to   { opacity: 1; transform: scale(1) translateY(0); }
+    @keyframes floatB {
+      0%, 100% { transform: translate(0, 0); }
+      50%       { transform: translate(-20px, 24px) scale(1.03); }
     }
 
-    .anim-up { animation: fadeSlideUp .5s var(--ease) both; }
-    .anim-up-1 { animation: fadeSlideUp .5s .08s var(--ease) both; }
-    .anim-up-2 { animation: fadeSlideUp .5s .16s var(--ease) both; }
-    .anim-up-3 { animation: fadeSlideUp .5s .24s var(--ease) both; }
-    .anim-pop  { animation: popIn .4s var(--ease-spring) both; }
+    .anim-up   { animation: fadeUp .5s var(--ease) both; }
+    .anim-up-1 { animation: fadeUp .5s .08s var(--ease) both; }
+    .anim-up-2 { animation: fadeUp .5s .16s var(--ease) both; }
+    .anim-up-3 { animation: fadeUp .5s .24s var(--ease) both; }
 
     /* ══════════════════════════════════
        RESPONSIVE
     ══════════════════════════════════ */
-    @media (max-width: 900px) {
-      .featured-row { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 960px) {
+      .popular-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .tool-layout { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .why-section { padding: 48px 32px; }
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
@@ -972,33 +931,38 @@
       .hamburger { display: flex; }
       .mobile-nav { display: block; }
       body { padding-bottom: 68px; }
-      .hero { padding: 72px 16px 64px; }
-      .section { padding: 48px 16px; }
+      .hero { padding: 80px 16px 72px; }
+      .section { padding: 56px 16px; }
       .why-section { margin: 0 12px; padding: 40px 24px; }
+      .cta-banner { margin: 0 12px; padding: 40px 24px; }
       .footer-top { grid-template-columns: 1fr; gap: 24px; }
       .footer-desc { max-width: 100%; }
     }
     @media (max-width: 540px) {
-      .featured-row { grid-template-columns: 1fr; }
+      .popular-grid { grid-template-columns: 1fr; }
       .hero h1 { font-size: 2rem; }
-      .typing-stats { flex-wrap: wrap; }
       .footer-bottom { flex-direction: column; text-align: center; }
+      .cta-banner { border-radius: var(--r-xl); }
     }
 
     /* Utility */
-    .mt-4  { margin-top: 16px; }
-    .mt-6  { margin-top: 24px; }
-    .ovx   { overflow-x: auto; }
-    .text-center { text-align: center; }
-    .w-full { width: 100%; }
-    .gap-2  { gap: 8px; }
-    .flex   { display: flex; }
+    .mt-4 { margin-top: 16px; }
+    .mt-6 { margin-top: 24px; }
+    .flex { display: flex; }
     .items-center { align-items: center; }
+    .gap-2 { gap: 8px; }
+    .w-full { width: 100%; }
+    .text-center { text-align: center; }
+    .max-w-800 { max-width: 800px; }
+
+    /* Divider */
+    .divider {
+      height: 1px; background: var(--border);
+      margin: 0 24px;
+    }
   </style>
 </head>
 <body>
-
-  <!-- Accessibility skip link -->
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <!-- ══════════════════════════════════
@@ -1006,51 +970,44 @@
   ══════════════════════════════════ -->
   <header class="header" role="banner">
     <nav class="nav-inner" aria-label="Main navigation">
-      <!-- Logo -->
       <a class="logo" href="#" onclick="showPage('home'); return false" aria-label="QuickTools Home">
         <div class="logo-mark" aria-hidden="true">⚡</div>
-        <span class="logo-text">Quick<span>Tools</span></span>
+        <span>Quick<span>Tools</span></span>
       </a>
 
-      <!-- Desktop nav links -->
       <ul class="nav-links" role="list">
         <li><a href="#" onclick="showPage('home'); return false">Home</a></li>
-        <li><a href="#" onclick="showPage('home'); scrollTo('#categories'); return false">Tools</a></li>
-        <li><a href="./tools/about.html">About Us</a></li>
+        <li><a href="#categories">Tools</a></li>
+        <li><a href="./tools/about.html">About</a></li>
         <li><a href="./tools/contact.html">Contact</a></li>
-        <li><a href="./tools/privacy.html">Privacy Policy</a></li>
+        <li><a href="./tools/privacy.html">Privacy</a></li>
       </ul>
 
-      <!-- Search -->
       <div class="nav-search-wrap" role="search">
         <div class="nav-search">
           <span class="nav-search-icon" aria-hidden="true">🔍</span>
-          <input
-            type="search" id="navSearch" autocomplete="off"
+          <input type="search" id="navSearch" autocomplete="off"
             placeholder="Search tools…" aria-label="Search tools"
             oninput="handleNavSearch(this.value)"
-            onkeydown="if(event.key==='Enter') quickSearch(this.value,'navResults')"
-          />
+            onkeydown="if(event.key==='Enter') quickSearch(this.value,'navResults')" />
         </div>
         <div class="search-dropdown" id="navResults" role="listbox" aria-label="Search results"></div>
       </div>
 
-      <!-- Actions -->
       <div class="nav-actions">
-        <button class="btn-icon" id="darkToggle" onclick="toggleDark()" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+        <button class="btn-icon" id="darkToggle" onclick="toggleDark()" aria-label="Toggle theme" title="Toggle theme">🌙</button>
         <button class="hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
     </nav>
 
-    <!-- Mobile drawer -->
     <div class="mobile-drawer" id="mobileDrawer" role="navigation" aria-label="Mobile navigation">
       <a href="#" onclick="showPage('home'); closeDrawer(); return false">🏠 Home</a>
-      <a href="#" onclick="showPage('home'); closeDrawer(); scrollTo('#categories'); return false">🔧 All Tools</a>
-      <a href="./tools/about.html">About</a>
-      <a href="./tools/contact.html">Contact</a>
-      <a href="./tools/privacy.html">Privacy Policy</a>
+      <a href="#categories" onclick="closeDrawer()">🔧 All Tools</a>
+      <a href="./tools/about.html">ℹ️ About</a>
+      <a href="./tools/contact.html">📬 Contact</a>
+      <a href="./tools/privacy.html">🔒 Privacy</a>
     </div>
   </header>
 
@@ -1062,36 +1019,36 @@
 
       <!-- HERO -->
       <section class="hero" aria-labelledby="hero-heading">
-        <div class="hero-bg" aria-hidden="true"></div>
-        <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
-        <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
-        <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
+        <div class="hero-canvas" aria-hidden="true">
+          <div class="hero-grid"></div>
+          <div class="hero-orb hero-orb-1"></div>
+          <div class="hero-orb hero-orb-2"></div>
+          <div class="hero-orb hero-orb-3"></div>
+        </div>
 
         <div class="hero-inner">
-          <div class="hero-badge" aria-label="20+ free tools with no login">
-            <div class="hero-badge-dot" aria-hidden="true">✦</div>
-            20+ Free Tools — No Login Required
+          <div class="hero-eyebrow" aria-label="20 plus free tools no login required">
+            <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+            20+ Free Tools · No Login Required
           </div>
 
           <h1 id="hero-heading">
-            The Smartest Free<br><em>Calculator Hub</em> Online
+            The Smartest Free<br>
+            <span class="line-accent">Calculator Hub</span> Online
           </h1>
 
           <p class="hero-sub">
             Fast, accurate tools for students, professionals &amp; everyday life.
-            EMI, BMI, Salary, GPA — everything you need, instantly.
+            EMI, BMI, PDF tools, Image converters — everything in one place.
           </p>
 
-          <!-- Hero search -->
           <div class="hero-search-wrap" role="search">
             <div class="hero-search">
-              <input
-                type="search" id="heroSearch" autocomplete="off"
-                placeholder="Search any tool… EMI, BMI, Age, GPA, Salary…"
+              <input type="search" id="heroSearch" autocomplete="off"
+                placeholder="Search any tool… EMI, BMI, PDF, Image, SIP…"
                 aria-label="Search calculators and tools"
                 oninput="handleHeroSearch(this.value)"
-                onkeydown="if(event.key==='Enter') quickSearch(this.value,'heroResults')"
-              />
+                onkeydown="if(event.key==='Enter') doHeroSearch()" />
               <button class="hero-search-btn" onclick="doHeroSearch()" aria-label="Search">
                 Search →
               </button>
@@ -1099,172 +1056,21 @@
             <div class="hero-search-dropdown" id="heroResults" role="listbox"></div>
           </div>
 
-          <!-- Quick tags -->
           <div class="hero-tags" aria-label="Popular tools">
-            <a href="./tools/emi-calculator.html"
-   class="hero-tag"
-   aria-label="Open EMI Calculator"
-   style="text-decoration:none">
-
-   💰 EMI Calculator
-
-</a>
-            <a href="./tools/bmi-calculator.html"
-   class="hero-tag"
-   aria-label="Open BMI Calculator"
-   style="text-decoration:none">
-
-   ⚖️ BMI Calculator
-
-</a>
-            <a href="./tools/age-calculator.html" class="hero-tag" aria-label="Open Age Calculator" style="text-decoration:none">🎂 Age Calculator</a>
-            <a href="./tools/percentage-calculator.html"
-   class="hero-tag"
-   aria-label="Open Percentage Calculator"
-   style="text-decoration:none">
-
-   📊 Percentage Calculator
-
-</a>
-            <a href="./tools/gst-calculator.html"
-   class="hero-tag"
-   aria-label="Open GST Calculator"
-   style="text-decoration:none">
-
-   🧾 GST Calculator
-
-</a>
-            <a href="./tools/sip-calculator.html"
-   class="hero-tag"
-   aria-label="Open SIP Calculator"
-   style="text-decoration:none">
-
-   📈 SIP Calculator
-
-</a>
-            <a href="./tools/loan-calculator.html"
-   class="hero-tag"
-   aria-label="Open Loan Calculator"
-   style="text-decoration:none">
-
-   🏦 Loan Calculator
-
-</a>
-            <a href="./tools/compound-interest-calculator.html"
-   class="hero-tag"
-   aria-label="Open Compound Interest Calculator"
-   style="text-decoration:none">
-
-   📊 Compound Interest
-
-</a>
-            <a href="./tools/discount-calculator.html"
-   class="hero-tag"
-   aria-label="Open Discount Calculator"
-   style="text-decoration:none">
-
-   🏷️ Discount Calculator
-
-</a>
-            <a href="./tools/currency-converter.html"
-   class="hero-tag"
-   aria-label="Open Currency Converter"
-   style="text-decoration:none">
-
-   💱 Currency Converter
-
-</a>
-            <a href="./tools/qr-code-generator.html"
-   class="hero-tag"
-   aria-label="Open QR Code Generator"
-   style="text-decoration:none">
-
-   📱 QR Generator
-
-</a>
-            <a href="./tools/password-generator.html"
-   class="hero-tag"
-   aria-label="Open Password Generator"
-   style="text-decoration:none">
-
-   🔐 Password Generator
-
-</a>
-            <a href="./tools/word-counter.html"
-   class="hero-tag"
-   aria-label="Open Word Counter"
-   style="text-decoration:none">
-
-   📝 Word Counter
-
-</a>
-            <a href="./tools/unit-converter.html"
-   class="hero-tag"
-   aria-label="Open Unit Converter"
-   style="text-decoration:none">
-
-   📏 Unit Converter
-
-</a>
-            <a href="./tools/image-compressor.html"
-   class="hero-tag"
-   aria-label="Open Image Compressor"
-   style="text-decoration:none">
-
-   🖼️ Image Compressor
-
-</a>
-            <a href="./tools/image-converter.html"
-   class="hero-tag"
-   aria-label="Open Image Converter"
-   style="text-decoration:none">
-
-   🖼️ Image Converter
-
-</a>
-            <a href="./tools/pdf-compressor.html"
-   class="hero-tag"
-   aria-label="Open PDF Compressor"
-   style="text-decoration:none">
-
-   📄 PDF Compressor
-
-</a>
-            <a href="./tools/image-to-pdf.html"
-   class="hero-tag"
-   aria-label="Open Image to PDF Converter"
-   style="text-decoration:none">
-
-   📄 Image to PDF
-
-</a>
-            <a href="./tools/pdf-merger.html"
-   class="hero-tag"
-   aria-label="Open PDF Merger"
-   style="text-decoration:none">
-
-   📚 PDF Merger
-
-</a>
-            <a href="./tools/pdf-splitter.html"
-   class="hero-tag"
-   aria-label="Open PDF Splitter"
-   style="text-decoration:none">
-
-   ✂️ PDF Splitter
-
-</a>
-            <a href="./tools/pdf-to-word.html"
-   class="hero-tag"
-   aria-label="Open PDF to Word Converter"
-   style="text-decoration:none">
-
-   📝 PDF to Word
-
-</a>
+            <a href="./tools/emi-calculator.html" class="hero-tag">💰 EMI Calculator</a>
+            <a href="./tools/bmi-calculator.html" class="hero-tag">⚖️ BMI Calculator</a>
+            <a href="./tools/age-calculator.html" class="hero-tag">🎂 Age Calculator</a>
+            <a href="./tools/sip-calculator.html" class="hero-tag">📈 SIP Calculator</a>
+            <a href="./tools/pdf-compressor.html" class="hero-tag">📄 PDF Compressor</a>
+            <a href="./tools/image-compressor.html" class="hero-tag">🖼️ Image Compressor</a>
+            <a href="./tools/image-converter.html" class="hero-tag">🔄 Image Converter</a>
+            <a href="./tools/qr-code-generator.html" class="hero-tag">📱 QR Generator</a>
+            <a href="./tools/password-generator.html" class="hero-tag">🔐 Password Gen</a>
+            <a href="./tools/currency-converter.html" class="hero-tag">💱 Currency</a>
+            <a href="./tools/word-counter.html" class="hero-tag">📝 Word Counter</a>
+            <a href="./tools/unit-converter.html" class="hero-tag">📏 Unit Converter</a>
           </div>
 
-          <!-- Stats -->
           <div class="hero-stats" aria-label="QuickTools statistics">
             <div class="stat-item">
               <span class="stat-num">20+</span>
@@ -1286,523 +1092,297 @@
         </div>
       </section>
 
-      <!-- FEATURED TOOLS -->
-      <section class="section" aria-labelledby="featured-heading">
-        <div class="section-head anim-up">
-          <div class="section-label">⭐ Most Popular</div>
-          <h2 id="featured-heading">Featured Tools</h2>
-          <p>Our most-loved calculators, trusted by thousands every day.</p>
+      <!-- ══════ POPULAR TOOLS ══════ -->
+      <section class="section" aria-labelledby="popular-heading">
+        <div class="section-header-row anim-up">
+          <div class="section-head">
+            <div class="section-label">⭐ Most Used</div>
+            <h2 id="popular-heading">Popular Tools</h2>
+            <p>Trusted by thousands every day — our most-loved utilities.</p>
+          </div>
+          <a href="#categories" class="view-all-link">View all tools →</a>
         </div>
 
-        <div class="featured-row" role="list">
-
-          <a href="./tools/emi-calculator.html"
-   class="feat-card fc-violet anim-up-3"
-   role="listitem"
-   aria-label="EMI Calculator"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">💰</div>
-    <span class="feat-badge-pill badge-pop">🔥 Popular</span>
-  </div>
-
-  <h3>EMI Calculator</h3>
-
-  <p>
-    Calculate home loan EMI, monthly payments,
-    total interest and repayment instantly.
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-
-          <a href="./tools/bmi-calculator.html"
-   class="feat-card fc-green anim-up-3"
-   role="listitem"
-   aria-label="BMI Calculator"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">⚖️</div>
-    <span class="feat-badge-pill badge-pop">🔥 Health</span>
-  </div>
-
-  <h3>BMI Calculator</h3>
-
-  <p>
-    Check your Body Mass Index, healthy weight range and fitness category instantly.
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-
-          <a href="./tools/age-calculator.html"
-   class="feat-card fc-amber anim-up-2"
-   role="listitem"
-   aria-label="Age Calculator"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">🎂</div>
-    <span class="feat-badge-pill badge-new">✓ Classic</span>
-  </div>
-
-  <h3>Age Calculator</h3>
-
-  <p>
-    Find your exact age in years, months, days, hours &amp; more
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/percentage-calculator.html"
-   class="feat-card fc-green anim-up-3"
-   role="listitem"
-   aria-label="Percentage Calculator"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">📊</div>
-    <span class="feat-badge-pill badge-pop">🔥 Popular</span>
-  </div>
-
-  <h3>Percentage Calculator</h3>
-
-  <p>
-    Calculate percentages, percentage increase, decrease and percentage difference instantly
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/gst-calculator.html"
-   class="feat-card fc-green anim-up-3"
-   role="listitem"
-   aria-label="GST Calculator"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">🧾</div>
-    <span class="feat-badge-pill badge-pop">🔥 Popular</span>
-  </div>
-
-  <h3>GST Calculator</h3>
-
-  <p>
-    Calculate GST inclusive and exclusive amounts instantly with CGST and SGST breakdown.
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/compound-interest-calculator.html"
-   class="feat-card fc-blue anim-up-3"
-   role="listitem"
-   aria-label="Compound Interest Calculator"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">📊</div>
-    <span class="feat-badge-pill badge-pop">🔥 Trending</span>
-  </div>
-
-  <h3>Compound Interest Calculator</h3>
-
-  <p>
-    Calculate investment growth, future value and compound returns instantly.
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/discount-calculator.html"
-   class="feat-card fc-orange anim-up-3"
-   role="listitem"
-   aria-label="Discount Calculator"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">🏷️</div>
-    <span class="feat-badge-pill badge-pop">🔥 Popular</span>
-  </div>
-
-  <h3>Discount Calculator</h3>
-
-  <p>
-    Calculate discounts, sale prices, savings and final amounts instantly.
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/currency-converter.html"
-   class="feat-card fc-blue anim-up-3"
-   role="listitem"
-   aria-label="Currency Converter"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">💱</div>
-    <span class="feat-badge-pill badge-pop">🔥 Global</span>
-  </div>
-
-  <h3>Currency Converter</h3>
-
-  <p>
-    Convert USD, INR, EUR and other currencies instantly with live exchange rates.
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/qr-code-generator.html"
-   class="feat-card fc-blue anim-up-3"
-   role="listitem"
-   aria-label="QR Code Generator"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">📱</div>
-    <span class="feat-badge-pill badge-pop">🔥 Trending</span>
-  </div>
-
-  <h3>QR Code Generator</h3>
-
-  <p>
-    Create free QR codes for URLs, WiFi, text, email and more instantly online.
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/password-generator.html"
-   class="feat-card fc-violet anim-up-3"
-   role="listitem"
-   aria-label="Password Generator"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">🔐</div>
-    <span class="feat-badge-pill badge-pop">🔥 Popular</span>
-  </div>
-
-  <h3>Password Generator</h3>
-
-  <p>
-    Generate strong, secure and random passwords instantly online for free.
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/unit-converter.html"
-   class="feat-card fc-orange anim-up-3"
-   role="listitem"
-   aria-label="Unit Converter"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">📏</div>
-    <span class="feat-badge-pill badge-pop">🔥 Useful</span>
-  </div>
-
-  <h3>Unit Converter</h3>
-
-  <p>
-    Convert length, weight, temperature, speed and other units instantly online.
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/sip-calculator.html"
-   class="feat-card fc-blue anim-up-3"
-   role="listitem"
-   aria-label="SIP Calculator"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">📈</div>
-    <span class="feat-badge-pill badge-pop">🔥 Trending</span>
-  </div>
-
-  <h3>SIP Calculator</h3>
-
-  <p>
-    Calculate SIP returns, investment growth, maturity value and mutual fund wealth instantly.
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/loan-calculator.html"
-   class="feat-card fc-violet anim-up-3"
-   role="listitem"
-   aria-label="Loan Calculator"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">🏦</div>
-    <span class="feat-badge-pill badge-pop">🔥 Popular</span>
-  </div>
-
-  <h3>Loan Calculator</h3>
-
-  <p>
-    Calculate loan EMI, interest amount, repayment schedule and monthly payments instantly.
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/word-counter.html"
-   class="feat-card fc-blue anim-up-3"
-   role="listitem"
-   aria-label="Word Counter"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">📝</div>
-    <span class="feat-badge-pill badge-pop">🔥 Useful</span>
-  </div>
-
-  <h3>Word Counter</h3>
-
-  <p>
-    Count words, characters, sentences and reading time instantly online.
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/image-compressor.html"
-   class="feat-card fc-green anim-up-3"
-   role="listitem"
-   aria-label="Image Compressor"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">🖼️</div>
-    <span class="feat-badge-pill badge-pop">🔥 Trending</span>
-  </div>
-
-  <h3>Image Compressor</h3>
-
-  <p>
-    Compress JPG, PNG and JPEG images online instantly without losing quality
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/image-converter.html"
-   class="feat-card fc-green anim-up-3"
-   role="listitem"
-   aria-label="Image Converter"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">🖼️</div>
-    <span class="feat-badge-pill badge-pop">🔥 Trending</span>
-  </div>
-
-  <h3>Image Converter</h3>
-
-  <p>
-    Convert JPG, PNG and WEBP images online instantly with high quality output
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/pdf-compressor.html"
-   class="feat-card fc-green anim-up-3"
-   role="listitem"
-   aria-label="PDF Compressor"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">📄</div>
-    <span class="feat-badge-pill badge-pop">🔥 Popular</span>
-  </div>
-
-  <h3>PDF Compressor</h3>
-
-  <p>
-    Compress PDF files online instantly without losing document quality
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/image-to-pdf.html"
-   class="feat-card fc-green anim-up-3"
-   role="listitem"
-   aria-label="Image to PDF Converter"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">📄</div>
-    <span class="feat-badge-pill badge-pop">🔥 Trending</span>
-  </div>
-
-  <h3>Image to PDF</h3>
-
-  <p>
-    Convert JPG, PNG, WEBP and JPEG images into high quality PDF files instantly
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/pdf-merger.html"
-   class="feat-card fc-green anim-up-3"
-   role="listitem"
-   aria-label="PDF Merger"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">📚</div>
-    <span class="feat-badge-pill badge-pop">🔥 Popular</span>
-  </div>
-
-  <h3>PDF Merger</h3>
-
-  <p>
-    Merge multiple PDF files into one document instantly and securely
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/pdf-splitter.html"
-   class="feat-card fc-green anim-up-3"
-   role="listitem"
-   aria-label="PDF Splitter"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">✂️</div>
-    <span class="feat-badge-pill badge-pop">🔥 Popular</span>
-  </div>
-
-  <h3>PDF Splitter</h3>
-
-  <p>
-    Split PDF pages and extract selected pages instantly online
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
-          <a href="./tools/pdf-to-word.html"
-   class="feat-card fc-green anim-up-3"
-   role="listitem"
-   aria-label="PDF to Word Converter"
-   style="text-decoration:none;color:inherit;display:block">
-
-  <div class="feat-card-bg"></div>
-
-  <div class="feat-card-top">
-    <div class="feat-icon">📝</div>
-    <span class="feat-badge-pill badge-pop">🔥 Trending</span>
-  </div>
-
-  <h3>PDF to Word</h3>
-
-  <p>
-    Convert PDF files into editable Word documents instantly online
-  </p>
-
-  <div class="feat-arrow" aria-hidden="true">→</div>
-
-</a>
+        <div class="popular-grid" role="list">
+
+          <a href="./tools/pdf-compressor.html" class="pop-card pc-cyan anim-up" role="listitem" aria-label="PDF Compressor">
+            <div class="pop-card-top">
+              <div class="pop-icon pi-cyan">📄</div>
+              <span class="pop-badge badge-hot">🔥 Hot</span>
+            </div>
+            <h3>PDF Compressor</h3>
+            <p>Compress PDF files online instantly without losing document quality. Reduce file size in seconds.</p>
+            <div class="pop-card-footer">
+              <span class="pop-card-cta cta-cyan">Compress PDF <span>→</span></span>
+              <span class="pop-users">Free forever</span>
+            </div>
+          </a>
+
+          <a href="./tools/image-compressor.html" class="pop-card pc-lime anim-up-1" role="listitem" aria-label="Image Compressor">
+            <div class="pop-card-top">
+              <div class="pop-icon pi-lime">🖼️</div>
+              <span class="pop-badge badge-trend">📈 Trending</span>
+            </div>
+            <h3>Image Compressor</h3>
+            <p>Compress JPG, PNG and JPEG images instantly online without losing quality.</p>
+            <div class="pop-card-footer">
+              <span class="pop-card-cta cta-lime">Compress Image <span>→</span></span>
+              <span class="pop-users">No upload limit</span>
+            </div>
+          </a>
+
+          <a href="./tools/image-converter.html" class="pop-card pc-violet anim-up-2" role="listitem" aria-label="Image Converter">
+            <div class="pop-card-top">
+              <div class="pop-icon pi-violet">🔄</div>
+              <span class="pop-badge badge-trend">📈 Trending</span>
+            </div>
+            <h3>Image Converter</h3>
+            <p>Convert JPG, PNG and WEBP images online instantly with high quality output.</p>
+            <div class="pop-card-footer">
+              <span class="pop-card-cta cta-violet">Convert Image <span>→</span></span>
+              <span class="pop-users">All formats</span>
+            </div>
+          </a>
+
+          <a href="./tools/image-to-pdf.html" class="pop-card pc-teal anim-up" role="listitem" aria-label="Image to PDF">
+            <div class="pop-card-top">
+              <div class="pop-icon pi-teal">📎</div>
+              <span class="pop-badge badge-trend">📈 Trending</span>
+            </div>
+            <h3>Image to PDF</h3>
+            <p>Convert JPG, PNG, WEBP images into high quality PDF files instantly online.</p>
+            <div class="pop-card-footer">
+              <span class="pop-card-cta cta-teal">Convert to PDF <span>→</span></span>
+              <span class="pop-users">Instant output</span>
+            </div>
+          </a>
+
+          <a href="./tools/sip-calculator.html" class="pop-card pc-amber anim-up-1" role="listitem" aria-label="SIP Calculator">
+            <div class="pop-card-top">
+              <div class="pop-icon pi-amber">📈</div>
+              <span class="pop-badge badge-pop">⭐ Popular</span>
+            </div>
+            <h3>SIP Calculator</h3>
+            <p>Calculate SIP returns, investment growth, maturity value and mutual fund wealth instantly.</p>
+            <div class="pop-card-footer">
+              <span class="pop-card-cta cta-amber">Calculate SIP <span>→</span></span>
+              <span class="pop-users">Plan your wealth</span>
+            </div>
+          </a>
+
+          <a href="./tools/loan-calculator.html" class="pop-card pc-rose anim-up-2" role="listitem" aria-label="Loan Calculator">
+            <div class="pop-card-top">
+              <div class="pop-icon pi-rose">🏦</div>
+              <span class="pop-badge badge-pop">⭐ Popular</span>
+            </div>
+            <h3>Loan Calculator</h3>
+            <p>Calculate loan EMI, interest amount, repayment schedule and monthly payments instantly.</p>
+            <div class="pop-card-footer">
+              <span class="pop-card-cta cta-rose">Calculate Loan <span>→</span></span>
+              <span class="pop-users">Accurate results</span>
+            </div>
+          </a>
 
         </div>
       </section>
 
-      
+      <div class="divider"></div>
+
+      <!-- ══════ TOOL CATEGORIES ══════ -->
+      <section class="section" id="categories" aria-labelledby="cat-heading">
+        <div class="section-head anim-up">
+          <div class="section-label">🗂️ Browse by Category</div>
+          <h2 id="cat-heading">All Tools by Category</h2>
+          <p>Everything organized neatly — find exactly what you need in seconds.</p>
+        </div>
+
+        <div class="all-tools-wrap">
+
+          <!-- Finance Tools -->
+          <div class="cat-section anim-up-1">
+            <div class="cat-title-row">
+              <div class="cat-icon-badge pi-cyan">💰</div>
+              <div>
+                <h3>Finance Tools</h3>
+                <p>Calculators for loans, investments, taxes and more</p>
+              </div>
+            </div>
+            <div class="tool-grid" role="list">
+              <a href="./tools/emi-calculator.html" class="tool-pill" role="listitem" aria-label="EMI Calculator">
+                <span class="tp-emoji">💰</span><span class="tp-name">EMI Calculator</span>
+              </a>
+              <a href="./tools/sip-calculator.html" class="tool-pill" role="listitem" aria-label="SIP Calculator">
+                <span class="tp-emoji">📈</span><span class="tp-name">SIP Calculator</span>
+              </a>
+              <a href="./tools/loan-calculator.html" class="tool-pill" role="listitem" aria-label="Loan Calculator">
+                <span class="tp-emoji">🏦</span><span class="tp-name">Loan Calculator</span>
+              </a>
+              <a href="./tools/compound-interest-calculator.html" class="tool-pill" role="listitem" aria-label="Compound Interest Calculator">
+                <span class="tp-emoji">📊</span><span class="tp-name">Compound Interest</span>
+              </a>
+              <a href="./tools/gst-calculator.html" class="tool-pill" role="listitem" aria-label="GST Calculator">
+                <span class="tp-emoji">🧾</span><span class="tp-name">GST Calculator</span>
+              </a>
+              <a href="./tools/discount-calculator.html" class="tool-pill" role="listitem" aria-label="Discount Calculator">
+                <span class="tp-emoji">🏷️</span><span class="tp-name">Discount Calculator</span>
+              </a>
+              <a href="./tools/percentage-calculator.html" class="tool-pill" role="listitem" aria-label="Percentage Calculator">
+                <span class="tp-emoji">📐</span><span class="tp-name">Percentage Calculator</span>
+              </a>
+              <a href="./tools/currency-converter.html" class="tool-pill" role="listitem" aria-label="Currency Converter">
+                <span class="tp-emoji">💱</span><span class="tp-name">Currency Converter</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Health Tools -->
+          <div class="cat-section anim-up-2" style="margin-top:48px">
+            <div class="cat-title-row">
+              <div class="cat-icon-badge pi-lime">❤️</div>
+              <div>
+                <h3>Health Tools</h3>
+                <p>Body metrics and wellness calculators</p>
+              </div>
+            </div>
+            <div class="tool-grid" role="list">
+              <a href="./tools/bmi-calculator.html" class="tool-pill" role="listitem" aria-label="BMI Calculator">
+                <span class="tp-emoji">⚖️</span><span class="tp-name">BMI Calculator</span>
+              </a>
+              <a href="./tools/age-calculator.html" class="tool-pill" role="listitem" aria-label="Age Calculator">
+                <span class="tp-emoji">🎂</span><span class="tp-name">Age Calculator</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- PDF Tools -->
+          <div class="cat-section anim-up-3" style="margin-top:48px">
+            <div class="cat-title-row">
+              <div class="cat-icon-badge pi-rose">📄</div>
+              <div>
+                <h3>PDF Tools</h3>
+                <p>Compress, merge, split and convert PDF files online</p>
+              </div>
+            </div>
+            <div class="tool-grid" role="list">
+              <a href="./tools/pdf-compressor.html" class="tool-pill" role="listitem" aria-label="PDF Compressor">
+                <span class="tp-emoji">📄</span><span class="tp-name">PDF Compressor</span>
+              </a>
+              <a href="./tools/pdf-merger.html" class="tool-pill" role="listitem" aria-label="PDF Merger">
+                <span class="tp-emoji">📚</span><span class="tp-name">PDF Merger</span>
+              </a>
+              <a href="./tools/pdf-splitter.html" class="tool-pill" role="listitem" aria-label="PDF Splitter">
+                <span class="tp-emoji">✂️</span><span class="tp-name">PDF Splitter</span>
+              </a>
+              <a href="./tools/pdf-to-word.html" class="tool-pill" role="listitem" aria-label="PDF to Word">
+                <span class="tp-emoji">📝</span><span class="tp-name">PDF to Word</span>
+              </a>
+              <a href="./tools/image-to-pdf.html" class="tool-pill" role="listitem" aria-label="Image to PDF">
+                <span class="tp-emoji">📎</span><span class="tp-name">Image to PDF</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Image Tools -->
+          <div class="cat-section anim-up" style="margin-top:48px">
+            <div class="cat-title-row">
+              <div class="cat-icon-badge pi-violet">🖼️</div>
+              <div>
+                <h3>Image Tools</h3>
+                <p>Compress and convert images with ease</p>
+              </div>
+            </div>
+            <div class="tool-grid" role="list">
+              <a href="./tools/image-compressor.html" class="tool-pill" role="listitem" aria-label="Image Compressor">
+                <span class="tp-emoji">🖼️</span><span class="tp-name">Image Compressor</span>
+              </a>
+              <a href="./tools/image-converter.html" class="tool-pill" role="listitem" aria-label="Image Converter">
+                <span class="tp-emoji">🔄</span><span class="tp-name">Image Converter</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Utility Tools -->
+          <div class="cat-section anim-up-1" style="margin-top:48px">
+            <div class="cat-title-row">
+              <div class="cat-icon-badge pi-amber">🔧</div>
+              <div>
+                <h3>Utility Tools</h3>
+                <p>Everyday smart tools for quick tasks</p>
+              </div>
+            </div>
+            <div class="tool-grid" role="list">
+              <a href="./tools/qr-code-generator.html" class="tool-pill" role="listitem" aria-label="QR Code Generator">
+                <span class="tp-emoji">📱</span><span class="tp-name">QR Code Generator</span>
+              </a>
+              <a href="./tools/password-generator.html" class="tool-pill" role="listitem" aria-label="Password Generator">
+                <span class="tp-emoji">🔐</span><span class="tp-name">Password Generator</span>
+              </a>
+              <a href="./tools/word-counter.html" class="tool-pill" role="listitem" aria-label="Word Counter">
+                <span class="tp-emoji">📝</span><span class="tp-name">Word Counter</span>
+              </a>
+              <a href="./tools/unit-converter.html" class="tool-pill" role="listitem" aria-label="Unit Converter">
+                <span class="tp-emoji">📏</span><span class="tp-name">Unit Converter</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="divider"></div>
 
       <!-- WHY QUICKTOOLS -->
-      <div class="why-section" aria-labelledby="why-heading">
-        <div class="why-section-bg" aria-hidden="true"></div>
-        <div class="why-inner">
-          <div class="section-label">Why QuickTools?</div>
-          <h2 id="why-heading">Built for speed.<br>Designed for everyone.</h2>
-          <div class="why-grid" role="list">
-            <div class="why-item" role="listitem">
-              <div class="why-emoji" aria-hidden="true">⚡</div>
-              <h3>Lightning Fast</h3>
-              <p>Results in milliseconds. No waiting, no lag, no loading screens.</p>
+      <div class="section">
+        <div class="why-section" aria-labelledby="why-heading">
+          <div class="why-bg" aria-hidden="true"></div>
+          <div class="why-inner">
+            <div class="section-label">Why QuickTools?</div>
+            <h2 id="why-heading">Built for speed.<br>Designed for everyone.</h2>
+            <div class="why-grid" role="list">
+              <div class="why-item" role="listitem">
+                <span class="why-emoji" aria-hidden="true">⚡</span>
+                <h3>Lightning Fast</h3>
+                <p>Results in milliseconds. No waiting, no lag, no loading screens.</p>
+              </div>
+              <div class="why-item" role="listitem">
+                <span class="why-emoji" aria-hidden="true">📱</span>
+                <h3>Mobile Friendly</h3>
+                <p>Works beautifully on any screen — phone, tablet, or desktop.</p>
+              </div>
+              <div class="why-item" role="listitem">
+                <span class="why-emoji" aria-hidden="true">🆓</span>
+                <h3>100% Free</h3>
+                <p>Every tool, forever free. No subscriptions, no hidden fees.</p>
+              </div>
+              <div class="why-item" role="listitem">
+                <span class="why-emoji" aria-hidden="true">🔒</span>
+                <h3>No Login Required</h3>
+                <p>Jump right in — no accounts, no tracking of personal data.</p>
+              </div>
+              <div class="why-item" role="listitem">
+                <span class="why-emoji" aria-hidden="true">🎨</span>
+                <h3>Dark &amp; Light Mode</h3>
+                <p>Easy on the eyes. Switch themes with one tap, anytime.</p>
+              </div>
+              <div class="why-item" role="listitem">
+                <span class="why-emoji" aria-hidden="true">🔍</span>
+                <h3>Instant Search</h3>
+                <p>Find any tool in seconds with our smart search feature.</p>
+              </div>
             </div>
-            <div class="why-item" role="listitem">
-              <div class="why-emoji" aria-hidden="true">📱</div>
-              <h3>Mobile Friendly</h3>
-              <p>Works beautifully on any screen — phone, tablet, or desktop.</p>
-            </div>
-            <div class="why-item" role="listitem">
-              <div class="why-emoji" aria-hidden="true">🆓</div>
-              <h3>100% Free</h3>
-              <p>Every tool, forever free. No subscriptions, no hidden fees.</p>
-            </div>
-            <div class="why-item" role="listitem">
-              <div class="why-emoji" aria-hidden="true">🔒</div>
-              <h3>No Login Required</h3>
-              <p>Jump right in — no accounts, no tracking of personal data.</p>
-            </div>
-            <div class="why-item" role="listitem">
-              <div class="why-emoji" aria-hidden="true">🎨</div>
-              <h3>Dark Mode</h3>
-              <p>Easy on the eyes. Switch themes with one tap, anytime.</p>
-            </div>
-            <div class="why-item" role="listitem">
-              <div class="why-emoji" aria-hidden="true">🔍</div>
-              <h3>Instant Search</h3>
-              <p>Find any tool in seconds with our smart search feature.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA BANNER -->
+      <div class="section section-sm">
+        <div class="cta-banner" aria-label="Call to action">
+          <div class="cta-inner">
+            <h2>Ready to simplify your life?</h2>
+            <p>Explore 20+ free tools — no signup, no fuss, just results.</p>
+            <div class="cta-btn-wrap">
+              <a href="#categories" class="cta-btn-primary">Browse All Tools →</a>
+              <a href="./tools/emi-calculator.html" class="cta-btn-secondary">Try EMI Calculator</a>
             </div>
           </div>
         </div>
@@ -1810,11 +1390,13 @@
 
       <!-- FAQ -->
       <section class="section" aria-labelledby="faq-heading">
-        <div class="section-head">
-          <div class="section-label">Got Questions?</div>
+        <div class="section-head anim-up max-w-800">
+          <div class="section-label">Help</div>
           <h2 id="faq-heading">Frequently Asked Questions</h2>
+          <p>Everything you need to know about QuickTools.</p>
         </div>
-        <div class="faq-list" role="list" id="faqList">
+
+        <div class="faq-grid" role="list" id="faqList">
           <div class="faq-item" role="listitem">
             <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
               Are all QuickTools calculators really free?
@@ -1822,13 +1404,15 @@
             </button>
             <div class="faq-a"><div class="faq-a-inner">Yes — every single tool on QuickTools is completely free to use, forever. No subscriptions, no hidden charges, no login required. We believe powerful tools should be accessible to everyone.</div></div>
           </div>
+
           <div class="faq-item" role="listitem">
             <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
               Is my data safe? Do you store my inputs?
               <div class="faq-icon" aria-hidden="true">+</div>
             </button>
-            <div class="faq-a"><div class="faq-a-inner">All calculations happen entirely in your browser — nothing is ever sent to our servers. We don't store, share, or sell any personal data. Only anonymous analytics (Google Analytics) are used to understand site usage.</div></div>
+            <div class="faq-a"><div class="faq-a-inner">All calculations happen entirely in your browser — nothing is ever sent to our servers. We don't store, share, or sell any personal data. Only anonymous analytics are used to understand site usage.</div></div>
           </div>
+
           <div class="faq-item" role="listitem">
             <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
               How accurate is the EMI Calculator?
@@ -1836,6 +1420,7 @@
             </button>
             <div class="faq-a"><div class="faq-a-inner">Our EMI Calculator uses the standard banking formula: EMI = P × r × (1+r)ⁿ / ((1+r)ⁿ – 1). Results are highly accurate for flat-rate loans. For loans with processing fees or variable rates, please consult your bank.</div></div>
           </div>
+
           <div class="faq-item" role="listitem">
             <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
               Do these tools work on mobile?
@@ -1843,29 +1428,51 @@
             </button>
             <div class="faq-a"><div class="faq-a-inner">Absolutely. QuickTools is designed mobile-first. Every tool is fully responsive and works great on any smartphone or tablet. You can even add it to your home screen for instant access.</div></div>
           </div>
+
           <div class="faq-item" role="listitem">
             <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
               How is BMI calculated?
               <div class="faq-icon" aria-hidden="true">+</div>
             </button>
-            <div class="faq-a"><div class="faq-a-inner">BMI is calculated as weight (kg) divided by height squared (m²). For imperial units, it's (weight in lbs × 703) / height in inches². The result is compared to standard WHO categories: Underweight (&lt;18.5), Normal (18.5–24.9), Overweight (25–29.9), Obese (≥30).</div></div>
+            <div class="faq-a"><div class="faq-a-inner">BMI is calculated as weight (kg) divided by height squared (m²). For imperial, it's (weight lbs × 703) / height in². Results are compared to WHO categories: Underweight (&lt;18.5), Normal (18.5–24.9), Overweight (25–29.9), Obese (≥30).</div></div>
           </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+              Can I use the PDF tools without uploading to a server?
+              <div class="faq-icon" aria-hidden="true">+</div>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">Yes! Our PDF tools process files locally in your browser where possible. Your documents are never stored on our servers, ensuring complete privacy and security for your sensitive files.</div></div>
+          </div>
+        </div>
+
+        <!-- SEO content -->
+        <div class="seo-block">
+          <h2>Free Online Calculator Hub — QuickTools</h2>
+          <p>QuickTools is your all-in-one destination for free online calculators, PDF tools, image utilities, and smart daily tools. Whether you need to calculate your home loan EMI, check your BMI, plan a SIP investment, compress a PDF, or convert an image — QuickTools has you covered.</p>
+
+          <h3>Finance Calculators</h3>
+          <p>Our finance tools include the popular <strong>EMI Calculator</strong>, <strong>SIP Calculator</strong>, <strong>Loan Calculator</strong>, <strong>Compound Interest Calculator</strong>, <strong>GST Calculator</strong>, <strong>Discount Calculator</strong>, <strong>Percentage Calculator</strong>, and <strong>Currency Converter</strong> — all free, accurate, and instant.</p>
+
+          <h3>PDF &amp; Image Tools</h3>
+          <p>Powerful browser-based tools to <strong>compress PDFs</strong>, <strong>merge PDF files</strong>, <strong>split PDFs</strong>, <strong>convert PDF to Word</strong>, <strong>compress images</strong>, <strong>convert image formats</strong>, and <strong>convert images to PDF</strong> — no upload, no sign-up.</p>
+
+          <h3>Utility Tools</h3>
+          <p>Generate secure <strong>QR codes</strong>, create strong <strong>passwords</strong>, <strong>count words</strong> in your documents, and <strong>convert units</strong> of length, weight, and temperature — all in seconds.</p>
         </div>
       </section>
 
     </main>
   </div><!-- /#home-page -->
 
-  <!-- ══════════════════════════════════
-       TOOL PAGE
-  ══════════════════════════════════ -->
+  <!-- TOOL PAGE (preserved) -->
   <div id="tool-page">
-    <main class="section" id="main-content" role="main">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="#" onclick="showPage('home'); return false">Home</a>
-        <span class="bc-sep" aria-hidden="true">›</span>
+    <main class="section" id="tool-main-content" role="main">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--text-3);margin-bottom:24px;flex-wrap:wrap;">
+        <a href="#" onclick="showPage('home'); return false" style="color:var(--cyan);font-weight:600;">Home</a>
+        <span aria-hidden="true">›</span>
         <span id="bcCat">Finance</span>
-        <span class="bc-sep" aria-hidden="true">›</span>
+        <span aria-hidden="true">›</span>
         <span id="bcTool">EMI Calculator</span>
       </nav>
       <div id="toolContent"></div>
@@ -1889,22 +1496,30 @@
           <h4>Finance</h4>
           <ul>
             <li><a href="tools/emi-calculator.html">EMI Calculator</a></li>
-            <li><a href="tools/age-calculator.html">Age Calculator</a></li>
+            <li><a href="tools/sip-calculator.html">SIP Calculator</a></li>
+            <li><a href="tools/loan-calculator.html">Loan Calculator</a></li>
+            <li><a href="tools/gst-calculator.html">GST Calculator</a></li>
+            <li><a href="tools/currency-converter.html">Currency Converter</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Health &amp; Study</h4>
+          <h4>PDF &amp; Image</h4>
           <ul>
-            <li><a href="tools/bmi-calculator.html">BMI Calculator</a></li>
-            <li><a href="tools/age-calculator.html">Age Calculator</a></li>
+            <li><a href="tools/pdf-compressor.html">PDF Compressor</a></li>
+            <li><a href="tools/pdf-merger.html">PDF Merger</a></li>
+            <li><a href="tools/image-compressor.html">Image Compressor</a></li>
+            <li><a href="tools/image-converter.html">Image Converter</a></li>
+            <li><a href="tools/image-to-pdf.html">Image to PDF</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <ul>
-            <a href="./tools/about.html">About</a>
-            <a href="./tools/contact.html">Contact</a>
-            <a href="./tools/privacy.html">Privacy Policy</a>
+            <li><a href="./tools/about.html">About Us</a></li>
+            <li><a href="./tools/contact.html">Contact</a></li>
+            <li><a href="./tools/privacy.html">Privacy Policy</a></li>
+            <li><a href="tools/bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="tools/age-calculator.html">Age Calculator</a></li>
           </ul>
         </div>
       </div>
@@ -1920,24 +1535,22 @@
     </div>
   </footer>
 
-  <!-- ══════════════════════════════════
-       MOBILE BOTTOM NAV
-  ══════════════════════════════════ -->
+  <!-- MOBILE BOTTOM NAV -->
   <nav class="mobile-nav" aria-label="Mobile bottom navigation">
     <div class="mobile-nav-items">
       <div class="mn-item active" onclick="showPage('home')" aria-label="Home">
         <span class="mn-icon" aria-hidden="true">🏠</span>Home
       </div>
-      <div class="mn-item" onclick="showPage('home'); setTimeout(()=>document.getElementById('categories')?.scrollIntoView({behavior:'smooth'}),200)" aria-label="All Tools">
+      <div class="mn-item" onclick="document.getElementById('categories')?.scrollIntoView({behavior:'smooth'})" aria-label="All Tools">
         <span class="mn-icon" aria-hidden="true">🔧</span>Tools
       </div>
-      <div class="mn-item" onclick="openTool('emi')" aria-label="EMI Calculator">
+      <div class="mn-item" onclick="location.href='./tools/emi-calculator.html'" aria-label="EMI Calculator">
         <span class="mn-icon" aria-hidden="true">💰</span>EMI
       </div>
-      <div class="mn-item" onclick="openTool('bmi')" aria-label="BMI Calculator">
+      <div class="mn-item" onclick="location.href='./tools/bmi-calculator.html'" aria-label="BMI Calculator">
         <span class="mn-icon" aria-hidden="true">⚖️</span>BMI
       </div>
-      <div class="mn-item" onclick="toggleDark()" aria-label="Toggle dark mode">
+      <div class="mn-item" onclick="toggleDark()" aria-label="Toggle theme">
         <span class="mn-icon" aria-hidden="true" id="mobileThemeIcon">🌙</span>Theme
       </div>
     </div>
@@ -1947,49 +1560,32 @@
        JAVASCRIPT
   ══════════════════════════════════ -->
   <script>
-    /* ────────────────────────────────
-       ALL TOOLS DATA
-    ──────────────────────────────── */
+    /* ─── ALL TOOLS DATA ─── */
     const ALL_TOOLS = [
-  {
-    name: 'EMI Calculator',
-    url: './tools/emi-calculator.html',
-    cat: 'Finance',
-    emoji: '💰',
-    desc: 'Monthly loan installments'
-  },
-  {
-    name: 'BMI Calculator',
-    url: './tools/bmi-calculator.html',
-    cat: 'Health',
-    emoji: '⚖️',
-    desc: 'Body Mass Index check'
-  }
-];
+      { id: 'emi',       name: 'EMI Calculator',              url: './tools/emi-calculator.html',                cat: 'Finance',   emoji: '💰', desc: 'Monthly loan installments' },
+      { id: 'bmi',       name: 'BMI Calculator',              url: './tools/bmi-calculator.html',                cat: 'Health',    emoji: '⚖️', desc: 'Body Mass Index check' },
+      { id: 'age',       name: 'Age Calculator',              url: './tools/age-calculator.html',                cat: 'Health',    emoji: '🎂', desc: 'Exact age in years, months, days' },
+      { id: 'percentage',name: 'Percentage Calculator',       url: './tools/percentage-calculator.html',         cat: 'Finance',   emoji: '📐', desc: 'Percentage, increase & decrease' },
+      { id: 'gst',       name: 'GST Calculator',              url: './tools/gst-calculator.html',                cat: 'Finance',   emoji: '🧾', desc: 'GST inclusive & exclusive' },
+      { id: 'sip',       name: 'SIP Calculator',              url: './tools/sip-calculator.html',                cat: 'Finance',   emoji: '📈', desc: 'Mutual fund SIP returns' },
+      { id: 'loan',      name: 'Loan Calculator',             url: './tools/loan-calculator.html',               cat: 'Finance',   emoji: '🏦', desc: 'Loan EMI & repayment schedule' },
+      { id: 'compound',  name: 'Compound Interest Calculator',url: './tools/compound-interest-calculator.html',  cat: 'Finance',   emoji: '📊', desc: 'Investment growth & future value' },
+      { id: 'discount',  name: 'Discount Calculator',         url: './tools/discount-calculator.html',           cat: 'Finance',   emoji: '🏷️', desc: 'Sale price & savings' },
+      { id: 'currency',  name: 'Currency Converter',          url: './tools/currency-converter.html',            cat: 'Finance',   emoji: '💱', desc: 'Live currency exchange rates' },
+      { id: 'qr',        name: 'QR Code Generator',           url: './tools/qr-code-generator.html',             cat: 'Utility',   emoji: '📱', desc: 'Generate free QR codes' },
+      { id: 'password',  name: 'Password Generator',          url: './tools/password-generator.html',            cat: 'Utility',   emoji: '🔐', desc: 'Secure random passwords' },
+      { id: 'wordcount', name: 'Word Counter',                url: './tools/word-counter.html',                  cat: 'Utility',   emoji: '📝', desc: 'Words, chars, reading time' },
+      { id: 'unit',      name: 'Unit Converter',              url: './tools/unit-converter.html',                cat: 'Utility',   emoji: '📏', desc: 'Length, weight, temperature' },
+      { id: 'imgcomp',   name: 'Image Compressor',            url: './tools/image-compressor.html',              cat: 'Image',     emoji: '🖼️', desc: 'Compress JPG, PNG online' },
+      { id: 'imgconv',   name: 'Image Converter',             url: './tools/image-converter.html',               cat: 'Image',     emoji: '🔄', desc: 'Convert JPG, PNG, WEBP' },
+      { id: 'pdfcomp',   name: 'PDF Compressor',              url: './tools/pdf-compressor.html',                cat: 'PDF',       emoji: '📄', desc: 'Compress PDF files online' },
+      { id: 'img2pdf',   name: 'Image to PDF',                url: './tools/image-to-pdf.html',                  cat: 'PDF',       emoji: '📎', desc: 'Convert images to PDF' },
+      { id: 'pdfmerge',  name: 'PDF Merger',                  url: './tools/pdf-merger.html',                    cat: 'PDF',       emoji: '📚', desc: 'Merge multiple PDFs' },
+      { id: 'pdfsplit',  name: 'PDF Splitter',                url: './tools/pdf-splitter.html',                  cat: 'PDF',       emoji: '✂️', desc: 'Split PDF pages' },
+      { id: 'pdf2word',  name: 'PDF to Word',                 url: './tools/pdf-to-word.html',                   cat: 'PDF',       emoji: '📝', desc: 'Convert PDF to editable Word' },
+    ];
 
-    /* ────────────────────────────────
-       RENDER ALL TOOLS GRID
-    ──────────────────────────────── */
-    (function renderAllTools() {
-  const grid = document.getElementById('allToolsGrid');
-  if (!grid) return;
-
-  grid.innerHTML = ALL_TOOLS.map(t => `
-    <a href="${t.url}"
-       class="tool-pill"
-       role="listitem"
-       aria-label="Open ${t.name}"
-       style="text-decoration:none">
-
-      <span class="tp-emoji" aria-hidden="true">${t.emoji}</span>
-      <span class="tp-name">${t.name}</span>
-
-    </a>
-  `).join('');
-})();
-    /* ────────────────────────────────
-       SEARCH
-    ──────────────────────────────── */
+    /* ─── SEARCH ─── */
     function searchTools(q) {
       if (!q.trim()) return [];
       const lq = q.toLowerCase();
@@ -2005,9 +1601,12 @@
       if (!el) return;
       if (!results.length) { el.classList.remove('open'); return; }
       el.innerHTML = results.map(t => `
-        <div class="search-item" role="option" onclick="openTool('${t.id}')" tabindex="0" onkeydown="if(event.key==='Enter')openTool('${t.id}')">
+        <div class="search-item" role="option" onclick="window.location.href='${t.url}'" tabindex="0" onkeydown="if(event.key==='Enter')window.location.href='${t.url}'">
           <span class="si-emoji" aria-hidden="true">${t.emoji}</span>
-          <div><div class="si-name">${t.name}</div><div class="si-cat">${t.cat} · ${t.desc}</div></div>
+          <div>
+            <div class="si-name">${t.name}</div>
+            <div class="si-cat">${t.cat} · ${t.desc}</div>
+          </div>
         </div>
       `).join('');
       el.classList.add('open');
@@ -2021,36 +1620,43 @@
       if (results.length) window.location.href = results[0].url;
     }
     function doHeroSearch() {
-      quickSearch(document.getElementById('heroSearch').value, 'heroResults');
+      const v = document.getElementById('heroSearch').value;
+      const results = searchTools(v);
+      if (results.length) window.location.href = results[0].url;
+      else renderDropdown(results, 'heroResults');
     }
 
-    // Close dropdowns on outside click
     document.addEventListener('click', e => {
       if (!e.target.closest('.nav-search-wrap') && !e.target.closest('.hero-search-wrap')) {
         document.querySelectorAll('.search-dropdown,.hero-search-dropdown').forEach(el => el.classList.remove('open'));
       }
     });
 
-    /* ────────────────────────────────
-       DARK MODE
-    ──────────────────────────────── */
+    /* ─── DARK MODE ─── */
     const saved = localStorage.getItem('qt-dark');
     if (saved === 'true') applyDark(true);
+    else if (saved === null && window.matchMedia('(prefers-color-scheme: light)').matches) applyDark(false);
 
-    function toggleDark() { applyDark(!document.body.classList.contains('dark')); }
+    function toggleDark() { applyDark(document.body.classList.contains('light')); }
 
-    function applyDark(on) {
-      document.body.classList.toggle('dark', on);
-      const icon = on ? '☀️' : '🌙';
-      document.getElementById('darkToggle').textContent = icon;
+    function applyDark(isDark) {
+      document.body.classList.toggle('light', !isDark);
+      const icon = isDark ? '🌙' : '☀️';
+      const btn = document.getElementById('darkToggle');
+      if (btn) btn.textContent = icon;
       const mti = document.getElementById('mobileThemeIcon');
       if (mti) mti.textContent = icon;
-      localStorage.setItem('qt-dark', on);
+      localStorage.setItem('qt-dark', isDark);
     }
-    
-    /* ────────────────────────────────
-       HAMBURGER
-    ──────────────────────────────── */
+
+    /* ─── PAGE TOGGLE ─── */
+    function showPage(page) {
+      document.getElementById('home-page').style.display = page === 'home' ? 'block' : 'none';
+      document.getElementById('tool-page').style.display  = page === 'tool'  ? 'block' : 'none';
+      if (page === 'home') window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ─── HAMBURGER ─── */
     function toggleDrawer() {
       const d = document.getElementById('mobileDrawer');
       const h = document.getElementById('hamburger');
@@ -2064,15 +1670,20 @@
       document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
     }
 
-    /* ────────────────────────────────
-       FAQ
-    ──────────────────────────────── */
+    /* ─── FAQ ─── */
     function toggleFAQ(btn) {
       const item = btn.closest('.faq-item');
       const open = item.classList.toggle('open');
       btn.setAttribute('aria-expanded', open);
     }
 
+    /* ─── SMOOTH SCROLL for hash links ─── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
   </script>
 </body>
 </html>
