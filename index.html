@@ -1016,8 +1016,9 @@
       <ul class="nav-links" role="list">
         <li><a href="#" onclick="showPage('home'); return false">Home</a></li>
         <li><a href="#" onclick="showPage('home'); scrollTo('#categories'); return false">Tools</a></li>
-        <li><a href="#" onclick="showStaticPage('about'); return false">About</a></li>
-        <li><a href="#" onclick="showStaticPage('contact'); return false">Contact</a></li>
+        <li><a href="./about.html">About Us</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="./privacy.html">Privacy Policy</a></li>
       </ul>
 
       <!-- Search -->
@@ -1047,9 +1048,9 @@
     <div class="mobile-drawer" id="mobileDrawer" role="navigation" aria-label="Mobile navigation">
       <a href="#" onclick="showPage('home'); closeDrawer(); return false">🏠 Home</a>
       <a href="#" onclick="showPage('home'); closeDrawer(); scrollTo('#categories'); return false">🔧 All Tools</a>
-      <a href="#" onclick="showStaticPage('about'); closeDrawer(); return false">ℹ️ About</a>
-      <a href="#" onclick="showStaticPage('contact'); closeDrawer(); return false">✉️ Contact</a>
-      <a href="#" onclick="showStaticPage('privacy'); closeDrawer(); return false">🔒 Privacy Policy</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy Policy</a>
     </div>
   </header>
 
@@ -1764,136 +1765,10 @@
 
 </a>
 
-          <article class="feat-card fc-violet anim-up-3" role="listitem" onclick="openTool('salary')" tabindex="0" onkeydown="if(event.key==='Enter') openTool('salary')" aria-label="Salary Calculator">
-            <div class="feat-card-bg"></div>
-            <div class="feat-card-top">
-              <div class="feat-icon">💼</div>
-              <span class="feat-badge-pill badge-trend">📈 Trending</span>
-            </div>
-            <h3>Salary Calculator</h3>
-            <p>Instantly break down your CTC into take-home pay</p>
-            <div class="feat-arrow" aria-hidden="true">→</div>
-          </article>
-
         </div>
       </section>
 
-      <!-- CATEGORIES -->
-      <section class="section" style="padding-top:0" id="categories" aria-labelledby="cat-heading">
-        <div class="section-head anim-up">
-          <div class="section-label">Browse by Category</div>
-          <h2 id="cat-heading">Everything Organized</h2>
-          <p>Pick a category and find the right tool instantly.</p>
-        </div>
-
-        <div class="cat-grid" role="list">
-          <!-- Finance -->
-          <div class="cat-card" role="listitem">
-            <div class="cat-header">
-              <div class="cat-icon-wrap" style="background:#eef0fe;font-size:1.25rem">💰</div>
-              <div>
-                <div class="cat-title">Finance Tools</div>
-                <div class="cat-count">3 tools</div>
-              </div>
-            </div>
-            <div class="cat-tools-list">
-              <div class="cat-tool-link" onclick="openTool('emi')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openTool('emi')">
-                <span class="ctl-left"><span>📊</span> EMI Calculator</span>
-                <span class="ctl-arrow">→</span>
-              </div>
-              <div class="cat-tool-link" onclick="openTool('salary')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openTool('salary')">
-                <span class="ctl-left"><span>💼</span> Salary Calculator</span>
-                <span class="ctl-arrow">→</span>
-              </div>
-              <div class="cat-tool-link" onclick="openTool('profit')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openTool('profit')">
-                <span class="ctl-left"><span>📈</span> Profit Calculator</span>
-                <span class="ctl-arrow">→</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Health -->
-          <div class="cat-card" role="listitem">
-            <div class="cat-header">
-              <div class="cat-icon-wrap" style="background:#e8fdf4;font-size:1.25rem">🏃</div>
-              <div>
-                <div class="cat-title">Health Tools</div>
-                <div class="cat-count">2 tools</div>
-              </div>
-            </div>
-            <div class="cat-tools-list">
-              <div class="cat-tool-link" onclick="openTool('bmi')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openTool('bmi')">
-                <span class="ctl-left"><span>⚖️</span> BMI Calculator</span>
-                <span class="ctl-arrow">→</span>
-              </div>
-              <div class="cat-tool-link" onclick="openTool('calorie')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openTool('calorie')">
-                <span class="ctl-left"><span>🥗</span> Calorie Calculator</span>
-                <span class="ctl-arrow">→</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Education -->
-          <div class="cat-card" role="listitem">
-            <div class="cat-header">
-              <div class="cat-icon-wrap" style="background:#f3f0ff;font-size:1.25rem">📚</div>
-              <div>
-                <div class="cat-title">Student Tools</div>
-                <div class="cat-count">3 tools</div>
-              </div>
-            </div>
-            <div class="cat-tools-list">
-              <div class="cat-tool-link" onclick="openTool('age')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openTool('age')">
-                <span class="ctl-left"><span>🎂</span> Age Calculator</span>
-                <span class="ctl-arrow">→</span>
-              </div>
-              <div class="cat-tool-link" onclick="openTool('gpa')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openTool('gpa')">
-                <span class="ctl-left"><span>🎓</span> GPA Calculator</span>
-                <span class="ctl-arrow">→</span>
-              </div>
-              <div class="cat-tool-link" onclick="openTool('typing')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openTool('typing')">
-                <span class="ctl-left"><span>⌨️</span> Typing Speed Test</span>
-                <span class="ctl-arrow">→</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Utility -->
-          <div class="cat-card" role="listitem">
-            <div class="cat-header">
-              <div class="cat-icon-wrap" style="background:#fff4ec;font-size:1.25rem">🛠️</div>
-              <div>
-                <div class="cat-title">Utility Tools</div>
-                <div class="cat-count">3 tools</div>
-              </div>
-            </div>
-            <div class="cat-tools-list">
-              <div class="cat-tool-link" onclick="openTool('timezone')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openTool('timezone')">
-                <span class="ctl-left"><span>🌍</span> Time Zone Converter</span>
-                <span class="ctl-arrow">→</span>
-              </div>
-              <div class="cat-tool-link" onclick="openTool('random')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openTool('random')">
-                <span class="ctl-left"><span>🎲</span> Random Generator</span>
-                <span class="ctl-arrow">→</span>
-              </div>
-              <div class="cat-tool-link" onclick="openTool('data')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openTool('data')">
-                <span class="ctl-left"><span>📶</span> Data Usage Calculator</span>
-                <span class="ctl-arrow">→</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ALL TOOLS QUICK GRID -->
-      <section class="section" style="padding-top:0" aria-labelledby="all-tools-heading">
-        <div class="section-head anim-up">
-          <div class="section-label">Quick Access</div>
-          <h2 id="all-tools-heading">All Tools</h2>
-          <p>Jump straight to any tool in one click.</p>
-        </div>
-        <div class="tools-grid" id="allToolsGrid" role="list"></div>
-      </section>
+      
 
       <!-- WHY QUICKTOOLS -->
       <div class="why-section" aria-labelledby="why-heading">
@@ -2001,71 +1876,6 @@
   </div>
 
   <!-- ══════════════════════════════════
-       STATIC PAGES
-  ══════════════════════════════════ -->
-
-  <!-- ABOUT -->
-  <div id="page-about" class="static-page">
-    <main class="section" role="main">
-      <div class="section-head" style="margin-bottom:32px">
-        <div class="section-label">Who We Are</div>
-        <h2>About QuickTools</h2>
-      </div>
-      <div class="seo-prose">
-        <p>QuickTools is a free, no-login online toolkit built for students, professionals, and everyday users. Our goal is to make complex calculations simple and fast — right in your browser, with zero friction.</p>
-        <h3>Our Mission</h3>
-        <p>We believe powerful tools should be free and accessible to everyone. From EMI calculations to BMI tracking, we cover finance, health, education, and utilities — all in one beautifully designed place.</p>
-        <h3>Why We Built This</h3>
-        <p>We were frustrated by cluttered, ad-heavy, slow calculator sites. So we built QuickTools — clean, fast, and mobile-friendly by default. No paywalls. No signup. Just tools that work.</p>
-        <h3>Technology</h3>
-        <p>QuickTools is a fully static website — pure HTML, CSS, and JavaScript. All calculations happen in your browser. This means it's lightning-fast, privacy-respecting, and works offline after first load.</p>
-      </div>
-    </main>
-  </div>
-
-  <!-- CONTACT -->
-  <div id="page-contact" class="static-page">
-    <main class="section" role="main">
-      <div class="section-head" style="margin-bottom:32px">
-        <div class="section-label">Get In Touch</div>
-        <h2>Contact Us</h2>
-      </div>
-      <div class="tool-card" style="max-width:560px">
-        <div class="form-group"><label for="c-name">Your Name</label><input type="text" id="c-name" placeholder="e.g. Ravi Kumar" /></div>
-        <div class="form-group"><label for="c-email">Email Address</label><input type="email" id="c-email" placeholder="you@example.com" /></div>
-        <div class="form-group">
-          <label for="c-msg">Message</label>
-          <textarea id="c-msg" rows="5" style="width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:var(--r-sm);font-family:var(--font-body);font-size:.95rem;resize:vertical;outline:none;background:var(--surface-2);color:var(--ink);transition:border-color .2s,box-shadow .2s" placeholder="How can we help you?" onfocus="this.style.borderColor='var(--blue)';this.style.boxShadow='0 0 0 3px rgba(79,110,247,.12)'" onblur="this.style.borderColor='var(--border)';this.style.boxShadow='none'"></textarea>
-        </div>
-        <button class="btn-primary" onclick="alert('Thanks! We\'ll get back to you soon. 🎉')">Send Message →</button>
-      </div>
-    </main>
-  </div>
-
-  <!-- PRIVACY -->
-  <div id="page-privacy" class="static-page">
-    <main class="section" role="main">
-      <div class="section-head" style="margin-bottom:32px">
-        <div class="section-label">Legal</div>
-        <h2>Privacy Policy</h2>
-      </div>
-      <div class="seo-prose">
-        <p><em>Last updated: May 2025</em></p>
-        <h3>Information We Collect</h3>
-        <p>QuickTools does not collect any personal data. All calculations happen entirely in your browser — nothing is sent to our servers.</p>
-        <h3>Cookies &amp; Analytics</h3>
-        <p>We use Google Analytics (via gtag.js) to understand how people use the site in aggregate. This may set anonymous cookies. No personally identifiable information is collected or stored.</p>
-        <h3>Third-Party Services</h3>
-        <p>We use Google Analytics for usage insights and Google Fonts for typography. These services have their own privacy policies. We do not sell, rent, or share any user data with third parties.</p>
-        <h3>Your Rights</h3>
-        <p>Since we do not collect personal data, there is nothing to delete or export. If you have privacy concerns or questions, please reach out via our Contact page.</p>
-        <h3>Changes</h3>
-        <p>We may update this policy occasionally. The date at the top of this page indicates the most recent revision.</p>
-      </div>
-    </main>
-  </div>
-
-  <!-- ══════════════════════════════════
        FOOTER
   ══════════════════════════════════ -->
   <footer class="footer" id="contact" role="contentinfo">
@@ -2082,8 +1892,6 @@
           <h4>Finance</h4>
           <ul>
             <li><a href="tools/emi-calculator.html">EMI Calculator</a></li>
-            <li><a href="#" onclick="openTool('salary'); return false">Salary Calculator</a></li>
-            <li><a href="#" onclick="openTool('profit'); return false">Profit Calculator</a></li>
             <li><a href="tools/age-calculator.html">Age Calculator</a></li>
           </ul>
         </div>
@@ -2091,19 +1899,15 @@
           <h4>Health &amp; Study</h4>
           <ul>
             <li><a href="tools/bmi-calculator.html">BMI Calculator</a></li>
-            <li><a href="#" onclick="openTool('calorie'); return false">Calorie Calculator</a></li>
             <li><a href="tools/age-calculator.html">Age Calculator</a></li>
-            <li><a href="#" onclick="openTool('gpa'); return false">GPA Calculator</a></li>
-            <li><a href="#" onclick="openTool('typing'); return false">Typing Speed Test</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <ul>
-            <li><button onclick="showStaticPage('about')">About Us</button></li>
-            <li><button onclick="showStaticPage('contact')">Contact</button></li>
-            <li><button onclick="showStaticPage('privacy')">Privacy Policy</button></li>
-            <li><a href="#categories" onclick="showPage('home'); return false">Sitemap</a></li>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/privacy.html">Privacy Policy</a>
           </ul>
         </div>
       </div>
@@ -2150,33 +1954,42 @@
        ALL TOOLS DATA
     ──────────────────────────────── */
     const ALL_TOOLS = [
-      { id:'emi',      name:'EMI Calculator',        cat:'Finance',   emoji:'💰', desc:'Monthly loan installments' },
-      { id:'salary',   name:'Salary Calculator',     cat:'Finance',   emoji:'💼', desc:'CTC to take-home breakdown' },
-      { id:'profit',   name:'Profit Calculator',     cat:'Finance',   emoji:'📈', desc:'Profit/loss percentage' },
-      { id:'bmi',      name:'BMI Calculator',        cat:'Health',    emoji:'⚖️', desc:'Body Mass Index check' },
-      { id:'calorie',  name:'Calorie Calculator',    cat:'Health',    emoji:'🥗', desc:'Daily calorie needs' },
-      { id:'age',      name:'Age Calculator',        cat:'Education', emoji:'🎂', desc:'Exact age in years/months/days' },
-      { id:'typing',   name:'Typing Speed Test',     cat:'Education', emoji:'⌨️', desc:'WPM & accuracy measurement' },
-      { id:'gpa',      name:'GPA Calculator',        cat:'Education', emoji:'🎓', desc:'Grade point average' },
-      { id:'timezone', name:'Time Zone Converter',   cat:'Utility',   emoji:'🌍', desc:'Convert times across zones' },
-      { id:'random',   name:'Random Generator',      cat:'Utility',   emoji:'🎲', desc:'Numbers, lists & UUIDs' },
-      { id:'data',     name:'Data Usage Calculator', cat:'Utility',   emoji:'📶', desc:'Monthly data usage estimate' },
-    ];
+  {
+    name: 'EMI Calculator',
+    url: './tools/emi-calculator.html',
+    cat: 'Finance',
+    emoji: '💰',
+    desc: 'Monthly loan installments'
+  },
+  {
+    name: 'BMI Calculator',
+    url: './tools/bmi-calculator.html',
+    cat: 'Health',
+    emoji: '⚖️',
+    desc: 'Body Mass Index check'
+  }
+];
 
     /* ────────────────────────────────
        RENDER ALL TOOLS GRID
     ──────────────────────────────── */
     (function renderAllTools() {
-      const grid = document.getElementById('allToolsGrid');
-      if (!grid) return;
-      grid.innerHTML = ALL_TOOLS.map(t => `
-        <div class="tool-pill" role="listitem" onclick="openTool('${t.id}')" tabindex="0" onkeydown="if(event.key==='Enter')openTool('${t.id}')" aria-label="Open ${t.name}">
-          <span class="tp-emoji" aria-hidden="true">${t.emoji}</span>
-          <span class="tp-name">${t.name}</span>
-        </div>
-      `).join('');
-    })();
+  const grid = document.getElementById('allToolsGrid');
+  if (!grid) return;
 
+  grid.innerHTML = ALL_TOOLS.map(t => `
+    <a href="${t.url}"
+       class="tool-pill"
+       role="listitem"
+       aria-label="Open ${t.name}"
+       style="text-decoration:none">
+
+      <span class="tp-emoji" aria-hidden="true">${t.emoji}</span>
+      <span class="tp-name">${t.name}</span>
+
+    </a>
+  `).join('');
+})();
     /* ────────────────────────────────
        SEARCH
     ──────────────────────────────── */
