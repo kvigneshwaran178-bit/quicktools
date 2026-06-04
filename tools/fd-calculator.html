@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FD Calculator – Calculate Fixed Deposit Interest &amp; Maturity Amount</title>
+  <meta name="description" content="Use our free FD Calculator to calculate fixed deposit interest, maturity amount, returns and earnings instantly online." />
+  <meta name="keywords" content="fd calculator, fixed deposit calculator, fd interest calculator, bank fd calculator, online fd calculator, fixed deposit maturity calculator, fd return calculator, fd investment calculator, fd calculator india, monthly interest fd calculator, compound fd calculator" />
+  <link rel="canonical" href="https://quicktools.com/tools/fd-calculator.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="FD Calculator – Calculate Fixed Deposit Interest &amp; Maturity Amount" />
+  <meta property="og:description" content="Use our free FD Calculator to calculate fixed deposit interest, maturity amount, returns and earnings instantly online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://quicktools.com/tools/fd-calculator.html" />
+  <meta property="og:site_name" content="QuickTools" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FD Calculator – Fixed Deposit Interest &amp; Maturity Amount" />
+  <meta name="twitter:description" content="Calculate FD interest, maturity amount, and total returns instantly with our free online FD calculator." />
+
+  <!-- Schema: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "FD Calculator",
+    "url": "https://quicktools.com/tools/fd-calculator.html",
+    "description": "Free online Fixed Deposit Calculator to calculate FD interest, maturity amount and total returns.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+  }
+  </script>
+
+  <!-- Schema: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an FD Calculator?",
+        "acceptedAnswer": { "@type": "Answer", "text": "An FD Calculator is an online tool that helps you calculate the maturity amount, total interest earned, and effective returns on your fixed deposit investment based on principal, interest rate, tenure, and compounding frequency." }
+      },
+      {
+        "@type": "Question",
+        "name": "How is FD interest calculated?",
+        "acceptedAnswer": { "@type": "Answer", "text": "FD interest is calculated using the compound interest formula: A = P × (1 + r/n)^(nt), where P is principal, r is annual interest rate, n is compounding frequency per year, and t is tenure in years." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between simple and compound interest in FD?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Simple interest is calculated only on the principal amount, while compound interest is calculated on principal plus accumulated interest. Most bank FDs use compound interest, which yields higher returns over time." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best FD interest rate in India?",
+        "acceptedAnswer": { "@type": "Answer", "text": "FD interest rates vary by bank and tenure. As of 2024, rates typically range from 5% to 9% per annum. Small finance banks and certain NBFCs may offer higher rates. Always compare current rates before investing." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is FD interest taxable in India?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, FD interest is taxable in India as per your income tax slab. TDS (Tax Deducted at Source) is deducted at 10% if interest exceeds ₹40,000 per year (₹50,000 for senior citizens)." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --bg2: #111827;
+      --card: rgba(255,255,255,0.035);
+      --card-border: rgba(255,255,255,0.08);
+      --card-hover: rgba(255,255,255,0.06);
+      --gold: #f5c842;
+      --gold2: #e8a820;
+      --gold-glow: rgba(245,200,66,0.18);
+      --teal: #2dd4bf;
+      --teal-dim: rgba(45,212,191,0.12);
+      --text: #f0ece0;
+      --text-dim: #8a8070;
+      --text-muted: #5a5448;
+      --success: #4ade80;
+      --radius: 18px;
+      --radius-sm: 10px;
+      --shadow: 0 24px 60px rgba(0,0,0,0.5);
+    }
+    [data-theme="light"] {
+      --bg: #faf7f0;
+      --bg2: #f0ebe0;
+      --card: rgba(255,255,255,0.75);
+      --card-border: rgba(180,160,100,0.2);
+      --card-hover: rgba(255,255,255,0.9);
+      --gold-glow: rgba(200,150,30,0.1);
+      --teal-dim: rgba(0,150,130,0.08);
+      --text: #1a1510;
+      --text-dim: #6b5e4a;
+      --text-muted: #9e8e78;
+      --shadow: 0 16px 40px rgba(100,80,20,0.12);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Background ambient */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 10%, rgba(245,200,66,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 80% 80%, rgba(45,212,191,0.05) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(11,15,26,0.82);
+      border-bottom: 1px solid var(--card-border);
+      padding: 0 24px;
+    }
+    [data-theme="light"] nav { background: rgba(250,247,240,0.88); }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dim);
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); background: var(--gold-glow); }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    #themeToggle {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      color: var(--text-dim);
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+    }
+    #themeToggle:hover { border-color: var(--gold); color: var(--gold); }
+    #menuToggle {
+      display: none;
+      background: none; border: none;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 1.4rem;
+      padding: 4px;
+    }
+
+    @media (max-width: 768px) {
+      #menuToggle { display: flex; align-items: center; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px; left: 0; right: 0;
+        background: var(--bg2);
+        border-bottom: 1px solid var(--card-border);
+        flex-direction: column;
+        padding: 12px;
+        gap: 2px;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { width: 100%; padding: 10px 16px; }
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 72px 24px 40px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--gold-glow);
+      border: 1px solid rgba(245,200,66,0.25);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      max-width: 700px;
+      margin: 0 auto 16px;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      color: var(--text-dim);
+      font-size: 1.05rem;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* MAIN GRID */
+    .main-grid {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .main-grid { grid-template-columns: 1fr; }
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 28px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .card:hover { border-color: rgba(245,200,66,0.2); box-shadow: 0 0 40px var(--gold-glow); }
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card-title .icon {
+      width: 32px; height: 32px;
+      background: var(--gold-glow);
+      border: 1px solid rgba(245,200,66,0.25);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem;
+    }
+
+    /* FORM */
+    .form-group { margin-bottom: 18px; }
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 7px;
+    }
+    .input-wrap {
+      position: relative;
+    }
+    .input-prefix {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 0.95rem;
+      pointer-events: none;
+    }
+    input[type="number"], select {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 12px 14px 12px 36px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -moz-appearance: textfield;
+      appearance: textfield;
+    }
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+    input[type="number"]:focus, select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px var(--gold-glow);
+    }
+    select { padding-left: 14px; cursor: pointer; }
+    [data-theme="light"] input[type="number"],
+    [data-theme="light"] select {
+      background: rgba(255,255,255,0.6);
+      color: var(--text);
+    }
+
+    /* Tenure row */
+    .tenure-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    /* RANGE SLIDER */
+    .range-wrap { margin-top: 8px; }
+    input[type="range"] {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 4px;
+      background: var(--card-border);
+      border-radius: 10px;
+      outline: none;
+      cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 8px var(--gold-glow);
+      cursor: pointer;
+    }
+    .range-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 5px;
+    }
+
+    /* CALCULATE BUTTON */
+    .btn-calc {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      color: #0b0f1a;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      margin-top: 6px;
+      transition: transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(245,200,66,0.3);
+    }
+    .btn-calc:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(245,200,66,0.4); }
+    .btn-calc:active { transform: translateY(0); }
+
+    /* RESULTS */
+    .results-hidden { opacity: 0; pointer-events: none; transform: translateY(16px); transition: opacity 0.4s, transform 0.4s; }
+    .results-visible { opacity: 1; pointer-events: all; transform: translateY(0); transition: opacity 0.4s, transform 0.4s; }
+
+    .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+    .result-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      text-align: center;
+    }
+    .result-item.highlight {
+      background: linear-gradient(135deg, rgba(245,200,66,0.1), rgba(232,168,32,0.06));
+      border-color: rgba(245,200,66,0.3);
+    }
+    .result-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+    }
+    .result-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .result-item.highlight .result-value { color: var(--gold); }
+    .result-item.teal .result-value { color: var(--teal); }
+
+    /* DONUT CHART */
+    .chart-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 8px 0 16px;
+    }
+    .donut-svg { width: 120px; height: 120px; }
+    .donut-legend { display: flex; flex-direction: column; gap: 10px; }
+    .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+    /* BAR CHART */
+    .bar-chart { margin-top: 16px; }
+    .bar-year { display: grid; grid-template-columns: 56px 1fr auto; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .bar-label { font-size: 0.75rem; color: var(--text-dim); font-weight: 500; }
+    .bar-track { height: 8px; background: var(--card-border); border-radius: 100px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 100px; background: linear-gradient(90deg, var(--gold), var(--teal)); transition: width 0.6s ease; }
+    .bar-val { font-size: 0.72rem; color: var(--text-dim); white-space: nowrap; min-width: 72px; text-align: right; }
+
+    /* SECTION */
+    .section {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 56px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .section-sub {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+    }
+    .section-divider {
+      width: 48px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    /* INFO CARDS */
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .info-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 22px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .info-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--gold);
+    }
+    .info-card p { font-size: 0.875rem; color: var(--text-dim); line-height: 1.65; }
+
+    /* FORMULA */
+    .formula-box {
+      background: rgba(45,212,191,0.05);
+      border: 1px solid rgba(45,212,191,0.15);
+      border-radius: var(--radius-sm);
+      padding: 20px 24px;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 1rem;
+      color: var(--teal);
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+    .formula-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 0.875rem;
+    }
+    .formula-table th, .formula-table td {
+      padding: 10px 14px;
+      border: 1px solid var(--card-border);
+      text-align: left;
+    }
+    .formula-table th {
+      background: var(--card);
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .formula-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+
+    /* EXAMPLES TABLE */
+    .examples-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+    }
+    .examples-table th {
+      background: linear-gradient(135deg, rgba(245,200,66,0.12), rgba(232,168,32,0.06));
+      border: 1px solid var(--card-border);
+      padding: 11px 14px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+      text-align: left;
+    }
+    .examples-table td {
+      border: 1px solid var(--card-border);
+      padding: 11px 14px;
+      color: var(--text-dim);
+    }
+    .examples-table tr:hover td { background: var(--card-hover); color: var(--text); }
+    .examples-table .green { color: var(--success); font-weight: 600; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item:hover { border-color: rgba(245,200,66,0.2); }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-align: left;
+      padding: 16px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-q .arrow {
+      color: var(--gold);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      transition: transform 0.25s;
+    }
+    .faq-item.open .faq-q .arrow { transform: rotate(45deg); }
+    .faq-a {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      line-height: 1.7;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s;
+      padding: 0 20px;
+    }
+    .faq-item.open .faq-a { max-height: 300px; padding: 0 20px 16px; }
+
+    /* RELATED TOOLS */
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .tool-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.2s;
+    }
+    .tool-card:hover {
+      border-color: var(--gold);
+      background: var(--card-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--gold-glow);
+    }
+    .tool-icon {
+      width: 38px; height: 38px;
+      background: var(--gold-glow);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .tool-name { font-size: 0.875rem; font-weight: 600; }
+    .tool-desc { font-size: 0.75rem; color: var(--text-dim); margin-top: 2px; }
+
+    /* CTA */
+    .cta-section {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+    .cta-card {
+      background: linear-gradient(135deg, rgba(245,200,66,0.1) 0%, rgba(45,212,191,0.07) 100%);
+      border: 1px solid rgba(245,200,66,0.2);
+      border-radius: 24px;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .cta-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+    .cta-card p { color: var(--text-dim); margin-bottom: 24px; font-size: 0.95rem; }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: var(--gold-glow);
+      padding: 11px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .btn-outline:hover { background: rgba(245,200,66,0.2); }
+
+    /* FOOTER */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--card-border);
+      background: var(--bg2);
+      padding: 40px 24px 24px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 640px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    .footer-brand p { font-size: 0.85rem; color: var(--text-dim); margin-top: 10px; max-width: 280px; line-height: 1.7; }
+    .footer-col h4 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      text-decoration: none;
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid var(--card-border);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero { animation: fadeUp 0.6s ease both; }
+    .main-grid { animation: fadeUp 0.6s 0.15s ease both; }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 24px 0;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--gold); }
+    .breadcrumb span { margin: 0 6px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav aria-label="Main Navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">QuickTools</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#tools">All Tools</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="./privacy.html">Privacy Policy</a></li>
+      </ul>
+      <div class="nav-right">
+        <button id="themeToggle" aria-label="Toggle dark/light mode">🌙</button>
+        <button id="menuToggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../index.html#tools">All Tools</a>
+    <span>›</span>
+    FD Calculator
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-badge">🏦 Financial Tools</div>
+    <h1>FD Calculator<br /><span>Fixed Deposit Returns</span></h1>
+    <p>Instantly calculate your fixed deposit maturity amount, total interest earned, and year-by-year growth — for free.</p>
+  </section>
+
+  <!-- CALCULATOR + RESULTS -->
+  <div class="main-grid">
+
+    <!-- LEFT: INPUTS -->
+    <div class="card" aria-label="FD Calculator Inputs">
+      <div class="card-title"><span class="icon">💰</span> Enter FD Details</div>
+
+      <div class="form-group">
+        <label for="principal">Deposit Amount (₹)</label>
+        <div class="input-wrap">
+          <span class="input-prefix">₹</span>
+          <input type="number" id="principal" value="100000" min="1000" max="100000000" step="1000" aria-label="Principal amount" />
+        </div>
+        <div class="range-wrap">
+          <input type="range" id="principalRange" min="10000" max="5000000" step="10000" value="100000" aria-label="Principal range" />
+          <div class="range-labels"><span>₹10K</span><span>₹50L</span></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="rate">Interest Rate (% per annum)</label>
+        <div class="input-wrap">
+          <span class="input-prefix">%</span>
+          <input type="number" id="rate" value="7.5" min="1" max="20" step="0.1" aria-label="Interest rate" />
+        </div>
+        <div class="range-wrap">
+          <input type="range" id="rateRange" min="1" max="15" step="0.1" value="7.5" aria-label="Rate range" />
+          <div class="range-labels"><span>1%</span><span>15%</span></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Investment Tenure</label>
+        <div class="tenure-row">
+          <div class="input-wrap">
+            <span class="input-prefix" style="color:var(--teal);">Y</span>
+            <input type="number" id="years" value="2" min="0" max="30" step="1" aria-label="Years" />
+          </div>
+          <div class="input-wrap">
+            <span class="input-prefix" style="color:var(--teal);">M</span>
+            <input type="number" id="months" value="0" min="0" max="11" step="1" aria-label="Months" />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="freq">Compounding Frequency</label>
+        <select id="freq" aria-label="Compounding frequency">
+          <option value="1">Annually (1x/year)</option>
+          <option value="2">Half-Yearly (2x/year)</option>
+          <option value="4" selected>Quarterly (4x/year)</option>
+          <option value="12">Monthly (12x/year)</option>
+        </select>
+      </div>
+
+      <button class="btn-calc" onclick="calculate()" aria-label="Calculate FD returns">⚡ Calculate Returns</button>
+    </div>
+
+    <!-- RIGHT: RESULTS -->
+    <div>
+      <div class="card results-hidden" id="resultsCard" aria-live="polite" aria-label="FD Calculation Results">
+        <div class="card-title"><span class="icon">📊</span> Your FD Summary</div>
+
+        <div class="result-grid">
+          <div class="result-item highlight">
+            <div class="result-label">Maturity Amount</div>
+            <div class="result-value" id="maturity">—</div>
+          </div>
+          <div class="result-item teal">
+            <div class="result-label">Total Interest</div>
+            <div class="result-value" id="interest">—</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Principal Invested</div>
+            <div class="result-value" id="principalOut">—</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Effective Return</div>
+            <div class="result-value" id="effectiveReturn">—</div>
+          </div>
+        </div>
+
+        <!-- Donut Chart -->
+        <div class="chart-wrap" id="donutWrap">
+          <svg class="donut-svg" viewBox="0 0 120 120" aria-hidden="true">
+            <circle id="donutBg" cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="16" />
+            <circle id="donutInterest" cx="60" cy="60" r="50" fill="none" stroke="#2dd4bf" stroke-width="16"
+              stroke-dasharray="0 314.16" stroke-linecap="round" transform="rotate(-90 60 60)" style="transition: stroke-dasharray 0.7s ease;" />
+            <circle id="donutPrincipal" cx="60" cy="60" r="50" fill="none" stroke="#f5c842" stroke-width="16"
+              stroke-dasharray="314.16 0" stroke-linecap="round" transform="rotate(-90 60 60)" style="transition: stroke-dasharray 0.7s ease;" />
+          </svg>
+          <div class="donut-legend">
+            <div class="legend-item"><span class="legend-dot" style="background:var(--gold)"></span><span style="font-size:0.82rem;color:var(--text-dim)">Principal <strong id="lgPrincipal" style="color:var(--text)"></strong></span></div>
+            <div class="legend-item"><span class="legend-dot" style="background:var(--teal)"></span><span style="font-size:0.82rem;color:var(--text-dim)">Interest <strong id="lgInterest" style="color:var(--text)"></strong></span></div>
+          </div>
+        </div>
+
+        <!-- Year-by-Year Growth -->
+        <div class="bar-chart" id="barChart" aria-label="Year by year growth chart"></div>
+      </div>
+
+      <!-- Empty state -->
+      <div class="card" id="emptyCard" style="text-align:center;padding:48px 28px;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">🏦</div>
+        <div style="font-weight:600;margin-bottom:8px;">Enter your FD details</div>
+        <div style="color:var(--text-dim);font-size:0.875rem;">Fill in the form and click "Calculate Returns" to see your FD maturity amount, interest earned, and year-wise growth.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- EXPLANATION SECTION -->
+  <section class="section" aria-labelledby="what-heading">
+    <div class="section-title" id="what-heading">What is a Fixed Deposit?</div>
+    <div class="section-divider"></div>
+    <p style="color:var(--text-dim);font-size:0.95rem;margin-bottom:20px;max-width:760px;">A Fixed Deposit (FD) is a financial instrument offered by banks and NBFCs that provides higher interest rates than regular savings accounts, in exchange for locking your money for a fixed period (tenure). FDs are one of the safest and most popular investment options in India.</p>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>🔒 Capital Safety</h3>
+        <p>Fixed deposits are one of the safest investment options, insured up to ₹5 lakh by DICGC. Your principal is fully protected.</p>
+      </div>
+      <div class="info-card">
+        <h3>📈 Guaranteed Returns</h3>
+        <p>Unlike market-linked instruments, FD interest rates are fixed at the time of deposit. Your returns are fully predictable.</p>
+      </div>
+      <div class="info-card">
+        <h3>⚡ Compound Growth</h3>
+        <p>Most bank FDs compound quarterly, meaning your interest earns interest too — significantly boosting your maturity amount.</p>
+      </div>
+      <div class="info-card">
+        <h3>🏦 Flexible Tenures</h3>
+        <p>FD tenures range from 7 days to 10 years. Senior citizens typically get an extra 0.25–0.50% interest rate on FDs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULA SECTION -->
+  <section class="section" aria-labelledby="formula-heading">
+    <div class="section-title" id="formula-heading">FD Interest Calculation Formula</div>
+    <div class="section-divider"></div>
+    <p style="color:var(--text-dim);font-size:0.92rem;margin-bottom:4px;">Most banks in India use the compound interest formula for FD maturity calculation:</p>
+    <div class="formula-box">A = P × ( 1 + r/n ) <sup>n×t</sup></div>
+    <table class="formula-table" aria-label="Formula variable descriptions">
+      <thead><tr><th>Variable</th><th>Meaning</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><strong>A</strong></td><td>Maturity Amount</td><td>₹1,16,136</td></tr>
+        <tr><td><strong>P</strong></td><td>Principal (Deposit Amount)</td><td>₹1,00,000</td></tr>
+        <tr><td><strong>r</strong></td><td>Annual Interest Rate (as decimal)</td><td>0.075</td></tr>
+        <tr><td><strong>n</strong></td><td>Compounding Frequency per Year</td><td>4 (quarterly)</td></tr>
+        <tr><td><strong>t</strong></td><td>Time (in years)</td><td>2</td></tr>
+      </tbody>
+    </table>
+    <p style="color:var(--text-dim);font-size:0.82rem;margin-top:10px;">* Simple interest formula (for some short-term FDs): I = P × r × t</p>
+  </section>
+
+  <!-- EXAMPLES SECTION -->
+  <section class="section" aria-labelledby="examples-heading">
+    <div class="section-title" id="examples-heading">FD Calculation Examples</div>
+    <div class="section-divider"></div>
+    <p style="color:var(--text-dim);font-size:0.92rem;margin-bottom:16px;">Here are real-world FD examples to understand how principal, rate, and tenure affect returns:</p>
+    <div style="overflow-x:auto;">
+      <table class="examples-table" aria-label="FD calculation examples">
+        <thead>
+          <tr>
+            <th>Principal</th>
+            <th>Rate</th>
+            <th>Tenure</th>
+            <th>Compounding</th>
+            <th>Maturity Amount</th>
+            <th>Interest Earned</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>₹1,00,000</td><td>7%</td><td>1 Year</td><td>Quarterly</td><td>₹1,07,186</td><td class="green">₹7,186</td></tr>
+          <tr><td>₹2,00,000</td><td>7.5%</td><td>2 Years</td><td>Quarterly</td><td>₹2,32,297</td><td class="green">₹32,297</td></tr>
+          <tr><td>₹5,00,000</td><td>8%</td><td>3 Years</td><td>Quarterly</td><td>₹6,34,120</td><td class="green">₹1,34,120</td></tr>
+          <tr><td>₹10,00,000</td><td>8.5%</td><td>5 Years</td><td>Quarterly</td><td>₹15,19,686</td><td class="green">₹5,19,686</td></tr>
+          <tr><td>₹25,00,000</td><td>7%</td><td>10 Years</td><td>Annually</td><td>₹49,17,893</td><td class="green">₹24,17,893</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section" aria-labelledby="faq-heading">
+    <div class="section-title" id="faq-heading">Frequently Asked Questions</div>
+    <div class="section-divider"></div>
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+          What is an FD Calculator and how does it work?
+          <span class="arrow" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">An FD Calculator is a free online tool that computes your fixed deposit maturity amount and total interest earned based on the deposit amount, interest rate, tenure, and compounding frequency. It uses the compound interest formula A = P(1 + r/n)^(nt) to instantly calculate results without any manual computation.</div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+          What is the best FD interest rate in India 2024?
+          <span class="arrow" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">FD interest rates in India vary by bank and tenure. Major banks like SBI and HDFC offer 6.5–7.5% for regular customers, while small finance banks like AU Small Finance Bank offer up to 8.5–9% per annum. Senior citizens typically receive 0.25–0.50% extra. Always compare current rates on the official bank website before investing.</div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+          Is FD interest taxable in India?
+          <span class="arrow" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">Yes. FD interest is taxable as "Income from Other Sources" per your applicable income tax slab. Banks deduct TDS (Tax Deducted at Source) at 10% if annual FD interest exceeds ₹40,000 (₹50,000 for senior citizens). If your total income is below the taxable limit, you can submit Form 15G/15H to avoid TDS deduction.</div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+          What is the difference between quarterly and annually compounded FD?
+          <span class="arrow" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">Quarterly compounding compounds your interest 4 times per year, meaning each quarter's interest is added to the principal before the next quarter's interest is calculated. This results in a higher effective yield compared to annual compounding. For a 7% FD compounded quarterly, the effective annual rate (EAR) is approximately 7.19%.</div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+          Can I break an FD before maturity?
+          <span class="arrow" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">Yes, most banks allow premature FD withdrawal, but a penalty of 0.5–1% is typically deducted from the applicable interest rate. For example, if your FD rate is 7% and you break it early, you may receive only 6–6.5%. Some banks offer tax-saver FDs with a 5-year lock-in period that cannot be broken prematurely.</div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+          What is a tax-saving FD?
+          <span class="arrow" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">A Tax-Saving FD is a fixed deposit with a 5-year lock-in period that qualifies for tax deduction under Section 80C of the Income Tax Act, up to ₹1.5 lakh per year. The interest earned is still taxable. These FDs cannot be pledged as collateral or broken prematurely.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RELATED TOOLS -->
+  <section class="section" aria-labelledby="related-heading">
+    <div class="section-title" id="related-heading">Related Financial Tools</div>
+    <div class="section-divider"></div>
+    <div class="tools-grid">
+      <a href="../tools/sip-calculator.html" class="tool-card">
+        <span class="tool-icon">📈</span>
+        <div><div class="tool-name">SIP Calculator</div><div class="tool-desc">Calculate SIP returns & wealth gain</div></div>
+      </a>
+      <a href="../tools/loan-calculator.html" class="tool-card">
+        <span class="tool-icon">🏠</span>
+        <div><div class="tool-name">Loan Calculator</div><div class="tool-desc">EMI, total interest & amortization</div></div>
+      </a>
+      <a href="../tools/gst-calculator.html" class="tool-card">
+        <span class="tool-icon">🧾</span>
+        <div><div class="tool-name">GST Calculator</div><div class="tool-desc">Calculate GST inclusive & exclusive</div></div>
+      </a>
+      <a href="../tools/compound-interest-calculator.html" class="tool-card">
+        <span class="tool-icon">📊</span>
+        <div><div class="tool-name">Compound Interest</div><div class="tool-desc">Visualize compound growth over time</div></div>
+      </a>
+      <a href="../tools/ppf-calculator.html" class="tool-card">
+        <span class="tool-icon">🏛️</span>
+        <div><div class="tool-name">PPF Calculator</div><div class="tool-desc">Public Provident Fund returns</div></div>
+      </a>
+      <a href="../tools/rd-calculator.html" class="tool-card">
+        <span class="tool-icon">💳</span>
+        <div><div class="tool-name">RD Calculator</div><div class="tool-desc">Recurring deposit maturity amount</div></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" aria-label="Call to action">
+    <div class="cta-card">
+      <h2>Explore All Free Financial Tools</h2>
+      <p>From SIP to loan EMI to GST — QuickTools has every calculator you need to manage your finances smarter.</p>
+      <a href="../index.html#tools" class="btn-outline">🔧 Browse All Tools</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo" style="display:inline-block;margin-bottom:4px;">QuickTools</a>
+          <p>Free, fast, and accurate online calculators for everyday financial decisions. No sign-up required.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Tools</h4>
+          <a href="../tools/fd-calculator.html">FD Calculator</a>
+          <a href="../tools/sip-calculator.html">SIP Calculator</a>
+          <a href="../tools/loan-calculator.html">Loan Calculator</a>
+          <a href="../tools/gst-calculator.html">GST Calculator</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="./about.html">About</a>
+          <a href="./contact.html">Contact</a>
+          <a href="./privacy.html">Privacy Policy</a>
+          <a href="../index.html">Home</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 QuickTools. All rights reserved.</span>
+        <span>Free online calculators for India</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ─── THEME TOGGLE ───────────────────────────────────────
+    const themeBtn = document.getElementById('themeToggle');
+    const stored = localStorage.getItem('qt-theme');
+    if (stored === 'light') { document.documentElement.setAttribute('data-theme','light'); themeBtn.textContent = '☀️'; }
+    themeBtn.addEventListener('click', () => {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      if (isLight) {
+        document.documentElement.removeAttribute('data-theme');
+        themeBtn.textContent = '🌙';
+        localStorage.setItem('qt-theme','dark');
+      } else {
+        document.documentElement.setAttribute('data-theme','light');
+        themeBtn.textContent = '☀️';
+        localStorage.setItem('qt-theme','light');
+      }
+    });
+
+    // ─── MOBILE MENU ─────────────────────────────────────────
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // ─── RANGE SYNC ──────────────────────────────────────────
+    const principalInput = document.getElementById('principal');
+    const principalRange = document.getElementById('principalRange');
+    const rateInput = document.getElementById('rate');
+    const rateRange = document.getElementById('rateRange');
+
+    principalInput.addEventListener('input', () => { principalRange.value = Math.min(principalInput.value, 5000000); });
+    principalRange.addEventListener('input', () => { principalInput.value = principalRange.value; });
+    rateInput.addEventListener('input', () => { rateRange.value = Math.min(rateInput.value, 15); });
+    rateRange.addEventListener('input', () => { rateInput.value = rateRange.value; });
+
+    // ─── CALCULATOR ──────────────────────────────────────────
+    function fmtINR(n) {
+      if (isNaN(n)) return '—';
+      return '₹' + n.toLocaleString('en-IN', { maximumFractionDigits: 0 });
+    }
+
+    function calculate() {
+      const P = parseFloat(principalInput.value);
+      const r = parseFloat(rateInput.value) / 100;
+      const yrs = parseInt(document.getElementById('years').value) || 0;
+      const mos = parseInt(document.getElementById('months').value) || 0;
+      const n = parseInt(document.getElementById('freq').value);
+      const t = yrs + mos / 12;
+
+      if (!P || P <= 0 || !r || t <= 0) {
+        alert('Please enter valid deposit amount, interest rate, and tenure.');
+        return;
+      }
+
+      const A = P * Math.pow(1 + r / n, n * t);
+      const I = A - P;
+      const pct = ((I / P) * 100).toFixed(2);
+
+      document.getElementById('maturity').textContent = fmtINR(Math.round(A));
+      document.getElementById('interest').textContent = fmtINR(Math.round(I));
+      document.getElementById('principalOut').textContent = fmtINR(P);
+      document.getElementById('effectiveReturn').textContent = pct + '%';
+
+      // Donut
+      const circ = 2 * Math.PI * 50; // 314.16
+      const principalFrac = P / A;
+      const interestFrac = I / A;
+      document.getElementById('donutPrincipal').setAttribute('stroke-dasharray', (principalFrac * circ).toFixed(2) + ' ' + circ);
+      document.getElementById('donutInterest').setAttribute('stroke-dasharray', (interestFrac * circ).toFixed(2) + ' ' + circ);
+      // offset interest circle
+      const principalAngle = principalFrac * 360;
+      document.getElementById('donutInterest').setAttribute('transform', `rotate(${-90 + principalAngle} 60 60)`);
+      document.getElementById('lgPrincipal').textContent = (principalFrac * 100).toFixed(1) + '%';
+      document.getElementById('lgInterest').textContent = (interestFrac * 100).toFixed(1) + '%';
+
+      // Bar chart - yearly growth
+      const totalYears = Math.max(1, Math.ceil(t));
+      let bars = '<div style="margin-bottom:10px;font-size:0.78rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-muted);">Year-by-Year Growth</div>';
+      for (let y = 1; y <= Math.min(totalYears, 10); y++) {
+        const ty = Math.min(y, t);
+        const Ay = P * Math.pow(1 + r / n, n * ty);
+        const pct = ((Ay / A) * 100).toFixed(0);
+        bars += `<div class="bar-year">
+          <div class="bar-label">Yr ${y}</div>
+          <div class="bar-track"><div class="bar-fill" style="width:${pct}%"></div></div>
+          <div class="bar-val">${fmtINR(Math.round(Ay))}</div>
+        </div>`;
+      }
+      document.getElementById('barChart').innerHTML = bars;
+
+      // Show results
+      const resultsCard = document.getElementById('resultsCard');
+      const emptyCard = document.getElementById('emptyCard');
+      emptyCard.style.display = 'none';
+      resultsCard.classList.remove('results-hidden');
+      resultsCard.classList.add('results-visible');
+    }
+
+    // ─── FAQ TOGGLE ──────────────────────────────────────────
+    function toggleFAQ(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+      }
+    }
+
+    // Auto-calculate on load
+    window.addEventListener('DOMContentLoaded', calculate);
+  </script>
+
+</body>
+</html>
