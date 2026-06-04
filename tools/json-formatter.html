@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSON Formatter & Validator – Beautify, Validate and Minify JSON Online</title>
+  <meta name="description" content="Format, validate, beautify and minify JSON instantly with our free JSON Formatter. Check syntax errors, pretty print JSON and improve readability online." />
+  <link rel="canonical" href="https://quicktools.com/tools/json-formatter.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="JSON Formatter & Validator – Beautify, Validate and Minify JSON Online" />
+  <meta property="og:description" content="Format, validate, beautify and minify JSON instantly with our free JSON Formatter. Check syntax errors, pretty print JSON and improve readability online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://quicktools.com/tools/json-formatter.html" />
+  <meta property="og:site_name" content="QuickTools" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="JSON Formatter & Validator – Beautify, Validate and Minify JSON Online" />
+  <meta name="twitter:description" content="Format, validate, beautify and minify JSON instantly with our free JSON Formatter. Check syntax errors, pretty print JSON and improve readability online." />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "JSON Formatter & Validator",
+    "url": "https://quicktools.com/tools/json-formatter.html",
+    "description": "Free online JSON formatter, validator, beautifier and minifier tool.",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a JSON Formatter?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A JSON Formatter is a tool that takes raw or minified JSON text and formats it with proper indentation and line breaks for better readability." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I validate JSON online?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Paste your JSON into the input area and click 'Validate'. The tool will instantly check syntax and highlight any errors with line numbers." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is JSON minification?",
+        "acceptedAnswer": { "@type": "Answer", "text": "JSON minification removes all whitespace and line breaks from JSON to reduce file size, ideal for production APIs and storage." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this JSON formatter free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, QuickTools JSON Formatter is completely free to use with no registration required." }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+    :root {
+      --bg: #0a0c12;
+      --surface: #111420;
+      --surface2: #161a27;
+      --border: rgba(255,255,255,0.07);
+      --border-accent: rgba(99,211,180,0.3);
+      --text: #e8eaf0;
+      --text-muted: #7a7f96;
+      --text-dim: #4a4f66;
+      --accent: #63d3b4;
+      --accent2: #7b8cff;
+      --accent3: #ff7b9c;
+      --error: #ff5f7e;
+      --success: #63d3b4;
+      --warn: #ffb347;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --glow: 0 0 30px rgba(99,211,180,0.12);
+      --card-shadow: 0 4px 40px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.04) inset;
+    }
+
+    [data-theme="light"] {
+      --bg: #f0f2f8;
+      --surface: #ffffff;
+      --surface2: #f7f8fc;
+      --border: rgba(0,0,0,0.08);
+      --border-accent: rgba(99,211,180,0.4);
+      --text: #1a1e30;
+      --text-muted: #5a6080;
+      --text-dim: #9098b8;
+      --glow: 0 0 30px rgba(99,211,180,0.08);
+      --card-shadow: 0 4px 30px rgba(0,0,0,0.1), 0 1px 0 rgba(255,255,255,0.8) inset;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
+      overflow-x: hidden;
+    }
+
+    /* Background mesh */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 10%, rgba(99,211,180,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 80% 80%, rgba(123,140,255,0.05) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,12,18,0.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+    [data-theme="light"] nav { background: rgba(240,242,248,0.85); }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); background: var(--border); }
+
+    .nav-right { display: flex; align-items: center; gap: 8px; }
+
+    #themeBtn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
+      width: 36px; height: 36px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+    #themeBtn:hover { color: var(--text); border-color: var(--border-accent); }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text-muted);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 72px 24px 52px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(99,211,180,0.1);
+      border: 1px solid rgba(99,211,180,0.25);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      max-width: 800px;
+      margin: 0 auto 16px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(120deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    /* ── MAIN TOOL CARD ── */
+    .tool-wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px 48px;
+    }
+
+    .tool-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+    }
+
+    /* Toolbar */
+    .tool-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface2);
+    }
+
+    .toolbar-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      transition: all 0.18s;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0a1510;
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+    .btn-primary:hover { background: #79e8cc; box-shadow: 0 0 20px rgba(99,211,180,0.35); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-muted);
+    }
+    .btn-secondary:hover { color: var(--text); background: var(--surface2); border-color: var(--border-accent); }
+
+    .btn-danger {
+      background: transparent;
+      color: var(--error);
+      border-color: rgba(255,95,126,0.2);
+    }
+    .btn-danger:hover { background: rgba(255,95,126,0.08); }
+
+    .toolbar-right { display: flex; gap: 8px; align-items: center; }
+
+    /* Indent selector */
+    .indent-sel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
+      padding: 7px 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      cursor: pointer;
+      outline: none;
+    }
+    .indent-sel:focus { border-color: var(--border-accent); color: var(--text); }
+
+    /* Editor area */
+    .editor-area {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 420px;
+    }
+    @media (max-width: 768px) {
+      .editor-area { grid-template-columns: 1fr; }
+    }
+
+    .pane {
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid var(--border);
+    }
+    .pane:last-child { border-right: none; }
+
+    .pane-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface2);
+    }
+
+    .pane-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .pane-actions { display: flex; gap: 6px; }
+
+    .icon-btn {
+      background: none;
+      border: 1px solid transparent;
+      color: var(--text-dim);
+      border-radius: 6px;
+      width: 28px; height: 28px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.18s;
+    }
+    .icon-btn:hover { color: var(--text); background: var(--border); border-color: var(--border); }
+
+    /* Textarea with line numbers */
+    .editor-container {
+      position: relative;
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .line-numbers {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      line-height: 1.7;
+      color: var(--text-dim);
+      background: var(--surface2);
+      border-right: 1px solid var(--border);
+      padding: 14px 10px 14px 14px;
+      text-align: right;
+      min-width: 42px;
+      user-select: none;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    textarea, .output-view {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      flex: 1;
+      padding: 14px;
+      border: none;
+      outline: none;
+      resize: none;
+      background: var(--surface);
+      color: var(--text);
+      width: 100%;
+      tab-size: 2;
+      overflow: auto;
+    }
+    textarea::placeholder { color: var(--text-dim); }
+    textarea:focus { background: rgba(99,211,180,0.02); }
+
+    .output-view {
+      white-space: pre;
+      word-break: break-all;
+      display: block;
+    }
+
+    /* Syntax highlighting */
+    .json-string { color: #98e67e; }
+    .json-number { color: #79b8ff; }
+    .json-bool   { color: #ff7b9c; }
+    .json-null   { color: var(--text-dim); }
+    .json-key    { color: var(--accent); }
+    .json-punct  { color: var(--text-muted); }
+
+    /* Status bar */
+    .status-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 16px;
+      border-top: 1px solid var(--border);
+      background: var(--surface2);
+      font-size: 0.75rem;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+    }
+
+    .status-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--text-dim);
+      transition: background 0.3s;
+    }
+    .status-dot.valid   { background: var(--success); box-shadow: 0 0 6px var(--success); }
+    .status-dot.invalid { background: var(--error);   box-shadow: 0 0 6px var(--error); }
+    .status-dot.idle    { background: var(--text-dim); }
+
+    .status-text { color: var(--text-muted); }
+    .status-text.valid   { color: var(--success); }
+    .status-text.invalid { color: var(--error); }
+
+    .status-meta { color: var(--text-dim); }
+
+    /* Upload area */
+    .upload-drop {
+      border: 2px dashed var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin: 12px 16px 0;
+      color: var(--text-dim);
+      font-size: 0.82rem;
+    }
+    .upload-drop:hover, .upload-drop.dragover {
+      border-color: var(--border-accent);
+      background: rgba(99,211,180,0.04);
+      color: var(--accent);
+    }
+    #fileInput { display: none; }
+
+    /* ── SECTIONS ── */
+    .section {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px 64px;
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      color: var(--text-muted);
+      font-weight: 300;
+      margin-bottom: 36px;
+      font-size: 0.95rem;
+    }
+
+    /* Info cards */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .info-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+
+    .info-icon {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .info-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .info-card p {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* Formula block */
+    .formula-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 20px;
+    }
+    .formula-block h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+    .formula-block p, .formula-block li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .formula-block ul { padding-left: 20px; }
+    .formula-block li { margin-bottom: 4px; }
+
+    .code-sample {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      color: var(--text);
+      overflow-x: auto;
+      line-height: 1.7;
+      margin-top: 12px;
+    }
+    .code-sample .ck { color: var(--accent); }
+    .code-sample .cv { color: #98e67e; }
+    .code-sample .cn { color: #79b8ff; }
+    .code-sample .cb { color: #ff7b9c; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 22px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.95rem;
+      gap: 12px;
+      transition: background 0.2s;
+    }
+    .faq-q:hover { background: var(--surface2); }
+
+    .faq-arrow {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); border-color: var(--border-accent); color: var(--accent); }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .faq-item.open .faq-a { max-height: 300px; }
+
+    .faq-a-inner {
+      padding: 0 22px 18px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* Related tools */
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .related-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .related-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+      box-shadow: var(--glow);
+    }
+    .related-icon {
+      width: 38px; height: 38px;
+      border-radius: var(--radius-sm);
+      background: rgba(99,211,180,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .related-card span {
+      font-size: 0.87rem;
+      font-weight: 500;
+    }
+
+    /* CTA */
+    .cta-section {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    .cta-card {
+      background: linear-gradient(135deg, rgba(99,211,180,0.1) 0%, rgba(123,140,255,0.08) 100%);
+      border: 1px solid rgba(99,211,180,0.2);
+      border-radius: 20px;
+      padding: 52px 40px;
+      text-align: center;
+    }
+    .cta-card h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 12px;
+    }
+    .cta-card p {
+      color: var(--text-muted);
+      font-weight: 300;
+      margin-bottom: 28px;
+      font-size: 0.97rem;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #0a1510;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-cta:hover { background: #79e8cc; box-shadow: 0 0 24px rgba(99,211,180,0.4); }
+
+    /* Footer */
+    footer {
+      position: relative;
+      z-index: 1;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .footer-brand span { color: var(--accent); }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 0.83rem;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      width: 100%;
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      margin-top: 10px;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 18px;
+      font-size: 0.83rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      transform: translateY(80px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+      pointer-events: none;
+    }
+    .toast.show { transform: translateY(0); opacity: 1; }
+    .toast.success { border-color: rgba(99,211,180,0.4); }
+    .toast.error   { border-color: rgba(255,95,126,0.4); }
+
+    /* Mobile nav */
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; left: 0; right: 0;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        padding: 16px;
+        gap: 4px;
+        z-index: 99;
+      }
+      .nav-links.mobile-open a { padding: 10px 14px; }
+      .editor-area { grid-template-columns: 1fr; }
+      .pane:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero { animation: fadeUp 0.6s ease both; }
+    .tool-card { animation: fadeUp 0.6s 0.1s ease both; }
+
+    .char-count { color: var(--text-dim); font-size: 0.72rem; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Quick<span>Tools</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#tools">All Tools</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+      <li><a href="./privacy.html">Privacy Policy</a></li>
+    </ul>
+    <div class="nav-right">
+      <button id="themeBtn" title="Toggle theme">🌙</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">⚡ Free Developer Tool</div>
+  <h1>JSON Formatter &amp; <em>Validator</em></h1>
+  <p>Beautify, minify, validate and inspect JSON instantly. No signup needed — works entirely in your browser.</p>
+</section>
+
+<!-- TOOL -->
+<div class="tool-wrap">
+  <div class="tool-card">
+
+    <!-- Toolbar -->
+    <div class="tool-toolbar">
+      <div class="toolbar-actions">
+        <button class="btn btn-primary" id="formatBtn">⬡ Beautify</button>
+        <button class="btn btn-secondary" id="minifyBtn">⬡ Minify</button>
+        <button class="btn btn-secondary" id="validateBtn">✓ Validate</button>
+        <button class="btn btn-danger" id="clearBtn">✕ Clear</button>
+      </div>
+      <div class="toolbar-right">
+        <label for="indentSel" style="font-size:0.78rem;color:var(--text-dim);">Indent</label>
+        <select id="indentSel" class="indent-sel">
+          <option value="2">2 spaces</option>
+          <option value="4">4 spaces</option>
+          <option value="tab">Tab</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Upload Drop -->
+    <div class="upload-drop" id="dropZone" onclick="document.getElementById('fileInput').click()">
+      📂 Drop a <strong>.json</strong> file here, or click to upload
+    </div>
+    <input type="file" id="fileInput" accept=".json,application/json" />
+
+    <!-- Editors -->
+    <div class="editor-area">
+      <!-- Input Pane -->
+      <div class="pane">
+        <div class="pane-header">
+          <span class="pane-label">Input</span>
+          <div class="pane-actions">
+            <button class="icon-btn" title="Paste from clipboard" id="pasteBtn">📋</button>
+          </div>
+        </div>
+        <div class="editor-container">
+          <div class="line-numbers" id="inputLines">1</div>
+          <textarea id="inputArea" spellcheck="false" placeholder='Paste your JSON here…
+{"name":"QuickTools","version":1}'></textarea>
+        </div>
+        <div class="status-bar">
+          <div class="status-indicator">
+            <div class="status-dot idle" id="statusDot"></div>
+            <span class="status-text" id="statusText">Waiting for input</span>
+          </div>
+          <span class="status-meta char-count" id="inputMeta">0 chars</span>
+        </div>
+      </div>
+
+      <!-- Output Pane -->
+      <div class="pane">
+        <div class="pane-header">
+          <span class="pane-label">Output</span>
+          <div class="pane-actions">
+            <button class="icon-btn" title="Copy output" id="copyBtn">⎘</button>
+            <button class="icon-btn" title="Download JSON" id="downloadBtn">⬇</button>
+          </div>
+        </div>
+        <div class="editor-container">
+          <div class="line-numbers" id="outputLines">1</div>
+          <div class="output-view" id="outputArea" style="color:var(--text-dim);font-style:italic;">Output will appear here…</div>
+        </div>
+        <div class="status-bar">
+          <span class="status-meta" id="outputMeta"></span>
+          <span class="status-meta char-count" id="outputChars">0 chars</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.tool-card -->
+</div>
+
+<!-- EXPLANATION -->
+<section class="section">
+  <div class="section-title">What is a JSON Formatter?</div>
+  <p class="section-sub">Everything you need to know about formatting, validating and working with JSON data.</p>
+  <div class="info-grid">
+    <div class="info-card">
+      <span class="info-icon">🔍</span>
+      <h3>JSON Beautifier</h3>
+      <p>Reformats compact or single-line JSON into a human-readable structure with proper indentation and line breaks.</p>
+    </div>
+    <div class="info-card">
+      <span class="info-icon">✅</span>
+      <h3>JSON Validator</h3>
+      <p>Checks your JSON against the RFC 8259 specification and pinpoints exact syntax errors with line and column details.</p>
+    </div>
+    <div class="info-card">
+      <span class="info-icon">📦</span>
+      <h3>JSON Minifier</h3>
+      <p>Strips all unnecessary whitespace to produce the smallest possible JSON — ideal for APIs and production payloads.</p>
+    </div>
+    <div class="info-card">
+      <span class="info-icon">🎨</span>
+      <h3>Syntax Highlighting</h3>
+      <p>Color-codes keys, strings, numbers, booleans and null values so you can scan complex structures at a glance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULA / STRUCTURE -->
+<section class="section" style="padding-top:0;">
+  <div class="section-title">JSON Structure Reference</div>
+  <p class="section-sub">A quick guide to valid JSON syntax and data types.</p>
+
+  <div class="formula-block">
+    <h3>Valid JSON Data Types</h3>
+    <ul>
+      <li><strong>String</strong> — always double-quoted: <code style="font-family:'DM Mono',monospace;">"hello world"</code></li>
+      <li><strong>Number</strong> — integer or float: <code style="font-family:'DM Mono',monospace;">42</code>, <code style="font-family:'DM Mono',monospace;">3.14</code>, <code style="font-family:'DM Mono',monospace;">-7</code></li>
+      <li><strong>Boolean</strong> — lowercase only: <code style="font-family:'DM Mono',monospace;">true</code> / <code style="font-family:'DM Mono',monospace;">false</code></li>
+      <li><strong>Null</strong> — lowercase: <code style="font-family:'DM Mono',monospace;">null</code></li>
+      <li><strong>Array</strong> — ordered list: <code style="font-family:'DM Mono',monospace;">[1, "two", true]</code></li>
+      <li><strong>Object</strong> — key-value pairs: <code style="font-family:'DM Mono',monospace;">{"key": "value"}</code></li>
+    </ul>
+  </div>
+
+  <div class="formula-block" style="border-left-color:var(--accent2);">
+    <h3 style="color:var(--accent2);">Example: Formatted JSON</h3>
+    <div class="code-sample"><span class="ck">{</span>
+  <span class="ck">"user"</span>: <span class="ck">{</span>
+    <span class="ck">"id"</span>: <span class="cn">1</span>,
+    <span class="ck">"name"</span>: <span class="cv">"Jane Doe"</span>,
+    <span class="ck">"active"</span>: <span class="cb">true</span>,
+    <span class="ck">"scores"</span>: <span class="ck">[</span><span class="cn">98</span>, <span class="cn">87</span>, <span class="cn">95</span><span class="ck">]</span>
+  <span class="ck">}</span>
+<span class="ck">}</span></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="padding-top:0;">
+  <div class="section-title">Frequently Asked Questions</div>
+  <p class="section-sub">Common questions about JSON formatting and validation.</p>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">What is a JSON Formatter?<span class="faq-arrow">▼</span></div>
+      <div class="faq-a"><div class="faq-a-inner">A JSON Formatter is an online tool that takes raw, compact, or poorly structured JSON and reformats it with proper indentation and line breaks. This makes large API responses or config files much easier to read and debug.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I validate JSON online?<span class="faq-arrow">▼</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Paste your JSON text into the Input box and click <strong>Validate</strong>. The tool will parse it and either confirm it is valid or show you the exact error — including which line and character caused the problem.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the difference between Beautify and Minify?<span class="faq-arrow">▼</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Beautify adds indentation and newlines to make JSON human-readable. Minify does the opposite — it removes all unnecessary whitespace to reduce file size, which is useful when transmitting JSON over a network or storing it efficiently.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is my JSON data safe?<span class="faq-arrow">▼</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Completely. All processing happens locally in your browser using JavaScript. Your JSON data is never sent to any server. We have no backend and no logging of any kind.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I upload a .json file?<span class="faq-arrow">▼</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Yes. Click the upload zone above the editor or drag and drop any <code>.json</code> file. Its contents will be loaded into the input area automatically, ready to format or validate.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Why is my JSON invalid?<span class="faq-arrow">▼</span></div>
+      <div class="faq-a"><div class="faq-a-inner">The most common issues are: using single quotes instead of double quotes for strings, leaving a trailing comma after the last item in an array or object, missing or mismatched curly braces / square brackets, or using <code>undefined</code> (which is not a valid JSON value).</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="section" style="padding-top:0;">
+  <div class="section-title">Related Tools</div>
+  <p class="section-sub">More free developer and finance tools from QuickTools.</p>
+  <div class="related-grid">
+    <a href="../tools/sip-calculator.html" class="related-card">
+      <div class="related-icon">📈</div><span>SIP Calculator</span>
+    </a>
+    <a href="../tools/gst-calculator.html" class="related-card">
+      <div class="related-icon">🧾</div><span>GST Calculator</span>
+    </a>
+    <a href="../tools/loan-calculator.html" class="related-card">
+      <div class="related-icon">🏦</div><span>Loan Calculator</span>
+    </a>
+    <a href="../tools/age-calculator.html" class="related-card">
+      <div class="related-icon">🎂</div><span>Age Calculator</span>
+    </a>
+    <a href="../tools/calorie-calculator.html" class="related-card">
+      <div class="related-icon">🥗</div><span>Calorie Calculator</span>
+    </a>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-card">
+    <h2>Explore All Free Tools</h2>
+    <p>Calculators, formatters, validators — everything a developer or student needs, free forever.</p>
+    <a href="../index.html#tools" class="btn-cta">Browse All Tools →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="../index.html" class="footer-brand">Quick<span>Tools</span></a>
+    <ul class="footer-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#tools">All Tools</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+      <li><a href="./privacy.html">Privacy Policy</a></li>
+    </ul>
+  </div>
+  <div class="footer-copy">
+    © 2025 QuickTools. All rights reserved. · Free online tools for developers and students.
+  </div>
+</footer>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+  /* ── Theme ── */
+  const root = document.documentElement;
+  const themeBtn = document.getElementById('themeBtn');
+  let isDark = true;
+
+  // Respect system preference on first load
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+    isDark = false;
+    root.setAttribute('data-theme', 'light');
+    themeBtn.textContent = '🌙';
+  }
+
+  themeBtn.addEventListener('click', () => {
+    isDark = !isDark;
+    root.setAttribute('data-theme', isDark ? '' : 'light');
+    themeBtn.textContent = isDark ? '🌙' : '☀️';
+  });
+
+  /* ── Mobile Nav ── */
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('mobile-open');
+  });
+
+  /* ── Toast ── */
+  function showToast(msg, type = 'success') {
+    const t = document.getElementById('toast');
+    t.textContent = (type === 'success' ? '✓ ' : '✕ ') + msg;
+    t.className = 'toast ' + type + ' show';
+    setTimeout(() => t.classList.remove('show'), 2600);
+  }
+
+  /* ── Line Numbers ── */
+  function updateLineNumbers(text, lnEl) {
+    const lines = (text.split('\n').length) || 1;
+    lnEl.textContent = Array.from({length: lines}, (_, i) => i + 1).join('\n');
+  }
+
+  const inputArea = document.getElementById('inputArea');
+  const inputLines = document.getElementById('inputLines');
+  const outputLines = document.getElementById('outputLines');
+  const outputArea = document.getElementById('outputArea');
+  const statusDot = document.getElementById('statusDot');
+  const statusText = document.getElementById('statusText');
+  const inputMeta = document.getElementById('inputMeta');
+  const outputChars = document.getElementById('outputChars');
+  const outputMeta = document.getElementById('outputMeta');
+
+  inputArea.addEventListener('input', () => {
+    updateLineNumbers(inputArea.value, inputLines);
+    inputMeta.textContent = inputArea.value.length.toLocaleString() + ' chars';
+    setStatus('idle', 'Waiting…');
+  });
+
+  inputArea.addEventListener('scroll', () => {
+    inputLines.scrollTop = inputArea.scrollTop;
+  });
+
+  function setStatus(state, msg) {
+    statusDot.className = 'status-dot ' + state;
+    statusText.className = 'status-text ' + state;
+    statusText.textContent = msg;
+  }
+
+  /* ── Syntax Highlight ── */
+  function syntaxHighlight(json) {
+    return json
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, match => {
+        let cls = 'json-number';
+        if (/^"/.test(match)) {
+          cls = /:$/.test(match) ? 'json-key' : 'json-string';
+        } else if (/true|false/.test(match)) {
+          cls = 'json-bool';
+        } else if (/null/.test(match)) {
+          cls = 'json-null';
+        }
+        return `<span class="${cls}">${match}</span>`;
+      });
+  }
+
+  function setOutput(text, highlight = true) {
+    if (highlight && text.trim()) {
+      outputArea.innerHTML = syntaxHighlight(text);
+    } else {
+      outputArea.textContent = text;
+    }
+    updateLineNumbers(text, outputLines);
+    outputChars.textContent = text.length.toLocaleString() + ' chars';
+  }
+
+  /* ── Indent util ── */
+  function getIndent() {
+    const v = document.getElementById('indentSel').value;
+    return v === 'tab' ? '\t' : parseInt(v);
+  }
+
+  /* ── Beautify ── */
+  document.getElementById('formatBtn').addEventListener('click', () => {
+    const raw = inputArea.value.trim();
+    if (!raw) { showToast('Nothing to format', 'error'); return; }
+    try {
+      const parsed = JSON.parse(raw);
+      const formatted = JSON.stringify(parsed, null, getIndent());
+      setOutput(formatted);
+      const lines = formatted.split('\n').length;
+      outputMeta.textContent = lines + ' lines';
+      setStatus('valid', '✓ Valid JSON');
+      showToast('Beautified successfully');
+    } catch (e) {
+      setStatus('invalid', e.message);
+      showToast(e.message, 'error');
+    }
+  });
+
+  /* ── Minify ── */
+  document.getElementById('minifyBtn').addEventListener('click', () => {
+    const raw = inputArea.value.trim();
+    if (!raw) { showToast('Nothing to minify', 'error'); return; }
+    try {
+      const parsed = JSON.parse(raw);
+      const minified = JSON.stringify(parsed);
+      setOutput(minified, false);
+      outputArea.style.whiteSpace = 'pre-wrap';
+      const saved = raw.length - minified.length;
+      outputMeta.textContent = `Saved ${saved} chars (${Math.round(saved/raw.length*100)}%)`;
+      setStatus('valid', '✓ Minified');
+      showToast('Minified successfully');
+    } catch (e) {
+      setStatus('invalid', e.message);
+      showToast(e.message, 'error');
+    }
+  });
+
+  /* ── Validate ── */
+  document.getElementById('validateBtn').addEventListener('click', () => {
+    const raw = inputArea.value.trim();
+    if (!raw) { showToast('Nothing to validate', 'error'); return; }
+    try {
+      JSON.parse(raw);
+      setStatus('valid', '✓ Valid JSON — no errors found');
+      setOutput('✓ Valid JSON\n\nYour JSON is syntactically correct.', false);
+      outputArea.style.color = 'var(--success)';
+      showToast('Valid JSON!');
+    } catch (e) {
+      setStatus('invalid', e.message);
+      setOutput('✕ Invalid JSON\n\n' + e.message, false);
+      outputArea.style.color = 'var(--error)';
+      showToast(e.message, 'error');
+    }
+  });
+
+  /* ── Clear ── */
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    inputArea.value = '';
+    outputArea.textContent = 'Output will appear here…';
+    outputArea.style.color = 'var(--text-dim)';
+    outputArea.style.fontStyle = 'italic';
+    outputArea.style.whiteSpace = 'pre';
+    inputLines.textContent = '1';
+    outputLines.textContent = '1';
+    inputMeta.textContent = '0 chars';
+    outputChars.textContent = '0 chars';
+    outputMeta.textContent = '';
+    setStatus('idle', 'Waiting for input');
+  });
+
+  /* ── Copy ── */
+  document.getElementById('copyBtn').addEventListener('click', () => {
+    const text = outputArea.textContent;
+    if (!text || text === 'Output will appear here…') { showToast('Nothing to copy', 'error'); return; }
+    navigator.clipboard.writeText(text).then(() => showToast('Copied to clipboard')).catch(() => {
+      // Fallback
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta); ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast('Copied to clipboard');
+    });
+  });
+
+  /* ── Paste ── */
+  document.getElementById('pasteBtn').addEventListener('click', async () => {
+    try {
+      const text = await navigator.clipboard.readText();
+      inputArea.value = text;
+      updateLineNumbers(text, inputLines);
+      inputMeta.textContent = text.length.toLocaleString() + ' chars';
+      showToast('Pasted from clipboard');
+    } catch {
+      showToast('Clipboard access denied', 'error');
+    }
+  });
+
+  /* ── Download ── */
+  document.getElementById('downloadBtn').addEventListener('click', () => {
+    const text = outputArea.textContent;
+    if (!text || text === 'Output will appear here…') { showToast('Nothing to download', 'error'); return; }
+    const blob = new Blob([text], {type: 'application/json'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'formatted.json';
+    a.click();
+    showToast('Downloaded formatted.json');
+  });
+
+  /* ── File Upload ── */
+  document.getElementById('fileInput').addEventListener('change', e => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      inputArea.value = ev.target.result;
+      updateLineNumbers(ev.target.result, inputLines);
+      inputMeta.textContent = ev.target.result.length.toLocaleString() + ' chars';
+      showToast('File loaded: ' + file.name);
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  });
+
+  /* ── Drag & Drop ── */
+  const dropZone = document.getElementById('dropZone');
+  dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('dragover'); });
+  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropZone.classList.remove('dragover');
+    const file = e.dataTransfer.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      inputArea.value = ev.target.result;
+      updateLineNumbers(ev.target.result, inputLines);
+      inputMeta.textContent = ev.target.result.length.toLocaleString() + ' chars';
+      showToast('File loaded: ' + file.name);
+    };
+    reader.readAsText(file);
+  });
+
+  /* ── FAQ Toggle ── */
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  /* ── Init line numbers ── */
+  updateLineNumbers(inputArea.value, inputLines);
+</script>
+</body>
+</html>
