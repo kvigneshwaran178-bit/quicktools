@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URL Encoder &amp; Decoder – Encode and Decode URLs Online | QuickTools</title>
+<meta name="description" content="Encode and decode URLs instantly with our free URL Encoder &amp; Decoder. Convert special characters, query strings and encoded URLs online.">
+<meta name="keywords" content="url encoder, url decoder, encode url online, decode url online, url encode decode, url converter, percent encoding tool, url encoding tool, url decoding tool, online url encoder, free url decoder, encode special characters url, url parser tool, developer url tool, url escape encoder, url unescape decoder">
+<link rel="canonical" href="https://quicktools.dev/tools/url-encoder-decoder.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="URL Encoder &amp; Decoder – Encode and Decode URLs Online">
+<meta property="og:description" content="Encode and decode URLs instantly with our free URL Encoder &amp; Decoder. Convert special characters, query strings and encoded URLs online.">
+<meta property="og:url" content="https://quicktools.dev/tools/url-encoder-decoder.html">
+<meta property="og:site_name" content="QuickTools">
+<meta property="og:image" content="https://quicktools.dev/og-url-encoder.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="URL Encoder &amp; Decoder – Encode and Decode URLs Online">
+<meta name="twitter:description" content="Encode and decode URLs instantly with our free URL Encoder &amp; Decoder. Convert special characters, query strings and encoded URLs online.">
+<meta name="twitter:image" content="https://quicktools.dev/og-url-encoder.png">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "URL Encoder & Decoder",
+  "url": "https://quicktools.dev/tools/url-encoder-decoder.html",
+  "description": "Encode and decode URLs instantly with our free URL Encoder & Decoder.",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "All",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {"@type": "Organization", "name": "QuickTools", "url": "https://quicktools.dev"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://quicktools.dev/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://quicktools.dev/tools/"},
+    {"@type": "ListItem", "position": 3, "name": "URL Encoder & Decoder", "item": "https://quicktools.dev/tools/url-encoder-decoder.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is URL encoding?",
+      "acceptedAnswer": {"@type": "Answer", "text": "URL encoding (also called percent-encoding) converts characters that are not allowed in a URL into a format that can be transmitted over the internet. Special characters are replaced with a percent sign (%) followed by two hexadecimal digits."}
+    },
+    {
+      "@type": "Question",
+      "name": "When should I encode a URL?",
+      "acceptedAnswer": {"@type": "Answer", "text": "You should encode URLs when passing special characters in query strings, form data, or any URL parameter. Characters like spaces, &, =, ?, #, and non-ASCII characters must be encoded to prevent parsing errors."}
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between encodeURI and encodeURIComponent?",
+      "acceptedAnswer": {"@type": "Answer", "text": "encodeURI encodes a complete URL and preserves characters like :, /, ?, #. encodeURIComponent encodes a single URL component (like a query parameter value) and encodes those characters too, making it safer for embedding values inside URLs."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is URL encoding the same as Base64 encoding?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. URL encoding uses percent-encoding to escape special characters in URLs, while Base64 encoding converts binary data to an ASCII string using a 64-character alphabet. They serve different purposes."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can I decode a partially encoded URL?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our tool automatically detects encoded sequences and decodes them, even in partially encoded URLs. The Auto Detect mode identifies whether your input is encoded or plain text."}
+    }
+  ]
+}
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --bg: #060610;
+    --bg2: #0a0a1a;
+    --surface: rgba(255,255,255,0.03);
+    --surface2: rgba(255,255,255,0.06);
+    --border: rgba(255,255,255,0.08);
+    --border-glow: rgba(99,102,241,0.4);
+    --text: #f0f0ff;
+    --text2: #8888aa;
+    --text3: #5555778;
+    --accent: #6366f1;
+    --accent2: #a855f7;
+    --accent3: #06b6d4;
+    --green: #10b981;
+    --red: #f43f5e;
+    --yellow: #f59e0b;
+    --glow: rgba(99,102,241,0.15);
+    --glow2: rgba(168,85,247,0.12);
+    --radius: 16px;
+    --radius-lg: 24px;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Syne', sans-serif;
+  }
+
+  .light-mode {
+    --bg: #f4f4ff;
+    --bg2: #eaeaf8;
+    --surface: rgba(255,255,255,0.7);
+    --surface2: rgba(255,255,255,0.9);
+    --border: rgba(99,102,241,0.15);
+    --border-glow: rgba(99,102,241,0.35);
+    --text: #12122a;
+    --text2: #44447a;
+    --glow: rgba(99,102,241,0.08);
+    --glow2: rgba(168,85,247,0.06);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background 0.4s, color 0.4s;
+  }
+
+  /* ── GRADIENT BG ── */
+  .bg-mesh {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 20%, rgba(99,102,241,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 80%, rgba(168,85,247,0.1) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 50% 50%, rgba(6,182,212,0.06) 0%, transparent 60%);
+    animation: meshPulse 8s ease-in-out infinite alternate;
+  }
+  @keyframes meshPulse {
+    0%   { opacity: 0.7; }
+    100% { opacity: 1; }
+  }
+
+  /* ── PARTICLES ── */
+  #particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    animation: floatParticle linear infinite;
+  }
+  @keyframes floatParticle {
+    0%   { transform: translateY(100vh) scale(0); opacity: 0; }
+    10%  { opacity: 0.6; }
+    90%  { opacity: 0.3; }
+    100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+  }
+
+  /* ── LAYOUT ── */
+  .wrapper { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(6,6,16,0.7);
+    backdrop-filter: blur(20px) saturate(1.5);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.3s;
+  }
+  .light-mode nav { background: rgba(244,244,255,0.75); }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px;
+  }
+  .nav-logo {
+    font-size: 1.2rem; font-weight: 800; letter-spacing: -0.03em;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; align-items: center; gap: 8px; }
+  .nav-links a {
+    font-size: 0.85rem; font-weight: 500; color: var(--text2);
+    text-decoration: none; padding: 6px 12px; border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); background: var(--surface2); }
+  .theme-btn {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 7px 10px; cursor: pointer;
+    color: var(--text2); font-size: 1rem; transition: all 0.2s;
+    display: flex; align-items: center;
+  }
+  .theme-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .nav-right { display: flex; align-items: center; gap: 8px; }
+  .hamburger { display: none; background: none; border: 1px solid var(--border); border-radius: 8px; padding: 7px 10px; cursor: pointer; color: var(--text2); font-size: 1rem; }
+  @media (max-width: 768px) {
+    .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--bg2); padding: 12px; flex-direction: column; border-bottom: 1px solid var(--border); }
+    .nav-links.open { display: flex; }
+    .hamburger { display: flex; }
+  }
+
+  /* ── BREADCRUMB ── */
+  .breadcrumb { padding: 16px 0 0; display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text2); }
+  .breadcrumb a { color: var(--text2); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+  .breadcrumb span { color: var(--text2); opacity: 0.5; }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 80px 0 60px;
+    text-align: center;
+    position: relative;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3);
+    border-radius: 100px; padding: 6px 16px; font-size: 0.78rem;
+    color: var(--accent); margin-bottom: 24px; letter-spacing: 0.05em;
+    text-transform: uppercase; font-weight: 600;
+    animation: fadeDown 0.6s ease both;
+  }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(1.4); } }
+  @keyframes fadeDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeUp   { from { opacity:0; transform:translateY(20px);  } to { opacity:1; transform:translateY(0); } }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, #ffffff 30%, var(--accent) 60%, var(--accent2) 90%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    animation: fadeUp 0.7s 0.1s ease both;
+    margin-bottom: 20px;
+  }
+  .light-mode .hero h1 {
+    background: linear-gradient(135deg, #12122a 20%, var(--accent) 55%, var(--accent2) 90%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero p {
+    font-size: 1.1rem; color: var(--text2); max-width: 600px; margin: 0 auto 32px;
+    line-height: 1.7; animation: fadeUp 0.7s 0.2s ease both;
+  }
+  .hero-stats {
+    display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+  .stat { text-align: center; }
+  .stat-value { font-size: 1.6rem; font-weight: 800; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .stat-label { font-size: 0.75rem; color: var(--text2); letter-spacing: 0.05em; }
+
+  /* ── GLASS CARD ── */
+  .glass {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(24px);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05);
+    transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+  }
+  .glass:hover { border-color: var(--border-glow); box-shadow: 0 12px 60px var(--glow), 0 0 0 1px rgba(99,102,241,0.1), inset 0 1px 0 rgba(255,255,255,0.07); }
+  .light-mode .glass { box-shadow: 0 4px 24px rgba(99,102,241,0.08), inset 0 1px 0 rgba(255,255,255,0.8); }
+
+  /* ── TOOL SECTION ── */
+  .tool-section { padding: 0 0 80px; }
+
+  .tool-card { padding: 32px; margin-bottom: 24px; }
+
+  /* Mode Tabs */
+  .mode-tabs { display: flex; gap: 6px; margin-bottom: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 4px; }
+  .mode-tab {
+    flex: 1; padding: 10px 8px; border: none; border-radius: 9px; cursor: pointer;
+    font-family: var(--sans); font-size: 0.85rem; font-weight: 600;
+    background: transparent; color: var(--text2);
+    transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 6px;
+  }
+  .mode-tab.active { background: var(--accent); color: #fff; box-shadow: 0 4px 20px rgba(99,102,241,0.4); }
+  .mode-tab:hover:not(.active) { background: var(--surface2); color: var(--text); }
+
+  /* Panel Grid */
+  .panel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 768px) { .panel-grid { grid-template-columns: 1fr; } }
+
+  .panel { display: flex; flex-direction: column; gap: 10px; }
+  .panel-header { display: flex; align-items: center; justify-content: space-between; }
+  .panel-label { font-size: 0.78rem; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.08em; display: flex; align-items: center; gap: 8px; }
+  .panel-label span { width: 8px; height: 8px; border-radius: 50%; }
+  .label-input span  { background: var(--accent); }
+  .label-output span { background: var(--green); }
+
+  .panel-actions { display: flex; gap: 6px; }
+  .icon-btn {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 8px; padding: 5px 10px; cursor: pointer;
+    color: var(--text2); font-size: 0.75rem; font-family: var(--sans);
+    font-weight: 500; transition: all 0.2s; display: flex; align-items: center; gap: 5px;
+  }
+  .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .icon-btn.danger:hover { border-color: var(--red); color: var(--red); }
+
+  textarea, .output-box {
+    width: 100%; min-height: 180px; padding: 16px;
+    background: rgba(0,0,0,0.3); border: 1px solid var(--border);
+    border-radius: 12px; color: var(--text);
+    font-family: var(--mono); font-size: 0.85rem; line-height: 1.6;
+    resize: vertical; outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .light-mode textarea, .light-mode .output-box { background: rgba(255,255,255,0.6); }
+  textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+  textarea::placeholder { color: var(--text2); opacity: 0.5; }
+
+  .output-box {
+    min-height: 180px; cursor: text; word-break: break-all;
+    user-select: all; position: relative; overflow-y: auto;
+  }
+  .output-placeholder { color: var(--text2); opacity: 0.4; font-style: italic; }
+
+  /* Meta Row */
+  .meta-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .char-count { font-size: 0.75rem; color: var(--text2); font-family: var(--mono); }
+  .char-count strong { color: var(--accent); }
+  .validation-badge { font-size: 0.72rem; padding: 3px 10px; border-radius: 100px; font-weight: 600; border: 1px solid transparent; }
+  .validation-badge.valid   { background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.3); color: var(--green); }
+  .validation-badge.invalid { background: rgba(244,63,94,0.1);  border-color: rgba(244,63,94,0.3);  color: var(--red); }
+
+  /* Action Buttons */
+  .action-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px; border-radius: 12px; border: none; cursor: pointer;
+    font-family: var(--sans); font-size: 0.88rem; font-weight: 700;
+    transition: all 0.25s; letter-spacing: 0.01em; position: relative; overflow: hidden;
+  }
+  .btn::after { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0); transition: background 0.2s; border-radius: inherit; }
+  .btn:hover::after { background: rgba(255,255,255,0.08); }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff; box-shadow: 0 4px 20px rgba(99,102,241,0.35);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.5); }
+  .btn-primary:active { transform: translateY(0); }
+  .btn-secondary { background: var(--surface2); border: 1px solid var(--border); color: var(--text); }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+  .btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--text2); padding: 10px 16px; }
+  .btn-ghost:hover { border-color: var(--border-glow); color: var(--text); }
+
+  /* ── SHORTCUT BAR ── */
+  .shortcut-bar {
+    display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+    padding: 14px 20px; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; font-size: 0.75rem; color: var(--text2);
+  }
+  .shortcut-bar strong { color: var(--text); }
+  kbd {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 6px; padding: 2px 7px; font-family: var(--mono);
+    font-size: 0.72rem; color: var(--accent);
+  }
+  .shortcut-sep { color: var(--border); }
+
+  /* ── EXAMPLES CHIP BAR ── */
+  .examples-bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+  .examples-label { font-size: 0.75rem; color: var(--text2); font-weight: 600; white-space: nowrap; }
+  .example-chip {
+    padding: 5px 12px; background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 100px; font-size: 0.72rem; font-family: var(--mono); color: var(--text2);
+    cursor: pointer; transition: all 0.2s; white-space: nowrap;
+  }
+  .example-chip:hover { border-color: var(--accent); color: var(--accent); background: rgba(99,102,241,0.08); }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed; bottom: 32px; right: 32px; z-index: 9999;
+    background: var(--accent); color: #fff; padding: 12px 24px;
+    border-radius: 12px; font-size: 0.85rem; font-weight: 600;
+    box-shadow: 0 8px 30px rgba(99,102,241,0.5);
+    transform: translateY(80px); opacity: 0;
+    transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    display: flex; align-items: center; gap: 8px; pointer-events: none;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+  .toast.success { background: var(--green); box-shadow: 0 8px 30px rgba(16,185,129,0.4); }
+
+  /* ── SECTION HEADERS ── */
+  .section { padding: 64px 0; }
+  .section-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .section-title { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px; }
+  .section-sub { font-size: 1rem; color: var(--text2); line-height: 1.7; max-width: 560px; }
+
+  /* ── INFO CARDS ── */
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-top: 40px; }
+  .info-card {
+    padding: 28px; border-radius: 20px; background: var(--surface);
+    border: 1px solid var(--border); transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .info-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); opacity: 0; transition: opacity 0.3s; }
+  .info-card:hover { transform: translateY(-4px); border-color: var(--border-glow); }
+  .info-card:hover::before { opacity: 1; }
+  .info-card-icon { font-size: 2rem; margin-bottom: 16px; }
+  .info-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+  .info-card p { font-size: 0.85rem; color: var(--text2); line-height: 1.6; }
+
+  /* ── ENCODING TABLE ── */
+  .encoding-table-wrap { margin-top: 32px; overflow-x: auto; border-radius: 16px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  th { background: var(--surface2); padding: 12px 20px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text2); font-weight: 700; text-align: left; }
+  td { padding: 12px 20px; font-size: 0.85rem; border-top: 1px solid var(--border); }
+  tr:hover td { background: var(--surface); }
+  td:nth-child(2), td:nth-child(3) { font-family: var(--mono); color: var(--accent); }
+  td:nth-child(4) { color: var(--text2); font-size: 0.8rem; }
+
+  /* ── FAQ ── */
+  .faq-list { display: flex; flex-direction: column; gap: 12px; margin-top: 36px; }
+  .faq-item { border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; transition: border-color 0.2s; }
+  .faq-item:hover { border-color: var(--border-glow); }
+  .faq-q {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 24px; cursor: pointer; font-weight: 600; font-size: 0.95rem;
+    gap: 16px; user-select: none; background: var(--surface);
+    transition: background 0.2s;
+  }
+  .faq-q:hover { background: var(--surface2); }
+  .faq-icon { width: 24px; height: 24px; border-radius: 50%; background: var(--surface2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s, background 0.2s; font-size: 0.8rem; color: var(--accent); }
+  .faq-item.open .faq-icon { transform: rotate(45deg); background: rgba(99,102,241,0.15); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.2s; }
+  .faq-item.open .faq-a { max-height: 300px; }
+  .faq-a-inner { padding: 0 24px 20px; font-size: 0.88rem; color: var(--text2); line-height: 1.7; }
+
+  /* ── RELATED TOOLS ── */
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-top: 32px; }
+  .related-card {
+    padding: 20px; border-radius: 16px; background: var(--surface);
+    border: 1px solid var(--border); text-decoration: none; color: var(--text);
+    display: flex; align-items: flex-start; gap: 14px;
+    transition: all 0.25s;
+  }
+  .related-card:hover { transform: translateY(-3px); border-color: var(--border-glow); box-shadow: 0 8px 30px var(--glow); }
+  .related-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; background: linear-gradient(135deg, var(--accent), var(--accent2)); }
+  .related-info h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 4px; }
+  .related-info p { font-size: 0.75rem; color: var(--text2); line-height: 1.4; }
+
+  /* ── CTA ── */
+  .cta-section {
+    padding: 80px 0; text-align: center;
+    background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(168,85,247,0.06));
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .cta-section h2 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.04em; margin-bottom: 16px; }
+  .cta-section p { color: var(--text2); font-size: 1rem; margin-bottom: 32px; }
+  .cta-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--bg2); border-top: 1px solid var(--border);
+    padding: 48px 0 24px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+  .footer-brand p { font-size: 0.85rem; color: var(--text2); line-height: 1.7; margin-top: 8px; }
+  .footer-col h5 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text2); margin-bottom: 14px; }
+  .footer-col a { display: block; font-size: 0.85rem; color: var(--text2); text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--accent); }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 24px; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--text2); flex-wrap: wrap; gap: 8px; }
+
+  /* ── FLOATING SYMBOLS ── */
+  .float-symbols { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .float-sym {
+    position: absolute; font-family: var(--mono); font-size: 1.2rem;
+    opacity: 0.04; color: var(--accent); animation: floatSym linear infinite;
+    font-weight: 600;
+  }
+  @keyframes floatSym { 0% { transform: translateY(0) rotate(0deg); opacity: 0.04; } 50% { opacity: 0.08; } 100% { transform: translateY(-80px) rotate(15deg); opacity: 0.02; } }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 8px 0; }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+  /* ── CODE INLINE ── */
+  code { font-family: var(--mono); font-size: 0.85em; background: var(--surface2); padding: 2px 6px; border-radius: 5px; color: var(--accent3); }
+
+  /* ── TILT ── */
+  .tiltable { transform-style: preserve-3d; will-change: transform; }
+
+  /* ── PROGRESS BAR ── */
+  .char-bar { height: 3px; border-radius: 2px; background: var(--border); overflow: hidden; margin-top: 4px; }
+  .char-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; transition: width 0.3s; width: 0%; }
+</style>
+</head>
+<body>
+
+<!-- Background -->
+<div class="bg-mesh"></div>
+<div id="particles"></div>
+
+<!-- Toast -->
+<div class="toast" id="toast">✓ Copied to clipboard!</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="../index.html">⚡ QuickTools</a>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#tools">All Tools</a>
+      <a href="./about.html">About</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./privacy.html">Privacy Policy</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle dark/light mode">🌙</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="wrapper">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>›</span>
+      <a href="../index.html#tools">Tools</a>
+      <span>›</span>
+      <span>URL Encoder &amp; Decoder</span>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="float-symbols">
+        <span class="float-sym" style="left:5%;top:20%;animation-duration:9s;animation-delay:0s;">%20</span>
+        <span class="float-sym" style="left:15%;top:60%;animation-duration:11s;animation-delay:2s;">%2F</span>
+        <span class="float-sym" style="left:75%;top:30%;animation-duration:8s;animation-delay:1s;">%3A</span>
+        <span class="float-sym" style="left:85%;top:65%;animation-duration:12s;animation-delay:3s;">%26</span>
+        <span class="float-sym" style="left:45%;top:10%;animation-duration:10s;animation-delay:0.5s;">%3D</span>
+        <span class="float-sym" style="left:60%;top:75%;animation-duration:9s;animation-delay:4s;">%3F</span>
+      </div>
+      <div class="hero-badge">🔗 Developer Tool</div>
+      <h1>URL Encoder &amp; Decoder</h1>
+      <p>Instantly encode and decode URLs, query strings, and special characters. Percent-encode any text for safe URL usage.</p>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-value">100%</div><div class="stat-label">Free Forever</div></div>
+        <div class="stat"><div class="stat-value">Live</div><div class="stat-label">Instant Results</div></div>
+        <div class="stat"><div class="stat-value">RFC 3986</div><div class="stat-label">Standard</div></div>
+      </div>
+    </header>
+  </div>
+
+  <!-- TOOL -->
+  <div class="wrapper">
+    <section class="tool-section" aria-label="URL Encoder Decoder Tool">
+      <div class="glass tool-card tiltable" id="toolCard">
+
+        <!-- Mode Tabs -->
+        <div class="mode-tabs" role="tablist" aria-label="Encoding mode">
+          <button class="mode-tab active" data-mode="encode" role="tab" aria-selected="true">
+            🔒 Encode URL
+          </button>
+          <button class="mode-tab" data-mode="decode" role="tab" aria-selected="false">
+            🔓 Decode URL
+          </button>
+          <button class="mode-tab" data-mode="auto" role="tab" aria-selected="false">
+            ✨ Auto Detect
+          </button>
+        </div>
+
+        <!-- Example chips -->
+        <div class="examples-bar">
+          <span class="examples-label">Try examples:</span>
+          <button class="example-chip" data-example="https://example.com/search?q=hello world&lang=en">Search URL</button>
+          <button class="example-chip" data-example="https://api.example.com/data?filter=name=John&page=1">API URL</button>
+          <button class="example-chip" data-example="user@example.com / special!#$%chars">Special chars</button>
+          <button class="example-chip" data-example="https%3A%2F%2Fexample.com%2Fsearch%3Fq%3Dhello%20world">Decode this</button>
+        </div>
+
+        <!-- Panel Grid -->
+        <div class="panel-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-label label-input"><span></span>Input</div>
+              <div class="panel-actions">
+                <button class="icon-btn" id="clearBtn" title="Clear input">✕ Clear</button>
+                <button class="icon-btn" id="pasteBtn" title="Paste from clipboard">⎘ Paste</button>
+              </div>
+            </div>
+            <textarea id="inputText" placeholder="Type or paste your URL here…&#10;&#10;Examples:&#10;• https://example.com/path?q=hello world&#10;• user=John&pass=p@ssw0rd!" autocomplete="off" spellcheck="false" aria-label="URL input"></textarea>
+            <div class="meta-row">
+              <div class="char-count">Input: <strong id="inputLen">0</strong> chars</div>
+              <div class="char-bar" style="flex:1; max-width:120px"><div class="char-bar-fill" id="inputBar"></div></div>
+              <span id="validBadge"></span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-label label-output"><span></span>Output</div>
+              <div class="panel-actions">
+                <button class="icon-btn" id="copyBtn" title="Copy output">⎘ Copy</button>
+                <button class="icon-btn" id="downloadBtn" title="Download result">↓ Save</button>
+                <button class="icon-btn" id="swapBtn" title="Swap input/output">⇄ Swap</button>
+              </div>
+            </div>
+            <div class="output-box" id="outputBox" role="textbox" aria-label="URL output" aria-live="polite">
+              <span class="output-placeholder">Result will appear here…</span>
+            </div>
+            <div class="meta-row">
+              <div class="char-count">Output: <strong id="outputLen">0</strong> chars</div>
+              <div class="char-count" id="diffCount"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider" style="margin:20px 0"></div>
+
+        <!-- Action Row -->
+        <div class="action-row">
+          <button class="btn btn-primary" id="convertBtn">
+            🚀 Convert Now
+          </button>
+          <button class="btn btn-secondary" id="encodeQueryBtn">
+            🔗 Encode Query String
+          </button>
+          <button class="btn btn-ghost" id="decodeQueryBtn">
+            📤 Decode Query String
+          </button>
+        </div>
+
+        <div class="divider" style="margin:20px 0"></div>
+
+        <!-- Shortcut Bar -->
+        <div class="shortcut-bar" role="note" aria-label="Keyboard shortcuts">
+          <strong>Shortcuts:</strong>
+          <span><kbd>Ctrl</kbd> + <kbd>Enter</kbd> Convert</span>
+          <span class="shortcut-sep">·</span>
+          <span><kbd>Ctrl</kbd> + <kbd>K</kbd> Clear</span>
+          <span class="shortcut-sep">·</span>
+          <span><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd> Copy</span>
+          <span class="shortcut-sep">·</span>
+          <span><kbd>Ctrl</kbd> + <kbd>D</kbd> Download</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- EXPLANATION -->
+  <div class="wrapper">
+    <section class="section" aria-labelledby="explain-title">
+      <div class="section-tag">📖 Learn More</div>
+      <h2 class="section-title" id="explain-title">What is URL Encoding?</h2>
+      <p class="section-sub">URL encoding converts characters that aren't allowed in URLs into a safe format using percent-encoding (RFC 3986). Every web developer needs it.</p>
+      <div class="cards-grid">
+        <div class="info-card">
+          <div class="info-card-icon">🔒</div>
+          <h3>Percent Encoding</h3>
+          <p>Special characters are replaced with a <code>%</code> sign followed by two hex digits representing the ASCII code, e.g. space becomes <code>%20</code>.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🌐</div>
+          <h3>Safe Transmission</h3>
+          <p>Encoded URLs can travel safely over HTTP without ambiguity. Characters like <code>&amp;</code>, <code>=</code>, <code>?</code> have special meaning and must be escaped in values.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">⚙️</div>
+          <h3>encodeURIComponent</h3>
+          <p>Use this for encoding individual query parameter values. It encodes everything except <code>A-Z a-z 0-9 - _ . ! ~ * ' ( )</code>.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🧩</div>
+          <h3>encodeURI vs Component</h3>
+          <p><code>encodeURI</code> encodes a full URL and preserves delimiters like <code>/ : ? #</code>. <code>encodeURIComponent</code> encodes them too — use it for parameter values.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ENCODING GUIDE TABLE -->
+  <div class="wrapper">
+    <section class="section" aria-labelledby="guide-title">
+      <div class="section-tag">📋 Reference</div>
+      <h2 class="section-title" id="guide-title">URL Encoding Quick Reference</h2>
+      <p class="section-sub">Common characters and their percent-encoded equivalents according to RFC 3986.</p>
+      <div class="encoding-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Character</th>
+              <th>Encoded</th>
+              <th>Hex Value</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Space</td><td>%20</td><td>0x20</td><td>Also represented as + in form data</td></tr>
+            <tr><td>!</td><td>%21</td><td>0x21</td><td>Exclamation mark</td></tr>
+            <tr><td>#</td><td>%23</td><td>0x23</td><td>Reserved: fragment identifier</td></tr>
+            <tr><td>$</td><td>%24</td><td>0x24</td><td>Reserved character</td></tr>
+            <tr><td>&amp;</td><td>%26</td><td>0x26</td><td>Reserved: query string separator</td></tr>
+            <tr><td>'</td><td>%27</td><td>0x27</td><td>Apostrophe / single quote</td></tr>
+            <tr><td>+</td><td>%2B</td><td>0x2B</td><td>Plus sign (also used as space in forms)</td></tr>
+            <tr><td>,</td><td>%2C</td><td>0x2C</td><td>Comma</td></tr>
+            <tr><td>/</td><td>%2F</td><td>0x2F</td><td>Reserved: path segment delimiter</td></tr>
+            <tr><td>:</td><td>%3A</td><td>0x3A</td><td>Reserved: protocol separator</td></tr>
+            <tr><td>;</td><td>%3B</td><td>0x3B</td><td>Semicolon</td></tr>
+            <tr><td>=</td><td>%3D</td><td>0x3D</td><td>Reserved: key=value separator</td></tr>
+            <tr><td>?</td><td>%3F</td><td>0x3F</td><td>Reserved: query string start</td></tr>
+            <tr><td>@</td><td>%40</td><td>0x40</td><td>Reserved: userinfo@host</td></tr>
+            <tr><td>[</td><td>%5B</td><td>0x5B</td><td>Left square bracket</td></tr>
+            <tr><td>]</td><td>%5D</td><td>0x5D</td><td>Right square bracket</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- FAQ -->
+  <div class="wrapper">
+    <section class="section" aria-labelledby="faq-title">
+      <div class="section-tag">❓ FAQ</div>
+      <h2 class="section-title" id="faq-title">Frequently Asked Questions</h2>
+      <div class="faq-list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            <span>What is URL encoding and why do I need it?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">URL encoding (percent-encoding) converts characters that aren't allowed in URLs — like spaces, ampersands, or non-ASCII characters — into a universally accepted format. Browsers, APIs, and servers all rely on it to correctly parse URLs. Without encoding, a URL with a space or <code>&amp;</code> in a parameter value would break the query string.</div></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            <span>When should I encode a URL?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">Encode URLs when passing special characters in query string parameters, form submissions, OAuth redirects, API calls, or email links. Characters like spaces, <code>&amp;</code>, <code>=</code>, <code>?</code>, <code>#</code>, and any non-ASCII characters (accents, CJK) must be encoded in parameter values to prevent parsing errors.</div></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            <span>What is the difference between encodeURI and encodeURIComponent?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner"><code>encodeURI</code> is designed for full URLs — it encodes unsafe characters but leaves <em>reserved</em> ones like <code>: / ? # @ ! $ &amp; ' ( ) * + , ; =</code> intact since they have structural meaning in a URL. <code>encodeURIComponent</code> encodes those reserved characters too, making it ideal for encoding individual query parameter keys and values.</div></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            <span>Is URL encoding the same as Base64 encoding?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">No. URL encoding uses <code>%XX</code> hex escapes to make URLs safe for transmission, and the encoded string is still readable. Base64 converts arbitrary binary data into a 64-character ASCII string — the result looks nothing like the input. They solve different problems: URL encoding for URL safety, Base64 for binary-to-text encoding.</div></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            <span>Can I decode a partially encoded URL?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">Yes. Our Auto Detect mode recognises encoded sequences (<code>%XX</code> patterns) and decodes them whether or not the entire URL is encoded. It will decode all percent-encoded sequences found in the input, leaving any unencoded characters unchanged.</div></div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            <span>Does encoding change the meaning of a URL?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-a"><div class="faq-a-inner">Encoding and decoding a URL produces the same semantic result — the encoded version is just a safe representation of the same content. However, incorrectly encoding a URL (for example, encoding the <code>/</code> in a path when you shouldn't) can cause the server to receive a different path than intended. That's why choosing between <code>encodeURI</code> and <code>encodeURIComponent</code> matters.</div></div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- RELATED TOOLS -->
+  <div class="wrapper">
+    <section class="section" aria-labelledby="related-title">
+      <div class="section-tag">🔧 Related</div>
+      <h2 class="section-title" id="related-title">More Developer Tools</h2>
+      <div class="related-grid">
+        <a href="../tools/json-formatter.html" class="related-card">
+          <div class="related-icon">{ }</div>
+          <div class="related-info">
+            <h4>JSON Formatter</h4>
+            <p>Beautify and validate JSON with syntax highlighting.</p>
+          </div>
+        </a>
+        <a href="../tools/base64-encoder-decoder.html" class="related-card">
+          <div class="related-icon">64</div>
+          <div class="related-info">
+            <h4>Base64 Encoder</h4>
+            <p>Encode and decode Base64 strings instantly.</p>
+          </div>
+        </a>
+        <a href="../tools/uuid-generator.html" class="related-card">
+          <div class="related-icon">🆔</div>
+          <div class="related-info">
+            <h4>UUID Generator</h4>
+            <p>Generate unique identifiers (UUID v4) instantly.</p>
+          </div>
+        </a>
+        <a href="../tools/password-generator.html" class="related-card">
+          <div class="related-icon">🔑</div>
+          <div class="related-info">
+            <h4>Password Generator</h4>
+            <p>Create strong, random passwords with custom rules.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section" aria-labelledby="cta-title">
+    <div class="wrapper">
+      <h2 id="cta-title">Explore All QuickTools</h2>
+      <p>Free, fast, privacy-first developer utilities — no login needed.</p>
+      <div class="cta-btns">
+        <a href="../index.html#tools" class="btn btn-primary">🚀 Browse All Tools</a>
+        <a href="./about.html" class="btn btn-secondary">Learn About Us</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrapper">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="../index.html">⚡ QuickTools</a>
+        <p>Free, fast, and privacy-first developer tools. No login, no tracking — just tools that work.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Tools</h5>
+        <a href="../tools/url-encoder-decoder.html">URL Encoder</a>
+        <a href="../tools/json-formatter.html">JSON Formatter</a>
+        <a href="../tools/base64-encoder-decoder.html">Base64 Encoder</a>
+        <a href="../tools/uuid-generator.html">UUID Generator</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+        <a href="./privacy.html">Privacy Policy</a>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a href="../index.html">Home</a>
+        <a href="../index.html#tools">All Tools</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 QuickTools. All rights reserved.</span>
+      <span>RFC 3986 compliant URL encoding</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  // ── STATE ──
+  let mode = 'encode';
+  let lightMode = false;
+
+  // ── DOM REFS ──
+  const inputText    = document.getElementById('inputText');
+  const outputBox    = document.getElementById('outputBox');
+  const inputLen     = document.getElementById('inputLen');
+  const outputLen    = document.getElementById('outputLen');
+  const inputBar     = document.getElementById('inputBar');
+  const diffCount    = document.getElementById('diffCount');
+  const validBadge   = document.getElementById('validBadge');
+  const convertBtn   = document.getElementById('convertBtn');
+  const copyBtn      = document.getElementById('copyBtn');
+  const downloadBtn  = document.getElementById('downloadBtn');
+  const clearBtn     = document.getElementById('clearBtn');
+  const pasteBtn     = document.getElementById('pasteBtn');
+  const swapBtn      = document.getElementById('swapBtn');
+  const encodeQBtn   = document.getElementById('encodeQueryBtn');
+  const decodeQBtn   = document.getElementById('decodeQueryBtn');
+  const themeBtn     = document.getElementById('themeBtn');
+  const hamburger    = document.getElementById('hamburger');
+  const navLinks     = document.getElementById('navLinks');
+  const toast        = document.getElementById('toast');
+  const tabs         = document.querySelectorAll('.mode-tab');
+  const faqItems     = document.querySelectorAll('.faq-item');
+  const toolCard     = document.getElementById('toolCard');
+  const exampleChips = document.querySelectorAll('.example-chip');
+
+  // ── PARTICLES ──
+  (function initParticles() {
+    const container = document.getElementById('particles');
+    const colors = ['#6366f1','#a855f7','#06b6d4','#10b981'];
+    for (let i = 0; i < 22; i++) {
+      const el = document.createElement('div');
+      el.className = 'particle';
+      const size = Math.random() * 4 + 1.5;
+      Object.assign(el.style, {
+        width: size + 'px', height: size + 'px',
+        left: Math.random() * 100 + '%',
+        background: colors[Math.floor(Math.random() * colors.length)],
+        animationDuration: (Math.random() * 15 + 10) + 's',
+        animationDelay: (Math.random() * 12) + 's'
+      });
+      container.appendChild(el);
+    }
+  })();
+
+  // ── TILT EFFECT ──
+  toolCard.addEventListener('mousemove', (e) => {
+    const rect = toolCard.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const dx = (e.clientX - cx) / rect.width;
+    const dy = (e.clientY - cy) / rect.height;
+    toolCard.style.transform = `perspective(1200px) rotateY(${dx * 3}deg) rotateX(${-dy * 2}deg)`;
+  });
+  toolCard.addEventListener('mouseleave', () => {
+    toolCard.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg)';
+  });
+
+  // ── ENCODE / DECODE FUNCTIONS ──
+  function encodeURL(input) {
+    try { return encodeURIComponent(input); }
+    catch (e) { return 'Error: Invalid input'; }
+  }
+
+  function decodeURL(input) {
+    try { return decodeURIComponent(input.replace(/\+/g, ' ')); }
+    catch (e) { return 'Error: Malformed encoded string'; }
+  }
+
+  function autoDetect(input) {
+    const hasEncoded = /%[0-9A-Fa-f]{2}/.test(input);
+    if (hasEncoded) return decodeURL(input);
+    return encodeURL(input);
+  }
+
+  function encodeQueryString(input) {
+    try {
+      const parts = input.split('&');
+      return parts.map(p => {
+        const [k, ...v] = p.split('=');
+        if (v.length === 0) return encodeURIComponent(k);
+        return encodeURIComponent(decodeURIComponent(k)) + '=' + encodeURIComponent(decodeURIComponent(v.join('=')));
+      }).join('&');
+    } catch (e) { return encodeURL(input); }
+  }
+
+  function decodeQueryString(input) {
+    try {
+      const parts = input.split('&');
+      return parts.map(p => {
+        const [k, ...v] = p.split('=');
+        if (v.length === 0) return decodeURL(k);
+        return decodeURL(k) + '=' + decodeURL(v.join('='));
+      }).join('&');
+    } catch (e) { return decodeURL(input); }
+  }
+
+  function isValidURL(str) {
+    try { new URL(str); return true; } catch (_) { return false; }
+  }
+
+  // ── CONVERT ──
+  function convert(override) {
+    const input = inputText.value.trim();
+    if (!input) { setOutput(''); return; }
+
+    let result;
+    const m = override || mode;
+    if      (m === 'encode') result = encodeURL(input);
+    else if (m === 'decode') result = decodeURL(input);
+    else                     result = autoDetect(input);
+
+    setOutput(result);
+  }
+
+  function setOutput(text) {
+    if (!text) {
+      outputBox.innerHTML = '<span class="output-placeholder">Result will appear here…</span>';
+      outputLen.textContent = '0';
+      diffCount.textContent = '';
+      return;
+    }
+    outputBox.textContent = text;
+    outputLen.textContent = text.length;
+    const diff = text.length - inputText.value.length;
+    if (diff !== 0) {
+      diffCount.textContent = (diff > 0 ? '+' : '') + diff + ' chars';
+      diffCount.style.color = diff > 0 ? 'var(--yellow)' : 'var(--green)';
+    } else {
+      diffCount.textContent = 'No change';
+      diffCount.style.color = 'var(--text2)';
+    }
+  }
+
+  // ── LIVE CONVERSION ──
+  inputText.addEventListener('input', () => {
+    const len = inputText.value.length;
+    inputLen.textContent = len;
+    inputBar.style.width = Math.min(len / 2, 100) + '%';
+    // Validate if it looks like a URL
+    if (inputText.value.startsWith('http')) {
+      const valid = isValidURL(inputText.value);
+      validBadge.innerHTML = valid
+        ? '<span class="validation-badge valid">✓ Valid URL</span>'
+        : '<span class="validation-badge invalid">⚠ Invalid URL</span>';
+    } else {
+      validBadge.innerHTML = '';
+    }
+    convert();
+  });
+
+  // ── CONVERT BTN ──
+  convertBtn.addEventListener('click', () => convert());
+
+  // ── QUERY STRING BTNS ──
+  encodeQBtn.addEventListener('click', () => {
+    const input = inputText.value;
+    if (!input) return;
+    setOutput(encodeQueryString(input));
+  });
+  decodeQBtn.addEventListener('click', () => {
+    const input = inputText.value;
+    if (!input) return;
+    setOutput(decodeQueryString(input));
+  });
+
+  // ── CLEAR ──
+  clearBtn.addEventListener('click', () => {
+    inputText.value = '';
+    inputLen.textContent = '0';
+    inputBar.style.width = '0%';
+    validBadge.innerHTML = '';
+    setOutput('');
+    inputText.focus();
+  });
+
+  // ── PASTE ──
+  pasteBtn.addEventListener('click', async () => {
+    try {
+      const text = await navigator.clipboard.readText();
+      inputText.value = text;
+      inputText.dispatchEvent(new Event('input'));
+    } catch (_) { showToast('Paste not available in this browser', false); }
+  });
+
+  // ── COPY ──
+  copyBtn.addEventListener('click', () => {
+    const text = outputBox.textContent;
+    if (!text || outputBox.querySelector('.output-placeholder')) return;
+    navigator.clipboard.writeText(text).then(() => showToast('Copied to clipboard!', true));
+  });
+
+  // ── SWAP ──
+  swapBtn.addEventListener('click', () => {
+    const out = outputBox.textContent;
+    if (!out || outputBox.querySelector('.output-placeholder')) return;
+    inputText.value = out;
+    inputText.dispatchEvent(new Event('input'));
+  });
+
+  // ── DOWNLOAD ──
+  downloadBtn.addEventListener('click', () => {
+    const text = outputBox.textContent;
+    if (!text || outputBox.querySelector('.output-placeholder')) return;
+    const blob = new Blob([text], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'encoded-url.txt'; a.click();
+    URL.revokeObjectURL(url);
+    showToast('Saved!', true);
+  });
+
+  // ── EXAMPLE CHIPS ──
+  exampleChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      inputText.value = chip.dataset.example;
+      inputText.dispatchEvent(new Event('input'));
+      inputText.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+
+  // ── MODE TABS ──
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      tab.classList.add('active'); tab.setAttribute('aria-selected', 'true');
+      mode = tab.dataset.mode;
+      convert();
+    });
+  });
+
+  // ── FAQ ACCORDION ──
+  faqItems.forEach(item => {
+    const q = item.querySelector('.faq-q');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      faqItems.forEach(f => { f.classList.remove('open'); f.querySelector('.faq-q').setAttribute('aria-expanded', 'false'); });
+      if (!isOpen) { item.classList.add('open'); q.setAttribute('aria-expanded', 'true'); }
+    });
+    q.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.click(); } });
+  });
+
+  // ── THEME TOGGLE ──
+  themeBtn.addEventListener('click', () => {
+    lightMode = !lightMode;
+    document.body.classList.toggle('light-mode', lightMode);
+    themeBtn.textContent = lightMode ? '🌙' : '☀️';
+  });
+
+  // ── HAMBURGER ──
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+  // ── KEYBOARD SHORTCUTS ──
+  document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey || e.metaKey) {
+      if (e.key === 'Enter') { e.preventDefault(); convert(); }
+      if (e.key === 'k')     { e.preventDefault(); clearBtn.click(); }
+      if (e.key === 'd' && !e.shiftKey) { e.preventDefault(); downloadBtn.click(); }
+      if (e.key === 'C' && e.shiftKey)  { e.preventDefault(); copyBtn.click(); }
+    }
+  });
+
+  // ── TOAST ──
+  let toastTimer;
+  function showToast(msg, success = true) {
+    toast.textContent = (success ? '✓ ' : '⚠ ') + msg;
+    toast.className = 'toast show' + (success ? ' success' : '');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { toast.classList.remove('show'); }, 2800);
+  }
+
+})();
+</script>
+</body>
+</html>
