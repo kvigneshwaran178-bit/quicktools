@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Picker & Converter – HEX, RGB, HSL, CMYK Color Tool | QuickTools</title>
+<meta name="description" content="Convert HEX, RGB, RGBA, HSL and CMYK colors instantly. Free online Color Picker, Palette Generator and CSS Color Converter for designers and developers.">
+<meta name="keywords" content="color picker, hex to rgb, rgb to hex, hex color converter, color converter, online color picker, css color picker, free color picker, rgba converter, hsl converter, cmyk converter, color palette generator, gradient generator, html color picker, web color picker, hex color code generator, rgb color converter, designer color tool, developer color tool, tailwind color picker">
+<link rel="canonical" href="https://quicktools.dev/tools/color-picker.html">
+
+<meta property="og:title" content="Color Picker & Converter – HEX, RGB, HSL, CMYK Color Tool">
+<meta property="og:description" content="Convert HEX, RGB, RGBA, HSL and CMYK colors instantly. Free online Color Picker, Palette Generator and CSS Color Converter.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quicktools.dev/tools/color-picker.html">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Color Picker & Converter – HEX, RGB, HSL, CMYK Color Tool">
+<meta name="twitter:description" content="Convert HEX, RGB, RGBA, HSL and CMYK colors instantly. Free online Color Picker.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Color Picker & Converter",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "Free online color picker and converter. Convert HEX, RGB, RGBA, HSL, HSV and CMYK colors instantly with palette generation and accessibility checking.",
+      "url": "https://quicktools.dev/tools/color-picker.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://quicktools.dev/" },
+        { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://quicktools.dev/tools/" },
+        { "@type": "ListItem", "position": 3, "name": "Color Picker", "item": "https://quicktools.dev/tools/color-picker.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a HEX color code?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A HEX color code is a 6-digit hexadecimal representation of a color used in web design. It starts with # followed by 6 characters (0-9 and A-F) representing Red, Green and Blue values." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert HEX to RGB?",
+          "acceptedAnswer": { "@type": "Answer", "text": "To convert HEX to RGB, split the 6-digit HEX code into three pairs and convert each pair from hexadecimal to decimal. For example, #FF5733 becomes R:255, G:87, B:51." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is HSL color format?",
+          "acceptedAnswer": { "@type": "Answer", "text": "HSL stands for Hue, Saturation, and Lightness. Hue is a degree on the color wheel (0-360), saturation is a percentage, and lightness is a percentage. It's often considered more intuitive than RGB for design work." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is CMYK and when is it used?",
+          "acceptedAnswer": { "@type": "Answer", "text": "CMYK stands for Cyan, Magenta, Yellow, and Key (Black). It's the color model used in color printing. Unlike RGB which is additive (for screens), CMYK is subtractive — colors are created by subtracting light." }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "name": "Color Picker & Converter",
+      "description": "Free online color picker and converter. Convert between HEX, RGB, HSL, CMYK and more.",
+      "url": "https://quicktools.dev/tools/color-picker.html"
+    }
+  ]
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&family=DM+Mono:wght@400;500&display=swap');
+
+/* ===== VARIABLES ===== */
+:root {
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+
+  --bg: #08090f;
+  --bg-2: #0e1018;
+  --bg-3: #14161f;
+  --glass: rgba(255,255,255,0.04);
+  --glass-hover: rgba(255,255,255,0.07);
+  --border: rgba(255,255,255,0.08);
+  --border-hi: rgba(255,255,255,0.15);
+
+  --txt: #f2f4ff;
+  --txt-2: #8b93b0;
+  --txt-3: #4a5068;
+  --code: #7dd3fc;
+
+  --accent: #f97316;
+  --accent2: #a855f7;
+  --accent3: #06b6d4;
+  --accent4: #10b981;
+
+  --shadow: 0 8px 32px rgba(0,0,0,0.5);
+  --shadow-lg: 0 24px 64px rgba(0,0,0,0.6);
+
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.light {
+  --bg: #f5f3ff;
+  --bg-2: #ece9ff;
+  --bg-3: #ffffff;
+  --glass: rgba(255,255,255,0.65);
+  --glass-hover: rgba(255,255,255,0.85);
+  --border: rgba(139,92,246,0.12);
+  --border-hi: rgba(139,92,246,0.3);
+  --txt: #1a1730;
+  --txt-2: #5a5580;
+  --txt-3: #9d99bb;
+  --code: #7c3aed;
+  --shadow: 0 8px 32px rgba(139,92,246,0.1);
+  --shadow-lg: 0 24px 64px rgba(139,92,246,0.15);
+}
+
+/* ===== RESET ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body);
+  background:var(--bg);
+  color:var(--txt);
+  min-height:100vh;
+  overflow-x:hidden;
+  transition:background .4s var(--ease), color .4s var(--ease);
+}
+a{color:inherit;text-decoration:none}
+button{font-family:var(--font-body);cursor:pointer}
+input,textarea,select{font-family:var(--font-body)}
+
+/* ===== BG SYSTEM ===== */
+.bg-wrap{
+  position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;
+}
+.orb{
+  position:absolute;border-radius:50%;filter:blur(90px);
+  animation:drift 18s infinite alternate ease-in-out;
+}
+.o1{width:700px;height:700px;background:radial-gradient(circle,rgba(249,115,22,.12),transparent);top:-200px;left:-150px;animation-duration:22s}
+.o2{width:500px;height:500px;background:radial-gradient(circle,rgba(168,85,247,.1),transparent);top:30%;right:-100px;animation-duration:16s;animation-delay:-6s}
+.o3{width:600px;height:600px;background:radial-gradient(circle,rgba(6,182,212,.08),transparent);bottom:-100px;left:30%;animation-duration:20s;animation-delay:-10s}
+.o4{width:400px;height:400px;background:radial-gradient(circle,rgba(16,185,129,.08),transparent);bottom:20%;right:10%;animation-duration:14s;animation-delay:-4s}
+.light .o1{background:radial-gradient(circle,rgba(249,115,22,.18),transparent)}
+.light .o2{background:radial-gradient(circle,rgba(168,85,247,.15),transparent)}
+.light .o3{background:radial-gradient(circle,rgba(6,182,212,.12),transparent)}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(50px,30px) scale(1.08)}}
+
+/* ===== NAV ===== */
+nav{
+  position:sticky;top:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 28px;height:58px;
+  background:rgba(8,9,15,.75);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--border);
+  transition:background .4s var(--ease);
+}
+.light nav{background:rgba(245,243,255,.75)}
+.nav-brand{
+  display:flex;align-items:center;gap:9px;
+  font-family:var(--font-display);font-size:1.15rem;font-weight:700;
+  color:var(--txt);
+}
+.nav-logo{
+  width:30px;height:30px;border-radius:7px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex;align-items:center;justify-content:center;font-size:15px;
+}
+.nav-links{list-style:none;display:flex;gap:2px}
+.nav-links a{
+  padding:5px 13px;border-radius:7px;font-size:.85rem;font-weight:500;
+  color:var(--txt-2);transition:all .2s var(--ease);
+}
+.nav-links a:hover{color:var(--txt);background:var(--glass)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.theme-btn{
+  width:38px;height:38px;border-radius:9px;border:1px solid var(--border);
+  background:var(--glass);color:var(--txt-2);font-size:16px;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s var(--ease);
+}
+.theme-btn:hover{border-color:var(--border-hi);color:var(--txt)}
+
+/* ===== MAIN ===== */
+main{
+  position:relative;z-index:1;
+  max-width:1300px;margin:0 auto;padding:0 24px;
+}
+
+/* ===== HERO ===== */
+.hero{padding:72px 0 52px;text-align:center}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:5px 16px;border-radius:100px;
+  border:1px solid rgba(249,115,22,.4);background:rgba(249,115,22,.08);
+  font-size:.75rem;font-weight:600;color:var(--accent);
+  font-family:var(--font-mono);margin-bottom:22px;
+  animation:fadeUp .6s var(--ease) both;
+}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.6)}}
+.hero h1{
+  font-family:var(--font-display);
+  font-size:clamp(2.4rem,5.5vw,4.2rem);
+  font-weight:800;line-height:1.1;
+  letter-spacing:-.03em;margin-bottom:18px;
+  animation:fadeUp .6s var(--ease) .1s both;
+}
+.gr{
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 50%,var(--accent3) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero p{
+  font-size:1.05rem;color:var(--txt-2);max-width:580px;
+  margin:0 auto 30px;line-height:1.75;
+  animation:fadeUp .6s var(--ease) .2s both;
+}
+.badges{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:10px;
+  animation:fadeUp .6s var(--ease) .3s both;
+}
+.tbadge{
+  display:flex;align-items:center;gap:6px;padding:6px 14px;
+  border-radius:100px;border:1px solid var(--border);background:var(--glass);
+  font-size:.78rem;font-weight:500;color:var(--txt-2);
+  backdrop-filter:blur(10px);
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== BREADCRUMB ===== */
+.crumb{
+  display:flex;align-items:center;gap:7px;
+  font-size:.78rem;color:var(--txt-3);font-family:var(--font-mono);
+  margin-bottom:28px;
+}
+.crumb a{color:var(--txt-2);transition:color .2s}
+.crumb a:hover{color:var(--accent)}
+.crumb span{color:var(--txt-3)}
+
+/* ===== CARD ===== */
+.card{
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  box-shadow:var(--shadow);
+  overflow:hidden;position:relative;
+  transition:all .35s var(--ease);
+}
+.card::before{
+  content:'';position:absolute;inset:0;border-radius:inherit;
+  background:linear-gradient(135deg,rgba(255,255,255,.05) 0%,transparent 60%);
+  pointer-events:none;
+}
+.card-hd{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 20px;border-bottom:1px solid var(--border);
+}
+.card-title{
+  display:flex;align-items:center;gap:9px;
+  font-size:.88rem;font-weight:700;letter-spacing:-.01em;
+}
+.cicon{
+  width:28px;height:28px;border-radius:7px;
+  display:flex;align-items:center;justify-content:center;font-size:14px;
+}
+.ci-or{background:rgba(249,115,22,.15)}
+.ci-pu{background:rgba(168,85,247,.15)}
+.ci-cy{background:rgba(6,182,212,.15)}
+.ci-gr{background:rgba(16,185,129,.15)}
+.ci-pk{background:rgba(236,72,153,.15)}
+.ci-bl{background:rgba(59,130,246,.15)}
+.cb{padding:20px}
+
+/* ===== COLOR PICKER HERO AREA ===== */
+.picker-layout{
+  display:grid;grid-template-columns:1fr 340px;gap:16px;
+  margin-bottom:16px;
+}
+@media(max-width:900px){.picker-layout{grid-template-columns:1fr}}
+
+.picker-main{display:flex;flex-direction:column;gap:16px}
+
+/* Native color input styled */
+.color-pick-wrap{
+  position:relative;display:flex;align-items:center;gap:14px;
+  padding:16px 20px;
+  background:var(--glass);border:1px solid var(--border);
+  border-radius:var(--r-md);
+}
+.native-picker{
+  width:64px;height:64px;border-radius:12px;
+  border:2px solid var(--border-hi);cursor:pointer;
+  padding:3px;background:none;outline:none;
+  transition:all .2s var(--ease);
+  -webkit-appearance:none;appearance:none;
+}
+.native-picker::-webkit-color-swatch-wrapper{padding:0;border-radius:9px}
+.native-picker::-webkit-color-swatch{border-radius:9px;border:none}
+.native-picker:hover{border-color:var(--accent);box-shadow:0 0 16px rgba(249,115,22,.3)}
+
+.picker-hex-row{
+  display:flex;align-items:center;gap:10px;flex:1;flex-wrap:wrap;
+}
+.hex-field-wrap{position:relative;flex:1;min-width:160px}
+.hex-prefix{
+  position:absolute;left:12px;top:50%;transform:translateY(-50%);
+  font-family:var(--font-mono);font-size:1rem;font-weight:600;
+  color:var(--accent);pointer-events:none;
+}
+#hexInput{
+  width:100%;padding:10px 12px 10px 28px;
+  border-radius:var(--r-sm);border:1px solid var(--border-hi);
+  background:var(--bg-2);color:var(--txt);
+  font-family:var(--font-mono);font-size:.95rem;font-weight:600;
+  outline:none;text-transform:uppercase;
+  transition:all .2s var(--ease);
+}
+#hexInput:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(249,115,22,.15)}
+
+.big-preview{
+  flex:1;min-height:140px;border-radius:var(--r-md);
+  border:1px solid var(--border);
+  position:relative;overflow:hidden;
+  transition:background-color .15s var(--ease);
+}
+.preview-label{
+  position:absolute;bottom:10px;left:12px;
+  font-size:.7rem;font-weight:600;color:rgba(255,255,255,.6);
+  font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.06em;
+}
+
+/* ===== DASHBOARD STATS ===== */
+.dash-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;
+}
+.dash-stat{
+  padding:14px 12px;border-radius:var(--r-md);
+  border:1px solid var(--border);background:var(--glass);
+  position:relative;overflow:hidden;cursor:pointer;
+  transition:all .2s var(--ease);
+}
+.dash-stat:hover{border-color:var(--border-hi);transform:translateY(-2px)}
+.dash-stat::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;border-radius:2px;
+  background:currentColor;opacity:.5;
+}
+.ds-or::after{color:var(--accent)}
+.ds-pu::after{color:var(--accent2)}
+.ds-cy::after{color:var(--accent3)}
+.ds-gr::after{color:var(--accent4)}
+.ds-pk::after{color:#ec4899}
+
+.ds-val{
+  font-family:var(--font-mono);font-size:1rem;font-weight:700;
+  margin-bottom:3px;word-break:break-all;line-height:1.3;
+}
+.ds-lbl{font-size:.68rem;font-weight:600;color:var(--txt-3);text-transform:uppercase;letter-spacing:.06em}
+
+/* ===== SLIDERS ===== */
+.slider-group{margin-bottom:12px}
+.slider-lbl{
+  display:flex;justify-content:space-between;
+  font-size:.75rem;font-weight:600;color:var(--txt-2);
+  font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.05em;
+  margin-bottom:5px;
+}
+.slider-lbl span{font-weight:700;color:var(--txt)}
+input[type=range]{
+  width:100%;height:6px;appearance:none;-webkit-appearance:none;
+  border-radius:3px;outline:none;cursor:pointer;
+}
+input[type=range]::-webkit-slider-thumb{
+  width:16px;height:16px;border-radius:50%;
+  appearance:none;-webkit-appearance:none;
+  background:#fff;border:2px solid var(--border-hi);
+  box-shadow:0 2px 6px rgba(0,0,0,.3);
+  transition:all .15s var(--ease);
+}
+input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.25)}
+
+#rSlider{background:linear-gradient(to right,#000,#f00)}
+#gSlider{background:linear-gradient(to right,#000,#0f0)}
+#bSlider{background:linear-gradient(to right,#000,#00f)}
+#aSlider{background:linear-gradient(to right,transparent,#888)}
+#hSlider{background:linear-gradient(to right,#f00,#ff0,#0f0,#0ff,#00f,#f0f,#f00)}
+#sSlider{background:linear-gradient(to right,#888,#f00)}
+#lSlider{background:linear-gradient(to right,#000,#f00,#fff)}
+
+/* ===== INPUTS ===== */
+.field{
+  width:100%;padding:9px 13px;
+  border-radius:var(--r-sm);border:1px solid var(--border);
+  background:var(--bg-2);color:var(--txt);
+  font-family:var(--font-mono);font-size:.85rem;
+  outline:none;transition:all .2s var(--ease);
+}
+.field:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(249,115,22,.12)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.field-row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
+.field-row4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+.field-lbl{font-size:.7rem;font-weight:600;color:var(--txt-3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;font-family:var(--font-mono)}
+
+/* ===== BUTTONS ===== */
+.btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 16px;border-radius:var(--r-sm);border:1px solid var(--border);
+  background:var(--glass);color:var(--txt);font-size:.8rem;font-weight:600;
+  transition:all .2s var(--ease);white-space:nowrap;
+}
+.btn:hover{border-color:var(--border-hi);transform:translateY(-1px)}
+.btn-prim{
+  background:linear-gradient(135deg,var(--accent),#ea6b0a);
+  border-color:transparent;color:#fff;
+  box-shadow:0 4px 14px rgba(249,115,22,.35);
+}
+.btn-prim:hover{box-shadow:0 6px 22px rgba(249,115,22,.45);transform:translateY(-2px)}
+.btn-sm{padding:5px 11px;font-size:.75rem}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+
+/* ===== PALETTE ===== */
+.palette-type-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.pal-type{
+  padding:6px 14px;border-radius:100px;border:1px solid var(--border);
+  background:var(--glass);color:var(--txt-2);font-size:.78rem;font-weight:600;
+  transition:all .2s var(--ease);
+}
+.pal-type.active,.pal-type:hover{
+  border-color:var(--accent2);background:rgba(168,85,247,.12);color:var(--accent2);
+}
+.palette-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.pal-swatch{
+  position:relative;width:56px;height:56px;border-radius:10px;
+  cursor:pointer;transition:all .25s var(--ease-spring);
+  border:2px solid rgba(255,255,255,.1);
+  display:flex;align-items:flex-end;justify-content:center;padding-bottom:3px;
+}
+.pal-swatch:hover{transform:scale(1.12) translateY(-4px);z-index:2}
+.pal-hex{font-family:var(--font-mono);font-size:.52rem;font-weight:700;color:rgba(255,255,255,.8);opacity:0;transition:opacity .2s}
+.pal-swatch:hover .pal-hex{opacity:1}
+
+/* ===== GRADIENT GENERATOR ===== */
+.grad-preview{
+  height:100px;border-radius:var(--r-md);
+  border:1px solid var(--border);margin-bottom:14px;
+  transition:background .3s var(--ease);
+}
+.grad-controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.grad-type{
+  padding:5px 12px;border-radius:100px;border:1px solid var(--border);
+  background:var(--glass);color:var(--txt-2);font-size:.75rem;font-weight:600;
+}
+.grad-type.active{border-color:var(--accent3);background:rgba(6,182,212,.12);color:var(--accent3)}
+.grad-angle-wrap{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--txt-2)}
+.grad-code{
+  padding:12px 14px;border-radius:var(--r-sm);
+  background:var(--bg-2);border:1px solid var(--border);
+  font-family:var(--font-mono);font-size:.78rem;color:var(--code);
+  word-break:break-all;line-height:1.6;
+}
+
+/* ===== CONTRAST / ACCESSIBILITY ===== */
+.contrast-box{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:24px;border-radius:var(--r-md);
+  border:1px solid var(--border);min-height:100px;
+  margin-bottom:12px;transition:all .3s var(--ease);
+  font-size:1.2rem;font-weight:700;
+}
+.contrast-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.cs-item{
+  padding:12px;border-radius:var(--r-sm);
+  border:1px solid var(--border);background:var(--glass);
+  text-align:center;
+}
+.cs-val{font-family:var(--font-mono);font-size:1.1rem;font-weight:700;margin-bottom:2px}
+.cs-lbl{font-size:.68rem;font-weight:600;color:var(--txt-3);text-transform:uppercase;letter-spacing:.06em}
+.pass{color:#10b981}.fail{color:#ef4444}
+
+/* ===== TAILWIND ===== */
+.tw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(48px,1fr));gap:6px}
+.tw-chip{
+  height:40px;border-radius:8px;cursor:pointer;
+  border:2px solid transparent;
+  transition:all .2s var(--ease-spring);
+  position:relative;
+}
+.tw-chip:hover{transform:scale(1.12);border-color:rgba(255,255,255,.4)}
+.tw-chip.active{border-color:#fff;transform:scale(1.15)}
+.tw-label{text-align:center;font-size:.62rem;font-weight:600;color:var(--txt-2);margin-top:2px}
+
+/* ===== CSS EXPORT ===== */
+.css-output{
+  background:var(--bg-2);border:1px solid var(--border);
+  border-radius:var(--r-sm);padding:14px;
+  font-family:var(--font-mono);font-size:.78rem;color:var(--code);
+  line-height:1.8;white-space:pre-wrap;word-break:break-all;
+  max-height:200px;overflow-y:auto;
+}
+
+/* ===== SECTION ===== */
+.section{margin-bottom:28px}
+.section-title{
+  font-family:var(--font-display);font-size:1.5rem;font-weight:800;
+  letter-spacing:-.025em;margin-bottom:6px;
+}
+.section-sub{font-size:.9rem;color:var(--txt-2);margin-bottom:18px;line-height:1.65}
+
+/* ===== CONTENT ===== */
+.prose{padding:28px 32px}
+.prose h2{font-family:var(--font-display);font-size:1.75rem;font-weight:800;letter-spacing:-.025em;margin-bottom:10px}
+.prose h3{font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:22px 0 7px}
+.prose p{font-size:.93rem;color:var(--txt-2);line-height:1.85;margin-bottom:14px}
+.prose code{font-family:var(--font-mono);font-size:.85em;background:rgba(249,115,22,.12);padding:2px 7px;border-radius:5px;color:var(--accent)}
+.prose ul{list-style:none;padding:0;margin-bottom:14px}
+.prose ul li{padding:3px 0 3px 18px;position:relative;font-size:.9rem;color:var(--txt-2);line-height:1.7}
+.prose ul li::before{content:'›';position:absolute;left:0;color:var(--accent);font-weight:700}
+
+/* ===== FAQ ===== */
+.faq{display:flex;flex-direction:column;gap:7px}
+.fi{border:1px solid var(--border);border-radius:var(--r-md);background:var(--glass);overflow:hidden}
+.fi:hover{border-color:var(--border-hi)}
+.fq{
+  padding:15px 20px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  font-weight:600;font-size:.9rem;user-select:none;
+}
+.ficon{
+  width:20px;height:20px;border-radius:50%;border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;font-size:12px;
+  color:var(--txt-3);flex-shrink:0;transition:all .2s var(--ease);
+}
+.fi.open .ficon{background:var(--accent);border-color:transparent;color:#fff;transform:rotate(45deg)}
+.fa{display:none;padding:0 20px 15px;font-size:.875rem;color:var(--txt-2);line-height:1.75;border-top:1px solid var(--border)}
+.fi.open .fa{display:block}
+
+/* ===== RELATED ===== */
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.rel-card{
+  display:flex;align-items:center;gap:12px;
+  padding:15px;border-radius:var(--r-md);border:1px solid var(--border);
+  background:var(--glass);transition:all .25s var(--ease);
+}
+.rel-card:hover{border-color:var(--border-hi);transform:translateY(-2px);box-shadow:var(--shadow)}
+.rel-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.rel-name{font-size:.875rem;font-weight:700;margin-bottom:2px}
+.rel-desc{font-size:.73rem;color:var(--txt-2)}
+
+/* ===== CTA ===== */
+.cta{
+  margin:28px 0;padding:52px 32px;border-radius:var(--r-xl);
+  text-align:center;
+  background:linear-gradient(135deg,rgba(249,115,22,.12),rgba(168,85,247,.08),rgba(6,182,212,.08));
+  border:1px solid rgba(249,115,22,.25);position:relative;overflow:hidden;
+}
+.cta::before{
+  content:'';position:absolute;top:-60%;left:-60%;width:220%;height:220%;
+  background:conic-gradient(from 0deg,transparent,rgba(249,115,22,.05),transparent,rgba(168,85,247,.04),transparent);
+  animation:spin 25s linear infinite;
+}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.cta h2{font-family:var(--font-display);font-size:2rem;font-weight:800;letter-spacing:-.03em;margin-bottom:10px;position:relative;z-index:1}
+.cta p{color:var(--txt-2);font-size:1rem;margin-bottom:22px;position:relative;z-index:1}
+.cta .btn{position:relative;z-index:1}
+
+/* ===== FOOTER ===== */
+footer{
+  border-top:1px solid var(--border);padding:28px 24px;
+  text-align:center;position:relative;z-index:1;
+}
+.footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:12px;flex-wrap:wrap}
+.footer-links a{font-size:.875rem;color:var(--txt-2);transition:color .2s}
+.footer-links a:hover{color:var(--accent)}
+.footer-copy{font-size:.78rem;color:var(--txt-3)}
+
+/* ===== TOAST ===== */
+.toast{
+  position:fixed;bottom:22px;right:22px;z-index:999;
+  padding:11px 20px;border-radius:var(--r-sm);
+  background:var(--bg-3);border:1px solid var(--border-hi);
+  color:var(--txt);font-size:.875rem;font-weight:500;
+  display:flex;align-items:center;gap:8px;
+  box-shadow:var(--shadow-lg);
+  transform:translateY(70px);opacity:0;
+  transition:all .3s var(--ease);
+}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* ===== RANDOM BTN ===== */
+.random-btn{
+  padding:8px 16px;border-radius:var(--r-sm);border:1px solid var(--border);
+  background:linear-gradient(135deg,var(--accent2),#7c3aed);
+  color:#fff;font-size:.8rem;font-weight:600;
+  transition:all .2s var(--ease-spring);
+  box-shadow:0 4px 12px rgba(168,85,247,.3);
+}
+.random-btn:hover{transform:scale(1.05) translateY(-1px);box-shadow:0 6px 20px rgba(168,85,247,.4)}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border-hi);border-radius:3px}
+
+/* ===== ANIMATIONS ===== */
+.fi-anim{opacity:0;transform:translateY(16px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.fi-anim.vis{opacity:1;transform:none}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:640px){
+  .nav-links{display:none}
+  .hero{padding:44px 0 32px}
+  .hero h1{font-size:2rem}
+  .dash-grid{grid-template-columns:repeat(2,1fr)}
+  .contrast-stats{grid-template-columns:1fr 1fr}
+  main{padding:0 14px}
+  nav{padding:0 16px}
+  .prose{padding:20px}
+}
+@media(max-width:400px){
+  .field-row4{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-wrap" aria-hidden="true">
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
+  <div class="orb o3"></div>
+  <div class="orb o4"></div>
+</div>
+
+<!-- NAV -->
+<nav role="navigation" aria-label="Main navigation">
+  <a href="../index.html" class="nav-brand" aria-label="QuickTools Home">
+    <div class="nav-logo">🎨</div> QuickTools
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="./about.html">About</a></li>
+    <li><a href="./contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">🌙</button>
+  </div>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-h1">
+    <div class="badge"><span class="badge-dot"></span> Live Color Engine</div>
+    <h1 id="hero-h1"><span class="gr">Color Picker</span><br>& Converter</h1>
+    <p>Convert HEX, RGB, RGBA, HSL, HSV and CMYK instantly. Generate palettes, check contrast ratios and export CSS variables — all in your browser.</p>
+    <div class="badges">
+      <div class="tbadge">✓ 100% Free</div>
+      <div class="tbadge">📶 Works Offline</div>
+      <div class="tbadge">🚀 No Installation</div>
+      <div class="tbadge">🎨 Designer Friendly</div>
+      <div class="tbadge">⚡ Developer Friendly</div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a><span>›</span>
+    <a href="../index.html">Tools</a><span>›</span>
+    <span aria-current="page">Color Picker</span>
+  </nav>
+
+  <!-- ===== MAIN TOOL ===== -->
+  <section class="section fi-anim" aria-labelledby="tool-h2">
+    <h2 id="tool-h2" class="section-title">🎨 Color Picker</h2>
+    <p class="section-sub">Click the color swatch or type a HEX value to start. All formats update in real time.</p>
+
+    <div class="picker-layout">
+      <!-- LEFT: Picker + Sliders -->
+      <div class="picker-main">
+        <!-- Color input -->
+        <div class="card">
+          <div class="card-hd">
+            <div class="card-title"><div class="cicon ci-or">🖌</div> Pick a Color</div>
+            <button class="random-btn" id="randomBtn" aria-label="Generate random color">🎲 Random</button>
+          </div>
+          <div class="cb">
+            <div class="color-pick-wrap">
+              <input type="color" id="colorPicker" class="native-picker" value="#f97316" aria-label="Color picker">
+              <div class="picker-hex-row">
+                <div class="hex-field-wrap">
+                  <span class="hex-prefix">#</span>
+                  <input type="text" id="hexInput" value="F97316" maxlength="7" aria-label="HEX color value" spellcheck="false" autocomplete="off">
+                </div>
+                <button class="btn btn-sm" id="copyHexBtn" aria-label="Copy HEX value">Copy HEX</button>
+              </div>
+            </div>
+
+            <!-- Big preview -->
+            <div class="big-preview" id="bigPreview" style="background:#f97316" aria-label="Color preview">
+              <span class="preview-label" id="previewLabel">Sample Text on Color</span>
+            </div>
+
+            <!-- RGB Sliders -->
+            <div style="margin-top:16px">
+              <div class="slider-group">
+                <div class="slider-lbl">R — Red <span id="rVal">249</span></div>
+                <input type="range" id="rSlider" min="0" max="255" value="249" aria-label="Red channel">
+              </div>
+              <div class="slider-group">
+                <div class="slider-lbl">G — Green <span id="gVal">115</span></div>
+                <input type="range" id="gSlider" min="0" max="255" value="115" aria-label="Green channel">
+              </div>
+              <div class="slider-group">
+                <div class="slider-lbl">B — Blue <span id="bVal">22</span></div>
+                <input type="range" id="bSlider" min="0" max="255" value="22" aria-label="Blue channel">
+              </div>
+              <div class="slider-group">
+                <div class="slider-lbl">A — Alpha <span id="aVal">100%</span></div>
+                <input type="range" id="aSlider" min="0" max="100" value="100" aria-label="Alpha channel">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HSL Sliders -->
+        <div class="card">
+          <div class="card-hd">
+            <div class="card-title"><div class="cicon ci-pu">🌈</div> HSL Controls</div>
+          </div>
+          <div class="cb">
+            <div class="slider-group">
+              <div class="slider-lbl">H — Hue <span id="hVal">28°</span></div>
+              <input type="range" id="hSlider" min="0" max="360" value="28" aria-label="Hue">
+            </div>
+            <div class="slider-group">
+              <div class="slider-lbl">S — Saturation <span id="sVal">95%</span></div>
+              <input type="range" id="sSlider" min="0" max="100" value="95" aria-label="Saturation">
+            </div>
+            <div class="slider-group">
+              <div class="slider-lbl">L — Lightness <span id="lVal">53%</span></div>
+              <input type="range" id="lSlider" min="0" max="100" value="53" aria-label="Lightness">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Dashboard -->
+      <div class="card" style="align-self:start">
+        <div class="card-hd">
+          <div class="card-title"><div class="cicon ci-cy">📊</div> Color Dashboard</div>
+          <button class="btn btn-sm" id="copyAllBtn" aria-label="Copy all color values">Copy All</button>
+        </div>
+        <div class="cb">
+          <div class="dash-grid">
+            <div class="dash-stat ds-or" title="Click to copy" id="ds-hex" tabindex="0" role="button" aria-label="HEX value">
+              <div class="ds-val" id="dHex">#F97316</div>
+              <div class="ds-lbl">HEX</div>
+            </div>
+            <div class="dash-stat ds-pu" id="ds-rgb" tabindex="0" role="button" aria-label="RGB value">
+              <div class="ds-val" id="dRgb">249,115,22</div>
+              <div class="ds-lbl">RGB</div>
+            </div>
+            <div class="dash-stat ds-cy" id="ds-hsl" tabindex="0" role="button" aria-label="HSL value">
+              <div class="ds-val" id="dHsl">28°,95%,53%</div>
+              <div class="ds-lbl">HSL</div>
+            </div>
+            <div class="dash-stat ds-gr" id="ds-cmyk" tabindex="0" role="button" aria-label="CMYK value">
+              <div class="ds-val" id="dCmyk">0,54,91,2</div>
+              <div class="ds-lbl">CMYK</div>
+            </div>
+            <div class="dash-stat ds-pk" id="ds-hsv" tabindex="0" role="button" aria-label="HSV value">
+              <div class="ds-val" id="dHsv">28°,91%,98%</div>
+              <div class="ds-lbl">HSV</div>
+            </div>
+            <div class="dash-stat ds-or" id="ds-rgba" tabindex="0" role="button" aria-label="RGBA value">
+              <div class="ds-val" id="dRgba">249,115,22,1</div>
+              <div class="ds-lbl">RGBA</div>
+            </div>
+          </div>
+
+          <!-- Luminance / contrast -->
+          <div style="margin-top:14px">
+            <div class="field-lbl">Luminance & Contrast</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <div class="dash-stat ds-cy" style="cursor:default">
+                <div class="ds-val" id="dLum">—</div>
+                <div class="ds-lbl">Luminance</div>
+              </div>
+              <div class="dash-stat ds-gr" style="cursor:default">
+                <div class="ds-val" id="dContrast">—</div>
+                <div class="ds-lbl">vs White</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CSS Vars -->
+          <div style="margin-top:14px">
+            <div class="field-lbl" style="margin-bottom:6px">Quick CSS</div>
+            <div class="grad-code" id="quickCss" style="font-size:.72rem">color: #F97316;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Converter manual inputs -->
+    <div class="card" style="margin-bottom:16px">
+      <div class="card-hd">
+        <div class="card-title"><div class="cicon ci-bl">🔄</div> Manual Converter</div>
+        <div style="font-size:.75rem;color:var(--txt-3);font-family:var(--font-mono)">Edit any field to convert</div>
+      </div>
+      <div class="cb">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+          <!-- RGB -->
+          <div>
+            <div class="field-lbl" style="margin-bottom:6px;color:var(--accent)">RGB</div>
+            <div class="field-row3">
+              <div><div class="field-lbl">R</div><input type="number" class="field" id="mR" min="0" max="255" value="249" aria-label="Red"></div>
+              <div><div class="field-lbl">G</div><input type="number" class="field" id="mG" min="0" max="255" value="115" aria-label="Green"></div>
+              <div><div class="field-lbl">B</div><input type="number" class="field" id="mB" min="0" max="255" value="22" aria-label="Blue"></div>
+            </div>
+          </div>
+          <!-- HSL -->
+          <div>
+            <div class="field-lbl" style="margin-bottom:6px;color:var(--accent2)">HSL</div>
+            <div class="field-row3">
+              <div><div class="field-lbl">H°</div><input type="number" class="field" id="mH" min="0" max="360" value="28" aria-label="Hue"></div>
+              <div><div class="field-lbl">S%</div><input type="number" class="field" id="mS" min="0" max="100" value="95" aria-label="Saturation"></div>
+              <div><div class="field-lbl">L%</div><input type="number" class="field" id="mL" min="0" max="100" value="53" aria-label="Lightness"></div>
+            </div>
+          </div>
+          <!-- CMYK -->
+          <div>
+            <div class="field-lbl" style="margin-bottom:6px;color:var(--accent3)">CMYK</div>
+            <div class="field-row4">
+              <div><div class="field-lbl">C%</div><input type="number" class="field" id="mC" min="0" max="100" value="0" aria-label="Cyan"></div>
+              <div><div class="field-lbl">M%</div><input type="number" class="field" id="mM" min="0" max="100" value="54" aria-label="Magenta"></div>
+              <div><div class="field-lbl">Y%</div><input type="number" class="field" id="mY" min="0" max="100" value="91" aria-label="Yellow"></div>
+              <div><div class="field-lbl">K%</div><input type="number" class="field" id="mK" min="0" max="100" value="2" aria-label="Key/Black"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PALETTE GENERATOR ===== -->
+  <section class="section fi-anim" aria-labelledby="pal-h2">
+    <h2 id="pal-h2" class="section-title">🌈 Palette Generator</h2>
+    <p class="section-sub">Generate harmonious color palettes from your base color using proven color theory.</p>
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-title"><div class="cicon ci-pu">✨</div> Color Harmony</div>
+        <div class="btn-row" style="margin:0">
+          <button class="btn btn-sm" id="copyPalBtn" aria-label="Copy palette HEX codes">Copy Palette</button>
+          <button class="btn btn-sm" id="dlPalBtn" aria-label="Download palette">⬇ Download</button>
+          <button class="btn btn-sm" id="cssPalBtn" aria-label="Export palette as CSS">CSS Export</button>
+        </div>
+      </div>
+      <div class="cb">
+        <div class="palette-type-row" role="group" aria-label="Palette type">
+          <button class="pal-type active" data-pt="mono" aria-pressed="true">Monochromatic</button>
+          <button class="pal-type" data-pt="analogous" aria-pressed="false">Analogous</button>
+          <button class="pal-type" data-pt="complementary" aria-pressed="false">Complementary</button>
+          <button class="pal-type" data-pt="triadic" aria-pressed="false">Triadic</button>
+          <button class="pal-type" data-pt="split" aria-pressed="false">Split Comp.</button>
+        </div>
+        <div class="palette-row" id="paletteRow" role="list" aria-label="Color palette swatches"></div>
+        <div id="cssExportBox" style="display:none;margin-top:10px">
+          <div class="css-output" id="cssExportContent"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GRADIENT GENERATOR ===== -->
+  <section class="section fi-anim" aria-labelledby="grad-h2">
+    <h2 id="grad-h2" class="section-title">✨ Gradient Generator</h2>
+    <p class="section-sub">Create CSS gradients using your current color as the start point.</p>
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-title"><div class="cicon ci-pk">🌅</div> CSS Gradient</div>
+        <button class="btn btn-sm" id="copyGradBtn" aria-label="Copy gradient CSS">Copy CSS</button>
+      </div>
+      <div class="cb">
+        <div class="grad-controls">
+          <button class="grad-type active" data-gt="linear" aria-pressed="true">Linear</button>
+          <button class="grad-type" data-gt="radial" aria-pressed="false">Radial</button>
+          <button class="grad-type" data-gt="conic" aria-pressed="false">Conic</button>
+          <div class="grad-angle-wrap">
+            <span>Angle:</span>
+            <input type="range" id="gradAngle" min="0" max="360" value="135" style="width:100px" aria-label="Gradient angle">
+            <span id="gradAngleVal">135°</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <span style="font-size:.8rem;color:var(--txt-2)">End color:</span>
+            <input type="color" id="gradEnd" value="#8b5cf6" style="width:36px;height:28px;border-radius:7px;border:1px solid var(--border);cursor:pointer;background:none;padding:2px" aria-label="Gradient end color">
+          </div>
+        </div>
+        <div class="grad-preview" id="gradPreview" aria-label="Gradient preview"></div>
+        <div class="grad-code" id="gradCode" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ACCESSIBILITY ===== -->
+  <section class="section fi-anim" aria-labelledby="a11y-h2">
+    <h2 id="a11y-h2" class="section-title">♿ Accessibility Checker</h2>
+    <p class="section-sub">Check contrast ratio and WCAG compliance against white and black backgrounds.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div class="card">
+        <div class="card-hd"><div class="card-title"><div class="cicon ci-gr">☀</div> vs White</div></div>
+        <div class="cb">
+          <div class="contrast-box" id="contrastWhiteBox" aria-label="Color on white background">
+            <span id="contrastWhiteText">Sample Text</span>
+          </div>
+          <div class="contrast-stats">
+            <div class="cs-item">
+              <div class="cs-val" id="ratioWhite">—</div>
+              <div class="cs-lbl">Ratio</div>
+            </div>
+            <div class="cs-item">
+              <div class="cs-val" id="aa-w">—</div>
+              <div class="cs-lbl">AA</div>
+            </div>
+            <div class="cs-item">
+              <div class="cs-val" id="aaa-w">—</div>
+              <div class="cs-lbl">AAA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-hd"><div class="card-title"><div class="cicon ci-bl">🌑</div> vs Black</div></div>
+        <div class="cb">
+          <div class="contrast-box" id="contrastBlackBox" style="background:#000" aria-label="Color on black background">
+            <span id="contrastBlackText">Sample Text</span>
+          </div>
+          <div class="contrast-stats">
+            <div class="cs-item">
+              <div class="cs-val" id="ratioBlack">—</div>
+              <div class="cs-lbl">Ratio</div>
+            </div>
+            <div class="cs-item">
+              <div class="cs-val" id="aa-b">—</div>
+              <div class="cs-lbl">AA</div>
+            </div>
+            <div class="cs-item">
+              <div class="cs-val" id="aaa-b">—</div>
+              <div class="cs-lbl">AAA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TAILWIND ===== -->
+  <section class="section fi-anim" aria-labelledby="tw-h2">
+    <h2 id="tw-h2" class="section-title">🌊 Tailwind Color Preview</h2>
+    <p class="section-sub">See how your color fits within the Tailwind CSS color spectrum. Click any swatch to load it.</p>
+    <div class="card">
+      <div class="card-hd"><div class="card-title"><div class="cicon ci-cy">💎</div> Tailwind Palette</div></div>
+      <div class="cb">
+        <div id="twGrid" class="tw-grid" role="list" aria-label="Tailwind color swatches"></div>
+        <div id="twMatch" style="margin-top:12px;font-family:var(--font-mono);font-size:.8rem;color:var(--txt-2)"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CSS EXPORT ===== -->
+  <section class="section fi-anim" aria-labelledby="css-h2">
+    <h2 id="css-h2" class="section-title">⚡ CSS Color Generator</h2>
+    <p class="section-sub">Export your color as ready-to-use CSS variables and utilities.</p>
+    <div class="card">
+      <div class="card-hd">
+        <div class="card-title"><div class="cicon ci-or">📋</div> CSS Variables</div>
+        <button class="btn btn-prim btn-sm" id="copyCssBtn" aria-label="Copy CSS variables">Copy CSS</button>
+      </div>
+      <div class="cb">
+        <div class="css-output" id="cssFullOutput" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTENT ===== -->
+  <section class="section fi-anim">
+    <div class="card">
+      <div class="prose">
+        <h2>The Complete Guide to Web Color Formats</h2>
+        <p>Color is one of the most fundamental elements of visual design. For web designers and developers, understanding color formats is essential — not just aesthetically, but technically. Different formats suit different workflows, and converting between them precisely is a daily need for anyone working on digital products.</p>
+
+        <h3>What Is a HEX Color Code?</h3>
+        <p>HEX (hexadecimal) color codes are the most common format in web development. A HEX code begins with a <code>#</code> symbol followed by six characters, each ranging from 0–9 and A–F. These six characters represent three pairs: the first two for Red, the next two for Green, and the last two for Blue. For example, <code>#FF5733</code> decodes to R:255, G:87, B:51 — a vivid orange-red.</p>
+        <p>A shorthand 3-character HEX is also valid when each pair is a doubled digit. <code>#FFF</code> is equivalent to <code>#FFFFFF</code> (white), and <code>#000</code> is <code>#000000</code> (black). HEX codes are case-insensitive and widely supported across all browsers.</p>
+
+        <h3>RGB vs HEX — Which Should You Use?</h3>
+        <p>RGB (Red, Green, Blue) and HEX represent the same additive color model — the only difference is notation. RGB uses decimal integers from 0 to 255 for each channel, making it easier to understand at a glance how red, green, or blue a color is. HEX is more compact and integrates cleanly into CSS stylesheets.</p>
+        <p>Use <strong>HEX</strong> when working with design tokens, brand guidelines, or CSS variables. Use <strong>RGB/RGBA</strong> when you need transparency via the alpha channel, or when dynamically calculating colors in JavaScript. Both formats are fully interchangeable with no data loss.</p>
+
+        <h3>HSL — The Designer's Color Format</h3>
+        <p>HSL stands for Hue, Saturation, and Lightness. Unlike RGB which describes color by how much of each primary light to mix, HSL describes color the way humans perceive it. <strong>Hue</strong> is an angle on the color wheel (0°–360°): 0° is red, 120° is green, 240° is blue. <strong>Saturation</strong> (0–100%) controls how vivid the color is — 0% is gray, 100% is fully saturated. <strong>Lightness</strong> (0–100%) controls brightness — 0% is black, 100% is white.</p>
+        <p>HSL is particularly useful in CSS when you want to create color variations programmatically. For example, you can darken a button on hover simply by adjusting the lightness value. This makes HSL the preferred format for generating accessible color systems.</p>
+
+        <h3>CMYK — The Print Color Model</h3>
+        <p>CMYK stands for Cyan, Magenta, Yellow, and Key (Black). It's the subtractive color model used by color printers. Unlike RGB which adds light to create colors (black = no light; white = all light), CMYK subtracts light by applying ink. Mixing CMY inks produces most colors, while K (black) ink is added for sharper text and deeper shadows.</p>
+        <p>When you export artwork for print, your designer or printer will need CMYK values. Be aware that not all RGB colors have exact CMYK equivalents — the RGB gamut is larger, meaning some highly saturated screen colors cannot be reproduced in print. Always soft-proof print work with correct color profiles.</p>
+
+        <h3>RGBA and Transparency</h3>
+        <p>RGBA extends RGB with an alpha (transparency) channel ranging from 0 (fully transparent) to 1 (fully opaque). It's essential for layered UI design — overlays, glass morphism effects, shadows, and tooltips all rely on RGBA. CSS also supports <code>HSL</code>/<code>HSLA</code> with an alpha channel, and modern CSS now accepts <code>rgb(255 115 22 / 50%)</code> syntax alongside the older comma-separated form.</p>
+
+        <h3>Color Theory for Digital Design</h3>
+        <p>Understanding color relationships helps you build better palettes. The five core harmonies are: <strong>Monochromatic</strong> (tints and shades of one hue), <strong>Analogous</strong> (colors adjacent on the wheel — naturally harmonious), <strong>Complementary</strong> (opposite colors — high contrast, energetic), <strong>Triadic</strong> (three equally spaced hues — vibrant and balanced), and <strong>Split Complementary</strong> (a base color plus two colors adjacent to its complement — softer than full complementary).</p>
+
+        <h3>Accessibility and Color Contrast</h3>
+        <p>WCAG (Web Content Accessibility Guidelines) defines minimum contrast ratios for readable text. The <strong>AA standard</strong> requires a ratio of at least 4.5:1 for normal text and 3:1 for large text (18pt or 14pt bold). The stricter <strong>AAA standard</strong> requires 7:1 for normal text and 4.5:1 for large text. The contrast ratio is calculated from the relative luminance of the foreground and background colors.</p>
+        <p>Never rely on color alone to convey information — about 8% of men have some form of color vision deficiency. Use patterns, shapes, or labels alongside color, and always test your designs against contrast checkers like the one built into this tool.</p>
+
+        <h3>CSS Color Best Practices</h3>
+        <p>Define colors as CSS custom properties (variables) at the root level: <code>:root { --color-primary: #f97316; }</code>. This creates a single source of truth and makes global color changes trivial. For theming, override variables in a <code>.dark</code> or <code>[data-theme="dark"]</code> selector. Use HSL variables for palettes — storing hue, saturation and lightness separately makes it easy to generate shades: <code>hsl(var(--h) var(--s) 30%)</code>.</p>
+
+        <h3>Color Design Tips for 2026</h3>
+        <ul>
+          <li>Build color systems, not just individual colors. Define 9 shades (50–900) for each brand hue.</li>
+          <li>Use oklch() for perceptually uniform color manipulation — it's now supported in all modern browsers.</li>
+          <li>Test all color combinations against WCAG AA at minimum before shipping.</li>
+          <li>Limit your palette: 2–3 hues with their tints and shades create more cohesion than many unrelated colors.</li>
+          <li>Keep dark mode in mind from day one — design both themes together, not as an afterthought.</li>
+          <li>Use semantic naming for your tokens: <code>--color-surface</code> not <code>--color-gray-100</code>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section fi-anim" aria-labelledby="faq-h2">
+    <h2 id="faq-h2" class="section-title">❓ Frequently Asked Questions</h2>
+    <div class="faq">
+      <div class="fi">
+        <div class="fq" role="button" tabindex="0" aria-expanded="false">What is a HEX color code? <div class="ficon">+</div></div>
+        <div class="fa">A HEX color code is a 6-digit hexadecimal value used to represent colors in web design. It starts with a # followed by three pairs of hex digits — one pair each for Red, Green, and Blue. For example, #FF5733 has R:255, G:87, B:51. Shorthand 3-digit codes like #FFF or #000 are also valid.</div>
+      </div>
+      <div class="fi">
+        <div class="fq" role="button" tabindex="0" aria-expanded="false">How does HEX to RGB conversion work? <div class="ficon">+</div></div>
+        <div class="fa">To convert HEX to RGB, split the 6-character code into three 2-character pairs and convert each from base-16 (hexadecimal) to base-10 (decimal). For example, #F97316 → F9 = 249, 73 = 115, 16 = 22 → RGB(249, 115, 22). This tool does all conversions automatically in real time.</div>
+      </div>
+      <div class="fi">
+        <div class="fq" role="button" tabindex="0" aria-expanded="false">What is HSL and why should I use it? <div class="ficon">+</div></div>
+        <div class="fa">HSL stands for Hue, Saturation, Lightness. Hue is a color wheel angle (0–360°), Saturation is color intensity (0–100%), and Lightness is brightness (0–100%). It's more intuitive than RGB for designers because you can adjust brightness or create tints without manually manipulating three channels. It's ideal for building consistent color palettes in CSS.</div>
+      </div>
+      <div class="fi">
+        <div class="fq" role="button" tabindex="0" aria-expanded="false">What is CMYK and when is it used? <div class="ficon">+</div></div>
+        <div class="fa">CMYK (Cyan, Magenta, Yellow, Key/Black) is the subtractive color model used in color printing. While screens mix light (RGB), printers subtract light using inks. You'll need CMYK values when preparing artwork for physical print. Note that the RGB gamut is larger than CMYK, so some vivid screen colors may shift when printed.</div>
+      </div>
+      <div class="fi">
+        <div class="fq" role="button" tabindex="0" aria-expanded="false">What contrast ratio do I need for accessibility? <div class="ficon">+</div></div>
+        <div class="fa">WCAG AA requires a minimum contrast ratio of 4.5:1 for normal-sized text and 3:1 for large text (18pt+). The stricter AAA level requires 7:1 for normal text. Our accessibility checker computes the ratio for your color against both white and black backgrounds so you can choose the more accessible combination.</div>
+      </div>
+      <div class="fi">
+        <div class="fq" role="button" tabindex="0" aria-expanded="false">Is my color data private? <div class="ficon">+</div></div>
+        <div class="fa">Completely. All color conversions, palette generation, and gradient calculations happen entirely in your browser using JavaScript. No data is sent to any server. This tool works offline — just open it and use it.</div>
+      </div>
+      <div class="fi">
+        <div class="fq" role="button" tabindex="0" aria-expanded="false">What is a complementary color? <div class="ficon">+</div></div>
+        <div class="fa">A complementary color is the color directly opposite on the color wheel — 180° away in hue. For example, the complement of orange (28°) is blue (208°). Complementary pairs create maximum contrast and visual tension, making them effective for calls-to-action and attention-grabbing designs.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RELATED ===== -->
+  <section class="section fi-anim" aria-labelledby="rel-h2">
+    <h2 id="rel-h2" class="section-title">🔧 Related Developer Tools</h2>
+    <div class="rel-grid">
+      <a href="../tools/json-formatter.html" class="rel-card">
+        <div class="rel-icon" style="background:rgba(16,185,129,.15)">📋</div>
+        <div><div class="rel-name">JSON Formatter</div><div class="rel-desc">Format and validate JSON data</div></div>
+      </a>
+      <a href="../tools/base64-encoder-decoder.html" class="rel-card">
+        <div class="rel-icon" style="background:rgba(99,102,241,.15)">📦</div>
+        <div><div class="rel-name">Base64 Encoder</div><div class="rel-desc">Encode and decode Base64</div></div>
+      </a>
+      <a href="../tools/regex-tester.html" class="rel-card">
+        <div class="rel-icon" style="background:rgba(6,182,212,.15)">⚡</div>
+        <div><div class="rel-name">Regex Tester</div><div class="rel-desc">Test regular expressions live</div></div>
+      </a>
+      <a href="../tools/hash-generator.html" class="rel-card">
+        <div class="rel-icon" style="background:rgba(239,68,68,.15)">🔑</div>
+        <div><div class="rel-name">Hash Generator</div><div class="rel-desc">MD5, SHA-256 and more</div></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta fi-anim">
+    <h2>Design With Confidence</h2>
+    <p>Pick the perfect color, check accessibility, generate palettes and export CSS — all in one place.</p>
+    <button class="btn btn-prim" onclick="document.getElementById('colorPicker').click()">Open Color Picker →</button>
+  </div>
+</main>
+
+<footer>
+  <nav class="footer-links" aria-label="Footer navigation">
+    <a href="../index.html">Home</a>
+    <a href="./about.html">About</a>
+    <a href="./contact.html">Contact</a>
+    <a href="./privacy.html">Privacy Policy</a>
+  </nav>
+  <p class="footer-copy">© 2026 QuickTools. Free tools for designers and developers.</p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span id="toastIcon">✅</span><span id="toastMsg">Copied!</span>
+</div>
+
+<script>
+// ====================================================
+// COLOR ENGINE
+// ====================================================
+let currentColor = { r:249, g:115, b:22, a:1 };
+let paletteType = 'mono';
+let gradType = 'linear';
+let skipUpdate = false;
+
+// ---- CONVERSIONS ----
+function rgbToHex(r,g,b){return '#'+[r,g,b].map(v=>Math.round(v).toString(16).padStart(2,'0')).join('').toUpperCase()}
+function hexToRgb(hex){hex=hex.replace('#','');if(hex.length===3)hex=hex.split('').map(c=>c+c).join('');const n=parseInt(hex,16);return{r:(n>>16)&255,g:(n>>8)&255,b:n&255}}
+function rgbToHsl(r,g,b){r/=255;g/=255;b/=255;const max=Math.max(r,g,b),min=Math.min(r,g,b);let h,s,l=(max+min)/2;if(max===min){h=s=0}else{const d=max-min;s=l>.5?d/(2-max-min):d/(max+min);switch(max){case r:h=(g-b)/d+(g<b?6:0);break;case g:h=(b-r)/d+2;break;case b:h=(r-g)/d+4;break}h/=6}return{h:Math.round(h*360),s:Math.round(s*100),l:Math.round(l*100)}}
+function hslToRgb(h,s,l){s/=100;l/=100;const k=n=>(n+h/30)%12,a=s*Math.min(l,1-l),f=n=>l-a*Math.max(-1,Math.min(k(n)-3,Math.min(9-k(n),1)));return{r:Math.round(f(0)*255),g:Math.round(f(8)*255),b:Math.round(f(4)*255)}}
+function rgbToHsv(r,g,b){r/=255;g/=255;b/=255;const max=Math.max(r,g,b),min=Math.min(r,g,b),d=max-min;let h;const s=max?d/max:0,v=max;if(d===0){h=0}else{switch(max){case r:h=(g-b)/d+(g<b?6:0);break;case g:h=(b-r)/d+2;break;case b:h=(r-g)/d+4;break}h/=6}return{h:Math.round(h*360),s:Math.round(s*100),v:Math.round(v*100)}}
+function rgbToCmyk(r,g,b){r/=255;g/=255;b/=255;const k=1-Math.max(r,g,b);if(k===1)return{c:0,m:0,y:0,k:100};return{c:Math.round((1-r-k)/(1-k)*100),m:Math.round((1-g-k)/(1-k)*100),y:Math.round((1-b-k)/(1-k)*100),k:Math.round(k*100)}}
+function cmykToRgb(c,m,y,k){c/=100;m/=100;y/=100;k/=100;return{r:Math.round(255*(1-c)*(1-k)),g:Math.round(255*(1-m)*(1-k)),b:Math.round(255*(1-y)*(1-k))}}
+function relativeLuminance(r,g,b){const f=v=>{v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)};return .2126*f(r)+.7152*f(g)+.0722*f(b)}
+function contrastRatio(l1,l2){const hi=Math.max(l1,l2),lo=Math.min(l1,l2);return((hi+.05)/(lo+.05))}
+function hueToHex(h){const {r,g,b}=hslToRgb(h,100,50);return rgbToHex(r,g,b)}
+
+// ---- UPDATE ALL FROM RGB ----
+function updateAll(source){
+  const {r,g,b,a}=currentColor;
+  const hex=rgbToHex(r,g,b);
+  const hsl=rgbToHsl(r,g,b);
+  const hsv=rgbToHsv(r,g,b);
+  const cmyk=rgbToCmyk(r,g,b);
+  const lum=relativeLuminance(r,g,b);
+  const lumWhite=relativeLuminance(255,255,255);
+  const lumBlack=relativeLuminance(0,0,0);
+  const ratW=contrastRatio(lum,lumWhite);
+  const ratB=contrastRatio(lum,lumBlack);
+
+  skipUpdate=true;
+
+  // Native picker + hex input
+  if(source!=='picker') document.getElementById('colorPicker').value=hex;
+  if(source!=='hex') document.getElementById('hexInput').value=hex.replace('#','');
+
+  // Sliders
+  if(source!=='rgb'){
+    document.getElementById('rSlider').value=r;
+    document.getElementById('gSlider').value=g;
+    document.getElementById('bSlider').value=b;
+  }
+  document.getElementById('aSlider').value=Math.round(a*100);
+
+  if(source!=='hsl'){
+    document.getElementById('hSlider').value=hsl.h;
+    document.getElementById('sSlider').value=hsl.s;
+    document.getElementById('lSlider').value=hsl.l;
+    document.getElementById('hVal').textContent=hsl.h+'°';
+    document.getElementById('sVal').textContent=hsl.s+'%';
+    document.getElementById('lVal').textContent=hsl.l+'%';
+  }
+
+  // Labels
+  document.getElementById('rVal').textContent=r;
+  document.getElementById('gVal').textContent=g;
+  document.getElementById('bVal').textContent=b;
+  document.getElementById('aVal').textContent=Math.round(a*100)+'%';
+
+  // Manual fields
+  if(source!=='mrgb'){document.getElementById('mR').value=r;document.getElementById('mG').value=g;document.getElementById('mB').value=b}
+  if(source!=='mhsl'){document.getElementById('mH').value=hsl.h;document.getElementById('mS').value=hsl.s;document.getElementById('mL').value=hsl.l}
+  if(source!=='mcmyk'){document.getElementById('mC').value=cmyk.c;document.getElementById('mM').value=cmyk.m;document.getElementById('mY').value=cmyk.y;document.getElementById('mK').value=cmyk.k}
+
+  // Dashboard
+  document.getElementById('dHex').textContent=hex;
+  document.getElementById('dRgb').textContent=`${r},${g},${b}`;
+  document.getElementById('dHsl').textContent=`${hsl.h}°,${hsl.s}%,${hsl.l}%`;
+  document.getElementById('dCmyk').textContent=`${cmyk.c},${cmyk.m},${cmyk.y},${cmyk.k}`;
+  document.getElementById('dHsv').textContent=`${hsv.h}°,${hsv.s}%,${hsv.v}%`;
+  document.getElementById('dRgba').textContent=`${r},${g},${b},${a}`;
+  document.getElementById('dLum').textContent=lum.toFixed(3);
+  document.getElementById('dContrast').textContent=ratW.toFixed(2)+':1';
+
+  // Preview
+  const rgba=`rgba(${r},${g},${b},${a})`;
+  document.getElementById('bigPreview').style.background=rgba;
+  document.getElementById('bigPreview').style.boxShadow=`0 8px 40px ${rgba}66`;
+  const fg=lum>.179?'#000':'#fff';
+  document.getElementById('previewLabel').style.color=fg;
+
+  // Quick CSS
+  document.getElementById('quickCss').textContent=`color: ${hex};\nbackground-color: ${hex};\nborder-color: ${hex};`;
+
+  // Accessibility
+  document.getElementById('contrastWhiteBox').style.background='#fff';
+  document.getElementById('contrastWhiteBox').style.color=hex;
+  document.getElementById('contrastWhiteText').textContent=`${hex} on White`;
+  document.getElementById('ratioWhite').textContent=ratW.toFixed(2)+':1';
+  setAA('aa-w','aaa-w',ratW);
+  document.getElementById('contrastBlackBox').style.background='#000';
+  document.getElementById('contrastBlackBox').style.color=hex;
+  document.getElementById('contrastBlackText').textContent=`${hex} on Black`;
+  document.getElementById('ratioBlack').textContent=ratB.toFixed(2)+':1';
+  setAA('aa-b','aaa-b',ratB);
+
+  // CSS Export
+  updateCSSExport(hex,r,g,b,hsl,a);
+
+  // Palette
+  updatePalette(hsl.h,hsl.s,hsl.l);
+
+  // Gradient
+  updateGradient(hex);
+
+  // Tailwind match
+  updateTailwindMatch(r,g,b);
+
+  skipUpdate=false;
+}
+
+function setAA(aaId,aaaId,ratio){
+  const aa=document.getElementById(aaId),aaa=document.getElementById(aaaId);
+  aa.textContent=ratio>=4.5?'✓ Pass':'✗ Fail';
+  aa.className='cs-val '+(ratio>=4.5?'pass':'fail');
+  aaa.textContent=ratio>=7?'✓ Pass':'✗ Fail';
+  aaa.className='cs-val '+(ratio>=7?'pass':'fail');
+}
+
+function updateCSSExport(hex,r,g,b,hsl,a){
+  const out=document.getElementById('cssFullOutput');
+  out.textContent=`:root {\n  --color-base: ${hex};\n  --color-rgb: ${r}, ${g}, ${b};\n  --color-hsl: ${hsl.h}deg ${hsl.s}% ${hsl.l}%;\n  --color-alpha: rgba(${r}, ${g}, ${b}, ${a});\n  --color-light: hsl(${hsl.h}deg ${hsl.s}% ${Math.min(hsl.l+20,95)}%);\n  --color-dark: hsl(${hsl.h}deg ${hsl.s}% ${Math.max(hsl.l-20,5)}%);\n  --color-muted: hsl(${hsl.h}deg 30% ${hsl.l}%);\n}`;
+}
+
+// ---- PALETTE ----
+function generatePaletteColors(h,s,l,type){
+  switch(type){
+    case 'mono':return[0,40,60,70,80,90].map(ll=>hslToRgb(h,s,ll));
+    case 'analogous':return[-30,-15,0,15,30].map(dh=>hslToRgb((h+dh+360)%360,s,l));
+    case 'complementary':return[0,180].flatMap(dh=>[.8,.6,1,.6,.8].map((ll,i)=>hslToRgb((h+dh)%360,s,30+i*15)));
+    case 'triadic':return[0,120,240].flatMap(dh=>[l-10,l,l+10].map(ll=>hslToRgb((h+dh)%360,s,Math.max(10,Math.min(90,ll)))));
+    case 'split':return[0,150,210].flatMap(dh=>[l-10,l,l+10].map(ll=>hslToRgb((h+dh)%360,s,Math.max(10,Math.min(90,ll)))));
+    default:return[];
+  }
+}
+
+function updatePalette(h,s,l){
+  const colors=generatePaletteColors(h,s,l,paletteType);
+  const row=document.getElementById('paletteRow');
+  row.innerHTML='';
+  colors.forEach(({r,g,b})=>{
+    const hex=rgbToHex(r,g,b);
+    const div=document.createElement('div');
+    div.className='pal-swatch';
+    div.style.background=hex;
+    div.setAttribute('role','listitem');
+    div.setAttribute('title',hex);
+    div.setAttribute('tabindex','0');
+    div.setAttribute('aria-label',`Color swatch ${hex}`);
+    div.innerHTML=`<span class="pal-hex">${hex}</span>`;
+    div.addEventListener('click',()=>{
+      currentColor={...hexToRgb(hex),a:currentColor.a};
+      updateAll('palette');
+    });
+    div.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){div.click()}});
+    row.appendChild(div);
+  });
+  // Update CSS export box if shown
+  const box=document.getElementById('cssExportBox');
+  if(box.style.display!=='none'){
+    generateCSSPalette();
+  }
+}
+
+function generateCSSPalette(){
+  const swatches=[...document.querySelectorAll('.pal-swatch')];
+  const lines=swatches.map((s,i)=>`  --palette-${i+1}: ${s.style.background};`);
+  document.getElementById('cssExportContent').textContent=`:root {\n${lines.join('\n')}\n}`;
+}
+
+// ---- GRADIENT ----
+function updateGradient(hex){
+  const end=document.getElementById('gradEnd').value;
+  const angle=document.getElementById('gradAngle').value;
+  let css;
+  if(gradType==='linear') css=`linear-gradient(${angle}deg, ${hex}, ${end})`;
+  else if(gradType==='radial') css=`radial-gradient(circle, ${hex}, ${end})`;
+  else css=`conic-gradient(from ${angle}deg, ${hex}, ${end}, ${hex})`;
+  document.getElementById('gradPreview').style.background=css;
+  const prop=gradType==='radial'?'background-image':'background-image';
+  document.getElementById('gradCode').textContent=`background-image: ${css};`;
+}
+
+// ---- TAILWIND ----
+const TW_COLORS={
+  'Slate-500':'#64748b','Slate-700':'#334155',
+  'Gray-500':'#6b7280','Gray-700':'#374151',
+  'Red-500':'#ef4444','Red-400':'#f87171','Red-600':'#dc2626',
+  'Orange-500':'#f97316','Orange-400':'#fb923c','Orange-600':'#ea580c',
+  'Amber-500':'#f59e0b','Yellow-500':'#eab308',
+  'Green-500':'#22c55e','Emerald-500':'#10b981',
+  'Teal-500':'#14b8a6','Cyan-500':'#06b6d4',
+  'Blue-500':'#3b82f6','Blue-400':'#60a5fa','Indigo-500':'#6366f1',
+  'Violet-500':'#8b5cf6','Purple-500':'#a855f7','Fuchsia-500':'#d946ef',
+  'Pink-500':'#ec4899','Rose-500':'#f43f5e',
+  'White':'#ffffff','Black':'#000000'
+};
+function buildTailwindGrid(){
+  const grid=document.getElementById('twGrid');
+  Object.entries(TW_COLORS).forEach(([name,hex])=>{
+    const wrap=document.createElement('div');
+    const chip=document.createElement('div');
+    chip.className='tw-chip';
+    chip.style.background=hex;
+    chip.setAttribute('title',`${name}: ${hex}`);
+    chip.setAttribute('role','listitem');
+    chip.setAttribute('aria-label',`${name} ${hex}`);
+    chip.addEventListener('click',()=>{
+      document.querySelectorAll('.tw-chip').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      currentColor={...hexToRgb(hex),a:currentColor.a};
+      updateAll('tailwind');
+    });
+    const lbl=document.createElement('div');
+    lbl.className='tw-label';lbl.textContent=name;
+    wrap.appendChild(chip);wrap.appendChild(lbl);
+    grid.appendChild(wrap);
+  });
+}
+function updateTailwindMatch(r,g,b){
+  let closest=null,minDist=Infinity;
+  Object.entries(TW_COLORS).forEach(([name,hex])=>{
+    const c=hexToRgb(hex);
+    const d=Math.hypot(r-c.r,g-c.g,b-c.b);
+    if(d<minDist){minDist=d;closest=name}
+  });
+  document.getElementById('twMatch').textContent=closest?`Closest Tailwind color: ${closest} (${TW_COLORS[closest]})`:'';
+}
+
+// ---- EVENT LISTENERS ----
+// Native picker
+document.getElementById('colorPicker').addEventListener('input',e=>{
+  const {r,g,b}=hexToRgb(e.target.value);
+  currentColor={r,g,b,a:currentColor.a};
+  updateAll('picker');
+});
+// HEX input
+document.getElementById('hexInput').addEventListener('input',e=>{
+  const v=e.target.value.replace('#','');
+  if(/^[0-9a-fA-F]{6}$/.test(v)){
+    const {r,g,b}=hexToRgb(v);
+    currentColor={r,g,b,a:currentColor.a};
+    updateAll('hex');
+  }
+});
+// RGB sliders
+['r','g','b'].forEach(ch=>{
+  document.getElementById(ch+'Slider').addEventListener('input',e=>{
+    currentColor[ch]=+e.target.value;
+    document.getElementById(ch+'Val').textContent=e.target.value;
+    if(!skipUpdate) updateAll('rgb');
+  });
+});
+document.getElementById('aSlider').addEventListener('input',e=>{
+  currentColor.a=e.target.value/100;
+  document.getElementById('aVal').textContent=e.target.value+'%';
+  if(!skipUpdate) updateAll('alpha');
+});
+// HSL sliders
+['h','s','l'].forEach(ch=>{
+  document.getElementById(ch+'Slider').addEventListener('input',e=>{
+    if(skipUpdate)return;
+    const h=+document.getElementById('hSlider').value;
+    const s=+document.getElementById('sSlider').value;
+    const l=+document.getElementById('lSlider').value;
+    const {r,g,b}=hslToRgb(h,s,l);
+    currentColor={r,g,b,a:currentColor.a};
+    document.getElementById('hVal').textContent=h+'°';
+    document.getElementById('sVal').textContent=s+'%';
+    document.getElementById('lVal').textContent=l+'%';
+    updateAll('hsl');
+  });
+});
+// Manual RGB
+['mR','mG','mB'].forEach(id=>{
+  document.getElementById(id).addEventListener('input',()=>{
+    if(skipUpdate)return;
+    currentColor.r=Math.max(0,Math.min(255,+document.getElementById('mR').value||0));
+    currentColor.g=Math.max(0,Math.min(255,+document.getElementById('mG').value||0));
+    currentColor.b=Math.max(0,Math.min(255,+document.getElementById('mB').value||0));
+    updateAll('mrgb');
+  });
+});
+// Manual HSL
+['mH','mS','mL'].forEach(id=>{
+  document.getElementById(id).addEventListener('input',()=>{
+    if(skipUpdate)return;
+    const h=+document.getElementById('mH').value;
+    const s=+document.getElementById('mS').value;
+    const l=+document.getElementById('mL').value;
+    const {r,g,b}=hslToRgb(h,s,l);
+    currentColor={r,g,b,a:currentColor.a};
+    updateAll('mhsl');
+  });
+});
+// Manual CMYK
+['mC','mM','mY','mK'].forEach(id=>{
+  document.getElementById(id).addEventListener('input',()=>{
+    if(skipUpdate)return;
+    const {r,g,b}=cmykToRgb(+document.getElementById('mC').value,+document.getElementById('mM').value,+document.getElementById('mY').value,+document.getElementById('mK').value);
+    currentColor={r,g,b,a:currentColor.a};
+    updateAll('mcmyk');
+  });
+});
+
+// Palette types
+document.querySelectorAll('.pal-type').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.pal-type').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false')});
+    btn.classList.add('active');btn.setAttribute('aria-pressed','true');
+    paletteType=btn.dataset.pt;
+    const hsl=rgbToHsl(currentColor.r,currentColor.g,currentColor.b);
+    updatePalette(hsl.h,hsl.s,hsl.l);
+  });
+});
+
+// Gradient type
+document.querySelectorAll('.grad-type').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.grad-type').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false')});
+    btn.classList.add('active');btn.setAttribute('aria-pressed','true');
+    gradType=btn.dataset.gt;
+    updateGradient(rgbToHex(currentColor.r,currentColor.g,currentColor.b));
+  });
+});
+document.getElementById('gradAngle').addEventListener('input',e=>{
+  document.getElementById('gradAngleVal').textContent=e.target.value+'°';
+  updateGradient(rgbToHex(currentColor.r,currentColor.g,currentColor.b));
+});
+document.getElementById('gradEnd').addEventListener('input',()=>{
+  updateGradient(rgbToHex(currentColor.r,currentColor.g,currentColor.b));
+});
+
+// Copy buttons
+function copyText(text,msg='Copied!'){
+  navigator.clipboard.writeText(text).then(()=>showToast(msg,'✅')).catch(()=>{
+    const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);showToast(msg,'✅');
+  });
+}
+document.getElementById('copyHexBtn').addEventListener('click',()=>copyText('#'+document.getElementById('hexInput').value,'HEX copied!'));
+document.getElementById('copyAllBtn').addEventListener('click',()=>{
+  const {r,g,b}=currentColor;
+  const hex=rgbToHex(r,g,b);
+  const hsl=rgbToHsl(r,g,b);
+  const cmyk=rgbToCmyk(r,g,b);
+  copyText(`HEX: ${hex}\nRGB: ${r},${g},${b}\nHSL: ${hsl.h}°,${hsl.s}%,${hsl.l}%\nCMYK: ${cmyk.c},${cmyk.m},${cmyk.y},${cmyk.k}`,'All values copied!');
+});
+document.getElementById('copyCssBtn').addEventListener('click',()=>copyText(document.getElementById('cssFullOutput').textContent,'CSS copied!'));
+document.getElementById('copyGradBtn').addEventListener('click',()=>copyText(document.getElementById('gradCode').textContent,'Gradient CSS copied!'));
+document.getElementById('copyPalBtn').addEventListener('click',()=>{
+  const hexes=[...document.querySelectorAll('.pal-swatch')].map(s=>s.style.background).join(', ');
+  copyText(hexes,'Palette copied!');
+});
+document.getElementById('dlPalBtn').addEventListener('click',()=>{
+  const swatches=[...document.querySelectorAll('.pal-swatch')];
+  const canvas=document.createElement('canvas');
+  const W=swatches.length*80,H=80;
+  canvas.width=W;canvas.height=H;
+  const ctx=canvas.getContext('2d');
+  swatches.forEach((s,i)=>{ctx.fillStyle=s.style.background;ctx.fillRect(i*80,0,80,80)});
+  const a=document.createElement('a');a.download='quicktools-palette.png';a.href=canvas.toDataURL();a.click();
+  showToast('Palette downloaded!','⬇️');
+});
+document.getElementById('cssPalBtn').addEventListener('click',()=>{
+  const box=document.getElementById('cssExportBox');
+  if(box.style.display==='none'){box.style.display='block';generateCSSPalette()}
+  else box.style.display='none';
+});
+
+// Dashboard stat click to copy
+document.querySelectorAll('.dash-stat[tabindex]').forEach(stat=>{
+  stat.addEventListener('click',()=>copyText(stat.querySelector('.ds-val').textContent,'Copied!'));
+  stat.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')stat.click()});
+});
+
+// Random color
+document.getElementById('randomBtn').addEventListener('click',()=>{
+  currentColor={r:Math.floor(Math.random()*256),g:Math.floor(Math.random()*256),b:Math.floor(Math.random()*256),a:currentColor.a};
+  updateAll('random');
+  showToast('Random color generated!','🎲');
+});
+
+// FAQ
+document.querySelectorAll('.fq').forEach(q=>{
+  const toggle=()=>{
+    const item=q.closest('.fi');
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.fi').forEach(f=>f.classList.remove('open'));
+    if(!open){item.classList.add('open');q.setAttribute('aria-expanded','true')}
+    else q.setAttribute('aria-expanded','false');
+  };
+  q.addEventListener('click',toggle);
+  q.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}});
+});
+
+// Theme
+document.getElementById('themeBtn').addEventListener('click',()=>{
+  document.body.classList.toggle('light');
+  document.getElementById('themeBtn').textContent=document.body.classList.contains('light')?'🌙':'☀️';
+});
+
+// Toast
+function showToast(msg,icon='✅'){
+  const t=document.getElementById('toast');
+  document.getElementById('toastMsg').textContent=msg;
+  document.getElementById('toastIcon').textContent=icon;
+  t.classList.add('show');
+  clearTimeout(t._tid);
+  t._tid=setTimeout(()=>t.classList.remove('show'),2400);
+}
+
+// Scroll animations
+const obsv=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obsv.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll('.fi-anim').forEach(el=>obsv.observe(el));
+
+// ---- INIT ----
+buildTailwindGrid();
+updateAll('init');
+</script>
+</body>
+</html>
