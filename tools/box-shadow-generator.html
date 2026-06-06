@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Box Shadow Generator – Create Beautiful Shadows Online | QuickTools</title>
+<meta name="description" content="Generate beautiful CSS box shadows instantly. Free online Box Shadow Generator with live preview, presets, glassmorphism effects and CSS export.">
+<meta name="keywords" content="box shadow generator, css box shadow generator, shadow generator, css shadow tool, online box shadow generator, css generator, box shadow css, shadow css generator, free box shadow generator, web design tool, css visual editor, css shadow maker, shadow designer, frontend developer tool, css effects generator, glassmorphism generator, neumorphism generator, css design tool, ui design generator, web developer tool">
+<link rel="canonical" href="https://quicktools.dev/tools/box-shadow-generator.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="CSS Box Shadow Generator – Create Beautiful Shadows Online">
+<meta property="og:description" content="Generate beautiful CSS box shadows instantly. Free online Box Shadow Generator with live preview, presets, glassmorphism effects and CSS export.">
+<meta property="og:url" content="https://quicktools.dev/tools/box-shadow-generator.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QuickTools">
+<meta property="og:image" content="https://quicktools.dev/og-image.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CSS Box Shadow Generator – QuickTools">
+<meta name="twitter:description" content="Generate beautiful CSS box shadows instantly. Free online tool with live preview and presets.">
+<meta name="twitter:image" content="https://quicktools.dev/og-image.png">
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "CSS Box Shadow Generator",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "url": "https://quicktools.dev/tools/box-shadow-generator.html",
+      "description": "Generate beautiful CSS box shadows instantly with live preview, presets, glassmorphism and neumorphism effects."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://quicktools.dev/" },
+        { "@type": "ListItem", "position": 2, "name": "CSS Box Shadow Generator", "item": "https://quicktools.dev/tools/box-shadow-generator.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is a CSS box shadow?", "acceptedAnswer": { "@type": "Answer", "text": "CSS box-shadow adds shadow effects around an element's frame. You can set multiple shadows with offset, blur, spread, and color values." } },
+        { "@type": "Question", "name": "How do I add multiple box shadows in CSS?", "acceptedAnswer": { "@type": "Answer", "text": "Separate multiple shadow values with commas: box-shadow: 0 2px 10px rgba(0,0,0,0.3), 0 4px 20px rgba(0,0,0,0.1);" } },
+        { "@type": "Question", "name": "What is an inset box shadow?", "acceptedAnswer": { "@type": "Answer", "text": "Adding the 'inset' keyword makes the shadow appear inside the element rather than outside, creating a pressed or recessed effect." } },
+        { "@type": "Question", "name": "What is glassmorphism in CSS?", "acceptedAnswer": { "@type": "Answer", "text": "Glassmorphism is a design style combining backdrop-filter blur, semi-transparent backgrounds, and subtle border highlights to create a frosted glass appearance." } },
+        { "@type": "Question", "name": "What is neumorphism?", "acceptedAnswer": { "@type": "Answer", "text": "Neumorphism (soft UI) uses dual light/dark shadows on same-color backgrounds to simulate extruded or embossed physical objects." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* ============================================================
+   FONTS
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ============================================================
+   RESET & ROOT
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --bg: #09090f;
+  --bg2: #0e0e1a;
+  --bg3: #13131f;
+  --surface: rgba(255,255,255,0.04);
+  --surface2: rgba(255,255,255,0.07);
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.14);
+  --text: #f0f0ff;
+  --text2: #9090b0;
+  --text3: #6060808;
+  --accent: #7c5cfc;
+  --accent2: #a78bfa;
+  --cyan: #22d3ee;
+  --pink: #f472b6;
+  --green: #34d399;
+  --orange: #fb923c;
+  --radius: 16px;
+  --radius2: 24px;
+  --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+.light {
+  --bg: #f0f0f8;
+  --bg2: #e8e8f5;
+  --bg3: #ffffff;
+  --surface: rgba(255,255,255,0.7);
+  --surface2: rgba(255,255,255,0.9);
+  --border: rgba(100,100,200,0.12);
+  --border2: rgba(100,100,200,0.22);
+  --text: #1a1a2e;
+  --text2: #5050708;
+  --text3: #8888aa;
+  --accent: #6d44fa;
+  --accent2: #9b72ff;
+  --cyan: #0891b2;
+  --pink: #db2777;
+  --green: #059669;
+  --orange: #ea580c;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background var(--transition), color var(--transition);
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+/* ============================================================
+   CANVAS BACKGROUND
+   ============================================================ */
+#bg-canvas {
+  position: fixed; inset: 0; z-index: 0;
+  pointer-events: none; opacity: 0.45;
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+/* ============================================================
+   NAV
+   ============================================================ */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(9,9,15,0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  transition: background var(--transition);
+}
+.light nav { background: rgba(240,240,248,0.85); }
+.nav-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px; gap: 24px;
+}
+.nav-logo {
+  font-family: var(--font-head); font-size: 20px; font-weight: 800;
+  text-decoration: none; color: var(--text);
+  display: flex; align-items: center; gap: 8px;
+}
+.logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block; }
+.nav-links { display: flex; gap: 8px; align-items: center; }
+.nav-links a {
+  color: var(--text2); text-decoration: none; font-size: 14px; font-weight: 500;
+  padding: 6px 14px; border-radius: 8px;
+  transition: color var(--transition), background var(--transition);
+}
+.nav-links a:hover { color: var(--text); background: var(--surface2); }
+.nav-right { display: flex; gap: 12px; align-items: center; }
+.theme-btn {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: var(--surface); border: 1px solid var(--border);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  font-size: 16px; transition: all var(--transition); color: var(--text);
+}
+.theme-btn:hover { background: var(--surface2); border-color: var(--accent); }
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+.breadcrumb {
+  padding: 16px 0;
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--text2);
+}
+.breadcrumb a { color: var(--text2); text-decoration: none; transition: color var(--transition); }
+.breadcrumb a:hover { color: var(--accent2); }
+.breadcrumb span { opacity: 0.5; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+  position: relative;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 16px; border-radius: 100px;
+  background: rgba(124,92,252,0.12);
+  border: 1px solid rgba(124,92,252,0.3);
+  font-size: 13px; font-weight: 500; color: var(--accent2);
+  margin-bottom: 24px;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+.hero h1 {
+  font-family: var(--font-head);
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 800; line-height: 1.1;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--text) 30%, var(--accent2) 60%, var(--cyan) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p {
+  font-size: 18px; color: var(--text2); max-width: 600px; margin: 0 auto 40px;
+  line-height: 1.7;
+}
+.trust-badges {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+  margin-bottom: 0;
+}
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 16px; border-radius: 100px;
+  background: var(--surface); border: 1px solid var(--border);
+  font-size: 13px; font-weight: 500; color: var(--text2);
+  transition: all var(--transition);
+}
+.badge:hover { border-color: var(--accent); color: var(--accent2); background: var(--surface2); }
+.badge-icon { font-size: 14px; }
+
+/* ============================================================
+   MAIN TOOL GRID
+   ============================================================ */
+.tool-section { padding: 48px 0 64px; }
+.tool-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+@media(max-width:900px){ .tool-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   GLASS PANEL
+   ============================================================ */
+.glass-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+.glass-panel:hover { border-color: var(--border2); }
+.panel-header {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.panel-title {
+  font-family: var(--font-head); font-size: 15px; font-weight: 700;
+  color: var(--text); display: flex; align-items: center; gap: 8px;
+}
+.panel-title-icon {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--cyan));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+}
+.panel-body { padding: 20px 24px; }
+
+/* ============================================================
+   CONTROLS
+   ============================================================ */
+.control-group { margin-bottom: 20px; }
+.control-label {
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 13px; font-weight: 600; color: var(--text2);
+  margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.06em;
+}
+.control-value {
+  font-family: var(--font-mono); font-size: 12px; color: var(--accent2);
+  background: rgba(124,92,252,0.1); padding: 2px 8px; border-radius: 6px;
+}
+.slider-wrap { position: relative; }
+input[type=range] {
+  width: 100%; height: 6px; cursor: pointer;
+  -webkit-appearance: none; appearance: none;
+  background: var(--border); border-radius: 3px;
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  height: 6px; border-radius: 3px;
+  background: linear-gradient(to right, var(--accent) 0%, var(--accent) var(--pct,50%), var(--border) var(--pct,50%));
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 0 3px var(--accent), 0 2px 8px rgba(0,0,0,0.4);
+  margin-top: -6px; cursor: pointer;
+  transition: transform 0.15s;
+}
+input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+input[type=range]::-moz-range-thumb {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: white; border: none;
+  box-shadow: 0 0 0 3px var(--accent), 0 2px 8px rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+/* Color row */
+.color-row { display: flex; gap: 12px; align-items: center; }
+input[type=color] {
+  width: 44px; height: 44px; border: 2px solid var(--border);
+  border-radius: 10px; cursor: pointer; background: none; padding: 2px;
+  flex-shrink: 0;
+}
+input[type=color]::-webkit-color-swatch-wrapper { padding: 0; border-radius: 8px; }
+input[type=color]::-webkit-color-swatch { border: none; border-radius: 6px; }
+.color-hex-input {
+  flex: 1; background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 10px 14px; color: var(--text);
+  font-family: var(--font-mono); font-size: 13px; outline: none;
+  transition: border-color var(--transition);
+}
+.color-hex-input:focus { border-color: var(--accent); }
+
+/* Toggle row */
+.toggle-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.toggle-label { font-size: 13px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.06em; }
+.toggle {
+  width: 44px; height: 24px; border-radius: 12px;
+  background: var(--border); border: none; cursor: pointer;
+  position: relative; transition: background var(--transition);
+}
+.toggle.on { background: var(--accent); }
+.toggle::after {
+  content: ''; position: absolute; top: 3px; left: 3px;
+  width: 18px; height: 18px; border-radius: 50%; background: white;
+  transition: left var(--transition), box-shadow var(--transition);
+}
+.toggle.on::after { left: 23px; box-shadow: 0 0 8px var(--accent); }
+
+/* Layer management */
+.layers-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.layer-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 12px; border-radius: 10px;
+  background: var(--bg2); border: 1px solid var(--border);
+  cursor: pointer; transition: all var(--transition);
+}
+.layer-item.active { border-color: var(--accent); background: rgba(124,92,252,0.08); }
+.layer-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.layer-name { font-size: 12px; color: var(--text2); flex: 1; font-family: var(--font-mono); }
+.layer-del {
+  width: 20px; height: 20px; border-radius: 6px; border: none;
+  background: rgba(255,100,100,0.1); color: #ff6464; cursor: pointer;
+  font-size: 12px; display: flex; align-items: center; justify-content: center;
+  transition: background var(--transition);
+}
+.layer-del:hover { background: rgba(255,100,100,0.25); }
+.add-layer-btn {
+  width: 100%; padding: 10px; border-radius: 10px;
+  background: rgba(124,92,252,0.08); border: 1px dashed rgba(124,92,252,0.3);
+  color: var(--accent2); font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: all var(--transition); font-family: var(--font-body);
+}
+.add-layer-btn:hover { background: rgba(124,92,252,0.15); border-color: var(--accent); }
+
+/* Buttons */
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 20px; border-radius: 12px;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: all var(--transition); text-decoration: none;
+  border: none; font-family: var(--font-body);
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), #a855f7);
+  color: white;
+  box-shadow: 0 4px 20px rgba(124,92,252,0.35);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(124,92,252,0.5); }
+.btn-secondary {
+  background: var(--surface2); border: 1px solid var(--border);
+  color: var(--text2);
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent2); background: rgba(124,92,252,0.08); }
+.btn-copy {
+  background: rgba(34,211,238,0.1); border: 1px solid rgba(34,211,238,0.25);
+  color: var(--cyan);
+}
+.btn-copy:hover { background: rgba(34,211,238,0.2); border-color: var(--cyan); }
+
+/* ============================================================
+   PREVIEW PANEL (right side)
+   ============================================================ */
+.preview-panel { display: flex; flex-direction: column; gap: 20px; }
+
+.preview-stage {
+  min-height: 320px;
+  border-radius: var(--radius2);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+  transition: background var(--transition);
+}
+.preview-bg-checker {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.03) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.03) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+.preview-card {
+  width: 200px; height: 140px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #1e1e3f, #2a1a4e);
+  position: relative; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.5);
+  transition: box-shadow var(--transition);
+  cursor: default;
+}
+.light .preview-card {
+  background: linear-gradient(135deg, #e8e8ff, #f0e8ff);
+  color: rgba(0,0,20,0.35);
+}
+.preview-bg-controls {
+  position: absolute; bottom: 16px; right: 16px; display: flex; gap: 8px; z-index: 10;
+}
+.bg-swatch {
+  width: 24px; height: 24px; border-radius: 50%; cursor: pointer;
+  border: 2px solid transparent; transition: border-color var(--transition);
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.1);
+}
+.bg-swatch.active { border-color: white; }
+
+/* CSS Output */
+.css-output {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius2); overflow: hidden;
+}
+.css-output-header {
+  padding: 14px 20px; display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+.css-output-title { font-size: 13px; font-weight: 600; color: var(--text2); font-family: var(--font-mono); }
+.css-copy-btn {
+  padding: 6px 14px; border-radius: 8px;
+  background: rgba(34,211,238,0.1); border: 1px solid rgba(34,211,238,0.2);
+  color: var(--cyan); font-size: 12px; font-weight: 600; cursor: pointer;
+  font-family: var(--font-body); transition: all var(--transition);
+}
+.css-copy-btn:hover { background: rgba(34,211,238,0.2); }
+.css-code {
+  padding: 20px; font-family: var(--font-mono); font-size: 13px;
+  color: var(--text2); line-height: 1.8; white-space: pre-wrap; word-break: break-all;
+}
+.css-prop { color: var(--cyan); }
+.css-val { color: var(--accent2); }
+
+/* ============================================================
+   PRESETS SECTION
+   ============================================================ */
+.section { padding: 32px 0; }
+.section-header { margin-bottom: 28px; }
+.section-eyebrow {
+  font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--accent2); margin-bottom: 8px;
+}
+.section-title {
+  font-family: var(--font-head); font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800; color: var(--text); line-height: 1.2;
+}
+.section-title span {
+  background: linear-gradient(135deg, var(--accent2), var(--cyan));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.section-sub { color: var(--text2); margin-top: 10px; max-width: 600px; }
+
+.presets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+.preset-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px 16px;
+  cursor: pointer; transition: all var(--transition); text-align: center;
+}
+.preset-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.preset-preview {
+  width: 80px; height: 56px; border-radius: 12px;
+  margin: 0 auto 14px; transition: box-shadow var(--transition);
+  background: linear-gradient(135deg, #1e1e3f, #2a2a50);
+}
+.light .preset-preview {
+  background: linear-gradient(135deg, #e8e8ff, #f0f0ff);
+}
+.preset-name { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 4px; font-family: var(--font-head); }
+.preset-sub { font-size: 11px; color: var(--text2); }
+
+/* ============================================================
+   CONTENT / SEO SECTION
+   ============================================================ */
+.content-section {
+  padding: 64px 0;
+  border-top: 1px solid var(--border);
+}
+.content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+@media(max-width:768px){ .content-grid { grid-template-columns: 1fr; } }
+.content-article h2 {
+  font-family: var(--font-head); font-size: 26px; font-weight: 800;
+  color: var(--text); margin-bottom: 16px; line-height: 1.3;
+}
+.content-article h3 {
+  font-family: var(--font-head); font-size: 18px; font-weight: 700;
+  color: var(--text); margin: 24px 0 10px;
+}
+.content-article p { color: var(--text2); line-height: 1.8; margin-bottom: 16px; }
+.content-article ul { color: var(--text2); padding-left: 20px; margin-bottom: 16px; }
+.content-article ul li { margin-bottom: 8px; line-height: 1.7; }
+.code-block {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px 20px; margin: 16px 0;
+  font-family: var(--font-mono); font-size: 12px; color: var(--accent2);
+  line-height: 1.7; overflow-x: auto;
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq-section { padding: 64px 0; border-top: 1px solid var(--border); }
+.faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden; transition: border-color var(--transition);
+}
+.faq-item:hover { border-color: var(--border2); }
+.faq-q {
+  padding: 20px 24px; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  font-weight: 600; color: var(--text); font-size: 15px;
+  list-style: none;
+}
+.faq-q::after {
+  content: '+'; font-size: 20px; color: var(--accent2);
+  transition: transform var(--transition); flex-shrink: 0;
+}
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease;
+  color: var(--text2); font-size: 14px; line-height: 1.8;
+  padding: 0 24px;
+}
+.faq-item.open .faq-a { max-height: 200px; padding: 0 24px 20px; }
+
+/* ============================================================
+   RELATED TOOLS
+   ============================================================ */
+.related-section { padding: 64px 0; border-top: 1px solid var(--border); }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.related-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px;
+  text-decoration: none; display: block; transition: all var(--transition);
+  position: relative; overflow: hidden;
+}
+.related-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(124,92,252,0.06), transparent);
+  opacity: 0; transition: opacity var(--transition);
+}
+.related-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.related-card:hover::before { opacity: 1; }
+.related-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--cyan));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; margin-bottom: 14px;
+}
+.related-card h4 { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.related-card p { font-size: 13px; color: var(--text2); line-height: 1.6; }
+
+/* ============================================================
+   CTA BANNER
+   ============================================================ */
+.cta-banner {
+  padding: 64px 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.cta-inner {
+  background: linear-gradient(135deg, rgba(124,92,252,0.12), rgba(34,211,238,0.06));
+  border: 1px solid rgba(124,92,252,0.25);
+  border-radius: 28px; padding: 56px 40px;
+  position: relative; overflow: hidden;
+}
+.cta-glow {
+  position: absolute; width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,92,252,0.15), transparent 70%);
+  top: -100px; left: 50%; transform: translateX(-50%);
+  pointer-events: none;
+}
+.cta-inner h2 {
+  font-family: var(--font-head); font-size: clamp(28px, 4vw, 48px);
+  font-weight: 800; color: var(--text); margin-bottom: 16px; position: relative;
+}
+.cta-inner p { color: var(--text2); font-size: 17px; max-width: 500px; margin: 0 auto 32px; position: relative; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 0 32px;
+}
+.footer-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 20px;
+}
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { font-size: 13px; color: var(--text2); text-decoration: none; transition: color var(--transition); }
+.footer-links a:hover { color: var(--accent2); }
+.footer-copy { font-size: 13px; color: var(--text2); }
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+.toast {
+  position: fixed; bottom: 32px; right: 32px; z-index: 9999;
+  padding: 14px 22px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), #a855f7);
+  color: white; font-size: 14px; font-weight: 600;
+  box-shadow: 0 8px 32px rgba(124,92,252,0.4);
+  transform: translateY(80px); opacity: 0;
+  transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  pointer-events: none;
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+
+/* ============================================================
+   DIVIDER
+   ============================================================ */
+.divider { height: 1px; background: var(--border); margin: 16px 0; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:640px){
+  .nav-links { display: none; }
+  .hero { padding: 48px 0 32px; }
+  .tool-section { padding: 32px 0 48px; }
+  .content-section, .faq-section, .related-section, .cta-banner { padding: 48px 0; }
+  .panel-body { padding: 16px; }
+  .btn-row { flex-direction: column; }
+  .btn { justify-content: center; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+
+/* Animation for number inputs */
+@keyframes pulse-glow {
+  0%,100% { box-shadow: 0 0 0 0 rgba(124,92,252,0); }
+  50% { box-shadow: 0 0 0 4px rgba(124,92,252,0.2); }
+}
+.preview-card { animation: pulse-glow 3s ease-in-out infinite; }
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<!-- NAV -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" aria-label="QuickTools Home">
+      <span class="logo-dot"></span>QuickTools
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle dark/light mode">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+<div class="container">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <span aria-current="page">CSS Box Shadow Generator</span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-badge">✦ Free CSS Design Tool</div>
+    <h1 id="hero-heading">CSS Box Shadow<br>Generator</h1>
+    <p>Design stunning shadows visually. Multi-layer, glassmorphism presets, neumorphism, live preview — copy-ready CSS instantly.</p>
+    <div class="trust-badges" role="list">
+      <span class="badge" role="listitem"><span class="badge-icon">✅</span> 100% Free</span>
+      <span class="badge" role="listitem"><span class="badge-icon">⚡</span> No Installation</span>
+      <span class="badge" role="listitem"><span class="badge-icon">🔒</span> Works Offline</span>
+      <span class="badge" role="listitem"><span class="badge-icon">🎨</span> Designer Friendly</span>
+      <span class="badge" role="listitem"><span class="badge-icon">💻</span> Developer Ready</span>
+    </div>
+  </section>
+
+  <!-- TOOL -->
+  <section class="tool-section" aria-label="Shadow generator tool">
+    <div class="tool-grid">
+
+      <!-- LEFT: CONTROLS -->
+      <div>
+        <!-- Layers Panel -->
+        <div class="glass-panel" style="margin-bottom:20px">
+          <div class="panel-header">
+            <div class="panel-title"><div class="panel-title-icon">⚡</div>Shadow Layers</div>
+          </div>
+          <div class="panel-body">
+            <div class="layers-list" id="layersList"></div>
+            <button class="add-layer-btn" id="addLayerBtn">+ Add Layer</button>
+          </div>
+        </div>
+
+        <!-- Controls Panel -->
+        <div class="glass-panel">
+          <div class="panel-header">
+            <div class="panel-title"><div class="panel-title-icon">🎛</div>Controls</div>
+          </div>
+          <div class="panel-body">
+
+            <div class="toggle-row">
+              <span class="toggle-label">Inset Shadow</span>
+              <button class="toggle" id="insetToggle" aria-label="Toggle inset shadow" aria-pressed="false"></button>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Horizontal Offset <span class="control-value" id="hVal">0px</span></div>
+              <div class="slider-wrap"><input type="range" id="hOffset" min="-80" max="80" value="0" aria-label="Horizontal offset"></div>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Vertical Offset <span class="control-value" id="vVal">8px</span></div>
+              <div class="slider-wrap"><input type="range" id="vOffset" min="-80" max="80" value="8" aria-label="Vertical offset"></div>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Blur Radius <span class="control-value" id="blurVal">24px</span></div>
+              <div class="slider-wrap"><input type="range" id="blurRadius" min="0" max="120" value="24" aria-label="Blur radius"></div>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Spread Radius <span class="control-value" id="spreadVal">0px</span></div>
+              <div class="slider-wrap"><input type="range" id="spreadRadius" min="-40" max="40" value="0" aria-label="Spread radius"></div>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Opacity <span class="control-value" id="opacityVal">40%</span></div>
+              <div class="slider-wrap"><input type="range" id="shadowOpacity" min="0" max="100" value="40" aria-label="Shadow opacity"></div>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Shadow Color</div>
+              <div class="color-row">
+                <input type="color" id="shadowColor" value="#7c5cfc" aria-label="Shadow color picker">
+                <input type="text" class="color-hex-input" id="colorHex" value="#7c5cfc" maxlength="7" aria-label="Color hex value">
+              </div>
+            </div>
+
+            <div class="btn-row">
+              <button class="btn btn-primary" id="resetBtn">↺ Reset</button>
+              <button class="btn btn-copy" id="copyCSS">⎘ Copy CSS</button>
+              <button class="btn btn-secondary" id="downloadCSS">⬇ Download</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: PREVIEW -->
+      <div class="preview-panel">
+        <!-- Live Preview -->
+        <div class="glass-panel">
+          <div class="panel-header">
+            <div class="panel-title"><div class="panel-title-icon">👁</div>Live Preview</div>
+          </div>
+          <div class="panel-body" style="padding:0">
+            <div class="preview-stage" id="previewStage">
+              <div class="preview-bg-checker"></div>
+              <div class="preview-card" id="previewCard">Preview</div>
+              <div class="preview-bg-controls">
+                <div class="bg-swatch active" style="background:#09090f" data-bg="#09090f" title="Dark"></div>
+                <div class="bg-swatch" style="background:#1e293b" data-bg="#1e293b" title="Navy"></div>
+                <div class="bg-swatch" style="background:#f8f8ff" data-bg="#f8f8ff" title="White"></div>
+                <div class="bg-swatch" style="background:#e8f4ff" data-bg="#e8f4ff" title="Light Blue"></div>
+                <div class="bg-swatch" style="background:#f0f0f0" data-bg="#f0f0f0" title="Gray"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CSS Output -->
+        <div class="css-output">
+          <div class="css-output-header">
+            <span class="css-output-title">/* Generated CSS */</span>
+            <button class="css-copy-btn" id="cssQuickCopy" aria-label="Copy CSS">Copy</button>
+          </div>
+          <div class="css-code" id="cssOutput" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /container -->
+
+<!-- PRESETS SECTION -->
+<section class="section" style="background: var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);" aria-label="Shadow presets">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Design Library</div>
+      <h2 class="section-title">Shadow <span>Presets</span></h2>
+      <p class="section-sub">Click any preset to apply it instantly to your preview.</p>
+    </div>
+    <div class="presets-grid" id="presetsGrid" role="list"></div>
+  </div>
+</section>
+
+<div class="container">
+
+<!-- CONTENT -->
+<section class="content-section" aria-label="About CSS box shadows">
+  <div class="content-grid">
+    <article class="content-article">
+      <h2>What Is a CSS Box Shadow?</h2>
+      <p>The CSS <code>box-shadow</code> property adds one or more shadow effects around an element's frame. It is one of the most versatile styling tools in modern web design, used to create everything from subtle depth cues to dramatic neon glows and complex neumorphic interfaces.</p>
+      <p>A single shadow value accepts five parameters: the optional <strong>inset</strong> keyword, horizontal offset, vertical offset, blur radius, spread radius, and a color value. Combine multiple shadows separated by commas for layered, expressive depth.</p>
+      <div class="code-block">/* Basic box-shadow syntax */
+.element {
+  box-shadow: [inset] h-offset v-offset blur spread color;
+}
+
+/* Example: Soft card shadow */
+.card {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Example: Layered shadows */
+.premium-card {
+  box-shadow:
+    0 2px 8px rgba(0,0,0,0.08),
+    0 8px 24px rgba(0,0,0,0.12),
+    0 24px 64px rgba(0,0,0,0.08);
+}</div>
+
+      <h3>Shadow Parameters Explained</h3>
+      <ul>
+        <li><strong>Horizontal Offset:</strong> Positive moves right, negative moves left. Zero centers the shadow.</li>
+        <li><strong>Vertical Offset:</strong> Positive moves down, negative moves up.</li>
+        <li><strong>Blur Radius:</strong> Higher values produce softer, more diffused shadows. Zero creates a hard edge.</li>
+        <li><strong>Spread Radius:</strong> Expands or shrinks the shadow. Negative values create an inward contracted shadow.</li>
+        <li><strong>Color:</strong> Use <code>rgba()</code> for alpha transparency — critical for natural-looking shadows.</li>
+        <li><strong>Inset:</strong> Moves the shadow inside the element, creating pressed or engraved effects.</li>
+      </ul>
+
+      <h3>Multiple Shadow Layers</h3>
+      <p>Professional UI designers rarely use a single shadow. Layering three or more shadows — each at different blur levels and opacities — creates convincing physical depth. The classic technique uses a short sharp shadow for contact shadow, a medium ambient shadow, and a large soft penumbra shadow.</p>
+      <div class="code-block">/* Professional multi-layer technique */
+.card {
+  box-shadow:
+    0 1px 3px rgba(0,0,0,0.12),   /* contact */
+    0 4px 16px rgba(0,0,0,0.09),  /* ambient */
+    0 16px 48px rgba(0,0,0,0.06); /* penumbra */
+}</div>
+    </article>
+
+    <article class="content-article">
+      <h2>Glassmorphism & Neumorphism</h2>
+      <p>Two of the most influential design trends of the 2020s use <code>box-shadow</code> as a core technique.</p>
+
+      <h3>Glassmorphism Design</h3>
+      <p>Glassmorphism replicates frosted glass: a semi-transparent background with <code>backdrop-filter: blur()</code>, a subtle border on the light-facing edges, and a soft shadow below. The aesthetic is strongly associated with Apple's macOS Big Sur and modern SaaS interfaces.</p>
+      <div class="code-block">/* Glassmorphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}</div>
+
+      <h3>Neumorphism (Soft UI)</h3>
+      <p>Neumorphism places elements on a same-colored background and uses <em>two</em> shadows — one lighter (highlight) and one darker (shadow) — to simulate an extruded or embossed physical surface. The effect works best with flat, muted palettes.</p>
+      <div class="code-block">/* Neumorphism button */
+.neu-button {
+  background: #e0e0f0;
+  border-radius: 16px;
+  box-shadow:
+    6px 6px 14px #b8b8cc,
+    -6px -6px 14px #ffffff;
+}
+
+/* Pressed / active state */
+.neu-button:active {
+  box-shadow:
+    inset 4px 4px 10px #b8b8cc,
+    inset -4px -4px 10px #ffffff;
+}</div>
+
+      <h3>Neon Glow Shadows</h3>
+      <p>For dark-mode dashboards and gaming UIs, colored glow effects create vibrant depth using a <code>spread</code> of 0 and a bright, partially transparent color.</p>
+      <div class="code-block">/* Neon glow effect */
+.neon-element {
+  box-shadow:
+    0 0 10px rgba(124, 92, 252, 0.5),
+    0 0 30px rgba(124, 92, 252, 0.3),
+    0 0 60px rgba(124, 92, 252, 0.15);
+}</div>
+
+      <h3>CSS Shadow Best Practices</h3>
+      <ul>
+        <li>Always use <code>rgba()</code> or <code>hsla()</code> for shadow colors — pure black at low opacity looks more natural.</li>
+        <li>Match shadow direction to a single consistent light source per design.</li>
+        <li>Use <code>transition: box-shadow</code> for smooth hover state changes — it's hardware-accelerated.</li>
+        <li>Three shadow layers produce the most realistic depth on cards and modals.</li>
+        <li>Test shadows on both light and dark backgrounds — they behave very differently.</li>
+        <li>Avoid spread values larger than blur — they tend to look harsh and artificial.</li>
+      </ul>
+    </article>
+  </div>
+
+  <!-- Extra full-width content -->
+  <div style="margin-top:48px">
+    <h2 style="font-family:var(--font-head);font-size:26px;font-weight:800;margin-bottom:20px;color:var(--text)">Modern Web Design Trends with Box Shadows</h2>
+    <p style="color:var(--text2);line-height:1.8;max-width:900px;margin-bottom:20px">In 2025–2026 web design, box shadows serve multiple aesthetic purposes beyond simple depth. Layered colored shadows tinted with your brand palette create a "aurora" or "halo" effect that is widely used in SaaS product marketing sites. Subtle inset shadows on input fields communicate interactivity states. Variable-blur shadow stacks are used in sophisticated card systems to indicate Z-level hierarchy.</p>
+    <p style="color:var(--text2);line-height:1.8;max-width:900px;margin-bottom:20px">The Tailwind CSS utility framework popularised a standardised shadow scale — sm, md, lg, xl, 2xl — which provides a consistent visual language. Material Design 3.0 uses elevation-based shadow tokens that shift color between baseline, tonal, and key surfaces. Understanding how to generate and tune these shadows visually — rather than editing raw numbers — dramatically speeds up UI prototyping.</p>
+    <p style="color:var(--text2);line-height:1.8;max-width:900px">Performance-wise, <code>box-shadow</code> is composited by the browser GPU when combined with <code>will-change: transform</code> or applied to elements that also use <code>transform</code>. Animating <code>box-shadow</code> directly can trigger layout reflows in older browsers; the modern technique is to animate a pseudo-element's opacity instead for buttery-smooth 60fps transitions.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" aria-labelledby="faq-heading">
+  <div class="section-header" style="text-align:center;margin-bottom:40px">
+    <div class="section-eyebrow">Help</div>
+    <h2 class="section-title" id="faq-heading">Frequently Asked <span>Questions</span></h2>
+  </div>
+  <div class="faq-list" id="faqList"></div>
+</section>
+
+<!-- RELATED TOOLS -->
+<section class="related-section" aria-labelledby="related-heading">
+  <div class="section-header" style="margin-bottom:28px">
+    <div class="section-eyebrow">More Tools</div>
+    <h2 class="section-title" id="related-heading">Related <span>Tools</span></h2>
+  </div>
+  <div class="related-grid">
+    <a href="../tools/color-picker-converter.html" class="related-card">
+      <div class="related-icon">🎨</div>
+      <h4>Color Picker & Converter</h4>
+      <p>Convert colors between HEX, RGB, HSL, HSV and more.</p>
+    </a>
+    <a href="../tools/json-formatter.html" class="related-card">
+      <div class="related-icon">{ }</div>
+      <h4>JSON Formatter</h4>
+      <p>Format, validate, and beautify JSON instantly.</p>
+    </a>
+    <a href="../tools/regex-tester.html" class="related-card">
+      <div class="related-icon">🔍</div>
+      <h4>Regex Tester</h4>
+      <p>Test and debug regular expressions in real time.</p>
+    </a>
+    <a href="../tools/base64-encoder-decoder.html" class="related-card">
+      <div class="related-icon">⇄</div>
+      <h4>Base64 Encoder/Decoder</h4>
+      <p>Encode and decode Base64 strings easily.</p>
+    </a>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-banner" aria-label="Call to action">
+  <div class="cta-inner">
+    <div class="cta-glow"></div>
+    <h2>Design Faster with QuickTools</h2>
+    <p>20+ free developer and designer tools. No signup, no ads, no limits.</p>
+    <a href="../index.html" class="btn btn-primary" style="font-size:15px;padding:14px 28px">Explore All Tools →</a>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="../index.html" class="nav-logo" style="font-size:17px">
+        <span class="logo-dot"></span>QuickTools
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="../index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+        <a href="./privacy.html">Privacy</a>
+      </nav>
+      <p class="footer-copy">© 2026 QuickTools. Free online developer tools.</p>
+    </div>
+  </div>
+</footer>
+</main>
+
+<div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+
+<script>
+/* ============================================================
+   STATE
+   ============================================================ */
+let layers = [
+  { id: 1, h: 0, v: 8, blur: 24, spread: 0, color: '#7c5cfc', opacity: 40, inset: false }
+];
+let activeLayerIdx = 0;
+let isDark = true;
+
+/* ============================================================
+   DOM REFS
+   ============================================================ */
+const hSlider = document.getElementById('hOffset');
+const vSlider = document.getElementById('vOffset');
+const blurSlider = document.getElementById('blurRadius');
+const spreadSlider = document.getElementById('spreadRadius');
+const opacitySlider = document.getElementById('shadowOpacity');
+const colorPicker = document.getElementById('shadowColor');
+const colorHex = document.getElementById('colorHex');
+const insetToggle = document.getElementById('insetToggle');
+const previewCard = document.getElementById('previewCard');
+const cssOutput = document.getElementById('cssOutput');
+const layersList = document.getElementById('layersList');
+
+/* ============================================================
+   UTILS
+   ============================================================ */
+function hexToRgb(hex) {
+  const r = parseInt(hex.slice(1,3),16);
+  const g = parseInt(hex.slice(3,5),16);
+  const b = parseInt(hex.slice(5,7),16);
+  return {r,g,b};
+}
+function buildShadowValue(l) {
+  const {r,g,b} = hexToRgb(l.color);
+  const alpha = (l.opacity/100).toFixed(2);
+  const insetPart = l.inset ? 'inset ' : '';
+  return `${insetPart}${l.h}px ${l.v}px ${l.blur}px ${l.spread}px rgba(${r},${g},${b},${alpha})`;
+}
+function buildFullShadow() {
+  return layers.map(buildShadowValue).join(',\n       ');
+}
+function buildCSSText() {
+  const shadow = buildFullShadow();
+  return `.element {\n  box-shadow: ${shadow};\n}`;
+}
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+function updateSliderTrack(input) {
+  const min = +input.min, max = +input.max, val = +input.value;
+  const pct = ((val - min) / (max - min) * 100).toFixed(1);
+  input.style.setProperty('--pct', pct + '%');
+}
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+function render() {
+  // Update preview card
+  const shadow = buildFullShadow();
+  previewCard.style.boxShadow = shadow;
+
+  // Update CSS output with syntax highlighting
+  const css = buildCSSText();
+  cssOutput.innerHTML = css
+    .replace(/(box-shadow)/g, '<span class="css-prop">$1</span>')
+    .replace(/([0-9-]+px|rgba\([^)]+\)|inset)/g, '<span class="css-val">$1</span>');
+
+  // Render layer list
+  layersList.innerHTML = '';
+  layers.forEach((l, i) => {
+    const div = document.createElement('div');
+    div.className = 'layer-item' + (i === activeLayerIdx ? ' active' : '');
+    div.innerHTML = `
+      <div class="layer-dot" style="background:${l.color};opacity:${l.opacity/100}"></div>
+      <span class="layer-name">Layer ${i+1}${l.inset ? ' (inset)' : ''}</span>
+      <button class="layer-del" data-i="${i}" aria-label="Delete layer ${i+1}">✕</button>
+    `;
+    div.addEventListener('click', (e) => {
+      if (e.target.classList.contains('layer-del')) return;
+      activeLayerIdx = i;
+      loadLayerToControls(layers[i]);
+      render();
+    });
+    div.querySelector('.layer-del').addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (layers.length === 1) return showToast('Need at least one layer');
+      layers.splice(i, 1);
+      activeLayerIdx = Math.max(0, activeLayerIdx - (i <= activeLayerIdx ? 1 : 0));
+      activeLayerIdx = Math.min(activeLayerIdx, layers.length - 1);
+      loadLayerToControls(layers[activeLayerIdx]);
+      render();
+    });
+    layersList.appendChild(div);
+  });
+}
+
+function loadLayerToControls(l) {
+  hSlider.value = l.h;
+  vSlider.value = l.v;
+  blurSlider.value = l.blur;
+  spreadSlider.value = l.spread;
+  opacitySlider.value = l.opacity;
+  colorPicker.value = l.color;
+  colorHex.value = l.color;
+  insetToggle.className = 'toggle' + (l.inset ? ' on' : '');
+  insetToggle.setAttribute('aria-pressed', String(l.inset));
+  document.getElementById('hVal').textContent = l.h + 'px';
+  document.getElementById('vVal').textContent = l.v + 'px';
+  document.getElementById('blurVal').textContent = l.blur + 'px';
+  document.getElementById('spreadVal').textContent = l.spread + 'px';
+  document.getElementById('opacityVal').textContent = l.opacity + '%';
+  [hSlider, vSlider, blurSlider, spreadSlider, opacitySlider].forEach(updateSliderTrack);
+}
+
+function getActiveLayer() { return layers[activeLayerIdx]; }
+
+/* ============================================================
+   CONTROLS → STATE
+   ============================================================ */
+function wireSlider(el, prop, displayId, suffix) {
+  el.addEventListener('input', () => {
+    getActiveLayer()[prop] = +el.value;
+    document.getElementById(displayId).textContent = el.value + suffix;
+    updateSliderTrack(el);
+    render();
+  });
+}
+wireSlider(hSlider, 'h', 'hVal', 'px');
+wireSlider(vSlider, 'v', 'vVal', 'px');
+wireSlider(blurSlider, 'blur', 'blurVal', 'px');
+wireSlider(spreadSlider, 'spread', 'spreadVal', 'px');
+wireSlider(opacitySlider, 'opacity', 'opacityVal', '%');
+
+colorPicker.addEventListener('input', () => {
+  getActiveLayer().color = colorPicker.value;
+  colorHex.value = colorPicker.value;
+  render();
+});
+colorHex.addEventListener('input', () => {
+  const v = colorHex.value;
+  if (/^#[0-9a-fA-F]{6}$/.test(v)) {
+    getActiveLayer().color = v;
+    colorPicker.value = v;
+    render();
+  }
+});
+insetToggle.addEventListener('click', () => {
+  const l = getActiveLayer();
+  l.inset = !l.inset;
+  insetToggle.className = 'toggle' + (l.inset ? ' on' : '');
+  insetToggle.setAttribute('aria-pressed', String(l.inset));
+  render();
+});
+document.getElementById('addLayerBtn').addEventListener('click', () => {
+  if (layers.length >= 6) return showToast('Max 6 layers');
+  layers.push({ id: Date.now(), h: 4, v: 4, blur: 16, spread: 0, color: '#22d3ee', opacity: 30, inset: false });
+  activeLayerIdx = layers.length - 1;
+  loadLayerToControls(layers[activeLayerIdx]);
+  render();
+});
+
+/* ============================================================
+   COPY / DOWNLOAD
+   ============================================================ */
+function copyText(txt) {
+  navigator.clipboard.writeText(txt).then(() => showToast('✓ Copied to clipboard!'));
+}
+document.getElementById('copyCSS').addEventListener('click', () => copyText(buildCSSText()));
+document.getElementById('cssQuickCopy').addEventListener('click', () => copyText(buildCSSText()));
+document.getElementById('downloadCSS').addEventListener('click', () => {
+  const blob = new Blob([buildCSSText()], { type: 'text/css' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'box-shadow.css';
+  a.click();
+  showToast('✓ CSS downloaded!');
+});
+document.getElementById('resetBtn').addEventListener('click', () => {
+  layers = [{ id: 1, h: 0, v: 8, blur: 24, spread: 0, color: '#7c5cfc', opacity: 40, inset: false }];
+  activeLayerIdx = 0;
+  loadLayerToControls(layers[0]);
+  render();
+  showToast('↺ Reset to default');
+});
+
+/* ============================================================
+   PREVIEW BACKGROUND SWATCHES
+   ============================================================ */
+document.querySelectorAll('.bg-swatch').forEach(sw => {
+  sw.addEventListener('click', () => {
+    document.querySelectorAll('.bg-swatch').forEach(s => s.classList.remove('active'));
+    sw.classList.add('active');
+    document.getElementById('previewStage').style.background = sw.dataset.bg;
+  });
+});
+
+/* ============================================================
+   PRESETS
+   ============================================================ */
+const PRESETS = [
+  {
+    name: 'Soft Shadow', sub: 'Subtle depth',
+    layers: [{ h:0,v:4,blur:16,spread:0,color:'#000000',opacity:15,inset:false }]
+  },
+  {
+    name: 'Floating Card', sub: 'Elevated card',
+    layers: [
+      { h:0,v:2,blur:8,spread:0,color:'#000000',opacity:10,inset:false },
+      { h:0,v:8,blur:24,spread:0,color:'#000000',opacity:14,inset:false },
+      { h:0,v:24,blur:64,spread:0,color:'#000000',opacity:8,inset:false }
+    ]
+  },
+  {
+    name: 'Glass Card', sub: 'Glassmorphism',
+    layers: [
+      { h:0,v:8,blur:32,spread:0,color:'#000000',opacity:30,inset:false },
+      { h:0,v:1,blur:0,spread:0,color:'#ffffff',opacity:20,inset:true }
+    ]
+  },
+  {
+    name: 'Material', sub: 'Material Design',
+    layers: [
+      { h:0,v:2,blur:4,spread:-1,color:'#000000',opacity:20,inset:false },
+      { h:0,v:4,blur:5,spread:0,color:'#000000',opacity:14,inset:false },
+      { h:0,v:1,blur:10,spread:0,color:'#000000',opacity:12,inset:false }
+    ]
+  },
+  {
+    name: 'Neumorphism', sub: 'Soft UI',
+    layers: [
+      { h:6,v:6,blur:14,spread:0,color:'#a0a0b8',opacity:60,inset:false },
+      { h:-6,v:-6,blur:14,spread:0,color:'#ffffff',opacity:80,inset:false }
+    ]
+  },
+  {
+    name: 'Glow Shadow', sub: 'Radiant glow',
+    layers: [{ h:0,v:0,blur:30,spread:0,color:'#7c5cfc',opacity:50,inset:false }]
+  },
+  {
+    name: 'Neon Shadow', sub: 'Cyberpunk neon',
+    layers: [
+      { h:0,v:0,blur:10,spread:0,color:'#22d3ee',opacity:70,inset:false },
+      { h:0,v:0,blur:30,spread:0,color:'#22d3ee',opacity:40,inset:false },
+      { h:0,v:0,blur:60,spread:0,color:'#22d3ee',opacity:20,inset:false }
+    ]
+  },
+  {
+    name: 'Deep Shadow', sub: 'Dramatic depth',
+    layers: [
+      { h:0,v:20,blur:60,spread:0,color:'#000000',opacity:30,inset:false },
+      { h:0,v:4,blur:8,spread:0,color:'#000000',opacity:20,inset:false }
+    ]
+  },
+  {
+    name: 'Apple Style', sub: 'macOS/iOS',
+    layers: [
+      { h:0,v:2,blur:6,spread:0,color:'#000000',opacity:8,inset:false },
+      { h:0,v:8,blur:20,spread:0,color:'#000000',opacity:10,inset:false }
+    ]
+  },
+  {
+    name: 'Figma Style', sub: 'Design tool UI',
+    layers: [
+      { h:0,v:1,blur:3,spread:0,color:'#000000',opacity:12,inset:false },
+      { h:0,v:4,blur:12,spread:0,color:'#000000',opacity:10,inset:false },
+      { h:0,v:12,blur:28,spread:0,color:'#000000',opacity:8,inset:false }
+    ]
+  }
+];
+
+const PRESET_SHADOWS_CSS = [
+  '0 4px 16px rgba(0,0,0,0.15)',
+  '0 2px 8px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.14)',
+  '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2)',
+  '0 2px 4px rgba(0,0,0,0.2), 0 4px 5px rgba(0,0,0,0.14)',
+  '6px 6px 14px rgba(160,160,184,0.6), -6px -6px 14px rgba(255,255,255,0.8)',
+  '0 0 30px rgba(124,92,252,0.5)',
+  '0 0 10px rgba(34,211,238,0.7), 0 0 30px rgba(34,211,238,0.4)',
+  '0 20px 60px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.2)',
+  '0 2px 6px rgba(0,0,0,0.08), 0 8px 20px rgba(0,0,0,0.10)',
+  '0 1px 3px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.10)'
+];
+
+const grid = document.getElementById('presetsGrid');
+PRESETS.forEach((p, i) => {
+  const card = document.createElement('div');
+  card.className = 'preset-card';
+  card.setAttribute('role', 'listitem');
+  card.innerHTML = `
+    <div class="preset-preview" style="box-shadow:${PRESET_SHADOWS_CSS[i]}"></div>
+    <div class="preset-name">${p.name}</div>
+    <div class="preset-sub">${p.sub}</div>
+  `;
+  card.addEventListener('click', () => {
+    layers = p.layers.map(l => ({...l, id: Date.now() + Math.random()}));
+    activeLayerIdx = 0;
+    loadLayerToControls(layers[0]);
+    render();
+    showToast(`✦ Applied: ${p.name}`);
+    document.querySelector('.tool-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  grid.appendChild(card);
+});
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+const FAQS = [
+  { q: 'What is a CSS box shadow?', a: 'The CSS box-shadow property adds one or more drop shadow effects around an element\'s frame. It accepts horizontal offset, vertical offset, blur radius, spread radius, and a color value. Multiple shadows can be stacked by separating them with commas.' },
+  { q: 'How do I add multiple box shadows in CSS?', a: 'Separate multiple shadow values with commas. For example: box-shadow: 0 2px 10px rgba(0,0,0,0.3), 0 4px 20px rgba(0,0,0,0.1). Each shadow renders on top of the next, creating layered depth.' },
+  { q: 'What does the inset keyword do?', a: 'The inset keyword changes the shadow from an outer drop shadow to an inner shadow, making it appear inside the element\'s border. It\'s used for pressed/recessed buttons and neumorphic active states.' },
+  { q: 'What is glassmorphism in CSS?', a: 'Glassmorphism combines backdrop-filter: blur(), semi-transparent rgba backgrounds, and a subtle border on the light-facing edge to simulate frosted glass. A soft box-shadow below reinforces the floating appearance.' },
+  { q: 'What is neumorphism?', a: 'Neumorphism (soft UI) uses two box shadows on the same-color background — one lighter highlight and one darker shadow — to simulate a physical extruded or embossed surface. Use inset shadows for the pressed/active state.' },
+  { q: 'Does box-shadow affect layout?', a: 'No. Like outline, box-shadow does not affect the document flow or element dimensions. Adding a large shadow will not push other elements away. Use margins or padding if you need layout space around the shadow.' },
+  { q: 'Can I animate box shadows in CSS?', a: 'Yes — box-shadow is interpolatable in CSS transitions and animations. However, for performance-critical animations, consider animating a pseudo-element\'s opacity instead, as direct box-shadow animation can trigger GPU compositing overhead in some browsers.' },
+  { q: 'What color format should I use for shadows?', a: 'Use rgba() or hsla() with an alpha (opacity) value. Pure black at low opacity (rgba(0,0,0,0.1)–(0.3)) produces the most natural-looking shadows. Colored shadows using your brand palette create a premium, cohesive aesthetic.' }
+];
+const faqList = document.getElementById('faqList');
+FAQS.forEach(faq => {
+  const item = document.createElement('div');
+  item.className = 'faq-item';
+  item.innerHTML = `
+    <div class="faq-q" role="button" tabindex="0" aria-expanded="false">${faq.q}</div>
+    <div class="faq-a">${faq.a}</div>
+  `;
+  const q = item.querySelector('.faq-q');
+  const toggleFaq = () => {
+    const open = item.classList.toggle('open');
+    q.setAttribute('aria-expanded', String(open));
+  };
+  q.addEventListener('click', toggleFaq);
+  q.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleFaq(); } });
+  faqList.appendChild(item);
+});
+
+/* ============================================================
+   DARK/LIGHT THEME TOGGLE
+   ============================================================ */
+const themeBtn = document.getElementById('themeToggle');
+themeBtn.addEventListener('click', () => {
+  isDark = !isDark;
+  document.body.classList.toggle('light', !isDark);
+  themeBtn.textContent = isDark ? '🌙' : '☀️';
+});
+
+/* ============================================================
+   CANVAS BACKGROUND (animated gradient orbs)
+   ============================================================ */
+(function initCanvas() {
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, orbs = [];
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = document.body.scrollHeight;
+  }
+
+  class Orb {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = Math.random() * W;
+      this.y = Math.random() * H;
+      this.r = 200 + Math.random() * 300;
+      this.vx = (Math.random() - 0.5) * 0.3;
+      this.vy = (Math.random() - 0.5) * 0.3;
+      this.hue = [260, 190, 320, 240][Math.floor(Math.random()*4)];
+    }
+    update() {
+      this.x += this.vx; this.y += this.vy;
+      if (this.x < -this.r || this.x > W + this.r) this.vx *= -1;
+      if (this.y < -this.r || this.y > H + this.r) this.vy *= -1;
+    }
+    draw() {
+      const g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r);
+      g.addColorStop(0, `hsla(${this.hue},80%,60%,0.07)`);
+      g.addColorStop(1, `hsla(${this.hue},80%,60%,0)`);
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  function init() {
+    resize();
+    orbs = Array.from({ length: 6 }, () => new Orb());
+  }
+
+  function loop() {
+    ctx.clearRect(0, 0, W, H);
+    orbs.forEach(o => { o.update(); o.draw(); });
+    requestAnimationFrame(loop);
+  }
+
+  window.addEventListener('resize', () => { resize(); });
+  init(); loop();
+})();
+
+/* ============================================================
+   INIT
+   ============================================================ */
+loadLayerToControls(layers[0]);
+render();
+</script>
+</body>
+</html>
