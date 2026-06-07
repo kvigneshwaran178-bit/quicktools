@@ -1,0 +1,2692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Meta Tags Generator & SERP Preview Tool | QuickTools</title>
+<meta name="description" content="Generate SEO meta titles, descriptions, Open Graph tags and preview Google search results instantly with our free AI Meta Tags Generator.">
+<meta name="keywords" content="meta tags generator, seo meta tags generator, meta description generator, meta title generator, serp preview tool, google snippet preview, seo title generator, seo description generator, website meta tag generator, free seo tool">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://quicktools.dev/tools/meta-tags-generator.html">
+<meta property="og:title" content="AI Meta Tags Generator & SERP Preview Tool | QuickTools">
+<meta property="og:description" content="Generate SEO meta titles, descriptions, Open Graph tags and preview Google search results instantly with our free AI Meta Tags Generator.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Meta Tags Generator & SERP Preview Tool | QuickTools">
+<meta name="twitter:description" content="Generate SEO meta titles, descriptions, Open Graph tags and preview Google search results instantly.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://quicktools.dev/tools/meta-tags-generator.html",
+      "url": "https://quicktools.dev/tools/meta-tags-generator.html",
+      "name": "AI Meta Tags Generator & SERP Preview Tool",
+      "description": "Generate SEO meta titles, descriptions, Open Graph tags and preview Google search results instantly.",
+      "isPartOf": { "@id": "https://quicktools.dev" },
+      "breadcrumb": { "@id": "https://quicktools.dev/tools/meta-tags-generator.html#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://quicktools.dev/tools/meta-tags-generator.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://quicktools.dev/" },
+        { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://quicktools.dev/tools/" },
+        { "@type": "ListItem", "position": 3, "name": "Meta Tags Generator" }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "AI Meta Tags Generator",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "featureList": ["AI Meta Title Generator","AI Meta Description Generator","SERP Preview","Open Graph Generator","Twitter Card Generator","Keyword Density Checker","SEO Score","Slug Generator"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a meta tags generator?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A meta tags generator is a tool that helps you create HTML meta tags for your web pages, including the title tag, meta description, Open Graph tags, and Twitter Card tags that improve SEO and social sharing." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long should a meta title be?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Google displays approximately 50-60 characters for meta titles. Aim for 55-60 characters to maximize visibility in search results without truncation." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the ideal meta description length?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The ideal meta description length is between 150-160 characters. Google may truncate descriptions longer than 160 characters in search results." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do meta keywords still matter for SEO?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Google officially ignores the meta keywords tag for ranking purposes. However, they may still be used by other search engines like Bing, and they can help you organize your content strategy." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a SERP preview?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A SERP (Search Engine Results Page) preview shows you how your page will appear in Google search results, including the title, URL, and meta description, before you publish." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* ═══════════════════════════════════════════════════
+   FONTS & ROOT VARIABLES
+═══════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #04050a;
+  --bg-secondary: #080c14;
+  --bg-card: rgba(12,16,28,0.75);
+  --bg-glass: rgba(255,255,255,0.04);
+  --bg-glass-hover: rgba(255,255,255,0.07);
+  --border: rgba(255,255,255,0.08);
+  --border-glow: rgba(99,102,241,0.4);
+  --text-primary: #f0f2ff;
+  --text-secondary: rgba(190,198,240,0.7);
+  --text-muted: rgba(140,150,200,0.5);
+  --accent: #6366f1;
+  --accent-2: #8b5cf6;
+  --accent-3: #06b6d4;
+  --accent-4: #10b981;
+  --accent-5: #f59e0b;
+  --accent-danger: #ef4444;
+  --glow-primary: 0 0 40px rgba(99,102,241,0.25);
+  --glow-cyan: 0 0 30px rgba(6,182,212,0.2);
+  --glow-green: 0 0 30px rgba(16,185,129,0.2);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+[data-theme="light"] {
+  --bg-primary: #f0f2ff;
+  --bg-secondary: #e8eaf8;
+  --bg-card: rgba(255,255,255,0.8);
+  --bg-glass: rgba(255,255,255,0.6);
+  --bg-glass-hover: rgba(255,255,255,0.85);
+  --border: rgba(99,102,241,0.15);
+  --border-glow: rgba(99,102,241,0.35);
+  --text-primary: #0f0f23;
+  --text-secondary: rgba(30,30,80,0.7);
+  --text-muted: rgba(60,60,120,0.5);
+  --glow-primary: 0 8px 40px rgba(99,102,241,0.18);
+  --glow-cyan: 0 8px 30px rgba(6,182,212,0.12);
+  --glow-green: 0 8px 30px rgba(16,185,129,0.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ═══════════════════════════════════════════════════
+   ANIMATED BACKGROUND
+═══════════════════════════════════════════════════ */
+.bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.mesh-layer {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(99,102,241,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(139,92,246,0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 70% at 50% 50%, rgba(6,182,212,0.06) 0%, transparent 70%);
+  animation: meshShift 20s ease-in-out infinite alternate;
+}
+
+[data-theme="light"] .mesh-layer {
+  background: 
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(99,102,241,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(139,92,246,0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 70% at 50% 50%, rgba(6,182,212,0.1) 0%, transparent 70%);
+}
+
+@keyframes meshShift {
+  0% { opacity: 1; transform: scale(1) rotate(0deg); }
+  100% { opacity: 0.8; transform: scale(1.05) rotate(1deg); }
+}
+
+.particle-field { position: absolute; inset: 0; }
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+  0% { transform: translateY(100vh) translateX(0) scale(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-20vh) translateX(var(--drift)) scale(1); opacity: 0; }
+}
+
+.neural-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(99,102,241,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,102,241,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridPulse 8s ease-in-out infinite;
+}
+
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(4,5,10,0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--border);
+}
+
+[data-theme="light"] nav {
+  background: rgba(240,242,255,0.75);
+}
+
+.nav-brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-brand-icon {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  box-shadow: 0 0 16px rgba(99,102,241,0.4);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.nav-links a:hover { color: var(--text-primary); background: var(--bg-glass); }
+
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+
+.theme-toggle {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-glass);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+}
+
+.theme-toggle:hover { background: var(--bg-glass-hover); border-color: var(--accent); }
+
+/* ═══════════════════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════════════════ */
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+  padding-top: 64px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ═══════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════ */
+.hero {
+  padding: 72px 0 48px;
+  text-align: center;
+  position: relative;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(99,102,241,0.12);
+  border: 1px solid rgba(99,102,241,0.3);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  animation: badgePulse 3s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99,102,241,0.2); }
+  50% { box-shadow: 0 0 0 6px rgba(99,102,241,0); }
+}
+
+.badge-dot {
+  width: 6px; height: 6px;
+  background: var(--accent-4);
+  border-radius: 50%;
+  animation: dotBlink 1.5s ease-in-out infinite;
+}
+
+@keyframes dotBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #f0f2ff 0%, #a5b4fc 40%, #818cf8 70%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="light"] .hero h1 {
+  background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 40%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* Trust Badges */
+.trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 0;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+.trust-badge:hover { border-color: var(--accent); color: var(--text-primary); }
+.trust-badge-icon { font-size: 14px; }
+
+/* ═══════════════════════════════════════════════════
+   SEO DASHBOARD STATS
+═══════════════════════════════════════════════════ */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 40px 0;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  transition: var(--transition);
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--card-accent, linear-gradient(90deg, var(--accent), var(--accent-2)));
+}
+
+.stat-card:hover {
+  border-color: var(--border-glow);
+  transform: translateY(-2px);
+  box-shadow: var(--glow-primary);
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.stat-bar {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: var(--card-accent, linear-gradient(90deg, var(--accent), var(--accent-2)));
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-sub { font-size: 0.75rem; color: var(--text-muted); }
+
+/* ═══════════════════════════════════════════════════
+   MAIN TOOL WORKSPACE
+═══════════════════════════════════════════════════ */
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.glass-card:hover { border-color: rgba(99,102,241,0.2); }
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.card-subtitle { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+
+/* ═══════════════════════════════════════════════════
+   FORM INPUTS
+═══════════════════════════════════════════════════ */
+.form-group { margin-bottom: 20px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.form-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.char-count {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 100px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.char-count.warn { color: var(--accent-5); border-color: rgba(245,158,11,0.3); }
+.char-count.danger { color: var(--accent-danger); border-color: rgba(239,68,68,0.3); }
+.char-count.good { color: var(--accent-4); border-color: rgba(16,185,129,0.3); }
+
+.field-input {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  outline: none;
+  transition: var(--transition);
+  resize: none;
+}
+
+.field-input::placeholder { color: var(--text-muted); }
+.field-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(99,102,241,0.1); background: rgba(99,102,241,0.04); }
+
+[data-theme="light"] .field-input {
+  background: rgba(255,255,255,0.7);
+  border-color: rgba(99,102,241,0.2);
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .field-input:focus { background: #fff; }
+
+.pixel-hint {
+  margin-top: 6px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* ═══════════════════════════════════════════════════
+   SEGMENTED CONTROL
+═══════════════════════════════════════════════════ */
+.seg-control {
+  display: flex;
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.seg-btn {
+  flex: 1;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.seg-btn.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 16px rgba(99,102,241,0.3);
+}
+
+.seg-btn:not(.active):hover { color: var(--text-primary); background: var(--bg-glass-hover); }
+
+/* ═══════════════════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════════════════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: var(--radius-sm);
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.1);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.btn:hover::before { opacity: 1; }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+  box-shadow: 0 0 24px rgba(99,102,241,0.35);
+}
+
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 0 32px rgba(99,102,241,0.5); }
+
+.btn-secondary {
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover { border-color: var(--accent); background: var(--bg-glass-hover); }
+
+.btn-sm { padding: 7px 14px; font-size: 0.8rem; }
+.btn-xs { padding: 5px 10px; font-size: 0.72rem; }
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-cyan { background: linear-gradient(135deg, var(--accent-3), #0284c7); color: #fff; box-shadow: var(--glow-cyan); }
+.btn-green { background: linear-gradient(135deg, var(--accent-4), #059669); color: #fff; box-shadow: var(--glow-green); }
+
+/* ═══════════════════════════════════════════════════
+   SERP PREVIEW
+═══════════════════════════════════════════════════ */
+.serp-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  backdrop-filter: blur(20px);
+  margin-bottom: 24px;
+}
+
+.serp-google-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+
+.serp-google-logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; }
+.google-g { color: #4285f4; }
+.google-o1 { color: #ea4335; }
+.google-o2 { color: #fbbc05; }
+.google-gl { color: #4285f4; }
+.google-e { color: #34a853; }
+
+.serp-search-query {
+  flex: 1;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+.serp-result {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+  cursor: default;
+}
+
+.serp-result:last-child { border-bottom: none; }
+.serp-result:hover { background: var(--bg-glass); padding-left: 12px; border-radius: 8px; margin: 0 -12px; padding-right: 12px; }
+
+.serp-url-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.serp-favicon {
+  width: 16px; height: 16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.serp-url {
+  font-size: 0.78rem;
+  color: #4285f4;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.serp-title {
+  font-size: 1.1rem;
+  color: #4285f4;
+  font-weight: 400;
+  margin-bottom: 4px;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+[data-theme="light"] .serp-title { color: #1a0dab; }
+
+.serp-title:hover { text-decoration: underline; }
+
+.serp-snippet {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+[data-theme="light"] .serp-snippet { color: #4d5156; }
+
+.serp-date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-right: 4px;
+}
+
+/* Mobile SERP Preview */
+.mobile-serp {
+  max-width: 360px;
+  margin: 0 auto;
+  border: 2px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 16px;
+  background: var(--bg-secondary);
+}
+
+.mobile-serp-bar {
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 8px 14px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.mobile-title { font-size: 0.95rem; color: #4285f4; margin-bottom: 3px; line-height: 1.3; }
+.mobile-url { font-size: 0.7rem; color: var(--text-muted); font-family: var(--font-mono); margin-bottom: 4px; }
+.mobile-snippet { font-size: 0.75rem; color: var(--text-secondary); line-height: 1.5; }
+
+/* ═══════════════════════════════════════════════════
+   SEO SCORE RING
+═══════════════════════════════════════════════════ */
+.score-ring-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+}
+
+.score-ring {
+  position: relative;
+  width: 140px; height: 140px;
+}
+
+.score-ring svg { transform: rotate(-90deg); }
+
+.score-ring-bg {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 10;
+}
+
+.score-ring-fill {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 408;
+  stroke-dashoffset: 408;
+  transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.score-ring-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.score-number {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-label { font-size: 0.7rem; color: var(--text-muted); font-weight: 500; }
+
+.score-metrics {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.metric-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+}
+
+.metric-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.metric-name { flex: 1; color: var(--text-secondary); }
+.metric-val { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
+
+/* ═══════════════════════════════════════════════════
+   CODE OUTPUT
+═══════════════════════════════════════════════════ */
+.code-block {
+  background: #020307;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  overflow-x: auto;
+  position: relative;
+  color: #abb2bf;
+}
+
+[data-theme="light"] .code-block {
+  background: #1e1e2e;
+}
+
+.code-block .tag { color: #e06c75; }
+.code-block .attr { color: #d19a66; }
+.code-block .val { color: #98c379; }
+.code-block .cmt { color: #5c6370; font-style: italic; }
+
+.copy-btn-abs {
+  position: absolute;
+  top: 10px; right: 10px;
+}
+
+/* ═══════════════════════════════════════════════════
+   TABS
+═══════════════════════════════════════════════════ */
+.tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tab-btn.active { background: var(--accent); color: #fff; }
+.tab-btn:not(.active):hover { color: var(--text-primary); }
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ═══════════════════════════════════════════════════
+   KEYWORD DENSITY TABLE
+═══════════════════════════════════════════════════ */
+.kw-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.kw-table th {
+  text-align: left;
+  padding: 8px 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+}
+
+.kw-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-secondary);
+}
+
+.kw-table tr:hover td { background: var(--bg-glass); }
+
+.kw-density-bar {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  min-width: 60px;
+}
+
+.kw-density-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+/* ═══════════════════════════════════════════════════
+   ROBOTS GENERATOR
+═══════════════════════════════════════════════════ */
+.robots-toggles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.toggle-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.toggle-item:hover { border-color: var(--accent); }
+.toggle-item.active { border-color: var(--accent); background: rgba(99,102,241,0.1); }
+
+.toggle-switch {
+  width: 36px; height: 20px;
+  background: var(--border);
+  border-radius: 10px;
+  position: relative;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.toggle-switch::after {
+  content: '';
+  position: absolute;
+  width: 16px; height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px; left: 2px;
+  transition: var(--transition);
+}
+
+.toggle-item.active .toggle-switch { background: var(--accent); }
+.toggle-item.active .toggle-switch::after { transform: translateX(16px); }
+
+.toggle-label { font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); }
+
+/* ═══════════════════════════════════════════════════
+   SECTION HEADERS
+═══════════════════════════════════════════════════ */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.section-num {
+  width: 28px; height: 28px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ═══════════════════════════════════════════════════
+   CONTENT SECTIONS
+═══════════════════════════════════════════════════ */
+.content-section {
+  margin: 80px 0;
+}
+
+.prose h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  margin-top: 40px;
+  color: var(--text-primary);
+}
+
+.prose h2:first-child { margin-top: 0; }
+
+.prose h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 28px;
+  color: var(--text-primary);
+}
+
+.prose p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.prose ul {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.prose li {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.prose strong { color: var(--text-primary); font-weight: 600; }
+
+.prose-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.info-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  backdrop-filter: blur(20px);
+  transition: var(--transition);
+}
+
+.info-card:hover { border-color: var(--border-glow); transform: translateY(-2px); }
+
+.info-card-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.info-card h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.info-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════════
+   FAQ
+═══════════════════════════════════════════════════ */
+.faq-section { margin: 60px 0; }
+
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 12px;
+  backdrop-filter: blur(20px);
+  transition: var(--transition);
+}
+
+.faq-item:hover { border-color: rgba(99,102,241,0.25); }
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  gap: 12px;
+  transition: var(--transition);
+}
+
+.faq-question:hover { background: var(--bg-glass); }
+
+.faq-icon {
+  width: 24px; height: 24px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.faq-item.open .faq-icon { background: var(--accent); border-color: var(--accent); transform: rotate(45deg); }
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.faq-answer-inner {
+  padding: 0 24px 18px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  border-top: 1px solid var(--border);
+  margin-top: 0;
+  padding-top: 16px;
+}
+
+.faq-item.open .faq-answer { max-height: 400px; }
+
+/* ═══════════════════════════════════════════════════
+   RELATED TOOLS
+═══════════════════════════════════════════════════ */
+.related-tools {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.related-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  backdrop-filter: blur(20px);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.related-card:hover {
+  border-color: var(--border-glow);
+  transform: translateY(-3px);
+  box-shadow: var(--glow-primary);
+}
+
+.related-icon { font-size: 1.5rem; }
+.related-name { font-weight: 700; font-size: 0.9rem; color: var(--text-primary); }
+.related-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; }
+
+/* ═══════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════ */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  margin-top: 60px;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.footer-links a {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-links a:hover { color: var(--text-primary); }
+
+.footer-copy { font-size: 0.8rem; color: var(--text-muted); }
+
+/* ═══════════════════════════════════════════════════
+   NOTIFICATIONS / TOASTS
+═══════════════════════════════════════════════════ */
+.toast {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  z-index: 9999;
+  transform: translateY(80px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(99,102,241,0.4);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toast.show { transform: translateY(0); opacity: 1; }
+
+/* ═══════════════════════════════════════════════════
+   UTILITY
+═══════════════════════════════════════════════════ */
+.flex { display: flex; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.gap-8 { gap: 8px; }
+.gap-12 { gap: 12px; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+.mb-24 { margin-bottom: 24px; }
+.w-full { width: 100%; }
+
+.glow-text {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent-3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 32px 0;
+}
+
+/* ═══════════════════════════════════════════════════
+   SIDEBAR PANEL
+═══════════════════════════════════════════════════ */
+.sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+/* ═══════════════════════════════════════════════════
+   BREADCRUMB
+═══════════════════════════════════════════════════ */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.breadcrumb a { color: var(--text-muted); text-decoration: none; transition: var(--transition); }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb-sep { color: var(--border); }
+.breadcrumb-current { color: var(--text-secondary); }
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .workspace { grid-template-columns: 1fr; }
+  .dashboard-stats { grid-template-columns: repeat(2, 1fr); }
+  .sidebar { display: grid; grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .dashboard-stats { grid-template-columns: repeat(2, 1fr); }
+  .prose-grid { grid-template-columns: 1fr; }
+  .related-tools { grid-template-columns: 1fr 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .robots-toggles { grid-template-columns: 1fr; }
+  .sidebar { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .footer-links { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .dashboard-stats { grid-template-columns: 1fr 1fr; }
+  .related-tools { grid-template-columns: 1fr; }
+  .trust-badges { gap: 6px; }
+  .trust-badge { font-size: 0.72rem; padding: 5px 10px; }
+}
+
+/* ═══════════════════════════════════════════════════
+   HOVER TILT ANIMATION
+═══════════════════════════════════════════════════ */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease;
+}
+
+/* Loading shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-line {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--border) 25%, var(--bg-glass-hover) 50%, var(--border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  margin-bottom: 8px;
+}
+
+/* Spotlight effect */
+.spotlight {
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: left 0.3s ease, top 0.3s ease;
+}
+</style>
+</head>
+
+<body data-theme="dark">
+
+<!-- ANIMATED BACKGROUND -->
+<div class="bg-canvas">
+  <div class="neural-grid"></div>
+  <div class="mesh-layer"></div>
+  <div class="particle-field" id="particleField"></div>
+  <div class="spotlight" id="spotlight"></div>
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="../index.html" class="nav-brand">
+    <div class="nav-brand-icon">⚡</div>
+    QuickTools
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="./about.html">About</a></li>
+    <li><a href="./contact.html">Contact</a></li>
+    <li><a href="./privacy.html">Privacy</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+<div class="container">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" style="margin-top:32px;" aria-label="Breadcrumb">
+    <a href="../index.html">🏠 Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="../index.html">Tools</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">Meta Tags Generator</span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      AI-Powered · Free · No Signup
+    </div>
+    <h1>AI Meta Tags Generator<br>&amp; SERP Preview Tool</h1>
+    <p class="hero-sub">Generate perfect SEO meta titles, descriptions, Open Graph tags and preview your Google search results in real-time. Powered by AI analysis for maximum CTR.</p>
+    <div class="trust-badges">
+      <span class="trust-badge"><span class="trust-badge-icon">✅</span> 100% Free</span>
+      <span class="trust-badge"><span class="trust-badge-icon">🤖</span> AI Powered</span>
+      <span class="trust-badge"><span class="trust-badge-icon">🔒</span> No Data Uploaded</span>
+      <span class="trust-badge"><span class="trust-badge-icon">📱</span> Works Offline</span>
+      <span class="trust-badge"><span class="trust-badge-icon">🎯</span> SEO Friendly</span>
+      <span class="trust-badge"><span class="trust-badge-icon">🌐</span> Google Compatible</span>
+    </div>
+  </section>
+
+  <!-- SEO DASHBOARD STATS -->
+  <div class="dashboard-stats" id="dashboardStats">
+    <div class="stat-card" style="--card-accent: linear-gradient(90deg, #6366f1, #8b5cf6);">
+      <div class="stat-label">SEO Score</div>
+      <div class="stat-value" id="statScore">0</div>
+      <div class="stat-bar"><div class="stat-bar-fill" id="barScore" style="width:0%"></div></div>
+      <div class="stat-sub">out of 100</div>
+    </div>
+    <div class="stat-card" style="--card-accent: linear-gradient(90deg, #06b6d4, #0284c7);">
+      <div class="stat-label">Title Length</div>
+      <div class="stat-value" id="statTitle">0</div>
+      <div class="stat-bar"><div class="stat-bar-fill" id="barTitle" style="width:0%; background: linear-gradient(90deg, #06b6d4, #0284c7)"></div></div>
+      <div class="stat-sub">of 60 chars ideal</div>
+    </div>
+    <div class="stat-card" style="--card-accent: linear-gradient(90deg, #10b981, #059669);">
+      <div class="stat-label">Description</div>
+      <div class="stat-value" id="statDesc">0</div>
+      <div class="stat-bar"><div class="stat-bar-fill" id="barDesc" style="width:0%; background: linear-gradient(90deg, #10b981, #059669)"></div></div>
+      <div class="stat-sub">of 160 chars ideal</div>
+    </div>
+    <div class="stat-card" style="--card-accent: linear-gradient(90deg, #f59e0b, #d97706);">
+      <div class="stat-label">CTR Potential</div>
+      <div class="stat-value" id="statCtr">—</div>
+      <div class="stat-bar"><div class="stat-bar-fill" id="barCtr" style="width:0%; background: linear-gradient(90deg, #f59e0b, #d97706)"></div></div>
+      <div class="stat-sub">Estimated CTR</div>
+    </div>
+  </div>
+
+  <!-- MAIN WORKSPACE -->
+  <div class="workspace">
+
+    <!-- LEFT: INPUT PANEL -->
+    <div>
+
+      <!-- Basic Meta -->
+      <div class="glass-card mb-24">
+        <div class="card-header">
+          <div class="card-icon" style="background: linear-gradient(135deg,#6366f1,#8b5cf6);">🎯</div>
+          <div>
+            <div class="card-title">Meta Tag Inputs</div>
+            <div class="card-subtitle">Fill in your page details — AI analysis updates instantly</div>
+          </div>
+        </div>
+
+        <!-- Title -->
+        <div class="form-group">
+          <label class="form-label">
+            Meta Title
+            <div style="display:flex;gap:6px;align-items:center;">
+              <span class="char-count" id="titleCount">0 chars · 0px</span>
+              <button class="btn btn-xs btn-secondary" onclick="aiSuggestTitle()">✨ AI Suggest</button>
+            </div>
+          </label>
+          <input type="text" class="field-input" id="metaTitle" placeholder="Your Page Title — Brand Name" maxlength="120" oninput="updateAll()">
+          <div class="pixel-hint" id="titlePixel">Estimated pixel width: 0px (Google shows ~600px)</div>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+          <label class="form-label">
+            Meta Description
+            <div style="display:flex;gap:6px;align-items:center;">
+              <span class="char-count" id="descCount">0 chars</span>
+              <button class="btn btn-xs btn-secondary" onclick="aiSuggestDesc()">✨ AI Suggest</button>
+            </div>
+          </label>
+          <textarea class="field-input" id="metaDesc" rows="3" placeholder="Compelling description that drives clicks from search results..." maxlength="320" oninput="updateAll()"></textarea>
+        </div>
+
+        <!-- Page URL & Keywords -->
+        <div class="form-row">
+          <div class="form-group" style="margin-bottom:0">
+            <label class="form-label">Page URL / Domain</label>
+            <input type="text" class="field-input" id="pageUrl" placeholder="https://example.com/page" oninput="updateAll()">
+          </div>
+          <div class="form-group" style="margin-bottom:0">
+            <label class="form-label">Focus Keyword</label>
+            <input type="text" class="field-input" id="focusKw" placeholder="e.g. meta tags generator" oninput="updateAll()">
+          </div>
+        </div>
+
+        <!-- Slug -->
+        <div class="form-group mt-16">
+          <label class="form-label">
+            Generated Slug
+            <button class="btn btn-xs btn-secondary" onclick="generateSlug()">🔗 Generate</button>
+          </label>
+          <input type="text" class="field-input" id="slugField" placeholder="auto-generated-from-title" readonly>
+        </div>
+
+        <!-- Canonical -->
+        <div class="form-group">
+          <label class="form-label">
+            Canonical URL
+            <button class="btn btn-xs btn-secondary" onclick="generateCanonical()">🔁 Auto-Generate</button>
+          </label>
+          <input type="text" class="field-input" id="canonicalUrl" placeholder="https://example.com/page">
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="updateAll()">🔄 Analyze &amp; Preview</button>
+          <button class="btn btn-secondary" onclick="resetAll()">↺ Reset</button>
+        </div>
+      </div>
+
+      <!-- Open Graph -->
+      <div class="glass-card mb-24">
+        <div class="card-header">
+          <div class="card-icon" style="background: linear-gradient(135deg,#06b6d4,#0284c7);">📘</div>
+          <div>
+            <div class="card-title">Open Graph Tags</div>
+            <div class="card-subtitle">Control how your page appears on Facebook &amp; LinkedIn</div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group" style="margin-bottom:0">
+            <label class="form-label">OG Title</label>
+            <input type="text" class="field-input" id="ogTitle" placeholder="Open Graph Title" oninput="updateAll()">
+          </div>
+          <div class="form-group" style="margin-bottom:0">
+            <label class="form-label">OG Type</label>
+            <select class="field-input" id="ogType" onchange="updateAll()">
+              <option value="website">website</option>
+              <option value="article">article</option>
+              <option value="product">product</option>
+              <option value="profile">profile</option>
+              <option value="video.other">video</option>
+              <option value="music.song">music</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group mt-16">
+          <label class="form-label">OG Description</label>
+          <textarea class="field-input" id="ogDesc" rows="2" placeholder="Open Graph description for social sharing..." oninput="updateAll()"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group" style="margin-bottom:0">
+            <label class="form-label">OG Image URL</label>
+            <input type="text" class="field-input" id="ogImage" placeholder="https://example.com/og-image.jpg" oninput="updateAll()">
+          </div>
+          <div class="form-group" style="margin-bottom:0">
+            <label class="form-label">Site Name</label>
+            <input type="text" class="field-input" id="siteName" placeholder="Your Site Name" oninput="updateAll()">
+          </div>
+        </div>
+      </div>
+
+      <!-- Twitter Card -->
+      <div class="glass-card mb-24">
+        <div class="card-header">
+          <div class="card-icon" style="background: linear-gradient(135deg,#1d9bf0,#0d7fd4);">𝕏</div>
+          <div>
+            <div class="card-title">Twitter / X Card</div>
+            <div class="card-subtitle">Optimize for Twitter / X sharing</div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group" style="margin-bottom:0">
+            <label class="form-label">Card Type</label>
+            <select class="field-input" id="twitterCard" onchange="updateAll()">
+              <option value="summary_large_image">summary_large_image</option>
+              <option value="summary">summary</option>
+              <option value="app">app</option>
+              <option value="player">player</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:0">
+            <label class="form-label">@Twitter Handle</label>
+            <input type="text" class="field-input" id="twitterSite" placeholder="@yourbrand" oninput="updateAll()">
+          </div>
+        </div>
+
+        <div class="form-group mt-16">
+          <label class="form-label">Twitter Title</label>
+          <input type="text" class="field-input" id="twitterTitle" placeholder="Twitter Card Title" oninput="updateAll()">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Twitter Description</label>
+          <textarea class="field-input" id="twitterDesc" rows="2" placeholder="Twitter Card Description..." oninput="updateAll()"></textarea>
+        </div>
+      </div>
+
+      <!-- Robots Meta -->
+      <div class="glass-card mb-24">
+        <div class="card-header">
+          <div class="card-icon" style="background: linear-gradient(135deg,#f59e0b,#d97706);">🤖</div>
+          <div>
+            <div class="card-title">Robots Meta Tag</div>
+            <div class="card-subtitle">Control how search engines index this page</div>
+          </div>
+        </div>
+
+        <div class="robots-toggles" id="robotsToggles">
+          <div class="toggle-item active" data-val="index" onclick="toggleRobot(this)">
+            <div class="toggle-switch"></div>
+            <div class="toggle-label">index</div>
+          </div>
+          <div class="toggle-item active" data-val="follow" onclick="toggleRobot(this)">
+            <div class="toggle-switch"></div>
+            <div class="toggle-label">follow</div>
+          </div>
+          <div class="toggle-item" data-val="noarchive" onclick="toggleRobot(this)">
+            <div class="toggle-switch"></div>
+            <div class="toggle-label">noarchive</div>
+          </div>
+          <div class="toggle-item" data-val="noimageindex" onclick="toggleRobot(this)">
+            <div class="toggle-switch"></div>
+            <div class="toggle-label">noimageindex</div>
+          </div>
+          <div class="toggle-item" data-val="nosnippet" onclick="toggleRobot(this)">
+            <div class="toggle-switch"></div>
+            <div class="toggle-label">nosnippet</div>
+          </div>
+          <div class="toggle-item" data-val="max-snippet:-1" onclick="toggleRobot(this)">
+            <div class="toggle-switch"></div>
+            <div class="toggle-label">max-snippet</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Generated Robots Tag</label>
+          <input type="text" class="field-input" id="robotsOutput" readonly placeholder="index, follow">
+        </div>
+      </div>
+
+      <!-- Generated HTML Code -->
+      <div class="glass-card">
+        <div class="card-header">
+          <div class="card-icon" style="background: linear-gradient(135deg,#10b981,#059669);">💻</div>
+          <div>
+            <div class="card-title">Generated HTML Head Code</div>
+            <div class="card-subtitle">Copy-paste into your &lt;head&gt; section</div>
+          </div>
+        </div>
+
+        <div style="position:relative;">
+          <pre class="code-block" id="htmlOutput"><span class="cmt">&lt;!-- Fill in the fields above to generate your meta tags --&gt;</span></pre>
+          <button class="btn btn-sm btn-primary copy-btn-abs" onclick="copyCode()">📋 Copy All</button>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-green" onclick="downloadHTML()">⬇️ Download HTML Head</button>
+          <button class="btn btn-cyan" onclick="copyCode()">📋 Copy All Tags</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: PREVIEW SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- SEO Score -->
+      <div class="glass-card">
+        <div class="card-header">
+          <div class="card-icon" style="background: linear-gradient(135deg,#6366f1,#8b5cf6);">📊</div>
+          <div>
+            <div class="card-title">SEO Score</div>
+            <div class="card-subtitle">AI analysis of your meta tags</div>
+          </div>
+        </div>
+        <div class="score-ring-wrapper">
+          <div class="score-ring">
+            <svg width="140" height="140" viewBox="0 0 140 140">
+              <circle class="score-ring-bg" cx="70" cy="70" r="65"/>
+              <circle class="score-ring-fill" id="scoreRingFill" cx="70" cy="70" r="65" stroke="url(#scoreGrad)"/>
+              <defs>
+                <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#6366f1"/>
+                  <stop offset="100%" stop-color="#10b981"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="score-ring-text">
+              <div class="score-number glow-text" id="scoreNum">0</div>
+              <div class="score-label">SEO SCORE</div>
+            </div>
+          </div>
+          <div class="score-metrics">
+            <div class="metric-row">
+              <div class="metric-dot" style="background:#6366f1"></div>
+              <div class="metric-name">Title Length</div>
+              <div class="metric-val" id="mTitle">—</div>
+            </div>
+            <div class="metric-row">
+              <div class="metric-dot" style="background:#8b5cf6"></div>
+              <div class="metric-name">Description</div>
+              <div class="metric-val" id="mDesc">—</div>
+            </div>
+            <div class="metric-row">
+              <div class="metric-dot" style="background:#06b6d4"></div>
+              <div class="metric-name">Keyword Usage</div>
+              <div class="metric-val" id="mKw">—</div>
+            </div>
+            <div class="metric-row">
+              <div class="metric-dot" style="background:#10b981"></div>
+              <div class="metric-name">Open Graph</div>
+              <div class="metric-val" id="mOg">—</div>
+            </div>
+            <div class="metric-row">
+              <div class="metric-dot" style="background:#f59e0b"></div>
+              <div class="metric-name">Social Ready</div>
+              <div class="metric-val" id="mSocial">—</div>
+            </div>
+            <div class="metric-row">
+              <div class="metric-dot" style="background:#ef4444"></div>
+              <div class="metric-name">CTR Potential</div>
+              <div class="metric-val" id="mCtr">—</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERP Preview -->
+      <div class="glass-card">
+        <div class="card-header">
+          <div class="card-icon" style="background: linear-gradient(135deg,#4285f4,#1a73e8);">🔍</div>
+          <div>
+            <div class="card-title">SERP Preview</div>
+            <div class="card-subtitle">Live Google search result preview</div>
+          </div>
+        </div>
+
+        <div class="seg-control">
+          <button class="seg-btn active" onclick="switchSerpView('desktop', this)">🖥️ Desktop</button>
+          <button class="seg-btn" onclick="switchSerpView('mobile', this)">📱 Mobile</button>
+        </div>
+
+        <!-- Desktop SERP -->
+        <div id="desktopSerp">
+          <div class="serp-google-bar">
+            <div class="serp-google-logo">
+              <span class="google-g">G</span><span class="google-o1">o</span><span class="google-o2">o</span><span class="google-gl">g</span><span class="google-e">l</span><span class="google-o1">e</span>
+            </div>
+            <div class="serp-search-query" id="serpQuery">your search query…</div>
+          </div>
+          <div class="serp-result">
+            <div class="serp-url-line">
+              <div class="serp-favicon"></div>
+              <div class="serp-url" id="serpUrl">https://example.com › page</div>
+            </div>
+            <div class="serp-title" id="serpTitle">Your Page Title — Brand Name</div>
+            <div class="serp-snippet">
+              <span class="serp-date" id="serpDate"></span>
+              <span id="serpDesc">Your meta description will appear here. Make it compelling to increase click-through rates from search results.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile SERP -->
+        <div id="mobileSerp" style="display:none;">
+          <div class="mobile-serp">
+            <div class="mobile-serp-bar">🔍 <span id="mSerpQuery">your search query</span></div>
+            <div class="serp-url-line">
+              <div class="serp-favicon"></div>
+              <div class="mobile-url" id="mSerpUrl">example.com</div>
+            </div>
+            <div class="mobile-title" id="mSerpTitle">Your Page Title</div>
+            <div class="mobile-snippet" id="mSerpDesc">Your meta description will appear here in mobile search results.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Keyword Density -->
+      <div class="glass-card">
+        <div class="card-header">
+          <div class="card-icon" style="background: linear-gradient(135deg,#f59e0b,#d97706);">📈</div>
+          <div>
+            <div class="card-title">Keyword Density</div>
+            <div class="card-subtitle">Top words in your meta content</div>
+          </div>
+        </div>
+        <table class="kw-table">
+          <thead>
+            <tr>
+              <th>Keyword</th>
+              <th>Count</th>
+              <th>Density</th>
+              <th>Bar</th>
+            </tr>
+          </thead>
+          <tbody id="kwTableBody">
+            <tr><td colspan="4" style="color:var(--text-muted);font-size:0.8rem;text-align:center;padding:20px;">Fill in title &amp; description to analyze keywords</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ALL GENERATED TAGS OUTPUT -->
+  <div class="glass-card mb-24">
+    <div class="card-header">
+      <div class="card-icon" style="background: linear-gradient(135deg,#8b5cf6,#6366f1);">🏷️</div>
+      <div>
+        <div class="card-title">All Generated Meta Tags</div>
+        <div class="card-subtitle">Complete head section with all SEO, OG &amp; Twitter tags</div>
+      </div>
+    </div>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('allTags', this)">All Tags</button>
+      <button class="tab-btn" onclick="switchTab('seoTags', this)">SEO Only</button>
+      <button class="tab-btn" onclick="switchTab('ogTags', this)">Open Graph</button>
+      <button class="tab-btn" onclick="switchTab('twitterTags', this)">Twitter</button>
+    </div>
+    <div class="tab-panel active" id="tab-allTags">
+      <div style="position:relative;"><pre class="code-block" id="allTagsCode"><span class="cmt">&lt;!-- Your generated tags will appear here --&gt;</span></pre><button class="btn btn-sm btn-secondary copy-btn-abs" onclick="copyTab('allTagsCode')">📋 Copy</button></div>
+    </div>
+    <div class="tab-panel" id="tab-seoTags">
+      <div style="position:relative;"><pre class="code-block" id="seoTagsCode"><span class="cmt">&lt;!-- SEO tags will appear here --&gt;</span></pre><button class="btn btn-sm btn-secondary copy-btn-abs" onclick="copyTab('seoTagsCode')">📋 Copy</button></div>
+    </div>
+    <div class="tab-panel" id="tab-ogTags">
+      <div style="position:relative;"><pre class="code-block" id="ogTagsCode"><span class="cmt">&lt;!-- OG tags will appear here --&gt;</span></pre><button class="btn btn-sm btn-secondary copy-btn-abs" onclick="copyTab('ogTagsCode')">📋 Copy</button></div>
+    </div>
+    <div class="tab-panel" id="tab-twitterTags">
+      <div style="position:relative;"><pre class="code-block" id="twitterTagsCode"><span class="cmt">&lt;!-- Twitter tags will appear here --&gt;</span></pre><button class="btn btn-sm btn-secondary copy-btn-abs" onclick="copyTab('twitterTagsCode')">📋 Copy</button></div>
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="divider"></div>
+
+  <!-- CONTENT: SEO GUIDE -->
+  <section class="content-section">
+    <div class="section-header mb-24">
+      <div class="section-num">01</div>
+      <div class="section-title">The Complete Meta Tags &amp; SEO Guide</div>
+    </div>
+
+    <div class="prose-grid">
+      <div class="info-card">
+        <div class="info-card-icon">🏷️</div>
+        <h3>What Are Meta Tags?</h3>
+        <p>Meta tags are HTML snippets placed inside the <code>&lt;head&gt;</code> section of your webpage. They are invisible to website visitors but are read by search engines and social media crawlers to understand your page content, control indexing behavior, and generate search result previews.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">🔍</div>
+        <h3>Why Meta Tags Matter for SEO</h3>
+        <p>While Google's algorithms rely primarily on content quality and links, meta tags directly control how your page appears in SERPs. A compelling meta title and description can dramatically improve your organic CTR — often by 20–30% — without changing your rankings.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">📏</div>
+        <h3>Meta Title Best Practices</h3>
+        <p>Keep meta titles between 50–60 characters (or ~580 pixels wide). Place your primary keyword near the beginning. Include your brand name at the end separated by a dash or pipe. Avoid keyword stuffing — write for humans first, search engines second.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">📝</div>
+        <h3>Meta Description Guide</h3>
+        <p>Meta descriptions should be 150–160 characters. They don't directly affect rankings but heavily influence CTR. Write descriptions as mini-advertisements — include a clear value proposition, your focus keyword naturally, and a subtle call-to-action like "Learn more" or "Try free".</p>
+      </div>
+    </div>
+
+    <div class="prose">
+      <h2>SERP Optimization &amp; CTR Improvement</h2>
+      <p>Your Search Engine Results Page (SERP) snippet is your free advertisement in Google. Even if you rank #3, an exceptionally compelling title and description can generate more clicks than the #1 result. Studies show that SERP CTR can vary from 1% to over 30% for the same ranking position, purely based on snippet quality.</p>
+      <p>To maximize CTR, consider using numbers (e.g., "7 Proven Strategies"), power words like "Ultimate," "Free," "Instant," or "Complete," and emotional triggers that create curiosity or urgency. Always match your snippet to user search intent — informational queries need different language than transactional ones.</p>
+      <p>Google may rewrite your meta descriptions up to 62.78% of the time, especially if it finds better matching content on your page. To minimize this, ensure your meta description closely reflects the most valuable information on your page and matches the query intent of your target keywords.</p>
+
+      <h2>Open Graph Tags Explained</h2>
+      <p>Open Graph (OG) tags were created by Facebook in 2010 and are now used by virtually every social platform including LinkedIn, Pinterest, Slack, and WhatsApp. They control how your content appears when shared as a link preview — including the image, title, and description shown in social feeds.</p>
+      <p>The most critical OG tags are <strong>og:title</strong>, <strong>og:description</strong>, <strong>og:image</strong>, and <strong>og:url</strong>. For images, use a minimum size of 1200×630 pixels for best display across all platforms. Use <strong>og:type</strong> to specify whether your content is a website, article, product, or other content type.</p>
+
+      <h2>Twitter Card Tags</h2>
+      <p>Twitter/X Cards allow you to attach rich media experiences to tweets. The four card types are: Summary (small image + text), Summary with Large Image (full-width image + text), App (app download CTA), and Player (video/audio player). For most websites, <strong>summary_large_image</strong> is the best choice as it creates visually striking link previews that drive more engagement.</p>
+      <p>Include <strong>twitter:site</strong> with your brand's Twitter handle and <strong>twitter:creator</strong> for the content author. Keep your Twitter description under 200 characters for optimal display across devices.</p>
+
+      <h2>Canonical URLs &amp; Duplicate Content</h2>
+      <p>The canonical tag (<code>&lt;link rel="canonical"&gt;</code>) tells search engines which URL is the "master" version of a page when duplicate or similar content exists across multiple URLs. This is essential for sites with URL parameters, pagination, HTTP/HTTPS variations, or www/non-www duplicates.</p>
+      <p>Always self-referencing canonical tags on every page — even if there are no duplicate versions — as a best practice signal to search engines. This prevents accidental duplicate content penalties from URL variations like trailing slashes or session IDs.</p>
+
+      <h2>Technical SEO Meta Tags</h2>
+      <p>Beyond title and description, several technical meta tags impact your SEO. The <strong>robots meta tag</strong> controls indexing behavior using directives like <code>index/noindex</code>, <code>follow/nofollow</code>, and <code>noarchive</code>. The <strong>viewport meta tag</strong> is crucial for mobile SEO, telling browsers how to scale your page on mobile devices.</p>
+      <p>The <strong>charset meta tag</strong> (<code>&lt;meta charset="UTF-8"&gt;</code>) ensures proper character encoding. The <strong>language meta tag</strong> helps search engines understand your content's language and serve it to the right geographic audience. For multilingual sites, combine this with <strong>hreflang</strong> tags.</p>
+
+      <h2>On-Page SEO: Complete Guide</h2>
+      <p>Meta tags are just one component of on-page SEO. True on-page optimization involves: proper heading hierarchy (H1→H2→H3), keyword placement in the first 100 words and last paragraph, internal linking with descriptive anchor text, image alt tags containing relevant keywords, page speed optimization, Core Web Vitals compliance, schema/structured data markup, and content length appropriate to query complexity.</p>
+      <p>Your <strong>title tag</strong> carries the most weight of any on-page SEO element. Google uses it to understand your page's primary topic. Place your exact-match focus keyword as close to the beginning of the title as naturally possible, without sacrificing readability or brand identity.</p>
+      <p>The <strong>meta description</strong>, while not a direct ranking factor, influences user behavior. Higher CTR sends positive engagement signals to Google, which can indirectly boost your ranking over time. Treat every meta description as conversion copy — concise, benefit-driven, and action-oriented.</p>
+
+      <h2>Pixel Width &amp; Character Count</h2>
+      <p>Google truncates title tags at approximately 600 pixels (not a fixed character count). This is why "pixel width" is a more accurate measurement than characters alone. Different characters have different widths — a capital "W" takes more space than a lowercase "i." Our tool estimates pixel width using typical font metrics to help you optimize titles precisely.</p>
+      <p>For meta descriptions, Google typically shows 155–160 characters on desktop and about 120 characters on mobile. Writing for the mobile truncation point ensures your most important content appears on both device types. Our live preview shows both desktop and mobile SERP rendering so you can optimize for both.</p>
+
+      <h2>URL Slug Generator Best Practices</h2>
+      <p>URL slugs are the human-readable part of a URL that follows the domain. SEO-friendly slugs are: lowercase, hyphen-separated, concise (ideally 3–5 words), keyword-rich, and free of stop words like "the," "a," and "of." Avoid underscores — search engines treat hyphens as word separators but may treat underscores differently.</p>
+      <p>Example: A page titled "10 Best SEO Meta Tags for 2025 — Complete Guide" should use the slug <code>/best-seo-meta-tags</code> rather than <code>/10-best-seo-meta-tags-for-2025-complete-guide</code>. Shorter, keyword-focused slugs perform better in both rankings and user experience.</p>
+    </div>
+  </section>
+
+  <!-- INFO CARDS GRID -->
+  <div class="prose-grid">
+    <div class="info-card">
+      <div class="info-card-icon">⚡</div>
+      <h3>Pixel Width Estimator</h3>
+      <p>Google measures title display space in pixels, not characters. A title perfectly 60 characters long may still be truncated if it contains wide characters. Our estimator approximates Google's rendering at 600px for desktop SERP titles.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">📱</div>
+      <h3>Mobile SERP Optimization</h3>
+      <p>Mobile searches account for over 60% of Google queries. Mobile SERPs show shorter titles (~70px less) and descriptions (~40 chars less). Always preview your snippets in mobile view to ensure they're not truncated at critical points.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🎯</div>
+      <h3>CTR Optimization Tips</h3>
+      <p>Use schema markup to earn rich snippets (star ratings, FAQ dropdowns, breadcrumbs) that dramatically increase visual SERP real estate. Rich results can increase CTR by 20–30% for the same ranking position.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🔒</div>
+      <h3>Robots Meta Tag Guide</h3>
+      <p>Use <code>noindex</code> on staging environments, duplicate content, and thin pages. Use <code>nofollow</code> on untrusted links. <code>noarchive</code> prevents Google from showing a cached version of your page in search results.</p>
+    </div>
+  </div>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+    <div class="section-header mb-24">
+      <div class="section-num">02</div>
+      <div class="section-title">Frequently Asked Questions</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">What is a meta tags generator and how does it work? <div class="faq-icon">+</div></button>
+      <div class="faq-answer"><div class="faq-answer-inner">A meta tags generator is an online tool that automatically creates HTML meta tags for your web pages based on your input. You enter your page title, description, URL, and other details — and the tool generates the complete HTML code you need to paste into your page's &lt;head&gt; section. Our AI-powered version also analyzes your inputs for SEO quality, character counts, pixel widths, and keyword density in real-time.</div></div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">How long should a meta title be for SEO? <div class="faq-icon">+</div></button>
+      <div class="faq-answer"><div class="faq-answer-inner">The ideal meta title length is 50–60 characters, or approximately 580 pixels wide. Google truncates titles that exceed their display limit with an ellipsis (…). However, the right length also depends on your characters — wider letters like W, M, and uppercase letters take more pixel space than narrow ones like i, l, and t. Our pixel width estimator helps you find the exact display width of your specific title.</div></div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">What is the ideal meta description length? <div class="faq-icon">+</div></button>
+      <div class="faq-answer"><div class="faq-answer-inner">Google typically displays 155–160 characters on desktop and 120 characters on mobile for meta descriptions. Aim for 150–155 characters to ensure your description isn't cut off on either device type. Write your most important content and call-to-action within the first 120 characters to be safe for mobile users. Remember that Google may rewrite your description if it determines another snippet better matches the user's query.</div></div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">Do meta keywords still matter for Google SEO? <div class="faq-icon">+</div></button>
+      <div class="faq-answer"><div class="faq-answer-inner">No — Google officially stopped using the meta keywords tag for ranking in 2009. In fact, using too many meta keywords can signal spam to search engines. However, the meta keywords tag may still be read by other search engines like Bing and Yandex, and some internal site search systems use it. We recommend focusing your SEO efforts on your meta title, description, content quality, and structured data instead of meta keywords.</div></div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">What is a SERP preview and why is it important? <div class="faq-icon">+</div></button>
+      <div class="faq-answer"><div class="faq-answer-inner">A SERP (Search Engine Results Page) preview shows exactly how your page will appear in Google search results before you publish it. This is critical for optimization because it lets you see if your title is truncated, if your description reads compellingly, and how your URL appears to searchers. Our tool shows both desktop and mobile SERP previews, since Google often displays different snippet lengths for each device type.</div></div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">What is a canonical URL and when should I use it? <div class="faq-icon">+</div></button>
+      <div class="faq-answer"><div class="faq-answer-inner">A canonical URL tag (&lt;link rel="canonical"&gt;) tells search engines which URL is the primary, preferred version of a page. Use it when: (1) multiple URLs show the same content (with/without www, http/https, with URL parameters), (2) you have paginated content series, (3) you've syndiciated your content to other sites. Always include self-referencing canonical tags on every page as a defensive SEO best practice to prevent accidental duplicate content issues.</div></div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">What Open Graph image size should I use? <div class="faq-icon">+</div></button>
+      <div class="faq-answer"><div class="faq-answer-inner">The recommended Open Graph image size is 1200×630 pixels with a 1.91:1 aspect ratio. This size works optimally across Facebook, LinkedIn, Twitter, and most other platforms. The minimum acceptable size is 200×200 pixels, but this will display as a smaller thumbnail. For Twitter's summary_large_image card, use a 1200×628 pixel image. Keep file size under 8MB (ideally under 1MB for fast loading) and use JPG or PNG format.</div></div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">Is this meta tags generator free to use? <div class="faq-icon">+</div></button>
+      <div class="faq-answer"><div class="faq-answer-inner">Yes — our AI Meta Tags Generator is 100% free with no registration required. All processing happens entirely in your browser, meaning no data is ever uploaded to our servers. You can use it unlimited times for as many pages as you need. The tool works offline once loaded, so you can even use it without an internet connection.</div></div>
+    </div>
+  </section>
+
+  <!-- RELATED TOOLS -->
+  <section style="margin: 60px 0;">
+    <div class="section-header mb-24">
+      <div class="section-num">03</div>
+      <div class="section-title">Related SEO Tools</div>
+    </div>
+    <div class="related-tools">
+      <a href="#" class="related-card">
+        <div class="related-icon">🔑</div>
+        <div class="related-name">Keyword Density Checker</div>
+        <div class="related-desc">Analyze keyword frequency and density across your full page content</div>
+      </a>
+      <a href="#" class="related-card">
+        <div class="related-icon">🔗</div>
+        <div class="related-name">URL Slug Generator</div>
+        <div class="related-desc">Create SEO-friendly URL slugs from any text or page title</div>
+      </a>
+      <a href="#" class="related-card">
+        <div class="related-icon">📊</div>
+        <div class="related-name">Schema Markup Generator</div>
+        <div class="related-desc">Generate structured data JSON-LD for rich search results</div>
+      </a>
+      <a href="#" class="related-card">
+        <div class="related-icon">🖼️</div>
+        <div class="related-name">OG Image Generator</div>
+        <div class="related-desc">Design perfect Open Graph social preview images</div>
+      </a>
+      <a href="#" class="related-card">
+        <div class="related-icon">🤖</div>
+        <div class="related-name">Robots.txt Generator</div>
+        <div class="related-desc">Create and validate your robots.txt file instantly</div>
+      </a>
+      <a href="#" class="related-card">
+        <div class="related-icon">🗺️</div>
+        <div class="related-name">XML Sitemap Generator</div>
+        <div class="related-desc">Generate XML sitemaps for better search engine crawling</div>
+      </a>
+    </div>
+  </section>
+
+</div><!-- /container -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="../index.html" class="nav-brand">
+        <div class="nav-brand-icon">⚡</div>
+        QuickTools
+      </a>
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="./privacy.html">Privacy</a></li>
+      </ul>
+      <div class="footer-copy">© 2025 QuickTools. Free SEO Tools.</div>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /page-wrapper -->
+
+<!-- TOAST NOTIFICATION -->
+<div class="toast" id="toast">✅ Copied to clipboard!</div>
+
+<script>
+/* ═══════════════════════════════════════════════════
+   PARTICLES
+═══════════════════════════════════════════════════ */
+(function initParticles() {
+  const field = document.getElementById('particleField');
+  const colors = ['#6366f1','#8b5cf6','#06b6d4','#10b981','#f59e0b'];
+  for (let i = 0; i < 30; i++) {
+    const p = document.createElement('div');
+    const size = Math.random() * 4 + 1;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const duration = Math.random() * 20 + 15;
+    const delay = Math.random() * 20;
+    const left = Math.random() * 100;
+    const drift = (Math.random() - 0.5) * 200;
+    p.className = 'particle';
+    p.style.cssText = `
+      width:${size}px;height:${size}px;
+      left:${left}%;
+      background:${color};
+      box-shadow:0 0 ${size*3}px ${color};
+      animation-duration:${duration}s;
+      animation-delay:-${delay}s;
+      --drift:${drift}px;
+      opacity:0.6;
+    `;
+    field.appendChild(p);
+  }
+})();
+
+/* Spotlight */
+document.addEventListener('mousemove', (e) => {
+  const s = document.getElementById('spotlight');
+  s.style.left = e.clientX + 'px';
+  s.style.top = e.clientY + 'px';
+});
+
+/* ═══════════════════════════════════════════════════
+   THEME TOGGLE
+═══════════════════════════════════════════════════ */
+const themeToggle = document.getElementById('themeToggle');
+let darkMode = true;
+
+themeToggle.addEventListener('click', () => {
+  darkMode = !darkMode;
+  document.body.setAttribute('data-theme', darkMode ? 'dark' : 'light');
+  themeToggle.textContent = darkMode ? '🌙' : '☀️';
+});
+
+/* ═══════════════════════════════════════════════════
+   ROBOTS TOGGLES
+═══════════════════════════════════════════════════ */
+function toggleRobot(el) {
+  el.classList.toggle('active');
+  updateRobotsTag();
+  updateAll();
+}
+
+function updateRobotsTag() {
+  const active = [...document.querySelectorAll('#robotsToggles .toggle-item.active')]
+    .map(el => el.dataset.val);
+  document.getElementById('robotsOutput').value = active.join(', ') || 'noindex, nofollow';
+}
+
+/* ═══════════════════════════════════════════════════
+   MAIN UPDATE FUNCTION
+═══════════════════════════════════════════════════ */
+function updateAll() {
+  const title = document.getElementById('metaTitle').value.trim();
+  const desc = document.getElementById('metaDesc').value.trim();
+  const url = document.getElementById('pageUrl').value.trim();
+  const kw = document.getElementById('focusKw').value.trim();
+  const ogTitle = document.getElementById('ogTitle').value.trim();
+  const ogDesc = document.getElementById('ogDesc').value.trim();
+  const ogImage = document.getElementById('ogImage').value.trim();
+  const ogType = document.getElementById('ogType').value;
+  const siteName = document.getElementById('siteName').value.trim();
+  const twCard = document.getElementById('twitterCard').value;
+  const twSite = document.getElementById('twitterSite').value.trim();
+  const twTitle = document.getElementById('twitterTitle').value.trim();
+  const twDesc = document.getElementById('twitterDesc').value.trim();
+  const canonical = document.getElementById('canonicalUrl').value.trim();
+  const robots = document.getElementById('robotsOutput').value || 'index, follow';
+
+  updateCharCounts(title, desc);
+  updatePixelWidth(title);
+  updateSerpPreview(title, desc, url, kw);
+  updateScores(title, desc, kw, ogTitle || title, ogDesc || desc, twTitle || title);
+  updateKeywordDensity(title, desc, kw);
+  updateHTMLOutput(title, desc, url, kw, ogTitle, ogDesc, ogImage, ogType, siteName, twCard, twSite, twTitle, twDesc, canonical, robots);
+}
+
+/* ═══════════════════════════════════════════════════
+   CHAR COUNTS
+═══════════════════════════════════════════════════ */
+function updateCharCounts(title, desc) {
+  const tc = document.getElementById('titleCount');
+  const dc = document.getElementById('descCount');
+  const tLen = title.length;
+  const dLen = desc.length;
+
+  // Title
+  tc.textContent = `${tLen} chars`;
+  tc.className = 'char-count';
+  if (tLen > 60) tc.className += ' danger';
+  else if (tLen >= 50) tc.className += ' good';
+  else if (tLen > 0) tc.className += ' warn';
+
+  // Desc
+  dc.textContent = `${dLen} chars`;
+  dc.className = 'char-count';
+  if (dLen > 160) dc.className += ' danger';
+  else if (dLen >= 140) dc.className += ' good';
+  else if (dLen > 0) dc.className += ' warn';
+
+  // Dashboard stats
+  document.getElementById('statTitle').textContent = tLen;
+  document.getElementById('barTitle').style.width = Math.min(100, (tLen / 60) * 100) + '%';
+  document.getElementById('statDesc').textContent = dLen;
+  document.getElementById('barDesc').style.width = Math.min(100, (dLen / 160) * 100) + '%';
+}
+
+/* ═══════════════════════════════════════════════════
+   PIXEL WIDTH ESTIMATOR
+═══════════════════════════════════════════════════ */
+function estimatePixelWidth(text) {
+  // Approximate pixel widths for Google's font
+  let w = 0;
+  const wideChars = 'WMQmwABCDEFGHJKLNOPRSTUVXYZ';
+  const narrowChars = 'fijlrtI ';
+  for (let c of text) {
+    if (wideChars.includes(c)) w += 11;
+    else if (narrowChars.includes(c)) w += 5;
+    else w += 8;
+  }
+  return Math.round(w);
+}
+
+function updatePixelWidth(title) {
+  const px = estimatePixelWidth(title);
+  const el = document.getElementById('titlePixel');
+  const tc = document.getElementById('titleCount');
+  tc.textContent = `${title.length} chars · ~${px}px`;
+  el.textContent = `Estimated pixel width: ~${px}px (Google shows ~600px on desktop)`;
+  el.style.color = px > 600 ? 'var(--accent-danger)' : px > 500 ? 'var(--accent-5)' : 'var(--text-muted)';
+}
+
+/* ═══════════════════════════════════════════════════
+   SERP PREVIEW
+═══════════════════════════════════════════════════ */
+function updateSerpPreview(title, desc, url, kw) {
+  const displayTitle = title || 'Your Page Title — Brand Name';
+  const displayDesc = desc || 'Your meta description will appear here. Make it compelling to increase click-through rates.';
+  let displayUrl = url || 'https://example.com/page';
+
+  // Format URL for display
+  try {
+    const u = new URL(displayUrl);
+    displayUrl = u.hostname + (u.pathname !== '/' ? ' › ' + u.pathname.replace(/^\//, '').replace(/\//g, ' › ') : '');
+  } catch(e) {
+    displayUrl = displayUrl.replace(/^https?:\/\//, '');
+  }
+
+  // Truncate for display
+  const truncTitle = displayTitle.length > 70 ? displayTitle.slice(0, 67) + '…' : displayTitle;
+  const truncDesc = displayDesc.length > 158 ? displayDesc.slice(0, 155) + '…' : displayDesc;
+  const truncMobileTitle = displayTitle.length > 55 ? displayTitle.slice(0, 52) + '…' : displayTitle;
+  const truncMobileDesc = displayDesc.length > 120 ? displayDesc.slice(0, 117) + '…' : displayDesc;
+
+  // Highlight keyword
+  function highlight(text, kw) {
+    if (!kw) return escapeHtml(text);
+    const re = new RegExp('(' + kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+    return escapeHtml(text).replace(re, '<strong>$1</strong>');
+  }
+
+  document.getElementById('serpTitle').innerHTML = highlight(truncTitle, kw);
+  document.getElementById('serpDesc').innerHTML = highlight(truncDesc, kw);
+  document.getElementById('serpUrl').textContent = displayUrl;
+  document.getElementById('serpQuery').textContent = kw || 'your search query…';
+  document.getElementById('serpDate').textContent = kw ? new Date().toLocaleDateString('en-US', {month:'short', day:'numeric'}) + ' — ' : '';
+
+  // Mobile
+  document.getElementById('mSerpTitle').innerHTML = highlight(truncMobileTitle, kw);
+  document.getElementById('mSerpDesc').innerHTML = highlight(truncMobileDesc, kw);
+  document.getElementById('mSerpUrl').textContent = displayUrl.split(' ›')[0];
+  document.getElementById('mSerpQuery').textContent = kw || 'your search query';
+}
+
+/* ═══════════════════════════════════════════════════
+   SEO SCORE
+═══════════════════════════════════════════════════ */
+function updateScores(title, desc, kw, ogTitle, ogDesc, twTitle) {
+  let score = 0;
+  const tLen = title.length;
+  const dLen = desc.length;
+
+  // Title (30 pts)
+  if (tLen >= 40 && tLen <= 60) score += 30;
+  else if (tLen >= 30 && tLen <= 70) score += 20;
+  else if (tLen > 0) score += 10;
+
+  // Description (25 pts)
+  if (dLen >= 140 && dLen <= 160) score += 25;
+  else if (dLen >= 100 && dLen <= 175) score += 16;
+  else if (dLen > 0) score += 8;
+
+  // Keyword in title (15 pts)
+  const kwInTitle = kw && title.toLowerCase().includes(kw.toLowerCase());
+  if (kwInTitle) score += 15;
+  else if (!kw) score += 8; // no kw specified, partial credit
+
+  // OG tags (15 pts)
+  if (ogTitle && ogDesc) score += 15;
+  else if (ogTitle || ogDesc) score += 8;
+
+  // Twitter (10 pts)
+  if (twTitle) score += 10;
+
+  // Keyword in desc (5 pts)
+  const kwInDesc = kw && desc.toLowerCase().includes(kw.toLowerCase());
+  if (kwInDesc) score += 5;
+
+  score = Math.min(100, score);
+
+  // Animate ring
+  const circumference = 408;
+  const offset = circumference - (score / 100) * circumference;
+  document.getElementById('scoreRingFill').style.strokeDashoffset = offset;
+
+  // Color by score
+  let color;
+  if (score >= 80) color = '#10b981';
+  else if (score >= 50) color = '#f59e0b';
+  else color = '#ef4444';
+
+  document.getElementById('scoreNum').textContent = score;
+  document.getElementById('scoreNum').style.color = color;
+
+  document.getElementById('statScore').textContent = score;
+  document.getElementById('barScore').style.width = score + '%';
+
+  // Metric labels
+  const grade = (val, good, ok) => val >= good ? '✅ Good' : val >= ok ? '⚠️ Fair' : val > 0 ? '❌ Poor' : '—';
+  document.getElementById('mTitle').textContent = tLen > 0 ? (tLen >= 40 && tLen <= 60 ? '✅ Optimal' : '⚠️ Adjust') : '—';
+  document.getElementById('mDesc').textContent = dLen > 0 ? (dLen >= 140 && dLen <= 160 ? '✅ Optimal' : '⚠️ Adjust') : '—';
+  document.getElementById('mKw').textContent = !kw ? '—' : kwInTitle && kwInDesc ? '✅ Used' : kwInTitle ? '⚠️ Partial' : '❌ Missing';
+  document.getElementById('mOg').textContent = ogTitle && ogDesc ? '✅ Complete' : ogTitle || ogDesc ? '⚠️ Partial' : '❌ Missing';
+  document.getElementById('mSocial').textContent = twTitle ? '✅ Ready' : '❌ Missing';
+
+  const ctrScore = score >= 80 ? 'High' : score >= 50 ? 'Medium' : 'Low';
+  const ctrPct = score >= 80 ? '~12-18%' : score >= 50 ? '~6-11%' : '~2-5%';
+  document.getElementById('mCtr').textContent = title ? ctrPct : '—';
+  document.getElementById('statCtr').textContent = title ? ctrScore : '—';
+  document.getElementById('barCtr').style.width = (score * 0.8) + '%';
+}
+
+/* ═══════════════════════════════════════════════════
+   KEYWORD DENSITY
+═══════════════════════════════════════════════════ */
+function updateKeywordDensity(title, desc, focusKw) {
+  const text = (title + ' ' + desc).toLowerCase();
+  const words = text.split(/\s+/).filter(w => w.length > 3);
+  const stopWords = new Set(['that','this','with','from','have','will','your','more','what','when','they','which','been','were','also','into','about','their','would','there','these','those','make','just','than','then','well','even','both','each','many','some','such','very','over','only','where','both','most','much','them','made','after','page','title','description']);
+
+  const freq = {};
+  words.forEach(w => {
+    const clean = w.replace(/[^a-z]/g, '');
+    if (clean.length > 3 && !stopWords.has(clean)) {
+      freq[clean] = (freq[clean] || 0) + 1;
+    }
+  });
+
+  // Add focus keyword
+  if (focusKw) {
+    const fk = focusKw.toLowerCase().trim();
+    const count = (text.split(fk).length - 1);
+    if (count > 0) freq[fk] = Math.max(freq[fk] || 0, count);
+  }
+
+  const total = words.length || 1;
+  const sorted = Object.entries(freq).sort((a,b) => b[1]-a[1]).slice(0, 8);
+
+  const tbody = document.getElementById('kwTableBody');
+  if (!sorted.length) {
+    tbody.innerHTML = '<tr><td colspan="4" style="color:var(--text-muted);font-size:0.8rem;text-align:center;padding:16px;">No significant keywords found</td></tr>';
+    return;
+  }
+
+  const maxCount = sorted[0][1];
+  tbody.innerHTML = sorted.map(([word, count]) => {
+    const density = ((count / total) * 100).toFixed(1);
+    const barWidth = (count / maxCount) * 100;
+    const isFocus = focusKw && word === focusKw.toLowerCase().trim();
+    return `<tr>
+      <td style="font-weight:600;color:${isFocus ? 'var(--accent)' : 'var(--text-primary)'}">${word}${isFocus ? ' 🎯' : ''}</td>
+      <td style="font-family:var(--font-mono)">${count}</td>
+      <td style="font-family:var(--font-mono)">${density}%</td>
+      <td><div class="kw-density-bar"><div class="kw-density-fill" style="width:${barWidth}%"></div></div></td>
+    </tr>`;
+  }).join('');
+}
+
+/* ═══════════════════════════════════════════════════
+   HTML OUTPUT GENERATION
+═══════════════════════════════════════════════════ */
+function escapeHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function syntaxHighlight(code) {
+  return code
+    .replace(/(&lt;\/?)([a-z]+)/g, (m, p1, p2) => `${escapeHtml(p1)}<span class="tag">${p2}</span>`)
+    .replace(/\b([a-z-]+)=/g, '<span class="attr">$1</span>=')
+    .replace(/"([^"]*)"/g, '"<span class="val">$1</span>"')
+    .replace(/(&lt;!--.*?--&gt;)/g, '<span class="cmt">$1</span>');
+}
+
+function buildSEOTags(title, desc, url, kw, canonical, robots) {
+  let out = '';
+  out += `<meta charset="UTF-8">\n`;
+  out += `<meta name="viewport" content="width=device-width, initial-scale=1.0">\n`;
+  if (title) out += `<title>${escapeHtml(title)}</title>\n`;
+  if (desc) out += `<meta name="description" content="${escapeHtml(desc)}">\n`;
+  if (kw) out += `<meta name="keywords" content="${escapeHtml(kw)}">\n`;
+  if (robots) out += `<meta name="robots" content="${escapeHtml(robots)}">\n`;
+  if (canonical) out += `<link rel="canonical" href="${escapeHtml(canonical)}">\n`;
+  return out;
+}
+
+function buildOGTags(ogTitle, ogDesc, ogImage, ogType, siteName, url) {
+  let out = '';
+  const t = ogTitle || document.getElementById('metaTitle').value.trim();
+  const d = ogDesc || document.getElementById('metaDesc').value.trim();
+  if (t) out += `<meta property="og:title" content="${escapeHtml(t)}">\n`;
+  if (d) out += `<meta property="og:description" content="${escapeHtml(d)}">\n`;
+  if (ogType) out += `<meta property="og:type" content="${escapeHtml(ogType)}">\n`;
+  if (url) out += `<meta property="og:url" content="${escapeHtml(url)}">\n`;
+  if (ogImage) out += `<meta property="og:image" content="${escapeHtml(ogImage)}">\n`;
+  if (siteName) out += `<meta property="og:site_name" content="${escapeHtml(siteName)}">\n`;
+  return out;
+}
+
+function buildTwitterTags(twCard, twSite, twTitle, twDesc) {
+  let out = '';
+  const t = twTitle || document.getElementById('metaTitle').value.trim();
+  const d = twDesc || document.getElementById('metaDesc').value.trim();
+  out += `<meta name="twitter:card" content="${escapeHtml(twCard || 'summary_large_image')}">\n`;
+  if (twSite) out += `<meta name="twitter:site" content="${escapeHtml(twSite)}">\n`;
+  if (t) out += `<meta name="twitter:title" content="${escapeHtml(t)}">\n`;
+  if (d) out += `<meta name="twitter:description" content="${escapeHtml(d)}">\n`;
+  return out;
+}
+
+function updateHTMLOutput(title, desc, url, kw, ogTitle, ogDesc, ogImage, ogType, siteName, twCard, twSite, twTitle, twDesc, canonical, robots) {
+  const seo = buildSEOTags(title, desc, url, kw, canonical, robots);
+  const og = buildOGTags(ogTitle, ogDesc, ogImage, ogType, siteName, url);
+  const tw = buildTwitterTags(twCard, twSite, twTitle, twDesc);
+
+  const all = `<!-- SEO Meta Tags -->\n${seo}\n<!-- Open Graph Tags -->\n${og}\n<!-- Twitter Card Tags -->\n${tw}`;
+
+  function highlight(code) {
+    return syntaxHighlight(code
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'));
+  }
+
+  const setCode = (id, content) => {
+    document.getElementById(id).innerHTML = highlight(content);
+  };
+
+  document.getElementById('htmlOutput').innerHTML = highlight(all);
+  setCode('allTagsCode', all);
+  setCode('seoTagsCode', '<!-- SEO Meta Tags -->\n' + seo);
+  setCode('ogTagsCode', '<!-- Open Graph Tags -->\n' + og);
+  setCode('twitterTagsCode', '<!-- Twitter Card Tags -->\n' + tw);
+
+  // Store raw for copy/download
+  document.getElementById('htmlOutput').dataset.raw = all;
+  document.getElementById('allTagsCode').dataset.raw = all;
+  document.getElementById('seoTagsCode').dataset.raw = '<!-- SEO Meta Tags -->\n' + seo;
+  document.getElementById('ogTagsCode').dataset.raw = '<!-- Open Graph Tags -->\n' + og;
+  document.getElementById('twitterTagsCode').dataset.raw = '<!-- Twitter Card Tags -->\n' + tw;
+}
+
+/* ═══════════════════════════════════════════════════
+   AI SUGGESTIONS (Template-based)
+═══════════════════════════════════════════════════ */
+function aiSuggestTitle() {
+  const kw = document.getElementById('focusKw').value.trim();
+  const site = document.getElementById('siteName').value.trim() || 'YourBrand';
+  const suggestions = kw ? [
+    `${kw.charAt(0).toUpperCase() + kw.slice(1)} — Free Online Tool | ${site}`,
+    `Best ${kw.charAt(0).toUpperCase() + kw.slice(1)}: Ultimate Guide 2025 | ${site}`,
+    `${kw.charAt(0).toUpperCase() + kw.slice(1)}: How It Works & Best Practices | ${site}`,
+  ] : [
+    `Free Online Tool for SEO Optimization | ${site}`,
+    `Professional SEO Tool — AI Powered | ${site}`,
+  ];
+  document.getElementById('metaTitle').value = suggestions[Math.floor(Math.random() * suggestions.length)];
+  updateAll();
+  showToast('✨ AI title generated!');
+}
+
+function aiSuggestDesc() {
+  const kw = document.getElementById('focusKw').value.trim();
+  const title = document.getElementById('metaTitle').value.trim();
+  const site = document.getElementById('siteName').value.trim() || 'QuickTools';
+  const suggestions = kw ? [
+    `Use our free ${kw} tool to boost your SEO rankings. Generate optimized meta tags, preview SERPs, and improve your Google CTR instantly — no signup required.`,
+    `The most powerful ${kw} for 2025. Analyze keyword density, generate meta descriptions, and preview Google results. Free forever with ${site}.`,
+    `Discover how to master ${kw} with AI-powered analysis. Get instant SERP previews, character counts, and one-click meta tag generation. 100% free.`,
+  ] : [
+    `Generate perfect SEO meta titles, descriptions, Open Graph tags and preview Google search results instantly with AI. Free, no signup required.`,
+    `Boost your organic CTR with our AI-powered meta tag generator. Preview SERP snippets for desktop and mobile. 100% free with no registration needed.`,
+  ];
+  document.getElementById('metaDesc').value = suggestions[Math.floor(Math.random() * suggestions.length)];
+  updateAll();
+  showToast('✨ AI description generated!');
+}
+
+/* ═══════════════════════════════════════════════════
+   SLUG & CANONICAL
+═══════════════════════════════════════════════════ */
+function generateSlug() {
+  const title = document.getElementById('metaTitle').value.trim();
+  if (!title) { showToast('⚠️ Enter a meta title first'); return; }
+  const stopWords = new Set(['a','an','the','and','or','but','in','on','at','to','for','of','with','by','from','is','are','was','were','be','been','have','has','had','do','does','did','will','would','shall','should','may','might','can','could','this','that','these','those']);
+  const slug = title.toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .split(/\s+/)
+    .filter(w => w && !stopWords.has(w))
+    .slice(0, 6)
+    .join('-');
+  document.getElementById('slugField').value = slug;
+  showToast('🔗 Slug generated!');
+}
+
+function generateCanonical() {
+  const url = document.getElementById('pageUrl').value.trim();
+  const slug = document.getElementById('slugField').value.trim();
+  if (!url && !slug) { showToast('⚠️ Enter a URL or generate slug first'); return; }
+  let canonical;
+  if (url) {
+    try {
+      const u = new URL(url);
+      canonical = u.origin + u.pathname;
+    } catch(e) {
+      canonical = url;
+    }
+  } else {
+    canonical = 'https://example.com/' + slug;
+  }
+  document.getElementById('canonicalUrl').value = canonical;
+  updateAll();
+  showToast('🔁 Canonical URL generated!');
+}
+
+/* ═══════════════════════════════════════════════════
+   COPY & DOWNLOAD
+═══════════════════════════════════════════════════ */
+function copyCode() {
+  const raw = document.getElementById('htmlOutput').dataset.raw || document.getElementById('htmlOutput').textContent;
+  navigator.clipboard.writeText(raw).then(() => showToast('📋 Copied to clipboard!')).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = raw;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    ta.remove();
+    showToast('📋 Copied!');
+  });
+}
+
+function copyTab(id) {
+  const raw = document.getElementById(id).dataset.raw || document.getElementById(id).textContent;
+  navigator.clipboard.writeText(raw).then(() => showToast('📋 Copied!')).catch(() => showToast('❌ Copy failed'));
+}
+
+function downloadHTML() {
+  const raw = document.getElementById('htmlOutput').dataset.raw;
+  if (!raw || raw.includes('Fill in the fields')) { showToast('⚠️ Generate tags first'); return; }
+  const full = `<!DOCTYPE html>\n<html lang="en">\n<head>\n${raw}\n</head>\n<body>\n<!-- Your page content here -->\n</body>\n</html>`;
+  const blob = new Blob([full], { type: 'text/html' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'meta-tags-head.html';
+  a.click();
+  showToast('⬇️ Downloaded!');
+}
+
+/* ═══════════════════════════════════════════════════
+   RESET
+═══════════════════════════════════════════════════ */
+function resetAll() {
+  ['metaTitle','metaDesc','pageUrl','focusKw','ogTitle','ogDesc','ogImage','siteName','twitterTitle','twitterDesc','twitterSite','canonicalUrl','slugField'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  document.querySelectorAll('#robotsToggles .toggle-item').forEach(el => {
+    el.classList.remove('active');
+    if (el.dataset.val === 'index' || el.dataset.val === 'follow') el.classList.add('active');
+  });
+  updateRobotsTag();
+  updateAll();
+  showToast('↺ Reset complete');
+}
+
+/* ═══════════════════════════════════════════════════
+   SERP VIEW SWITCH
+═══════════════════════════════════════════════════ */
+function switchSerpView(view, btn) {
+  document.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('desktopSerp').style.display = view === 'desktop' ? 'block' : 'none';
+  document.getElementById('mobileSerp').style.display = view === 'mobile' ? 'block' : 'none';
+}
+
+/* ═══════════════════════════════════════════════════
+   TABS
+═══════════════════════════════════════════════════ */
+function switchTab(tabId, btn) {
+  btn.closest('.glass-card').querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.closest('.glass-card').querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + tabId).classList.add('active');
+}
+
+/* ═══════════════════════════════════════════════════
+   FAQ
+═══════════════════════════════════════════════════ */
+function toggleFaq(item) {
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+/* ═══════════════════════════════════════════════════
+   TOAST
+═══════════════════════════════════════════════════ */
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+/* ═══════════════════════════════════════════════════
+   HOVER TILT
+═══════════════════════════════════════════════════ */
+document.querySelectorAll('.stat-card, .related-card, .info-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `perspective(600px) rotateX(${-y * 6}deg) rotateY(${x * 6}deg) translateY(-2px)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
+
+/* ═══════════════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════════════ */
+updateRobotsTag();
+updateAll();
+</script>
+</body>
+</html>
