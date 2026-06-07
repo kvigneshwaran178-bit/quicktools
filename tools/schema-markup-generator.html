@@ -1,0 +1,3030 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schema Markup Generator – Create JSON-LD Structured Data Online | QuickTools</title>
+  <meta name="description" content="Generate JSON-LD schema markup instantly. Create FAQ, Article, Product, Breadcrumb, Organization and other structured data for better Google rich results." />
+  <meta name="keywords" content="schema markup generator, json ld generator, schema generator, faq schema generator, structured data generator, google schema markup, rich snippets generator, seo schema generator, json ld tool, product schema generator, article schema generator, schema markup tool, free schema generator, rich results generator, schema validator, website schema generator, local business schema generator, breadcrumb schema generator, software schema generator, seo structured data tool" />
+  <link rel="canonical" href="https://quicktools.dev/tools/schema-markup-generator.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Schema Markup Generator – Create JSON-LD Structured Data Online" />
+  <meta property="og:description" content="Generate JSON-LD schema markup instantly. Create FAQ, Article, Product, Breadcrumb, Organization and other structured data for better Google rich results." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://quicktools.dev/tools/schema-markup-generator.html" />
+  <meta property="og:site_name" content="QuickTools" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Schema Markup Generator – JSON-LD Structured Data" />
+  <meta name="twitter:description" content="Free online schema markup generator. Create JSON-LD for FAQ, Article, Product, and 15+ schema types instantly." />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://quicktools.dev/tools/schema-markup-generator.html",
+        "name": "Schema Markup Generator",
+        "description": "Generate JSON-LD schema markup instantly for better Google rich results.",
+        "url": "https://quicktools.dev/tools/schema-markup-generator.html",
+        "isPartOf": { "@id": "https://quicktools.dev/#website" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Schema Markup Generator",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Free online tool to generate JSON-LD schema markup for SEO and Google rich results.",
+        "url": "https://quicktools.dev/tools/schema-markup-generator.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://quicktools.dev/" },
+          { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://quicktools.dev/tools/" },
+          { "@type": "ListItem", "position": 3, "name": "Schema Markup Generator", "item": "https://quicktools.dev/tools/schema-markup-generator.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is schema markup?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Schema markup is structured data code (JSON-LD, Microdata, or RDFa) added to HTML that helps search engines understand your content and display rich results." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is JSON-LD?",
+            "acceptedAnswer": { "@type": "Answer", "text": "JSON-LD (JavaScript Object Notation for Linked Data) is Google's recommended format for adding structured data. It is added in a script tag and does not interfere with page HTML." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does schema markup improve SEO?",
+            "acceptedAnswer": { "@type": "Answer", "text": "While schema markup is not a direct ranking factor, it enables rich results in Google search, which significantly improves click-through rates (CTR) and visibility." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ─── FONTS ─── */
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+    /* ─── VARIABLES ─── */
+    :root {
+      --font-ui: 'Outfit', sans-serif;
+      --font-display: 'Syne', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      /* accent palette */
+      --indigo: #6366f1;
+      --violet: #8b5cf6;
+      --cyan: #06b6d4;
+      --pink: #ec4899;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+
+      --radius: 14px;
+      --radius-lg: 20px;
+      --radius-sm: 8px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* DARK THEME */
+    [data-theme="dark"] {
+      --bg: #080b14;
+      --bg2: #0d1120;
+      --bg3: #111827;
+      --surface: rgba(255,255,255,0.04);
+      --surface2: rgba(255,255,255,0.07);
+      --surface3: rgba(255,255,255,0.10);
+      --border: rgba(99,102,241,0.25);
+      --border2: rgba(255,255,255,0.08);
+      --text: #f0f4ff;
+      --text2: #9ba8c5;
+      --text3: #5b6a8a;
+      --glow: rgba(99,102,241,0.4);
+      --glow2: rgba(139,92,246,0.3);
+      --glow-cyan: rgba(6,182,212,0.3);
+      --card-bg: rgba(13,17,32,0.8);
+      --code-bg: rgba(6,8,18,0.95);
+      --input-bg: rgba(255,255,255,0.05);
+      --input-border: rgba(99,102,241,0.3);
+      --shadow: 0 8px 32px rgba(0,0,0,0.5);
+      --shadow-glow: 0 0 40px rgba(99,102,241,0.2);
+    }
+
+    /* LIGHT THEME */
+    [data-theme="light"] {
+      --bg: #f0f2ff;
+      --bg2: #e8eaf8;
+      --bg3: #ffffff;
+      --surface: rgba(255,255,255,0.7);
+      --surface2: rgba(255,255,255,0.85);
+      --surface3: rgba(255,255,255,0.95);
+      --border: rgba(99,102,241,0.2);
+      --border2: rgba(99,102,241,0.12);
+      --text: #111827;
+      --text2: #4b5563;
+      --text3: #9ca3af;
+      --glow: rgba(99,102,241,0.15);
+      --glow2: rgba(139,92,246,0.12);
+      --glow-cyan: rgba(6,182,212,0.15);
+      --card-bg: rgba(255,255,255,0.8);
+      --code-bg: rgba(15,23,42,0.96);
+      --input-bg: rgba(255,255,255,0.9);
+      --input-border: rgba(99,102,241,0.3);
+      --shadow: 0 8px 32px rgba(99,102,241,0.12);
+      --shadow-glow: 0 0 40px rgba(99,102,241,0.1);
+    }
+
+    /* ─── RESET ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-ui);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.6;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    /* ─── ANIMATED BACKGROUND ─── */
+    .bg-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    [data-theme="dark"] .bg-canvas {
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 20%, rgba(99,102,241,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(139,92,246,0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 60% 10%, rgba(6,182,212,0.07) 0%, transparent 50%),
+        #080b14;
+    }
+
+    [data-theme="light"] .bg-canvas {
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 20%, rgba(99,102,241,0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(139,92,246,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 60% 10%, rgba(6,182,212,0.06) 0%, transparent 50%),
+        #f0f2ff;
+    }
+
+    .particle {
+      position: absolute;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      opacity: 0;
+      animation: floatParticle linear infinite;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    [data-theme="dark"] .particle { color: rgba(99,102,241,0.4); }
+    [data-theme="light"] .particle { color: rgba(99,102,241,0.25); }
+
+    @keyframes floatParticle {
+      0% { opacity: 0; transform: translateY(100vh) rotate(0deg); }
+      10% { opacity: 1; }
+      90% { opacity: 0.5; }
+      100% { opacity: 0; transform: translateY(-100px) rotate(360deg); }
+    }
+
+    /* ─── MESH GRID ─── */
+    .mesh-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(99,102,241,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,102,241,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+    }
+
+    /* ─── WRAPPER ─── */
+    .wrapper { position: relative; z-index: 1; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border2);
+      transition: all var(--transition);
+    }
+
+    [data-theme="dark"] nav { background: rgba(8,11,20,0.85); }
+    [data-theme="light"] nav { background: rgba(240,242,255,0.9); }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, var(--indigo), var(--violet));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      font-family: var(--font-display);
+      box-shadow: 0 0 16px rgba(99,102,241,0.4);
+    }
+
+    .logo-name {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--indigo), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text2);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 8px;
+      transition: all var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: var(--surface2);
+    }
+
+    .theme-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: all var(--transition);
+      color: var(--text);
+    }
+
+    .theme-btn:hover {
+      background: var(--surface3);
+      box-shadow: 0 0 16px var(--glow);
+      transform: scale(1.05);
+    }
+
+    /* ─── BREADCRUMB ─── */
+    .breadcrumb {
+      padding: 14px 24px;
+      font-size: 13px;
+      color: var(--text3);
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb a { color: var(--text3); text-decoration: none; transition: color var(--transition); }
+    .breadcrumb a:hover { color: var(--indigo); }
+    .breadcrumb span { color: var(--text2); }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 60px 24px 40px;
+      max-width: 1300px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 16px;
+      border-radius: 100px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--indigo);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      font-family: var(--font-mono);
+    }
+
+    [data-theme="dark"] .hero-badge {
+      box-shadow: 0 0 20px rgba(99,102,241,0.2);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 60px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .grad {
+      background: linear-gradient(135deg, var(--indigo) 0%, var(--violet) 40%, var(--cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--text2);
+      max-width: 620px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+
+    /* trust badges */
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 0;
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text2);
+      transition: all var(--transition);
+    }
+
+    .trust-badge:hover {
+      background: var(--surface2);
+      color: var(--text);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .trust-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 8px rgba(16,185,129,0.6);
+    }
+
+    /* ─── MAIN TOOL GRID ─── */
+    .tool-container {
+      max-width: 1300px;
+      margin: 40px auto 0;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .tool-container { grid-template-columns: 1fr; }
+    }
+
+    /* ─── GLASS CARD ─── */
+    .glass-card {
+      backdrop-filter: blur(20px) saturate(150%);
+      -webkit-backdrop-filter: blur(20px) saturate(150%);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: all var(--transition);
+    }
+
+    [data-theme="dark"] .glass-card {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+
+    [data-theme="light"] .glass-card {
+      box-shadow: 0 8px 32px rgba(99,102,241,0.1), inset 0 1px 0 rgba(255,255,255,0.8);
+    }
+
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--indigo), transparent);
+      opacity: 0.6;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(99,102,241,0.4);
+      transform: translateY(-2px);
+    }
+
+    [data-theme="dark"] .glass-card:hover {
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 30px rgba(99,102,241,0.15);
+    }
+
+    [data-theme="light"] .glass-card:hover {
+      box-shadow: 0 16px 48px rgba(99,102,241,0.15), 0 0 30px rgba(99,102,241,0.08);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+    }
+
+    .icon-indigo { background: rgba(99,102,241,0.15); }
+    .icon-violet { background: rgba(139,92,246,0.15); }
+    .icon-cyan   { background: rgba(6,182,212,0.15); }
+    .icon-pink   { background: rgba(236,72,153,0.15); }
+    .icon-emerald { background: rgba(16,185,129,0.15); }
+
+    /* ─── FORM ELEMENTS ─── */
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text2);
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+    }
+
+    .form-group label .req {
+      color: var(--pink);
+      margin-left: 3px;
+    }
+
+    .form-group label .rec {
+      color: var(--cyan);
+      margin-left: 3px;
+      font-size: 10px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px 14px;
+      background: var(--input-bg);
+      border: 1px solid var(--input-border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-family: var(--font-ui);
+      font-size: 14px;
+      outline: none;
+      transition: all var(--transition);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--indigo);
+      box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+    }
+
+    [data-theme="dark"] input, [data-theme="dark"] select, [data-theme="dark"] textarea {
+      background: rgba(255,255,255,0.05);
+    }
+
+    textarea { resize: vertical; min-height: 80px; line-height: 1.5; }
+
+    /* custom select arrow */
+    .select-wrap { position: relative; }
+    .select-wrap::after {
+      content: '▾';
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text3);
+      pointer-events: none;
+      font-size: 12px;
+    }
+
+    /* ─── SCHEMA TYPE SELECTOR ─── */
+    .schema-types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .schema-type-btn {
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border2);
+      background: var(--surface);
+      color: var(--text2);
+      font-size: 12px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      cursor: pointer;
+      text-align: left;
+      transition: all var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .schema-type-btn:hover {
+      border-color: var(--indigo);
+      color: var(--text);
+      background: var(--surface2);
+      transform: translateY(-1px);
+    }
+
+    .schema-type-btn.active {
+      border-color: var(--indigo);
+      background: rgba(99,102,241,0.12);
+      color: var(--indigo);
+      box-shadow: 0 0 16px rgba(99,102,241,0.2);
+    }
+
+    [data-theme="light"] .schema-type-btn.active {
+      box-shadow: 0 4px 12px rgba(99,102,241,0.2);
+    }
+
+    /* ─── DYNAMIC FIELDS ─── */
+    #dynamic-fields {
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .faq-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .faq-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--violet);
+      font-family: var(--font-mono);
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      font-family: var(--font-ui);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--indigo), var(--violet));
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(99,102,241,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(99,102,241,0.4);
+    }
+
+    .btn-secondary {
+      background: var(--surface2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface3);
+      border-color: var(--indigo);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text2);
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+
+    .btn-ghost:hover { color: var(--pink); }
+
+    .btn-danger {
+      background: rgba(239,68,68,0.1);
+      color: #ef4444;
+      border: 1px solid rgba(239,68,68,0.2);
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+
+    .btn-danger:hover { background: rgba(239,68,68,0.2); }
+
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    /* ─── FULL WIDTH CARD ─── */
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    /* ─── CODE OUTPUT ─── */
+    .code-container {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .code-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: rgba(0,0,0,0.3);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    [data-theme="light"] .code-header {
+      background: rgba(15,23,42,0.9);
+    }
+
+    .code-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .code-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot-red   { background: #ff5f57; }
+    .dot-amber { background: #ffbd2e; }
+    .dot-green { background: #28ca42; }
+
+    .code-label {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: rgba(255,255,255,0.4);
+    }
+
+    .code-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .code-btn {
+      padding: 4px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.7);
+      font-size: 11px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .code-btn:hover {
+      background: rgba(99,102,241,0.3);
+      border-color: rgba(99,102,241,0.5);
+      color: #fff;
+    }
+
+    pre#output {
+      background: var(--code-bg);
+      color: #e2e8f0;
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      line-height: 1.7;
+      padding: 20px;
+      overflow-x: auto;
+      max-height: 480px;
+      overflow-y: auto;
+      white-space: pre;
+      margin: 0;
+    }
+
+    /* Syntax Highlight */
+    .tok-key   { color: #818cf8; }
+    .tok-str   { color: #86efac; }
+    .tok-url   { color: #67e8f9; text-decoration: underline; text-underline-offset: 2px; }
+    .tok-num   { color: #fcd34d; }
+    .tok-bool  { color: #f9a8d4; }
+    .tok-null  { color: #94a3b8; }
+    .tok-brace { color: #e2e8f0; }
+
+    /* cursor blink */
+    .cursor-blink::after {
+      content: '▋';
+      animation: blink 1.2s step-end infinite;
+      color: var(--indigo);
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* ─── DASHBOARD CARDS ─── */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .dashboard-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .dash-card {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+      transition: all var(--transition);
+    }
+
+    .dash-card:hover {
+      border-color: var(--border);
+      transform: translateY(-2px);
+    }
+
+    .dash-value {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .dash-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text3);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+    }
+
+    .color-indigo { color: var(--indigo); }
+    .color-violet { color: var(--violet); }
+    .color-cyan   { color: var(--cyan); }
+    .color-emerald { color: var(--emerald); }
+    .color-pink   { color: var(--pink); }
+    .color-amber  { color: var(--amber); }
+
+    /* ─── STATUS BADGES ─── */
+    .status-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+    }
+
+    .status-badge.valid {
+      background: rgba(16,185,129,0.1);
+      color: var(--emerald);
+      border: 1px solid rgba(16,185,129,0.2);
+    }
+
+    .status-badge.warning {
+      background: rgba(245,158,11,0.1);
+      color: var(--amber);
+      border: 1px solid rgba(245,158,11,0.2);
+    }
+
+    .status-badge.info {
+      background: rgba(99,102,241,0.1);
+      color: var(--indigo);
+      border: 1px solid rgba(99,102,241,0.2);
+    }
+
+    .status-badge.rich {
+      background: rgba(6,182,212,0.1);
+      color: var(--cyan);
+      border: 1px solid rgba(6,182,212,0.2);
+    }
+
+    /* ─── SCORE BAR ─── */
+    .score-bar-wrap {
+      margin-top: 12px;
+    }
+
+    .score-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text2);
+      margin-bottom: 6px;
+      font-family: var(--font-mono);
+    }
+
+    .score-bar {
+      height: 6px;
+      border-radius: 100px;
+      background: var(--surface2);
+      overflow: hidden;
+    }
+
+    .score-bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      background: linear-gradient(90deg, var(--indigo), var(--cyan));
+      width: 0%;
+      transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 0 8px rgba(99,102,241,0.4);
+    }
+
+    /* ─── SECTION ─── */
+    section {
+      max-width: 1300px;
+      margin: 60px auto 0;
+      padding: 0 24px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--indigo);
+      font-family: var(--font-mono);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3.5vw, 38px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--text2);
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ─── INFO GRID ─── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .info-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+      padding: 20px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .info-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--indigo), var(--violet));
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .info-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border);
+    }
+
+    .info-card:hover::after { opacity: 1; }
+
+    [data-theme="dark"] .info-card:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 20px rgba(99,102,241,0.1);
+    }
+
+    [data-theme="light"] .info-card:hover {
+      box-shadow: 0 12px 40px rgba(99,102,241,0.12);
+    }
+
+    .info-card-icon {
+      font-size: 26px;
+      margin-bottom: 14px;
+    }
+
+    .info-card h3 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .info-card p {
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.65;
+    }
+
+    /* ─── SEO CONTENT ─── */
+    .content-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border2);
+      border-radius: var(--radius-lg);
+      padding: 32px 36px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    [data-theme="dark"] .content-section {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    [data-theme="light"] .content-section {
+      box-shadow: 0 8px 32px rgba(99,102,241,0.06);
+    }
+
+    .content-section h2 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 800;
+      margin: 28px 0 10px;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .content-section h2:first-child { margin-top: 0; }
+
+    .content-section h3 {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      margin: 20px 0 8px;
+      color: var(--text);
+    }
+
+    .content-section p {
+      font-size: 15px;
+      color: var(--text2);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .content-section ul, .content-section ol {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    .content-section li {
+      font-size: 15px;
+      color: var(--text2);
+      line-height: 1.7;
+      margin-bottom: 6px;
+    }
+
+    .content-section code {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      padding: 2px 7px;
+      border-radius: 5px;
+      background: var(--surface2);
+      color: var(--cyan);
+    }
+
+    /* ─── SCHEMA EXAMPLES ─── */
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+    }
+
+    .example-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all var(--transition);
+    }
+
+    .example-card:hover {
+      border-color: var(--border);
+      transform: translateY(-2px);
+    }
+
+    .example-header {
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border2);
+      background: var(--surface);
+    }
+
+    .example-type {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--violet);
+      letter-spacing: 0.05em;
+    }
+
+    .example-code {
+      background: var(--code-bg);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      line-height: 1.6;
+      padding: 14px 16px;
+      overflow-x: auto;
+      color: #cbd5e1;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    /* ─── RICH RESULTS GUIDE ─── */
+    .rich-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .rich-card {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      transition: all var(--transition);
+    }
+
+    .rich-card:hover {
+      border-color: var(--border);
+      transform: translateY(-2px);
+    }
+
+    .rich-icon { font-size: 24px; margin-bottom: 8px; }
+    .rich-name {
+      font-size: 13px;
+      font-weight: 700;
+      font-family: var(--font-display);
+      margin-bottom: 6px;
+    }
+
+    .rich-desc {
+      font-size: 12px;
+      color: var(--text3);
+      line-height: 1.5;
+    }
+
+    /* ─── FAQ ─── */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .faq-q {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all var(--transition);
+    }
+
+    .faq-q:hover { border-color: var(--border); }
+
+    .faq-q-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .faq-q-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .faq-q-chevron {
+      color: var(--text3);
+      font-size: 12px;
+      transition: transform var(--transition);
+    }
+
+    .faq-q.open .faq-q-chevron { transform: rotate(180deg); }
+
+    .faq-q-body {
+      display: none;
+      padding: 0 20px 16px;
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.7;
+      border-top: 1px solid var(--border2);
+      padding-top: 14px;
+    }
+
+    .faq-q.open .faq-q-body { display: block; }
+
+    /* ─── RELATED TOOLS ─── */
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .related-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: all var(--transition);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .related-card:hover {
+      border-color: var(--indigo);
+      transform: translateY(-3px);
+    }
+
+    [data-theme="dark"] .related-card:hover {
+      box-shadow: 0 8px 24px rgba(99,102,241,0.2);
+    }
+
+    [data-theme="light"] .related-card:hover {
+      box-shadow: 0 8px 24px rgba(99,102,241,0.15);
+    }
+
+    .related-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--indigo), var(--violet));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .related-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: var(--font-display);
+      margin-bottom: 3px;
+    }
+
+    .related-text span {
+      font-size: 12px;
+      color: var(--text3);
+    }
+
+    /* ─── CTA BANNER ─── */
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.15));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(99,102,241,0.08), transparent);
+    }
+
+    .cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 800;
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    .cta-banner p {
+      color: var(--text2);
+      font-size: 16px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .cta-banner .btn-row {
+      justify-content: center;
+      position: relative;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border2);
+      padding: 32px 24px;
+      margin-top: 80px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    [data-theme="dark"] footer { background: rgba(8,11,20,0.7); }
+    [data-theme="light"] footer { background: rgba(240,242,255,0.7); }
+
+    .footer-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--text3);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .footer-links a:hover { color: var(--indigo); }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--text3);
+    }
+
+    /* ─── TOAST ─── */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      padding: 12px 20px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--indigo), var(--violet));
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 8px 32px rgba(99,102,241,0.4);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toast.show { transform: translateY(0); opacity: 1; }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(99,102,241,0.2); }
+      50% { box-shadow: 0 0 40px rgba(99,102,241,0.4); }
+    }
+
+    .pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero { padding: 40px 20px 30px; }
+      section { padding: 0 20px; margin-top: 40px; }
+      .tool-container { padding: 0 20px; }
+      .content-section { padding: 24px 20px; }
+      .cta-banner { padding: 32px 20px; }
+    }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--surface3); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--indigo); }
+
+    /* ─── GLOW HEADER LINE ─── */
+    .glow-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--indigo), var(--violet), transparent);
+      margin-bottom: 40px;
+      opacity: 0.5;
+    }
+
+    /* field set */
+    .field-set-title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--violet);
+      margin: 16px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border2);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg-canvas" id="bgCanvas">
+  <div class="mesh-grid"></div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✓ Copied to clipboard</div>
+
+<div class="wrapper">
+
+  <!-- ─── NAV ─── -->
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="../index.html" class="nav-logo" aria-label="QuickTools Home">
+      <div class="logo-mark" aria-hidden="true">Q</div>
+      <span class="logo-name">QuickTools</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+      <li><a href="./privacy.html">Privacy</a></li>
+    </ul>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle dark/light mode">🌙</button>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a>
+    <span aria-hidden="true"> › </span>
+    <span>Schema Markup Generator</span>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <header class="hero" role="banner">
+    <div class="hero-badge" aria-label="Tool category">⚡ JSON-LD · Structured Data · Rich Results</div>
+    <h1>
+      <span class="grad">Schema Markup</span><br>
+      Generator
+    </h1>
+    <p>Generate production-ready JSON-LD schema markup for 15+ schema types. Boost your Google rich results eligibility and CTR instantly — no coding required.</p>
+    <div class="trust-row" role="list">
+      <div class="trust-badge" role="listitem"><span class="dot" aria-hidden="true"></span>100% Free</div>
+      <div class="trust-badge" role="listitem"><span class="dot" aria-hidden="true"></span>No Installation</div>
+      <div class="trust-badge" role="listitem"><span class="dot" aria-hidden="true"></span>Works Offline</div>
+      <div class="trust-badge" role="listitem"><span class="dot" aria-hidden="true"></span>Google Compatible</div>
+      <div class="trust-badge" role="listitem"><span class="dot" aria-hidden="true"></span>SEO Friendly</div>
+      <div class="trust-badge" role="listitem"><span class="dot" aria-hidden="true"></span>Developer Friendly</div>
+    </div>
+  </header>
+
+  <!-- ─── MAIN TOOL ─── -->
+  <main>
+    <div class="tool-container" id="toolGrid">
+
+      <!-- LEFT: Schema Builder -->
+      <div class="glass-card" role="region" aria-label="Schema Builder">
+        <div class="card-header">
+          <div class="card-title">
+            <div class="card-icon icon-indigo" aria-hidden="true">🧩</div>
+            Schema Builder
+          </div>
+          <span style="font-size:11px;font-family:var(--font-mono);color:var(--text3);">SELECT TYPE →</span>
+        </div>
+
+        <!-- Schema Type Selector -->
+        <div class="schema-types-grid" role="group" aria-label="Schema type selection">
+          <button class="schema-type-btn active" data-type="FAQ" onclick="setSchemaType('FAQ',this)">📋 FAQ</button>
+          <button class="schema-type-btn" data-type="Article" onclick="setSchemaType('Article',this)">📰 Article</button>
+          <button class="schema-type-btn" data-type="BlogPosting" onclick="setSchemaType('BlogPosting',this)">✍️ BlogPost</button>
+          <button class="schema-type-btn" data-type="Product" onclick="setSchemaType('Product',this)">🛍️ Product</button>
+          <button class="schema-type-btn" data-type="BreadcrumbList" onclick="setSchemaType('BreadcrumbList',this)">🔗 Breadcrumb</button>
+          <button class="schema-type-btn" data-type="Organization" onclick="setSchemaType('Organization',this)">🏢 Organization</button>
+          <button class="schema-type-btn" data-type="Person" onclick="setSchemaType('Person',this)">👤 Person</button>
+          <button class="schema-type-btn" data-type="LocalBusiness" onclick="setSchemaType('LocalBusiness',this)">📍 LocalBusiness</button>
+          <button class="schema-type-btn" data-type="Event" onclick="setSchemaType('Event',this)">📅 Event</button>
+          <button class="schema-type-btn" data-type="Recipe" onclick="setSchemaType('Recipe',this)">🍴 Recipe</button>
+          <button class="schema-type-btn" data-type="VideoObject" onclick="setSchemaType('VideoObject',this)">🎬 Video</button>
+          <button class="schema-type-btn" data-type="WebSite" onclick="setSchemaType('WebSite',this)">🌐 Website</button>
+          <button class="schema-type-btn" data-type="SoftwareApplication" onclick="setSchemaType('SoftwareApplication',this)">💻 Software</button>
+          <button class="schema-type-btn" data-type="Review" onclick="setSchemaType('Review',this)">⭐ Review</button>
+          <button class="schema-type-btn" data-type="Course" onclick="setSchemaType('Course',this)">🎓 Course</button>
+        </div>
+
+        <!-- Dynamic Fields -->
+        <div id="dynamic-fields" aria-live="polite"></div>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="generateSchema()" aria-label="Generate JSON-LD schema">
+            ⚡ Generate Schema
+          </button>
+          <button class="btn btn-secondary" onclick="resetForm()" aria-label="Reset form">
+            ↺ Reset
+          </button>
+        </div>
+      </div>
+
+      <!-- RIGHT: Live SEO Dashboard + Output -->
+      <div style="display:flex;flex-direction:column;gap:20px;">
+
+        <!-- Dashboard -->
+        <div class="glass-card" role="region" aria-label="SEO Dashboard">
+          <div class="card-header">
+            <div class="card-title">
+              <div class="card-icon icon-cyan" aria-hidden="true">📊</div>
+              Live SEO Dashboard
+            </div>
+          </div>
+
+          <div class="dashboard-grid">
+            <div class="dash-card">
+              <div class="dash-value color-indigo" id="d-type">FAQ</div>
+              <div class="dash-label">Schema Type</div>
+            </div>
+            <div class="dash-card">
+              <div class="dash-value color-emerald" id="d-status">Ready</div>
+              <div class="dash-label">Status</div>
+            </div>
+            <div class="dash-card">
+              <div class="dash-value color-cyan" id="d-lines">0</div>
+              <div class="dash-label">Lines Generated</div>
+            </div>
+            <div class="dash-card">
+              <div class="dash-value color-violet" id="d-required">0</div>
+              <div class="dash-label">Required Fields</div>
+            </div>
+            <div class="dash-card">
+              <div class="dash-value color-pink" id="d-filled">0</div>
+              <div class="dash-label">Fields Filled</div>
+            </div>
+            <div class="dash-card">
+              <div class="dash-value color-amber" id="d-score">0%</div>
+              <div class="dash-label">Completion</div>
+            </div>
+          </div>
+
+          <div class="status-row">
+            <span class="status-badge valid" id="badge-valid">✓ Valid JSON-LD</span>
+            <span class="status-badge rich" id="badge-rich">⚡ Rich Results Eligible</span>
+            <span class="status-badge info" id="badge-type">🔖 FAQ Schema</span>
+          </div>
+
+          <div class="score-bar-wrap">
+            <div class="score-bar-label">
+              <span>Completion Score</span>
+              <span id="score-pct">0%</span>
+            </div>
+            <div class="score-bar">
+              <div class="score-bar-fill" id="score-fill"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- JSON-LD Output -->
+        <div class="glass-card" role="region" aria-label="JSON-LD Output">
+          <div class="card-header">
+            <div class="card-title">
+              <div class="card-icon icon-violet" aria-hidden="true">{ }</div>
+              JSON-LD Output
+            </div>
+          </div>
+
+          <div class="code-container">
+            <div class="code-header">
+              <div class="code-dots" aria-hidden="true">
+                <div class="code-dot dot-red"></div>
+                <div class="code-dot dot-amber"></div>
+                <div class="code-dot dot-green"></div>
+              </div>
+              <span class="code-label">application/ld+json</span>
+              <div class="code-actions">
+                <button class="code-btn" onclick="copyOutput()" aria-label="Copy schema">📋 Copy</button>
+                <button class="code-btn" onclick="downloadOutput()" aria-label="Download schema">⬇ Download</button>
+              </div>
+            </div>
+            <pre id="output" class="cursor-blink" aria-label="Generated JSON-LD schema">// Select a schema type and fill in the fields above,
+// then click ⚡ Generate Schema to get your JSON-LD.</pre>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn-primary" onclick="copyOutput()" aria-label="Copy JSON-LD">📋 Copy JSON-LD</button>
+            <button class="btn btn-secondary" onclick="downloadOutput()" aria-label="Download .json file">⬇ Download .json</button>
+            <button class="btn btn-secondary" onclick="validateExternal()" aria-label="Validate with Google">🔍 Validate</button>
+          </div>
+        </div>
+
+      </div><!-- /right col -->
+    </div><!-- /tool-container -->
+
+    <!-- ─── RICH RESULTS GUIDE ─── -->
+    <section aria-labelledby="rich-title">
+      <div class="section-header">
+        <div class="section-eyebrow">Rich Results Guide</div>
+        <h2 class="section-title" id="rich-title">Schema Types & Rich Result Support</h2>
+        <p class="section-desc">Each schema type unlocks specific Google rich result features that significantly boost your SERP visibility.</p>
+      </div>
+      <div class="rich-grid">
+        <div class="rich-card">
+          <div class="rich-icon">📋</div>
+          <div class="rich-name">FAQ</div>
+          <div class="rich-desc">Expandable Q&A directly in search results. Up to 10 questions shown.</div>
+        </div>
+        <div class="rich-card">
+          <div class="rich-icon">📰</div>
+          <div class="rich-name">Article</div>
+          <div class="rich-desc">News carousel, Top Stories, and article rich snippets with images.</div>
+        </div>
+        <div class="rich-card">
+          <div class="rich-icon">🛍️</div>
+          <div class="rich-name">Product</div>
+          <div class="rich-desc">Star ratings, price, availability shown directly in search results.</div>
+        </div>
+        <div class="rich-card">
+          <div class="rich-icon">📍</div>
+          <div class="rich-name">LocalBusiness</div>
+          <div class="rich-desc">Business info in Knowledge Panel: hours, address, phone, reviews.</div>
+        </div>
+        <div class="rich-card">
+          <div class="rich-icon">📅</div>
+          <div class="rich-name">Event</div>
+          <div class="rich-desc">Event rich results with date, location, and ticket availability.</div>
+        </div>
+        <div class="rich-card">
+          <div class="rich-icon">🍴</div>
+          <div class="rich-name">Recipe</div>
+          <div class="rich-desc">Cooking time, ratings, nutrition info, and ingredients in SERP.</div>
+        </div>
+        <div class="rich-card">
+          <div class="rich-icon">🎬</div>
+          <div class="rich-name">Video</div>
+          <div class="rich-desc">Video carousels with preview thumbnails and metadata.</div>
+        </div>
+        <div class="rich-card">
+          <div class="rich-icon">💻</div>
+          <div class="rich-name">Software</div>
+          <div class="rich-desc">App details, ratings, pricing, and OS compatibility in search.</div>
+        </div>
+        <div class="rich-card">
+          <div class="rich-icon">🎓</div>
+          <div class="rich-name">Course</div>
+          <div class="rich-desc">Course details, provider, description displayed in search results.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SEO CONTENT ─── -->
+    <section aria-labelledby="content-title">
+      <div class="section-header">
+        <div class="section-eyebrow">Complete SEO Guide</div>
+        <h2 class="section-title" id="content-title">Everything About Schema Markup</h2>
+        <p class="section-desc">Master structured data and unlock Google's rich results for your website.</p>
+      </div>
+      <div class="content-section">
+
+        <h2>What Is Schema Markup?</h2>
+        <p>Schema markup is a standardized vocabulary of tags (based on schema.org) that you add to your HTML to help search engines understand the context of your content. Unlike regular HTML which only tells search engines what content looks like, schema markup tells them what the content <em>means</em>. For example, schema markup can tell Google that a number on your page represents a product rating, not just a random number.</p>
+        <p>The schema.org vocabulary was created by a collaboration between Google, Bing, Yahoo, and Yandex in 2011. Today, it defines hundreds of item types and thousands of properties, covering everything from local businesses and events to recipes, products, and job postings. When implemented correctly, schema markup enables your content to appear as rich results — visually enhanced search listings that stand out dramatically from standard blue links.</p>
+
+        <h2>Why Structured Data Matters for SEO</h2>
+        <p>In 2024 and beyond, structured data has become one of the most impactful technical SEO investments you can make. While Google has stated that schema markup is not a direct ranking factor, its indirect effects on SEO performance are profound:</p>
+        <ul>
+          <li><strong>Rich Results Eligibility:</strong> Structured data is the gateway to Google's rich results — FAQ dropdowns, star ratings, recipe cards, event listings, and more. These visual enhancements make your listing stand out in a crowded SERP.</li>
+          <li><strong>Higher Click-Through Rates (CTR):</strong> Studies consistently show that rich results achieve 20–30% higher CTR compared to standard results. Product listings with star ratings can see even greater improvements.</li>
+          <li><strong>Knowledge Graph Integration:</strong> Organization, Person, and LocalBusiness schemas feed directly into Google's Knowledge Graph, increasing brand authority and helping Google understand entity relationships.</li>
+          <li><strong>Voice Search Optimization:</strong> Structured data helps voice assistants like Google Assistant understand and serve your content as answers to voice queries.</li>
+          <li><strong>AI Overview Inclusion:</strong> Google's AI-powered search features increasingly rely on structured data to identify authoritative, well-defined content for inclusion in AI Overviews.</li>
+        </ul>
+
+        <h2>JSON-LD: Google's Recommended Format</h2>
+        <p>There are three formats for adding schema markup: JSON-LD, Microdata, and RDFa. Google strongly recommends JSON-LD (JavaScript Object Notation for Linked Data) as the preferred implementation method, and it's the only format generated by this tool.</p>
+        <p>JSON-LD works by embedding a JavaScript snippet in your page's <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code>. This snippet contains all your structured data as a JSON object, completely separate from your visible HTML. This separation is what makes JSON-LD so powerful:</p>
+        <ul>
+          <li>Easy to add without touching your HTML structure</li>
+          <li>Simple to update and maintain</li>
+          <li>Can be dynamically injected via CMS plugins or JavaScript</li>
+          <li>Does not risk breaking page layout</li>
+          <li>Can describe entities not directly represented in the visible HTML</li>
+        </ul>
+
+        <h2>How to Implement JSON-LD Schema Markup</h2>
+        <p>Adding JSON-LD to your website is straightforward. Once you've generated your schema using this tool, place the output inside a <code>&lt;script type="application/ld+json"&gt;</code> tag. You can add this tag in the <code>&lt;head&gt;</code> section of your HTML or anywhere in the <code>&lt;body&gt;</code>. For dynamic pages, you can inject it server-side or via JavaScript.</p>
+
+        <h3>WordPress Implementation</h3>
+        <p>For WordPress sites, you can add schema markup using the <code>wp_head</code> action hook in your <code>functions.php</code>, use a plugin like Yoast SEO or Schema Pro, or embed it directly in your theme's <code>header.php</code>. Many page builders like Elementor also offer native schema markup support.</p>
+
+        <h3>Google Search Console Verification</h3>
+        <p>After implementing schema markup, use Google Search Console's Rich Results Test and URL Inspection tool to verify that Google can properly read your structured data. The Rich Results Test shows you exactly which rich result features your page is eligible for and highlights any errors or warnings.</p>
+
+        <h2>Common Schema Types and When to Use Them</h2>
+
+        <h3>FAQ Schema (FAQPage)</h3>
+        <p>Use FAQ schema on any page that contains a list of questions and answers about a particular topic. When implemented correctly, Google may show your FAQs as expandable items directly under your search result, dramatically increasing your result's size and visibility. This is one of the highest-impact schema types available.</p>
+
+        <h3>Article and BlogPosting Schema</h3>
+        <p>Use Article schema for news articles, reports, and editorial content. Use BlogPosting for blog entries and opinion pieces. These schemas help Google identify the publication date, author, and headline of your content — all factors that influence inclusion in Google News and Top Stories carousels.</p>
+
+        <h3>Product Schema</h3>
+        <p>Product schema is essential for any e-commerce page. It enables Google to display star ratings, price ranges, and availability status directly in search results. Combined with Review and Offer schemas, Product schema is one of the best ways to improve e-commerce CTR from organic search.</p>
+
+        <h3>LocalBusiness Schema</h3>
+        <p>Any business with a physical location should implement LocalBusiness schema (or its more specific subtypes like Restaurant, MedicalBusiness, or LodgingBusiness). This data feeds into Google Maps, the Knowledge Panel, and Local Pack results — the most valuable SERP real estate for local businesses.</p>
+
+        <h2>Schema Best Practices</h2>
+        <ul>
+          <li><strong>Only mark up what's visible on the page:</strong> Google requires that schema markup accurately represents content that users can see. Don't mark up content that's hidden or not present on the page.</li>
+          <li><strong>Use specific schema types:</strong> Always use the most specific schema type available. For example, use <code>Restaurant</code> instead of <code>LocalBusiness</code> if you're marking up a restaurant.</li>
+          <li><strong>Include all required properties:</strong> Missing required properties will prevent your content from being eligible for rich results. Our tool marks required fields clearly.</li>
+          <li><strong>Keep data accurate and up-to-date:</strong> Stale or inaccurate structured data can lead to penalties. Automate schema generation where possible to keep it in sync with your content.</li>
+          <li><strong>Validate before deploying:</strong> Always test your schema with Google's Rich Results Test before pushing to production.</li>
+          <li><strong>Use absolute URLs:</strong> Always use full, absolute URLs (including <code>https://</code>) for all URL properties in your schema.</li>
+          <li><strong>Implement one schema per entity:</strong> If a page represents a single entity (e.g., one product), use a single Product schema. For multiple entities, use <code>@graph</code> to combine them in one script block.</li>
+        </ul>
+
+        <h2>Schema Validation and Testing</h2>
+        <p>After generating your schema markup, you should validate it using multiple tools to ensure correctness. Google provides two official validation tools: the <strong>Rich Results Test</strong> (tests eligibility for rich results specifically) and the <strong>Schema Markup Validator</strong> (tests general schema.org compliance). Both tools accept a URL or pasted code directly.</p>
+        <p>Common validation errors to watch for include: missing required properties, incorrect data types (e.g., passing a string where a number is expected), malformed URLs, and schema types that don't match the page's actual content.</p>
+
+        <h2>How Rich Snippets Increase CTR</h2>
+        <p>The CTR benefits of rich snippets are well-documented. A standard search result occupies roughly one to two lines in the SERP. An FAQ-enhanced result can occupy five to eight lines. A Product result with star ratings, price, and availability is visually distinctive from competitors. Research from Moz, Backlinko, and Google's own studies shows that:</p>
+        <ul>
+          <li>FAQ rich results increase organic CTR by an average of 20–30%</li>
+          <li>Product rich results with stars see CTR improvements of 15–35%</li>
+          <li>Recipe rich cards achieve 2–3x more clicks than standard results</li>
+          <li>Event rich results drive significantly higher engagement for time-sensitive content</li>
+        </ul>
+
+        <h2>Technical SEO and Structured Data Strategy</h2>
+        <p>For a comprehensive technical SEO strategy, schema markup should be part of a broader structured data plan that includes: a site-wide Organization or WebSite schema on your homepage, BreadcrumbList schema on all interior pages, Article/BlogPosting schemas on all editorial content, Product schemas on all product pages, and LocalBusiness schema in the site footer for local businesses.</p>
+        <p>This layered approach ensures maximum rich result coverage and helps Google build a comprehensive understanding of your website's entity relationships — a key factor in establishing topical authority and improving overall organic performance.</p>
+
+      </div>
+    </section>
+
+    <!-- ─── SCHEMA EXAMPLES ─── -->
+    <section aria-labelledby="examples-title">
+      <div class="section-header">
+        <div class="section-eyebrow">Code Examples</div>
+        <h2 class="section-title" id="examples-title">Real Schema Examples</h2>
+        <p class="section-desc">Copy-ready JSON-LD examples for the most common schema types.</p>
+      </div>
+      <div class="examples-grid">
+
+        <div class="example-card">
+          <div class="example-header">
+            <span class="example-type">FAQ Schema</span>
+            <button class="code-btn" onclick="copyExample(this)" aria-label="Copy FAQ Schema example">Copy</button>
+          </div>
+          <pre class="example-code">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is JSON-LD?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "JSON-LD is a method of encoding structured data using JSON."
+    }
+  }]
+}</pre>
+        </div>
+
+        <div class="example-card">
+          <div class="example-header">
+            <span class="example-type">Product Schema</span>
+            <button class="code-btn" onclick="copyExample(this)" aria-label="Copy Product Schema example">Copy</button>
+          </div>
+          <pre class="example-code">{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Premium Headphones",
+  "description": "High-fidelity wireless headphones.",
+  "brand": { "@type": "Brand", "name": "AudioPro" },
+  "offers": {
+    "@type": "Offer",
+    "price": "299.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "1284"
+  }
+}</pre>
+        </div>
+
+        <div class="example-card">
+          <div class="example-header">
+            <span class="example-type">Article Schema</span>
+            <button class="code-btn" onclick="copyExample(this)" aria-label="Copy Article Schema example">Copy</button>
+          </div>
+          <pre class="example-code">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Understanding Schema Markup",
+  "datePublished": "2025-01-15",
+  "dateModified": "2025-06-01",
+  "author": {
+    "@type": "Person",
+    "name": "Jane Smith"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TechBlog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://example.com/logo.png"
+    }
+  }
+}</pre>
+        </div>
+
+        <div class="example-card">
+          <div class="example-header">
+            <span class="example-type">Organization Schema</span>
+            <button class="code-btn" onclick="copyExample(this)" aria-label="Copy Organization Schema example">Copy</button>
+          </div>
+          <pre class="example-code">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Acme Corp",
+  "url": "https://acmecorp.com",
+  "logo": "https://acmecorp.com/logo.png",
+  "sameAs": [
+    "https://twitter.com/acmecorp",
+    "https://linkedin.com/company/acmecorp"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-800-ACME",
+    "contactType": "customer service"
+  }
+}</pre>
+        </div>
+
+        <div class="example-card">
+          <div class="example-header">
+            <span class="example-type">Breadcrumb Schema</span>
+            <button class="code-btn" onclick="copyExample(this)" aria-label="Copy Breadcrumb Schema example">Copy</button>
+          </div>
+          <pre class="example-code">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://example.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://example.com/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Schema Guide"
+    }
+  ]
+}</pre>
+        </div>
+
+        <div class="example-card">
+          <div class="example-header">
+            <span class="example-type">LocalBusiness Schema</span>
+            <button class="code-btn" onclick="copyExample(this)" aria-label="Copy LocalBusiness Schema example">Copy</button>
+          </div>
+          <pre class="example-code">{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "The Coffee House",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Main Street",
+    "addressLocality": "San Francisco",
+    "addressRegion": "CA",
+    "postalCode": "94105",
+    "addressCountry": "US"
+  },
+  "telephone": "+1-415-555-0100",
+  "openingHours": "Mo-Fr 07:00-19:00",
+  "url": "https://thecoffeehouse.com"
+}</pre>
+        </div>
+
+        <div class="example-card">
+          <div class="example-header">
+            <span class="example-type">SoftwareApplication Schema</span>
+            <button class="code-btn" onclick="copyExample(this)" aria-label="Copy SoftwareApplication Schema example">Copy</button>
+          </div>
+          <pre class="example-code">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "QuickTools",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "2340"
+  }
+}</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── WHY SCHEMA MATTERS ─── -->
+    <section aria-labelledby="benefits-title">
+      <div class="section-header">
+        <div class="section-eyebrow">SEO Benefits</div>
+        <h2 class="section-title" id="benefits-title">Why Schema Markup Matters</h2>
+        <p class="section-desc">Structured data gives you a measurable edge in organic search — here's exactly how.</p>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-icon">📈</div>
+          <h3>Higher Click-Through Rate</h3>
+          <p>Rich results occupy more SERP real estate and include visual elements like stars, prices, and images. Studies show rich results achieve 20–30% higher CTR on average.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🎯</div>
+          <h3>Better Search Intent Matching</h3>
+          <p>Schema markup helps Google understand exactly what your content represents, ensuring your pages appear for the most relevant queries and user intents.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🔍</div>
+          <h3>Knowledge Panel Presence</h3>
+          <p>Organization, Person, and LocalBusiness schemas contribute to Google's Knowledge Graph, helping establish your brand's authoritative presence in search.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🗣️</div>
+          <h3>Voice Search Optimization</h3>
+          <p>Structured data is how Google's voice assistant finds answers to spoken queries. FAQ and HowTo schemas are especially impactful for voice search visibility.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🤖</div>
+          <h3>AI Overview Inclusion</h3>
+          <p>Google's AI-powered search overviews draw heavily from structured, well-defined content. Schema markup signals that your content is reliable and machine-readable.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">⚡</div>
+          <h3>Faster Indexing</h3>
+          <p>Schema markup reduces ambiguity for Google's crawlers, enabling faster and more accurate indexing of your pages and their relationships to other entities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PAGE FAQ ─── -->
+    <section aria-labelledby="faq-title">
+      <div class="section-header">
+        <div class="section-eyebrow">Frequently Asked Questions</div>
+        <h2 class="section-title" id="faq-title">Schema Markup FAQ</h2>
+      </div>
+      <div class="faq-list" role="list">
+        <div class="faq-q" role="listitem">
+          <div class="faq-q-header" onclick="toggleFaq(this)" tabindex="0" role="button" aria-expanded="false" aria-label="Question: What is schema markup">
+            <span class="faq-q-title">What is schema markup and why do I need it?</span>
+            <span class="faq-q-chevron" aria-hidden="true">▾</span>
+          </div>
+          <div class="faq-q-body">Schema markup is structured data code added to your HTML that helps search engines understand your content's context and meaning. You need it to be eligible for Google's rich results — enhanced search listings with star ratings, FAQs, prices, and more — which significantly increase your click-through rate and organic visibility.</div>
+        </div>
+        <div class="faq-q" role="listitem">
+          <div class="faq-q-header" onclick="toggleFaq(this)" tabindex="0" role="button" aria-expanded="false" aria-label="Question: What is JSON-LD">
+            <span class="faq-q-title">What is JSON-LD and why does Google recommend it?</span>
+            <span class="faq-q-chevron" aria-hidden="true">▾</span>
+          </div>
+          <div class="faq-q-body">JSON-LD (JavaScript Object Notation for Linked Data) is a method of encoding structured data using JSON format inside a script tag. Google recommends it over Microdata and RDFa because it's easy to implement without touching your HTML, simple to maintain, and can be dynamically generated. It also cleanly separates structured data from visual content, reducing the risk of errors.</div>
+        </div>
+        <div class="faq-q" role="listitem">
+          <div class="faq-q-header" onclick="toggleFaq(this)" tabindex="0" role="button" aria-expanded="false" aria-label="Question: Does schema markup improve rankings">
+            <span class="faq-q-title">Does schema markup directly improve my Google rankings?</span>
+            <span class="faq-q-chevron" aria-hidden="true">▾</span>
+          </div>
+          <div class="faq-q-body">Schema markup is not a confirmed direct ranking factor. However, its indirect benefits are significant: higher CTR from rich results sends positive engagement signals to Google, Knowledge Panel presence increases brand authority, and FAQ schemas can reduce bounce rate by answering questions immediately in search. These indirect effects consistently translate to improved ranking performance over time.</div>
+        </div>
+        <div class="faq-q" role="listitem">
+          <div class="faq-q-header" onclick="toggleFaq(this)" tabindex="0" role="button" aria-expanded="false" aria-label="Question: Where do I add JSON-LD">
+            <span class="faq-q-title">Where should I add my JSON-LD schema markup?</span>
+            <span class="faq-q-chevron" aria-hidden="true">▾</span>
+          </div>
+          <div class="faq-q-body">Add your JSON-LD inside a &lt;script type="application/ld+json"&gt; tag. Google recommends placing it in the &lt;head&gt; section, though it works anywhere in the &lt;head&gt; or &lt;body&gt;. For CMS platforms, use a dedicated plugin (Yoast SEO, Schema Pro) or add it through your theme's header template. Ensure it's present in the page's HTML when Google crawls it.</div>
+        </div>
+        <div class="faq-q" role="listitem">
+          <div class="faq-q-header" onclick="toggleFaq(this)" tabindex="0" role="button" aria-expanded="false" aria-label="Question: Is this tool free">
+            <span class="faq-q-title">Is this schema markup generator completely free?</span>
+            <span class="faq-q-chevron" aria-hidden="true">▾</span>
+          </div>
+          <div class="faq-q-body">Yes, QuickTools' Schema Markup Generator is 100% free with no registration required. All schema generation happens entirely in your browser using JavaScript — no data is sent to any server, and the tool works fully offline once the page is loaded.</div>
+        </div>
+        <div class="faq-q" role="listitem">
+          <div class="faq-q-header" onclick="toggleFaq(this)" tabindex="0" role="button" aria-expanded="false" aria-label="Question: How to validate schema">
+            <span class="faq-q-title">How do I validate my schema markup after generating it?</span>
+            <span class="faq-q-chevron" aria-hidden="true">▾</span>
+          </div>
+          <div class="faq-q-body">Use Google's official Rich Results Test (search.google.com/test/rich-results) to test your schema's eligibility for rich results. For general schema.org compliance, use the Schema Markup Validator (validator.schema.org). Both tools accept either a live URL or pasted code directly, and provide detailed error and warning messages to help you fix any issues.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── RELATED TOOLS ─── -->
+    <section aria-labelledby="related-title">
+      <div class="section-header">
+        <div class="section-eyebrow">More Tools</div>
+        <h2 class="section-title" id="related-title">Related Developer Tools</h2>
+      </div>
+      <div class="related-grid">
+        <a href="../tools/json-formatter.html" class="related-card" aria-label="JSON Formatter & Validator">
+          <div class="related-icon" aria-hidden="true">{ }</div>
+          <div class="related-text">
+            <strong>JSON Formatter</strong>
+            <span>Format & validate JSON online</span>
+          </div>
+        </a>
+        <a href="../tools/regex-tester.html" class="related-card" aria-label="Regex Tester">
+          <div class="related-icon" aria-hidden="true">.*</div>
+          <div class="related-text">
+            <strong>Regex Tester</strong>
+            <span>Test regular expressions live</span>
+          </div>
+        </a>
+        <a href="../tools/base64-encoder-decoder.html" class="related-card" aria-label="Base64 Encoder/Decoder">
+          <div class="related-icon" aria-hidden="true">64</div>
+          <div class="related-text">
+            <strong>Base64 Encoder</strong>
+            <span>Encode & decode Base64 data</span>
+          </div>
+        </a>
+        <a href="../tools/hash-generator.html" class="related-card" aria-label="Hash Generator">
+          <div class="related-icon" aria-hidden="true">#</div>
+          <div class="related-text">
+            <strong>Hash Generator</strong>
+            <span>SHA-256, MD5, SHA-512 hashing</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ─── CTA ─── -->
+    <section>
+      <div class="cta-banner">
+        <h2>Generate Perfect Schema Markup<br><span class="grad">Every Time</span></h2>
+        <p>Join thousands of SEO professionals and developers using QuickTools for structured data generation.</p>
+        <div class="btn-row">
+          <button class="btn btn-primary pulse-glow" onclick="document.querySelector('.tool-container').scrollIntoView({behavior:'smooth'})" aria-label="Start generating schema">
+            ⚡ Generate Schema Now
+          </button>
+          <a href="../index.html" class="btn btn-secondary" aria-label="Browse all tools">
+            🛠️ All Tools
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-copy">© 2025 QuickTools.dev — Free Online Developer Tools</div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="../index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+        <a href="./privacy.html">Privacy Policy</a>
+      </nav>
+    </div>
+  </footer>
+
+</div><!-- /wrapper -->
+
+<script>
+// ─── PARTICLE SYSTEM ───────────────────────────────────────────────────────
+const TOKENS = ['{ }','[ ]','@type','"@context"','JSON','LD','schema','SEO','⚡','//','<script>','/>','</>', '{ }', '[ ]', '"url"','"name"', 'true'];
+const canvas = document.getElementById('bgCanvas');
+const N = 16;
+
+for (let i = 0; i < N; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.textContent = TOKENS[Math.floor(Math.random() * TOKENS.length)];
+  p.style.left = (Math.random() * 100) + '%';
+  p.style.animationDuration = (12 + Math.random() * 18) + 's';
+  p.style.animationDelay = (-Math.random() * 20) + 's';
+  p.style.fontSize = (9 + Math.random() * 8) + 'px';
+  canvas.appendChild(p);
+}
+
+// ─── THEME TOGGLE ──────────────────────────────────────────────────────────
+const themeBtn = document.getElementById('themeBtn');
+let darkMode = true;
+
+themeBtn.addEventListener('click', () => {
+  darkMode = !darkMode;
+  document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
+  themeBtn.textContent = darkMode ? '🌙' : '☀️';
+  localStorage.setItem('qt-theme', darkMode ? 'dark' : 'light');
+});
+
+// Restore theme
+const saved = localStorage.getItem('qt-theme');
+if (saved === 'light') {
+  darkMode = false;
+  document.documentElement.setAttribute('data-theme', 'light');
+  themeBtn.textContent = '☀️';
+}
+
+// ─── SCHEMA CONFIG ─────────────────────────────────────────────────────────
+const SCHEMA_META = {
+  FAQ:                 { rich: true,  required: ['mainEntity'], label: 'FAQPage' },
+  Article:             { rich: true,  required: ['headline','datePublished','author'], label: 'Article' },
+  BlogPosting:         { rich: true,  required: ['headline','datePublished','author'], label: 'BlogPosting' },
+  Product:             { rich: true,  required: ['name','offers'], label: 'Product' },
+  BreadcrumbList:      { rich: true,  required: ['itemListElement'], label: 'BreadcrumbList' },
+  Organization:        { rich: false, required: ['name','url'], label: 'Organization' },
+  Person:              { rich: false, required: ['name'], label: 'Person' },
+  LocalBusiness:       { rich: true,  required: ['name','address'], label: 'LocalBusiness' },
+  Event:               { rich: true,  required: ['name','startDate','location'], label: 'Event' },
+  Recipe:              { rich: true,  required: ['name','recipeIngredient','recipeInstructions'], label: 'Recipe' },
+  VideoObject:         { rich: true,  required: ['name','description','thumbnailUrl'], label: 'VideoObject' },
+  WebSite:             { rich: false, required: ['name','url'], label: 'WebSite' },
+  SoftwareApplication: { rich: true,  required: ['name','applicationCategory','operatingSystem'], label: 'SoftwareApplication' },
+  Review:              { rich: true,  required: ['reviewRating','author'], label: 'Review' },
+  Course:              { rich: true,  required: ['name','description','provider'], label: 'Course' },
+};
+
+// Track state
+let currentType = 'FAQ';
+let faqItems = [{ q: '', a: '' }];
+let breadcrumbItems = [{ name: '', url: '' }];
+
+// ─── SCHEMA TYPE SETTER ────────────────────────────────────────────────────
+function setSchemaType(type, btn) {
+  currentType = type;
+  document.querySelectorAll('.schema-type-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const meta = SCHEMA_META[type];
+  document.getElementById('d-type').textContent = meta.label;
+  document.getElementById('d-required').textContent = meta.required.length;
+  document.getElementById('d-status').textContent = 'Ready';
+  document.getElementById('badge-type').textContent = '🔖 ' + meta.label;
+  document.getElementById('badge-rich').style.opacity = meta.rich ? '1' : '0.4';
+
+  renderFields(type);
+  updateScore(0, meta.required.length);
+}
+
+// ─── RENDER DYNAMIC FIELDS ────────────────────────────────────────────────
+function renderFields(type) {
+  const el = document.getElementById('dynamic-fields');
+  el.innerHTML = '';
+
+  const fields = getFieldsHTML(type);
+  el.innerHTML = fields;
+
+  // Special: FAQ items
+  if (type === 'FAQ') {
+    faqItems = [{ q: '', a: '' }];
+    renderFaqItems();
+  }
+  if (type === 'BreadcrumbList') {
+    breadcrumbItems = [{ name: '', url: '' }];
+    renderBreadcrumbItems();
+  }
+
+  // Input listeners for score
+  el.querySelectorAll('input,select,textarea').forEach(inp => {
+    inp.addEventListener('input', () => liveScore());
+  });
+}
+
+function getFieldsHTML(type) {
+  const tpl = {
+
+    FAQ: `
+      <div class="field-set-title">FAQ Entries</div>
+      <div id="faq-items-container"></div>
+      <button type="button" class="btn btn-secondary" style="margin-top:8px;" onclick="addFaqItem()">+ Add Question</button>
+    `,
+
+    Article: `
+      <div class="field-set-title">Required Fields</div>
+      <div class="form-group"><label>Headline<span class="req">*</span></label><input id="f-headline" type="text" placeholder="How to Implement Schema Markup in 2025" /></div>
+      <div class="form-group"><label>URL<span class="req">*</span></label><input id="f-url" type="url" placeholder="https://example.com/article" /></div>
+      <div class="form-group"><label>Date Published<span class="req">*</span></label><input id="f-datePublished" type="date" /></div>
+      <div class="form-group"><label>Date Modified</label><input id="f-dateModified" type="date" /></div>
+      <div class="field-set-title">Author</div>
+      <div class="form-group"><label>Author Name<span class="req">*</span></label><input id="f-authorName" type="text" placeholder="Jane Smith" /></div>
+      <div class="form-group"><label>Author URL<span class="rec">recommended</span></label><input id="f-authorUrl" type="url" placeholder="https://example.com/about" /></div>
+      <div class="field-set-title">Publisher</div>
+      <div class="form-group"><label>Publisher Name<span class="req">*</span></label><input id="f-publisherName" type="text" placeholder="My Blog" /></div>
+      <div class="form-group"><label>Publisher Logo URL<span class="rec">recommended</span></label><input id="f-publisherLogo" type="url" placeholder="https://example.com/logo.png" /></div>
+      <div class="field-set-title">Optional</div>
+      <div class="form-group"><label>Article Image URL</label><input id="f-image" type="url" placeholder="https://example.com/image.jpg" /></div>
+      <div class="form-group"><label>Description</label><textarea id="f-description" placeholder="Brief article description"></textarea></div>
+    `,
+
+    BlogPosting: `
+      <div class="field-set-title">Required Fields</div>
+      <div class="form-group"><label>Headline<span class="req">*</span></label><input id="f-headline" type="text" placeholder="My Blog Post Title" /></div>
+      <div class="form-group"><label>URL<span class="req">*</span></label><input id="f-url" type="url" placeholder="https://example.com/blog/post" /></div>
+      <div class="form-group"><label>Date Published<span class="req">*</span></label><input id="f-datePublished" type="date" /></div>
+      <div class="form-group"><label>Date Modified</label><input id="f-dateModified" type="date" /></div>
+      <div class="field-set-title">Author</div>
+      <div class="form-group"><label>Author Name<span class="req">*</span></label><input id="f-authorName" type="text" placeholder="John Doe" /></div>
+      <div class="form-group"><label>Author URL</label><input id="f-authorUrl" type="url" placeholder="https://example.com/author" /></div>
+      <div class="field-set-title">Publisher</div>
+      <div class="form-group"><label>Publisher Name<span class="req">*</span></label><input id="f-publisherName" type="text" placeholder="My Website" /></div>
+      <div class="form-group"><label>Publisher Logo URL</label><input id="f-publisherLogo" type="url" placeholder="https://example.com/logo.png" /></div>
+      <div class="field-set-title">Optional</div>
+      <div class="form-group"><label>Featured Image URL</label><input id="f-image" type="url" placeholder="https://example.com/image.jpg" /></div>
+      <div class="form-group"><label>Description</label><textarea id="f-description" placeholder="Brief post description"></textarea></div>
+    `,
+
+    Product: `
+      <div class="field-set-title">Required Fields</div>
+      <div class="form-group"><label>Product Name<span class="req">*</span></label><input id="f-name" type="text" placeholder="Premium Wireless Headphones" /></div>
+      <div class="form-group"><label>Description<span class="req">*</span></label><textarea id="f-description" placeholder="High-fidelity wireless headphones with 40h battery"></textarea></div>
+      <div class="form-group"><label>Product URL<span class="req">*</span></label><input id="f-url" type="url" placeholder="https://store.com/product" /></div>
+      <div class="form-group"><label>Image URL</label><input id="f-image" type="url" placeholder="https://store.com/product.jpg" /></div>
+      <div class="field-set-title">Pricing & Availability</div>
+      <div class="form-group"><label>Price<span class="req">*</span></label><input id="f-price" type="text" placeholder="299.00" /></div>
+      <div class="form-group"><label>Currency</label><input id="f-currency" type="text" placeholder="USD" value="USD" /></div>
+      <div class="form-group"><label>Availability</label>
+        <div class="select-wrap">
+          <select id="f-availability">
+            <option value="InStock">In Stock</option>
+            <option value="OutOfStock">Out of Stock</option>
+            <option value="PreOrder">Pre-Order</option>
+            <option value="BackOrder">Back Order</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-set-title">Brand & Ratings</div>
+      <div class="form-group"><label>Brand Name</label><input id="f-brand" type="text" placeholder="AudioPro" /></div>
+      <div class="form-group"><label>SKU / GTIN</label><input id="f-sku" type="text" placeholder="AP-WH-1000XM5" /></div>
+      <div class="form-group"><label>Rating Value</label><input id="f-ratingValue" type="text" placeholder="4.7" /></div>
+      <div class="form-group"><label>Review Count</label><input id="f-reviewCount" type="text" placeholder="1284" /></div>
+    `,
+
+    BreadcrumbList: `
+      <div class="field-set-title">Breadcrumb Items</div>
+      <div id="breadcrumb-items-container"></div>
+      <button type="button" class="btn btn-secondary" style="margin-top:8px;" onclick="addBreadcrumbItem()">+ Add Item</button>
+    `,
+
+    Organization: `
+      <div class="field-set-title">Required Fields</div>
+      <div class="form-group"><label>Organization Name<span class="req">*</span></label><input id="f-name" type="text" placeholder="Acme Corporation" /></div>
+      <div class="form-group"><label>Website URL<span class="req">*</span></label><input id="f-url" type="url" placeholder="https://acme.com" /></div>
+      <div class="field-set-title">Optional</div>
+      <div class="form-group"><label>Logo URL</label><input id="f-logo" type="url" placeholder="https://acme.com/logo.png" /></div>
+      <div class="form-group"><label>Description</label><textarea id="f-description" placeholder="Acme Corporation is a leading provider of..."></textarea></div>
+      <div class="form-group"><label>Phone</label><input id="f-phone" type="tel" placeholder="+1-800-ACME" /></div>
+      <div class="form-group"><label>Email</label><input id="f-email" type="email" placeholder="contact@acme.com" /></div>
+      <div class="form-group"><label>Social Profiles (one per line)</label><textarea id="f-sameAs" placeholder="https://twitter.com/acme&#10;https://linkedin.com/company/acme"></textarea></div>
+    `,
+
+    Person: `
+      <div class="field-set-title">Required Fields</div>
+      <div class="form-group"><label>Full Name<span class="req">*</span></label><input id="f-name" type="text" placeholder="Jane Smith" /></div>
+      <div class="field-set-title">Optional</div>
+      <div class="form-group"><label>Job Title</label><input id="f-jobTitle" type="text" placeholder="Senior SEO Specialist" /></div>
+      <div class="form-group"><label>URL</label><input id="f-url" type="url" placeholder="https://janesmith.com" /></div>
+      <div class="form-group"><label>Image URL</label><input id="f-image" type="url" placeholder="https://janesmith.com/photo.jpg" /></div>
+      <div class="form-group"><label>Email</label><input id="f-email" type="email" placeholder="jane@example.com" /></div>
+      <div class="form-group"><label>Works For</label><input id="f-worksFor" type="text" placeholder="Acme Corp" /></div>
+      <div class="form-group"><label>Social Profiles (one per line)</label><textarea id="f-sameAs" placeholder="https://twitter.com/janesmith&#10;https://linkedin.com/in/janesmith"></textarea></div>
+    `,
+
+    LocalBusiness: `
+      <div class="field-set-title">Required Fields</div>
+      <div class="form-group"><label>Business Name<span class="req">*</span></label><input id="f-name" type="text" placeholder="The Coffee House" /></div>
+      <div class="form-group"><label>Business URL</label><input id="f-url" type="url" placeholder="https://thecoffeehouse.com" /></div>
+      <div class="form-group"><label>Phone</label><input id="f-phone" type="tel" placeholder="+1-415-555-0100" /></div>
+      <div class="field-set-title">Address</div>
+      <div class="form-group"><label>Street Address<span class="req">*</span></label><input id="f-street" type="text" placeholder="123 Main Street" /></div>
+      <div class="form-group"><label>City<span class="req">*</span></label><input id="f-city" type="text" placeholder="San Francisco" /></div>
+      <div class="form-group"><label>State / Region</label><input id="f-state" type="text" placeholder="CA" /></div>
+      <div class="form-group"><label>Postal Code</label><input id="f-zip" type="text" placeholder="94105" /></div>
+      <div class="form-group"><label>Country</label><input id="f-country" type="text" placeholder="US" value="US" /></div>
+      <div class="field-set-title">Optional</div>
+      <div class="form-group"><label>Opening Hours</label><input id="f-hours" type="text" placeholder="Mo-Fr 07:00-19:00, Sa 08:00-17:00" /></div>
+      <div class="form-group"><label>Geo Latitude</label><input id="f-lat" type="text" placeholder="37.7749" /></div>
+      <div class="form-group"><label>Geo Longitude</label><input id="f-lng" type="text" placeholder="-122.4194" /></div>
+      <div class="form-group"><label>Price Range</label><input id="f-priceRange" type="text" placeholder="$$" /></div>
+    `,
+
+    Event: `
+      <div class="field-set-title">Required Fields</div>
+      <div class="form-group"><label>Event Name<span class="req">*</span></label><input id="f-name" type="text" placeholder="Tech Summit 2025" /></div>
+      <div class="form-group"><label>Start Date & Time<span class="req">*</span></label><input id="f-startDate" type="datetime-local" /></div>
+      <div class="form-group"><label>End Date & Time</label><input id="f-endDate" type="datetime-local" /></div>
+      <div class="field-set-title">Location</div>
+      <div class="form-group"><label>Venue Name<span class="req">*</span></label><input id="f-venueName" type="text" placeholder="Moscone Center" /></div>
+      <div class="form-group"><label>Venue Address</label><input id="f-venueAddress" type="text" placeholder="747 Howard St, San Francisco, CA" /></div>
+      <div class="field-set-title">Optional</div>
+      <div class="form-group"><label>Description</label><textarea id="f-description" placeholder="Annual technology conference..."></textarea></div>
+      <div class="form-group"><label>Event URL</label><input id="f-url" type="url" placeholder="https://techsummit.com" /></div>
+      <div class="form-group"><label>Image URL</label><input id="f-image" type="url" placeholder="https://techsummit.com/banner.jpg" /></div>
+      <div class="form-group"><label>Ticket Price</label><input id="f-price" type="text" placeholder="99.00" /></div>
+      <div class="form-group"><label>Currency</label><input id="f-currency" type="text" placeholder="USD" value="USD" /></div>
+      <div class="form-group"><label>Event Mode</label>
+        <div class="select-wrap">
+          <select id="f-eventMode">
+            <option value="OfflineEventAttendanceMode">In-Person</option>
+            <option value="OnlineEventAttendanceMode">Online</option>
+            <option value="MixedEventAttendanceMode">Mixed</option>
+          </select>
+        </div>
+      </div>
+    `,
+
+    Recipe: `
+      <div class="field-set-title">Required Fields</div>
+      <div class="form-group"><label>Recipe Name<span class="req">*</span></label><input id="f-name" type="text" placeholder="Classic Carbonara Pasta" /></div>
+      <div class="form-group"><label>Description</label><textarea id="f-description" placeholder="Traditional Roman pasta dish..."></textarea></div>
+      <div class="form-group"><label>Image URL</label><input id="f-image" type="url" placeholder="https://example.com/recipe.jpg" /></div>
+      <div class="form-group"><label>Recipe URL</label><input id="f-url" type="url" placeholder="https://example.com/recipe" /></div>
+      <div class="field-set-title">Times & Servings</div>
+      <div class="form-group"><label>Prep Time</label><input id="f-prepTime" type="text" placeholder="PT15M (ISO 8601)" /></div>
+      <div class="form-group"><label>Cook Time</label><input id="f-cookTime" type="text" placeholder="PT20M (ISO 8601)" /></div>
+      <div class="form-group"><label>Total Time</label><input id="f-totalTime" type="text" placeholder="PT35M (ISO 8601)" /></div>
+      <div class="form-group"><label>Recipe Yield (servings)</label><input id="f-yield" type="text" placeholder="4 servings" /></div>
+      <div class="field-set-title">Content (one per line)</div>
+      <div class="form-group"><label>Ingredients<span class="req">*</span></label><textarea id="f-ingredients" rows="4" placeholder="200g spaghetti&#10;4 egg yolks&#10;100g pecorino romano&#10;150g guanciale"></textarea></div>
+      <div class="form-group"><label>Instructions<span class="req">*</span></label><textarea id="f-instructions" rows="4" placeholder="Cook pasta al dente.&#10;Fry guanciale until crispy.&#10;Mix eggs with cheese.&#10;Combine all ingredients."></textarea></div>
+      <div class="field-set-title">Ratings</div>
+      <div class="form-group"><label>Rating Value</label><input id="f-ratingValue" type="text" placeholder="4.8" /></div>
+      <div class="form-group"><label>Review Count</label><input id="f-reviewCount" type="text" placeholder="342" /></div>
+    `,
+
+    VideoObject: `
+      <div class="field-set-title">Required Fields</div>
+      <div class="form-group"><label>Video Name<span class="req">*</span></label><input id="f-name" type="text" placeholder="How to Add Schema Markup - Tutorial" /></div>
+      <div class="form-group"><label>Description<span class="req">*</span></label><textarea id="f-description" placeholder="In this tutorial we cover..."></textarea></div>
+      <div class="form-group"><label>Thumbnail URL<span class="req">*</span></label><input id="f-thumbnailUrl" type="url" placeholder="https://example.com/thumb.jpg" /></div>
+      <div class="form-group"><label>Upload Date<span class="req">*</span></label><input id="f-uploadDate" type="date" /></div>
+      <div class="field-set-title">Optional</div>
+      <div class="form-group"><label>Content URL</label><input id="f-contentUrl" type="url" placeholder="https://example.com/video.mp4" /></div>
+      <div class="form-group"><label>Embed URL</label><input id="f-embedUrl" type="url" placeholder="https://www.youtube.com/embed/VIDEO_ID" /></div>
+      <div class="form-group"><label>Duration</label><input id="f-duration" type="text" placeholder="PT8M30S (ISO 8601)" /></div>
+    `,
+
+    WebSite: `
+      <div class="field-set-title">Required Fields</div>
+      <div class="form-group"><label>Website Name<span class="req">*</span></label><input id="f-name" type="text" placeholder="My Awesome Website" /></div>
+      <div class="form-group"><label>Website URL<span class="req">*</span></label><input id="f-url" type="url" placeholder="https://example.com" /></div>
+      <div class="field-set-title">Sitelinks Searchbox</div>
+      <div class="form-group"><label>Search Page URL Pattern</label><input id="f-searchUrl" type="url" placeholder="https://example.com/search?q={search_term_string}" /></div>
+      <div class="field-set-title">Optional</div>
+      <div class="form-group"><label>Description</label><textarea id="f-description" placeholder="A comprehensive resource for developers..."></textarea></div>
+    `,
+
+    SoftwareApplication: `
+      <div class="field-set-title">Required Fields</div>
+      <div class="form-group"><label>App Name<span class="req">*</span></label><input id="f-name" type="text" placeholder="QuickTools" /></div>
+      <div class="form-group"><label>Category<span class="req">*</span></label>
+        <div class="select-wrap">
+          <select id="f-appCategory">
+            <option value="DeveloperApplication">Developer App</option>
+            <option value="UtilitiesApplication">Utilities</option>
+            <option value="BusinessApplication">Business</option>
+            <option value="EducationApplication">Education</option>
+            <option value="EntertainmentApplication">Entertainment</option>
+            <option value="GameApplication">Game</option>
+            <option value="HealthApplication">Health</option>
+            <option value="LifestyleApplication">Lifestyle</option>
+            <option value="MultimediaApplication">Multimedia</option>
+            <option value="SocialNetworkingApplication">Social</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group"><label>Operating System<span class="req">*</span></label><input id="f-os" type="text" placeholder="Windows, macOS, Linux, iOS, Android" /></div>
+      <div class="form-group"><label>App URL</label><input id="f-url" type="url" placeholder="https://example.com/app" /></div>
+      <div class="field-set-title">Pricing</div>
+      <div class="form-group"><label>Price</label><input id="f-price" type="text" placeholder="0 (free) or 9.99" /></div>
+      <div class="form-group"><label>Currency</label><input id="f-currency" type="text" placeholder="USD" value="USD" /></div>
+      <div class="field-set-title">Ratings</div>
+      <div class="form-group"><label>Rating Value</label><input id="f-ratingValue" type="text" placeholder="4.9" /></div>
+      <div class="form-group"><label>Rating Count</label><input id="f-ratingCount" type="text" placeholder="2340" /></div>
+    `,
+
+    Review: `
+      <div class="field-set-title">Review Info</div>
+      <div class="form-group"><label>Item Reviewed (name)<span class="req">*</span></label><input id="f-itemName" type="text" placeholder="Product or Service Name" /></div>
+      <div class="form-group"><label>Item Type</label>
+        <div class="select-wrap">
+          <select id="f-itemType">
+            <option value="Product">Product</option>
+            <option value="SoftwareApplication">Software</option>
+            <option value="LocalBusiness">Local Business</option>
+            <option value="Book">Book</option>
+            <option value="Movie">Movie</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group"><label>Rating Value<span class="req">*</span></label><input id="f-ratingValue" type="number" min="1" max="5" step="0.1" placeholder="4.5" /></div>
+      <div class="form-group"><label>Best Rating</label><input id="f-bestRating" type="text" placeholder="5" value="5" /></div>
+      <div class="form-group"><label>Review Body</label><textarea id="f-reviewBody" placeholder="This product is absolutely amazing..."></textarea></div>
+      <div class="field-set-title">Reviewer</div>
+      <div class="form-group"><label>Reviewer Name<span class="req">*</span></label><input id="f-authorName" type="text" placeholder="John Smith" /></div>
+      <div class="form-group"><label>Review Date</label><input id="f-datePublished" type="date" /></div>
+    `,
+
+    Course: `
+      <div class="field-set-title">Required Fields</div>
+      <div class="form-group"><label>Course Name<span class="req">*</span></label><input id="f-name" type="text" placeholder="The Complete SEO Course 2025" /></div>
+      <div class="form-group"><label>Description<span class="req">*</span></label><textarea id="f-description" placeholder="Master SEO from beginner to advanced..."></textarea></div>
+      <div class="form-group"><label>Course URL</label><input id="f-url" type="url" placeholder="https://example.com/course" /></div>
+      <div class="field-set-title">Provider</div>
+      <div class="form-group"><label>Provider Name<span class="req">*</span></label><input id="f-providerName" type="text" placeholder="SEO Academy" /></div>
+      <div class="form-group"><label>Provider URL</label><input id="f-providerUrl" type="url" placeholder="https://seoacademy.com" /></div>
+      <div class="field-set-title">Optional</div>
+      <div class="form-group"><label>Course Image</label><input id="f-image" type="url" placeholder="https://example.com/course-thumb.jpg" /></div>
+      <div class="form-group"><label>Price</label><input id="f-price" type="text" placeholder="49.99 or 0 for free" /></div>
+      <div class="form-group"><label>Currency</label><input id="f-currency" type="text" placeholder="USD" value="USD" /></div>
+    `
+  };
+
+  return tpl[type] || `<p style="color:var(--text3);font-size:14px;padding:8px 0;">Fields for ${type} schema</p>`;
+}
+
+// ─── FAQ ITEMS ──────────────────────────────────────────────────────────────
+function renderFaqItems() {
+  const c = document.getElementById('faq-items-container');
+  if (!c) return;
+  c.innerHTML = faqItems.map((item, i) => `
+    <div class="faq-item">
+      <div class="faq-item-header">
+        <span class="faq-label">Q&A #${i+1}</span>
+        ${faqItems.length > 1 ? `<button class="btn btn-danger" onclick="removeFaqItem(${i})">✕ Remove</button>` : ''}
+      </div>
+      <div class="form-group">
+        <label>Question<span class="req">*</span></label>
+        <input type="text" value="${escHtml(item.q)}" oninput="faqItems[${i}].q=this.value;liveScore()" placeholder="What is JSON-LD schema markup?" />
+      </div>
+      <div class="form-group">
+        <label>Answer<span class="req">*</span></label>
+        <textarea oninput="faqItems[${i}].a=this.value;liveScore()" placeholder="JSON-LD is a method of encoding linked data...">${escHtml(item.a)}</textarea>
+      </div>
+    </div>
+  `).join('');
+}
+
+function addFaqItem() {
+  faqItems.push({ q: '', a: '' });
+  renderFaqItems();
+}
+
+function removeFaqItem(i) {
+  faqItems.splice(i, 1);
+  renderFaqItems();
+}
+
+// ─── BREADCRUMB ITEMS ───────────────────────────────────────────────────────
+function renderBreadcrumbItems() {
+  const c = document.getElementById('breadcrumb-items-container');
+  if (!c) return;
+  c.innerHTML = breadcrumbItems.map((item, i) => `
+    <div class="faq-item">
+      <div class="faq-item-header">
+        <span class="faq-label">Item #${i+1}</span>
+        ${breadcrumbItems.length > 1 ? `<button class="btn btn-danger" onclick="removeBreadcrumbItem(${i})">✕ Remove</button>` : ''}
+      </div>
+      <div class="form-group">
+        <label>Name<span class="req">*</span></label>
+        <input type="text" value="${escHtml(item.name)}" oninput="breadcrumbItems[${i}].name=this.value;liveScore()" placeholder="Home / Blog / Article" />
+      </div>
+      <div class="form-group">
+        <label>URL (omit for last item)</label>
+        <input type="url" value="${escHtml(item.url)}" oninput="breadcrumbItems[${i}].url=this.value;liveScore()" placeholder="https://example.com/blog" />
+      </div>
+    </div>
+  `).join('');
+}
+
+function addBreadcrumbItem() {
+  breadcrumbItems.push({ name: '', url: '' });
+  renderBreadcrumbItems();
+}
+
+function removeBreadcrumbItem(i) {
+  breadcrumbItems.splice(i, 1);
+  renderBreadcrumbItems();
+}
+
+function escHtml(str) {
+  return (str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ─── FIELD GETTERS ──────────────────────────────────────────────────────────
+function val(id) { const el = document.getElementById(id); return el ? el.value.trim() : ''; }
+function valML(id) { const el = document.getElementById(id); return el ? el.value.trim().split('\n').filter(l=>l.trim()) : []; }
+
+// ─── GENERATE SCHEMA ────────────────────────────────────────────────────────
+function generateSchema() {
+  const type = currentType;
+  let schema = null;
+
+  try {
+    switch (type) {
+      case 'FAQ': schema = buildFAQ(); break;
+      case 'Article': schema = buildArticle('Article'); break;
+      case 'BlogPosting': schema = buildArticle('BlogPosting'); break;
+      case 'Product': schema = buildProduct(); break;
+      case 'BreadcrumbList': schema = buildBreadcrumb(); break;
+      case 'Organization': schema = buildOrganization(); break;
+      case 'Person': schema = buildPerson(); break;
+      case 'LocalBusiness': schema = buildLocalBusiness(); break;
+      case 'Event': schema = buildEvent(); break;
+      case 'Recipe': schema = buildRecipe(); break;
+      case 'VideoObject': schema = buildVideo(); break;
+      case 'WebSite': schema = buildWebsite(); break;
+      case 'SoftwareApplication': schema = buildSoftware(); break;
+      case 'Review': schema = buildReview(); break;
+      case 'Course': schema = buildCourse(); break;
+    }
+  } catch(e) {
+    showToast('⚠️ Error generating schema');
+    return;
+  }
+
+  if (!schema) { showToast('⚠️ Please fill required fields'); return; }
+
+  const json = JSON.stringify(schema, null, 2);
+  const wrapped = `<script type="application/ld+json">\n${json}\n<\/script>`;
+
+  renderOutput(wrapped, json);
+
+  // Update dashboard
+  const lines = wrapped.split('\n').length;
+  const filled = countFilledFields();
+  const req = SCHEMA_META[type].required.length;
+  document.getElementById('d-lines').textContent = lines;
+  document.getElementById('d-filled').textContent = filled;
+  document.getElementById('d-status').textContent = 'Valid ✓';
+
+  updateScore(filled, req);
+  document.getElementById('pre-output-raw', json);
+  showToast('✓ Schema generated successfully!');
+  liveScore();
+}
+
+// ─── SCHEMA BUILDERS ────────────────────────────────────────────────────────
+function buildFAQ() {
+  const entities = faqItems.filter(f => f.q && f.a);
+  if (!entities.length) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": entities.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
+  };
+}
+
+function buildArticle(type) {
+  const hl = val('f-headline'), dp = val('f-datePublished'), an = val('f-authorName'), pn = val('f-publisherName');
+  if (!hl || !dp || !an || !pn) return null;
+  const s = {
+    "@context": "https://schema.org",
+    "@type": type,
+    "headline": hl,
+    "datePublished": dp,
+    "author": { "@type": "Person", "name": an }
+  };
+  if (val('f-dateModified')) s.dateModified = val('f-dateModified');
+  if (val('f-authorUrl')) s.author.url = val('f-authorUrl');
+  s.publisher = { "@type": "Organization", "name": pn };
+  if (val('f-publisherLogo')) s.publisher.logo = { "@type": "ImageObject", "url": val('f-publisherLogo') };
+  if (val('f-url')) s.url = val('f-url');
+  if (val('f-image')) s.image = val('f-image');
+  if (val('f-description')) s.description = val('f-description');
+  return s;
+}
+
+function buildProduct() {
+  const nm = val('f-name'), pr = val('f-price');
+  if (!nm || !pr) return null;
+  const s = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": nm,
+    "offers": {
+      "@type": "Offer",
+      "price": pr,
+      "priceCurrency": val('f-currency') || 'USD',
+      "availability": "https://schema.org/" + (val('f-availability') || 'InStock')
+    }
+  };
+  if (val('f-description')) s.description = val('f-description');
+  if (val('f-url')) s.url = val('f-url');
+  if (val('f-image')) s.image = val('f-image');
+  if (val('f-brand')) s.brand = { "@type": "Brand", "name": val('f-brand') };
+  if (val('f-sku')) s.sku = val('f-sku');
+  if (val('f-ratingValue') && val('f-reviewCount')) {
+    s.aggregateRating = { "@type": "AggregateRating", "ratingValue": val('f-ratingValue'), "reviewCount": val('f-reviewCount') };
+  }
+  return s;
+}
+
+function buildBreadcrumb() {
+  const items = breadcrumbItems.filter(b => b.name);
+  if (!items.length) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((b, i) => {
+      const li = { "@type": "ListItem", "position": i + 1, "name": b.name };
+      if (b.url) li.item = b.url;
+      return li;
+    })
+  };
+}
+
+function buildOrganization() {
+  const nm = val('f-name'), url = val('f-url');
+  if (!nm || !url) return null;
+  const s = { "@context": "https://schema.org", "@type": "Organization", "name": nm, "url": url };
+  if (val('f-logo')) s.logo = val('f-logo');
+  if (val('f-description')) s.description = val('f-description');
+  if (val('f-phone')) s.telephone = val('f-phone');
+  if (val('f-email')) s.email = val('f-email');
+  const sa = valML('f-sameAs');
+  if (sa.length) s.sameAs = sa;
+  return s;
+}
+
+function buildPerson() {
+  const nm = val('f-name');
+  if (!nm) return null;
+  const s = { "@context": "https://schema.org", "@type": "Person", "name": nm };
+  if (val('f-jobTitle')) s.jobTitle = val('f-jobTitle');
+  if (val('f-url')) s.url = val('f-url');
+  if (val('f-image')) s.image = val('f-image');
+  if (val('f-email')) s.email = val('f-email');
+  if (val('f-worksFor')) s.worksFor = { "@type": "Organization", "name": val('f-worksFor') };
+  const sa = valML('f-sameAs');
+  if (sa.length) s.sameAs = sa;
+  return s;
+}
+
+function buildLocalBusiness() {
+  const nm = val('f-name'), street = val('f-street'), city = val('f-city');
+  if (!nm || !street || !city) return null;
+  const s = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": nm,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": street,
+      "addressLocality": city,
+      "addressRegion": val('f-state'),
+      "postalCode": val('f-zip'),
+      "addressCountry": val('f-country') || 'US'
+    }
+  };
+  if (val('f-url')) s.url = val('f-url');
+  if (val('f-phone')) s.telephone = val('f-phone');
+  if (val('f-hours')) s.openingHours = val('f-hours');
+  if (val('f-priceRange')) s.priceRange = val('f-priceRange');
+  if (val('f-lat') && val('f-lng')) {
+    s.geo = { "@type": "GeoCoordinates", "latitude": val('f-lat'), "longitude": val('f-lng') };
+  }
+  return s;
+}
+
+function buildEvent() {
+  const nm = val('f-name'), sd = val('f-startDate'), vn = val('f-venueName');
+  if (!nm || !sd || !vn) return null;
+  const s = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": nm,
+    "startDate": sd,
+    "location": { "@type": "Place", "name": vn }
+  };
+  if (val('f-venueAddress')) s.location.address = val('f-venueAddress');
+  if (val('f-endDate')) s.endDate = val('f-endDate');
+  if (val('f-description')) s.description = val('f-description');
+  if (val('f-url')) s.url = val('f-url');
+  if (val('f-image')) s.image = val('f-image');
+  if (val('f-price')) s.offers = { "@type": "Offer", "price": val('f-price'), "priceCurrency": val('f-currency') || 'USD' };
+  const mode = val('f-eventMode');
+  if (mode) s.eventAttendanceMode = "https://schema.org/" + mode;
+  return s;
+}
+
+function buildRecipe() {
+  const nm = val('f-name'), ing = valML('f-ingredients'), ins = valML('f-instructions');
+  if (!nm || !ing.length || !ins.length) return null;
+  const s = {
+    "@context": "https://schema.org",
+    "@type": "Recipe",
+    "name": nm,
+    "recipeIngredient": ing,
+    "recipeInstructions": ins.map((step, i) => ({
+      "@type": "HowToStep",
+      "position": i + 1,
+      "text": step
+    }))
+  };
+  if (val('f-description')) s.description = val('f-description');
+  if (val('f-image')) s.image = val('f-image');
+  if (val('f-url')) s.url = val('f-url');
+  if (val('f-prepTime')) s.prepTime = val('f-prepTime');
+  if (val('f-cookTime')) s.cookTime = val('f-cookTime');
+  if (val('f-totalTime')) s.totalTime = val('f-totalTime');
+  if (val('f-yield')) s.recipeYield = val('f-yield');
+  if (val('f-ratingValue') && val('f-reviewCount')) {
+    s.aggregateRating = { "@type": "AggregateRating", "ratingValue": val('f-ratingValue'), "reviewCount": val('f-reviewCount') };
+  }
+  return s;
+}
+
+function buildVideo() {
+  const nm = val('f-name'), desc = val('f-description'), thumb = val('f-thumbnailUrl'), ud = val('f-uploadDate');
+  if (!nm || !desc || !thumb) return null;
+  const s = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": nm,
+    "description": desc,
+    "thumbnailUrl": thumb
+  };
+  if (ud) s.uploadDate = ud;
+  if (val('f-contentUrl')) s.contentUrl = val('f-contentUrl');
+  if (val('f-embedUrl')) s.embedUrl = val('f-embedUrl');
+  if (val('f-duration')) s.duration = val('f-duration');
+  return s;
+}
+
+function buildWebsite() {
+  const nm = val('f-name'), url = val('f-url');
+  if (!nm || !url) return null;
+  const s = { "@context": "https://schema.org", "@type": "WebSite", "name": nm, "url": url };
+  if (val('f-description')) s.description = val('f-description');
+  const su = val('f-searchUrl');
+  if (su) {
+    s.potentialAction = {
+      "@type": "SearchAction",
+      "target": { "@type": "EntryPoint", "urlTemplate": su },
+      "query-input": "required name=search_term_string"
+    };
+  }
+  return s;
+}
+
+function buildSoftware() {
+  const nm = val('f-name'), cat = val('f-appCategory'), os = val('f-os');
+  if (!nm || !cat || !os) return null;
+  const s = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": nm,
+    "applicationCategory": cat,
+    "operatingSystem": os
+  };
+  if (val('f-url')) s.url = val('f-url');
+  if (val('f-price') !== undefined) {
+    s.offers = { "@type": "Offer", "price": val('f-price') || '0', "priceCurrency": val('f-currency') || 'USD' };
+  }
+  if (val('f-ratingValue') && val('f-ratingCount')) {
+    s.aggregateRating = { "@type": "AggregateRating", "ratingValue": val('f-ratingValue'), "ratingCount": val('f-ratingCount') };
+  }
+  return s;
+}
+
+function buildReview() {
+  const iname = val('f-itemName'), rv = val('f-ratingValue'), an = val('f-authorName');
+  if (!iname || !rv || !an) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": { "@type": val('f-itemType') || 'Product', "name": iname },
+    "reviewRating": { "@type": "Rating", "ratingValue": rv, "bestRating": val('f-bestRating') || '5' },
+    "author": { "@type": "Person", "name": an },
+    "reviewBody": val('f-reviewBody') || undefined,
+    "datePublished": val('f-datePublished') || undefined
+  };
+}
+
+function buildCourse() {
+  const nm = val('f-name'), desc = val('f-description'), pn = val('f-providerName');
+  if (!nm || !desc || !pn) return null;
+  const s = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": nm,
+    "description": desc,
+    "provider": { "@type": "Organization", "name": pn }
+  };
+  if (val('f-providerUrl')) s.provider.url = val('f-providerUrl');
+  if (val('f-url')) s.url = val('f-url');
+  if (val('f-image')) s.image = val('f-image');
+  if (val('f-price')) s.offers = { "@type": "Offer", "price": val('f-price'), "priceCurrency": val('f-currency') || 'USD' };
+  return s;
+}
+
+// ─── RENDER OUTPUT ──────────────────────────────────────────────────────────
+let lastJsonRaw = '';
+
+function renderOutput(wrapped, json) {
+  lastJsonRaw = json;
+  const pre = document.getElementById('output');
+  pre.classList.remove('cursor-blink');
+  pre.innerHTML = syntaxHighlight(wrapped);
+}
+
+function syntaxHighlight(str) {
+  return str
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, match => {
+      if (/^"/.test(match)) {
+        if (/:$/.test(match)) return `<span class="tok-key">${match}</span>`;
+        if (/https?:\/\//.test(match)) return `<span class="tok-url">${match}</span>`;
+        return `<span class="tok-str">${match}</span>`;
+      }
+      if (/true|false/.test(match)) return `<span class="tok-bool">${match}</span>`;
+      if (/null/.test(match)) return `<span class="tok-null">${match}</span>`;
+      return `<span class="tok-num">${match}</span>`;
+    })
+    .replace(/([{}[\]])/g, '<span class="tok-brace">$1</span>');
+}
+
+// ─── LIVE SCORE ─────────────────────────────────────────────────────────────
+function liveScore() {
+  const filled = countFilledFields();
+  const meta = SCHEMA_META[currentType];
+  updateScore(filled, meta.required.length);
+  document.getElementById('d-filled').textContent = filled;
+}
+
+function countFilledFields() {
+  let count = 0;
+  if (currentType === 'FAQ') {
+    faqItems.forEach(f => { if (f.q && f.a) count++; });
+    return count;
+  }
+  if (currentType === 'BreadcrumbList') {
+    breadcrumbItems.forEach(b => { if (b.name) count++; });
+    return count;
+  }
+  document.querySelectorAll('#dynamic-fields input, #dynamic-fields select, #dynamic-fields textarea').forEach(el => {
+    if (el.value.trim()) count++;
+  });
+  return count;
+}
+
+function updateScore(filled, required) {
+  const total = Math.max(required, filled);
+  const pct = total ? Math.min(100, Math.round((filled / Math.max(required, 1)) * 100)) : 0;
+  document.getElementById('d-score').textContent = pct + '%';
+  document.getElementById('score-pct').textContent = pct + '%';
+  document.getElementById('score-fill').style.width = pct + '%';
+
+  const statusEl = document.getElementById('badge-valid');
+  if (pct >= 80) {
+    statusEl.textContent = '✓ Valid JSON-LD';
+    statusEl.className = 'status-badge valid';
+  } else if (pct >= 40) {
+    statusEl.textContent = '⚠ Incomplete';
+    statusEl.className = 'status-badge warning';
+  } else {
+    statusEl.textContent = '○ Not Generated';
+    statusEl.className = 'status-badge info';
+  }
+}
+
+// ─── COPY / DOWNLOAD ────────────────────────────────────────────────────────
+function copyOutput() {
+  const pre = document.getElementById('output');
+  const text = pre.innerText || pre.textContent;
+  if (!text || text.startsWith('//')) { showToast('⚡ Generate schema first!'); return; }
+  navigator.clipboard.writeText(text).then(() => showToast('✓ Copied to clipboard!')).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    ta.remove();
+    showToast('✓ Copied!');
+  });
+}
+
+function downloadOutput() {
+  const pre = document.getElementById('output');
+  const text = pre.innerText || pre.textContent;
+  if (!text || text.startsWith('//')) { showToast('⚡ Generate schema first!'); return; }
+  const blob = new Blob([text], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'schema-' + currentType.toLowerCase() + '.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  showToast('⬇ Download started!');
+}
+
+function validateExternal() {
+  const pre = document.getElementById('output');
+  const text = pre.innerText || pre.textContent;
+  if (!text || text.startsWith('//')) { showToast('⚡ Generate schema first!'); return; }
+  window.open('https://search.google.com/test/rich-results', '_blank', 'noopener');
+}
+
+function copyExample(btn) {
+  const pre = btn.closest('.example-card').querySelector('.example-code');
+  navigator.clipboard.writeText(pre.textContent).then(() => showToast('✓ Example copied!')).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = pre.textContent;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    ta.remove();
+    showToast('✓ Copied!');
+  });
+}
+
+// ─── RESET ──────────────────────────────────────────────────────────────────
+function resetForm() {
+  faqItems = [{ q: '', a: '' }];
+  breadcrumbItems = [{ name: '', url: '' }];
+  renderFields(currentType);
+  document.getElementById('output').innerHTML = '// Select a schema type and fill in the fields above,\n// then click ⚡ Generate Schema to get your JSON-LD.';
+  document.getElementById('output').classList.add('cursor-blink');
+  document.getElementById('d-lines').textContent = '0';
+  document.getElementById('d-filled').textContent = '0';
+  document.getElementById('d-score').textContent = '0%';
+  document.getElementById('score-fill').style.width = '0%';
+  document.getElementById('score-pct').textContent = '0%';
+  document.getElementById('d-status').textContent = 'Ready';
+  updateScore(0, SCHEMA_META[currentType].required.length);
+  showToast('↺ Form reset');
+}
+
+// ─── TOAST ──────────────────────────────────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._t);
+  t._t = setTimeout(() => t.classList.remove('show'), 2600);
+}
+
+// ─── FAQ TOGGLE ─────────────────────────────────────────────────────────────
+function toggleFaq(header) {
+  const item = header.closest('.faq-q');
+  const isOpen = item.classList.contains('open');
+  item.classList.toggle('open', !isOpen);
+  header.setAttribute('aria-expanded', String(!isOpen));
+}
+
+document.querySelectorAll('.faq-q-header').forEach(h => {
+  h.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleFaq(h); } });
+});
+
+// ─── INIT ────────────────────────────────────────────────────────────────────
+setSchemaType('FAQ', document.querySelector('[data-type="FAQ"]'));
+</script>
+
+</body>
+</html>
