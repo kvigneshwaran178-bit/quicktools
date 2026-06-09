@@ -1298,6 +1298,21 @@ themeToggle.addEventListener('click', () => {
 // FILE UPLOAD HANDLING
 // ══════════════════════════════════════════
 
+// Lazy-load PDF.js and JSZip only when needed
+const PDFJS_CDN   = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+const PDFJS_WORKER = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+const JSZIP_CDN   = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
+
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    if (document.querySelector(`script[src="${src}"]`)) { resolve(); return; }
+    const s = document.createElement('script');
+    s.src = src; s.onload = resolve; s.onerror = reject;
+    document.head.appendChild(s);
+  });
+}
+
+// ── Drag / Drop helpers ──
 function handleDragOver(e, zoneId) {
   e.preventDefault();
   document.getElementById(zoneId).classList.add('dragover');
@@ -1316,6 +1331,7 @@ function handleFileSelect(input, targetId, zoneId, badgeId, noticeId) {
   if (file) processFile(file, targetId, zoneId, badgeId, noticeId);
 }
 
+// ── Main entry point ──
 function processFile(file, targetId, zoneId, badgeId, noticeId) {
   const ext = file.name.split('.').pop().toLowerCase();
   const allowed = ['txt', 'pdf', 'doc', 'docx'];
@@ -1324,10 +1340,8 @@ function processFile(file, targetId, zoneId, badgeId, noticeId) {
     return;
   }
 
-  const zone = document.getElementById(zoneId);
-  zone.classList.add('has-file');
-
-  // Show file badge
+  // Mark zone + show badge
+  document.getElementById(zoneId).classList.add('has-file');
   const badge = document.getElementById(badgeId);
   badge.style.display = 'block';
   badge.innerHTML = `<div class="file-badge">
@@ -1339,149 +1353,136 @@ function processFile(file, targetId, zoneId, badgeId, noticeId) {
     readAsText(file, targetId, noticeId);
   } else if (ext === 'pdf') {
     readPDF(file, targetId, noticeId);
-  } else if (ext === 'doc' || ext === 'docx') {
-    readDocx(file, targetId, noticeId);
+  } else {
+    readDocx(file, targetId, noticeId);   // .doc or .docx
   }
 }
 
+// ── TXT ──
 function readAsText(file, targetId, noticeId) {
   const reader = new FileReader();
-  reader.onload = e => {
-    setTextarea(targetId, e.target.result);
-    hideParseNotice(noticeId);
-  };
-  reader.onerror = () => showParseNotice(noticeId, '❌ Could not read the file. Try copying and pasting the text instead.', 'error');
-  reader.readAsText(file);
+  reader.onload  = e => { setTextarea(targetId, e.target.result); hideParseNotice(noticeId); };
+  reader.onerror = () => showParseNotice(noticeId, '❌ Could not read the file. Try copy-pasting the text instead.', 'error');
+  reader.readAsText(file, 'UTF-8');
 }
 
-function readPDF(file, targetId, noticeId) {
-  showParseNotice(noticeId, '⏳ Extracting text from PDF…', 'info');
-  const reader = new FileReader();
-  reader.onload = e => {
-    try {
-      const bytes = new Uint8Array(e.target.result);
-      const text = extractPDFText(bytes);
-      if (text && text.trim().length > 30) {
-        setTextarea(targetId, text);
-        hideParseNotice(noticeId);
-      } else {
-        showParseNotice(noticeId, '⚠️ This PDF appears to be image-based or scanned. Text extraction is limited. For best results, copy-paste the text from the PDF instead.', 'warn');
-      }
-    } catch {
-      showParseNotice(noticeId, '⚠️ Could not fully extract text from this PDF. For best results, copy-paste the text from your PDF into the text area below.', 'warn');
+// ── PDF  (PDF.js) ──
+async function readPDF(file, targetId, noticeId) {
+  showParseNotice(noticeId, '⏳ Loading PDF reader…', 'info');
+  try {
+    await loadScript(PDFJS_CDN);
+    // Set worker source (must happen after the main script loads)
+    window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER;
+
+    showParseNotice(noticeId, '⏳ Extracting text from PDF…', 'info');
+
+    const arrayBuffer = await file.arrayBuffer();
+    const pdf = await window.pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+
+    let fullText = '';
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page    = await pdf.getPage(i);
+      const content = await page.getTextContent();
+      // Join items, add a newline between lines that have a large y-gap
+      let lastY = null;
+      content.items.forEach(item => {
+        if (lastY !== null && Math.abs(item.transform[5] - lastY) > 5) {
+          fullText += '\n';
+        }
+        fullText += item.str;
+        lastY = item.transform[5];
+      });
+      fullText += '\n\n'; // page break
     }
-  };
-  reader.readAsArrayBuffer(file);
-}
 
-function extractPDFText(bytes) {
-  // Lightweight PDF text extractor — works on most text-based PDFs without external libs
-  let text = '';
-  const str = new TextDecoder('latin1').decode(bytes);
-
-  // Extract text from BT...ET blocks (PDF text operators)
-  const btBlocks = str.match(/BT[\s\S]*?ET/g) || [];
-  btBlocks.forEach(block => {
-    // Tj / TJ operators
-    const tjMatches = block.match(/\(((?:[^()\\]|\\.|(\([^)]*\)))*)\)\s*Tj/g) || [];
-    tjMatches.forEach(m => {
-      const content = m.match(/\(((?:[^()\\]|\\.)*)\)/);
-      if (content) text += decodePDFString(content[1]) + ' ';
-    });
-    const tjArr = block.match(/\[((?:[^\[\]])*)\]\s*TJ/g) || [];
-    tjArr.forEach(m => {
-      const inner = m.match(/\[([\s\S]*)\]/);
-      if (inner) {
-        const parts = inner[1].match(/\(([^)]*)\)/g) || [];
-        parts.forEach(p => { text += decodePDFString(p.slice(1, -1)) + ' '; });
-      }
-    });
-  });
-
-  // Fallback: grab all parenthesized strings if no BT/ET found
-  if (!text.trim()) {
-    const allStrings = str.match(/\(([^\n\r]{3,120})\)/g) || [];
-    allStrings.forEach(s => {
-      const clean = decodePDFString(s.slice(1, -1));
-      if (/[a-zA-Z]{3,}/.test(clean)) text += clean + ' ';
-    });
-  }
-
-  return cleanExtractedText(text);
-}
-
-function decodePDFString(s) {
-  return s
-    .replace(/\\n/g, '\n').replace(/\\r/g, '\r').replace(/\\t/g, '\t')
-    .replace(/\\\(/g, '(').replace(/\\\)/g, ')').replace(/\\\\/g, '\\')
-    .replace(/\\(\d{3})/g, (_, oct) => String.fromCharCode(parseInt(oct, 8)));
-}
-
-function readDocx(file, targetId, noticeId) {
-  showParseNotice(noticeId, '⏳ Extracting text from document…', 'info');
-  const reader = new FileReader();
-  reader.onload = e => {
-    try {
-      const bytes = new Uint8Array(e.target.result);
-      const text = extractDocxText(bytes);
-      if (text && text.trim().length > 30) {
-        setTextarea(targetId, text);
-        hideParseNotice(noticeId);
-      } else {
-        showParseNotice(noticeId, '⚠️ Limited text extracted. For best results, open the document and copy-paste the text into the area below.', 'warn');
-      }
-    } catch {
-      showParseNotice(noticeId, '⚠️ Could not read this .doc file. Try saving it as .docx or copy-pasting the text below.', 'warn');
+    const cleaned = fullText.replace(/\n{3,}/g, '\n\n').trim();
+    if (cleaned.length > 40) {
+      setTextarea(targetId, cleaned);
+      hideParseNotice(noticeId);
+    } else {
+      showParseNotice(noticeId,
+        '⚠️ This PDF appears to be image-based or scanned — no selectable text was found. Please copy-paste the text from the PDF into the area below.',
+        'warn');
     }
-  };
-  reader.readAsArrayBuffer(file);
-}
-
-function extractDocxText(bytes) {
-  // .docx is a ZIP — find word/document.xml and extract text
-  const str = new TextDecoder('utf-8', { fatal: false }).decode(bytes);
-  // Find the XML content between w:t tags
-  const xmlMatch = str.match(/word\/document\.xml[^<]*([\s\S]*)/);
-  let xml = xmlMatch ? xmlMatch[1] : str;
-  // Extract all w:t text nodes
-  const tNodes = xml.match(/<w:t[^>]*>([^<]*)<\/w:t>/g) || [];
-  let text = '';
-  tNodes.forEach(node => {
-    const content = node.replace(/<[^>]+>/g, '');
-    text += content + ' ';
-  });
-  // Add paragraph breaks for w:p
-  text = text.replace(/<\/w:p>/g, '\n').replace(/<[^>]+>/g, '');
-  if (!text.trim()) {
-    // Fallback: strip all XML tags from whatever we got
-    text = str.replace(/<[^>]+>/g, ' ').replace(/\s{2,}/g, ' ');
+  } catch (err) {
+    console.error('PDF.js error:', err);
+    showParseNotice(noticeId,
+      '⚠️ Could not extract text from this PDF. Please copy-paste the resume text into the area below instead.',
+      'warn');
   }
-  return cleanExtractedText(text);
 }
 
-function cleanExtractedText(text) {
-  return text
-    .replace(/[ \t]{3,}/g, '  ')
-    .replace(/\n{3,}/g, '\n\n')
-    .replace(/[^\x09\x0A\x0D\x20-\x7E\xA0-\uFFFF]/g, '')
-    .trim();
+// ── DOCX / DOC  (JSZip) ──
+async function readDocx(file, targetId, noticeId) {
+  showParseNotice(noticeId, '⏳ Reading document…', 'info');
+  try {
+    await loadScript(JSZIP_CDN);
+
+    const arrayBuffer = await file.arrayBuffer();
+    const zip  = await JSZip.loadAsync(arrayBuffer);
+    const xmlFile = zip.file('word/document.xml');
+
+    if (!xmlFile) {
+      // Old binary .doc format — not a ZIP; fall back gracefully
+      showParseNotice(noticeId,
+        '⚠️ Binary .doc files are not fully supported. Please save as .docx or copy-paste the text below.',
+        'warn');
+      return;
+    }
+
+    const xmlText = await xmlFile.async('string');
+
+    // Parse XML string
+    const parser   = new DOMParser();
+    const xmlDoc   = parser.parseFromString(xmlText, 'application/xml');
+    const nsW      = 'http://schemas.openxmlformats.org/wordprocessingml/2006/main';
+
+    let text = '';
+    const paragraphs = xmlDoc.getElementsByTagNameNS(nsW, 'p');
+    for (const para of paragraphs) {
+      const runs = para.getElementsByTagNameNS(nsW, 't');
+      let line = '';
+      for (const run of runs) line += run.textContent;
+      if (line.trim()) text += line + '\n';
+    }
+
+    const cleaned = text.replace(/\n{3,}/g, '\n\n').trim();
+    if (cleaned.length > 40) {
+      setTextarea(targetId, cleaned);
+      hideParseNotice(noticeId);
+    } else {
+      showParseNotice(noticeId,
+        '⚠️ Limited text could be extracted. Please copy-paste the resume text into the area below.',
+        'warn');
+    }
+  } catch (err) {
+    console.error('DOCX error:', err);
+    showParseNotice(noticeId,
+      '⚠️ Could not read this document. Try saving as .docx or copy-pasting the text below.',
+      'warn');
+  }
 }
 
+// ── Helpers ──
 function setTextarea(id, text) {
   const el = document.getElementById(id);
+  if (!el) return;
   el.value = text;
   el.dispatchEvent(new Event('input'));
   if (id === 'resumeInput' || id === 'resumeInput2') updateCount();
 }
 
 function removeFile(targetId, zoneId, badgeId, noticeId) {
-  document.getElementById(targetId).value = '';
-  document.getElementById(badgeId).style.display = 'none';
-  document.getElementById(zoneId).classList.remove('has-file');
+  const ta = document.getElementById(targetId);
+  if (ta) ta.value = '';
+  const badge = document.getElementById(badgeId);
+  if (badge) badge.style.display = 'none';
+  const zone = document.getElementById(zoneId);
+  if (zone) {
+    zone.classList.remove('has-file', 'dragover');
+    zone.querySelectorAll('input[type=file]').forEach(i => i.value = '');
+  }
   hideParseNotice(noticeId);
-  // Reset file input
-  const inputs = document.getElementById(zoneId).querySelectorAll('input[type=file]');
-  inputs.forEach(i => i.value = '');
   updateCount();
 }
 
@@ -1489,14 +1490,16 @@ function showParseNotice(id, msg, type) {
   const el = document.getElementById(id);
   if (!el) return;
   el.textContent = msg;
-  el.className = 'parse-notice show';
-  if (type === 'error') el.style.cssText = 'display:block;background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.2);color:var(--red)';
-  else if (type === 'warn') el.style.cssText = 'display:block;background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.2);color:var(--amber)';
-  else el.style.cssText = 'display:block;background:rgba(34,211,238,0.06);border-color:rgba(34,211,238,0.2);color:var(--cyan)';
+  if (type === 'error')
+    el.style.cssText = 'display:block;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);color:var(--red);padding:10px 14px;border-radius:10px;font-size:0.8rem;margin-bottom:12px;line-height:1.5';
+  else if (type === 'warn')
+    el.style.cssText = 'display:block;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);color:var(--amber);padding:10px 14px;border-radius:10px;font-size:0.8rem;margin-bottom:12px;line-height:1.5';
+  else
+    el.style.cssText = 'display:block;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.2);color:var(--cyan);padding:10px 14px;border-radius:10px;font-size:0.8rem;margin-bottom:12px;line-height:1.5';
 }
 function hideParseNotice(id) {
   const el = document.getElementById(id);
-  if (el) { el.className = 'parse-notice'; el.style.cssText = ''; }
+  if (el) el.style.cssText = 'display:none';
 }
 
 function formatFileSize(bytes) {
